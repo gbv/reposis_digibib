@@ -370,9 +370,7 @@
         </div>
         <div class="c15r">
           <xsl:if test="./structure/derobjects">
-            <xsl:variable name="objectBaseURL">
-                <xsl:value-of select="concat($WebApplicationBaseURL,'receive/')" />
-            </xsl:variable>
+            <xsl:variable name="objectBaseURL" select="concat($WebApplicationBaseURL,'receive/')" />
             <xsl:variable name="staticURL">
               <xsl:value-of select="concat($objectBaseURL,@ID)" />
             </xsl:variable>
@@ -503,6 +501,7 @@
           <xsl:variable name="classlink" select="mcrmods:getClassCategParentLink(.)" />
           <xsl:choose>
             <xsl:when test="string-length($classlink) &gt; 0">
+              <!-- DIGIBIB specific changes: add check for 'x-hide' label in mir_institutes classification -->
               <xsl:for-each select="document($classlink)/mycoreclass//category[position()=1 or position()=last()][not(label/@xml:lang='x-hide')]">
                 <xsl:if test="position() > 1">
                   <xsl:value-of select="', '" />
@@ -926,16 +925,18 @@
       </xsl:variable>
       <!-- Volume -->
       <xsl:if test="mods:part/mods:detail[@type='volume']/mods:number">
-        <xsl:value-of select="concat(i18n:translate('component.mods.metaData.dictionary.volume.shortcut'),' ',mods:part/mods:detail[@type='volume']/mods:number)" />
+        <xsl:value-of
+          select="concat(i18n:translate('component.mods.metaData.dictionary.volume.shortcut'),' ',mods:part/mods:detail[@type='volume']/mods:number)" />
         <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number">
           <xsl:text>, </xsl:text>
         </xsl:if>
       </xsl:if>
       <!-- Issue -->
       <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number">
-        <xsl:value-of select="concat(i18n:translate('component.mods.metaData.dictionary.issue.shortcut'),' ',mods:part/mods:detail[@type='issue']/mods:number)" />
+        <xsl:value-of
+          select="concat(i18n:translate('component.mods.metaData.dictionary.issue.shortcut'),' ',mods:part/mods:detail[@type='issue']/mods:number)" />
       </xsl:if>
-      <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number and string-length($dateIssued) &gt; 0">
+      <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number or mods:part/mods:detail[@type='volume']/mods:number and string-length($dateIssued) &gt; 0">
         <xsl:text> </xsl:text>
       </xsl:if>
       <xsl:if test="string-length($dateIssued) &gt; 0">
@@ -1245,9 +1246,7 @@
           </div>
           <div class="c15r">
             <xsl:if test="./structure/derobjects">
-              <xsl:variable name="objectBaseURL">
-                  <xsl:value-of select="concat($WebApplicationBaseURL,'receive/')" />
-              </xsl:variable>
+              <xsl:variable name="objectBaseURL" select="concat($WebApplicationBaseURL,'receive/')" />
               <xsl:variable name="staticURL">
                 <xsl:value-of select="concat($objectBaseURL,@ID)" />
               </xsl:variable>
