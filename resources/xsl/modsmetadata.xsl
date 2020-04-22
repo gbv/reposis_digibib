@@ -371,12 +371,7 @@
         <div class="c15r">
           <xsl:if test="./structure/derobjects">
             <xsl:variable name="objectBaseURL">
-              <xsl:if test="$objectHost != 'local'">
-                <xsl:value-of select="document('webapp:hosts.xml')/mcr:hosts/mcr:host[@alias=$objectHost]/mcr:url[@type='object']/@href" />
-              </xsl:if>
-              <xsl:if test="$objectHost = 'local'">
                 <xsl:value-of select="concat($WebApplicationBaseURL,'receive/')" />
-              </xsl:if>
             </xsl:variable>
             <xsl:variable name="staticURL">
               <xsl:value-of select="concat($objectBaseURL,@ID)" />
@@ -915,10 +910,10 @@
       <xsl:text disable-output-escaping="yes">&lt;br /></xsl:text>
       <xsl:variable name="dateIssued">
         <xsl:choose>
-          <xsl:when test="../../mods:originInfo[@eventType='publication']/mods:dateIssued">
+          <xsl:when test="(./@type='host' or ./@type='series') and ../../mods:originInfo[@eventType='publication']/mods:dateIssued">
             <xsl:apply-templates select="../../mods:originInfo[@eventType='publication']/mods:dateIssued" mode="formatDate"/>
           </xsl:when>
-          <xsl:when test="../mods:originInfo[@eventType='publication']/mods:dateIssued">
+          <xsl:when test="(./@type='host' or ./@type='series') and ../mods:originInfo[@eventType='publication']/mods:dateIssued">
             <xsl:apply-templates select="../mods:originInfo[@eventType='publication']/mods:dateIssued" mode="formatDate"/>
           </xsl:when>
           <xsl:when test="mods:originInfo[@eventType='publication']/mods:dateIssued">
@@ -931,16 +926,14 @@
       </xsl:variable>
       <!-- Volume -->
       <xsl:if test="mods:part/mods:detail[@type='volume']/mods:number">
-        <xsl:value-of
-          select="concat('Vol. ',mods:part/mods:detail[@type='volume']/mods:number)" />
+        <xsl:value-of select="concat(i18n:translate('component.mods.metaData.dictionary.volume.shortcut'),' ',mods:part/mods:detail[@type='volume']/mods:number)" />
         <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number">
           <xsl:text>, </xsl:text>
         </xsl:if>
       </xsl:if>
       <!-- Issue -->
       <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number">
-        <xsl:value-of
-          select="concat('H. ',mods:part/mods:detail[@type='issue']/mods:number)" />
+        <xsl:value-of select="concat(i18n:translate('component.mods.metaData.dictionary.issue.shortcut'),' ',mods:part/mods:detail[@type='issue']/mods:number)" />
       </xsl:if>
       <xsl:if test="mods:part/mods:detail[@type='issue']/mods:number and string-length($dateIssued) &gt; 0">
         <xsl:text> </xsl:text>
@@ -1253,12 +1246,7 @@
           <div class="c15r">
             <xsl:if test="./structure/derobjects">
               <xsl:variable name="objectBaseURL">
-                <xsl:if test="$objectHost != 'local'">
-                  <xsl:value-of select="document('webapp:hosts.xml')/mcr:hosts/mcr:host[@alias=$objectHost]/mcr:url[@type='object']/@href" />
-                </xsl:if>
-                <xsl:if test="$objectHost = 'local'">
                   <xsl:value-of select="concat($WebApplicationBaseURL,'receive/')" />
-                </xsl:if>
               </xsl:variable>
               <xsl:variable name="staticURL">
                 <xsl:value-of select="concat($objectBaseURL,@ID)" />

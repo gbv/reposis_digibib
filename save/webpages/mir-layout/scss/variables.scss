@@ -9,7 +9,7 @@
 $web-font-path: "https://webfonts.gbv.de/css?family=Lato:400,700,400italic";
 $text-color: #333333;
 $font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-size-base: 15px;
+$font-size-base: 0.9375rem;
 $font-size-h1: floor(($font-size-base * 2.4));
 $font-size-h2: floor(($font-size-base * 2.0));
 $font-size-h3: ceil(($font-size-base * 1.6));
@@ -24,11 +24,17 @@ $padding-small-horizontal: 9px;
 
 // Brand colors
 // -------------------------
-$brand-primary: #00709b;
-$brand-success: #6eba6b;
-$brand-info: #4b8fbb;
-$brand-warning: #f39c12;
-$brand-danger: #be1e3c;
+$primary: #00709b;
+$success: #6eba6b;
+$info: #4b8fbb;
+$warning: #f39c12;
+$danger: #be1e3c;
+
+$brand-primary: $primary;
+$brand-success: $success;
+$brand-info:    $info;
+$brand-warning: $warning;
+$brand-danger:  $danger;
 
 $gray-dark: #7b8a8b;
 $gray: #95a5a6;
@@ -116,7 +122,7 @@ $state-danger-text: #ffffff;
 $state-danger-bg: $brand-danger;
 $state-danger-border: $brand-danger;
 $label-default-bg: $btn-default-bg;
-$modal-inner-padding: 20px;
+// $modal-inner-padding: 20px;
 $progress-bg: $gray-lighter;
 $list-group-border: $gray-lighter;
 $list-group-hover-bg: $gray-lighter;

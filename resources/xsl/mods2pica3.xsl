@@ -83,10 +83,11 @@
     </line>
   </xsl:template>
 
-  <xsl:template match="mods:originInfo/mods:dateIssued" mode="pica3">
+  <xsl:template match="mods:originInfo[@eventType='publication' or ( not(@eventType) and not(../mods:originInfo[@eventType='publication']) )]/mods:dateIssued[@encoding='w3cdtf']" mode="pica3">
     <line>
       <xsl:text>1100  </xsl:text>
-      <xsl:value-of select="." />
+      <xsl:value-of select="substring-before(.,'-')" />
+      <xsl:value-of select="concat('$c',.)" />
     </line>
   </xsl:template>
 
@@ -101,6 +102,13 @@
     <line>
       <xsl:text>1500  </xsl:text>
       <xsl:value-of select="." />
+    </line>
+  </xsl:template>
+  
+  <xsl:template match="mods:language/mods:languageTerm[@authority='rfc5646' and ( not (../mods:languageTerm[@authority='iso639-2b']) )]" mode="pica3">
+    <line>
+      <xsl:text>1500  </xsl:text>
+      <xsl:value-of select="document(concat('language:',.))/language/@biblCode" />
     </line>
   </xsl:template>
 
@@ -244,8 +252,16 @@
 
   <xsl:template match="mods:identifier[@type='doi']" mode="pica3">
     <line>
+      <xsl:text>2051  </xsl:text>
+      <xsl:value-of select="." />
+    </line>
+    <!-- <line>
       <xsl:text>4083  </xsl:text>
       <xsl:value-of select="concat($MCR.DOI.Resolver.MasterURL, .)" />
+    </line> -->
+    <line>
+      <xsl:text>4950  </xsl:text>
+      <xsl:value-of select="concat($MCR.DOI.Resolver.MasterURL, .,'$xR$3Volltext$534')" />
     </line>
   </xsl:template>
 
@@ -275,9 +291,15 @@
       <xsl:text>2050  </xsl:text>
       <xsl:value-of select="text()"></xsl:value-of>
     </line>
-    <line>
+    <!-- <line>
       <xsl:text>4083  $S1$a</xsl:text>
       <xsl:value-of select="concat($MCR.URN.Resolver.MasterURL, .)" />
+      <xsl:text>$qapplication/pdf</xsl:text>
+    </line>
+    -->
+    <line>
+      <xsl:text>4950  </xsl:text>
+      <xsl:value-of select="concat($MCR.URN.Resolver.MasterURL, .,'$xR$3Volltext$534')" />
       <xsl:text>$qapplication/pdf</xsl:text>
     </line>
   </xsl:template>

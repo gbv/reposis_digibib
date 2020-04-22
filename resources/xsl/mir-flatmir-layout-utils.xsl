@@ -29,13 +29,13 @@
                   </xsl:when>
                 </xsl:choose>
               </div>
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
             </form>
           </div>
         </xsl:if>
 
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="navbar-nav ml-auto flex-row">
             <xsl:call-template name="mir.loginMenu" />
             <xsl:call-template name="mir.languageMenu" />
           </ul>
@@ -46,31 +46,32 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="navbar navbar-default mir-main-nav">
+    <div class="navbar navbar-expand-lg bg-primary mir-main-nav">
       <div class="container">
 
         <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".mir-main-nav-entries">
-            <span class="sr-only"> Toggle navigation </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-          </button>
-          <div id="project_logo_box">
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".mir-main-nav-entries">
+            <span class="navbar-toggler-icon"></span>
+          </button>	
+	  <div id="project_logo_box">
             <a class="navbar-brand hidden-xs" href="http://www.tu-braunschweig.de" title="{i18n:translate('digibib.goToMainSite')}"><img src="{$WebApplicationBaseURL}images/siegel_rot.png" alt="{i18n:translate('digibib.logoTUBS')}" /></a>
             <!-- a class="navbar-brand visible-xs-block" href="http://www.tu-braunschweig.de" title="zur Startseite der TU Braunschweig"><img src="{$WebApplicationBaseURL}images/siegel_rot_small.png" alt="Technische Universität Braunschweig" /></a -->
           </div>
         </div>
 
         <nav class="collapse navbar-collapse mir-main-nav-entries">
-          <ul class="nav navbar-nav pull-left">
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='brand']/*" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
+          <ul class="navbar-nav mr-auto">
+            <xsl:for-each select="$loaded_navigation_xml/menu">
+              <xsl:choose>
+                <xsl:when test="@id='main'"/> <!-- Ignore some menus, they are shown elsewhere in the layout -->
+                <xsl:when test="@id='brand'"/>
+                <xsl:when test="@id='below'"/>
+                <xsl:when test="@id='user'"/>
+                <xsl:otherwise>
+                  <xsl:apply-templates select="."/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:for-each>
             <xsl:call-template name="mir.basketMenu" />
           </ul>
         </nav>
@@ -90,12 +91,12 @@
   <xsl:template name="mir.footer">
     <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-sm-9">
-          <ul class="internal_links nav navbar-nav">
+        <div class="col-6 col-sm-9">
+          <ul class="internal_links">
             <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" />
           </ul>
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-6 col-sm-3">
           <xsl:variable name="mcr_version" select="concat('MyCoRe ',mcrver:getCompleteVersion())" />
           <div id="powered_by">
             <a id="dini_logo" href="https://www.dini.de/dienste-projekte/dini-zertifikat/" title="{i18n:translate('digibib.diniCertificate2016')}">
