@@ -1,0 +1,115 @@
+/*  navigation
+ *  - all styles about menus
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  // options menu
+  .mir-prop-nav {
+    // inverted flex order!
+    // means: all but the first
+    .nav-item:not(:last-child) {
+      margin-left: 15px;
+    }
+  }
+
+  // main menu
+  .mir-main-nav {
+    .container {
+      position: relative;
+    }
+    .navbar {
+      padding: 0;
+    }
+    .navbar-nav {
+      padding-left: 200px;
+    }
+    .nav-link {
+      border-left: 1px solid #fff;
+      padding: 0px 1em;
+      line-height: 2em;
+      border-top: 1px solid transparent;
+      // active nav link (no dropdown)
+      &.active {
+        background-color: $danger;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: $danger !important;
+        background-color: white;
+      }
+    }
+    .dropdown-menu {
+      background-color: $danger;
+    }
+    .dropdown-item {
+      color: white;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $danger;
+        background-color: white;
+      }
+    }
+    // active sub menu link (dropdown)
+    .active {
+      .nav-link {
+        color: white !important;
+        background-color: $danger;
+      }
+      > .dropdown-item {
+        background-color: #35c7ff;
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: white;
+        }
+      }
+    }
+  }
+  // overwrite bs settings
+  .mir-main-nav.bg-primary .navbar-nav .active > .nav-link {
+    color: white !important;
+    background-color: $danger;
+  }
+  .mir-main-nav .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  // footer menu
+  .internal_links {
+    width: 100%;
+    li {
+      width: auto;
+      display: inline-block;
+      > a:hover,
+      > a:focus {
+        text-decoration: underline;
+        background-color: transparent;
+      }
+    }
+  }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

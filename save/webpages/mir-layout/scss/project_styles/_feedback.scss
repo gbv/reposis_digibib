@@ -1,0 +1,57 @@
+/*  feedback settings
+ *  - styles for the feedback button
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  #digibib_feedback {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20%;
+    right: -24px;
+    transform: rotate(-90deg);
+    display: block;
+    background: #a9072f;
+    padding: 8px 0px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: solid 1px #a9072f;
+    border-left: solid 0px #a9072f;
+    border-right: solid 1px #a9072f;
+    z-index: 999;
+    width: 80px;
+    text-align: center;
+  }
+  #digibib_feedback:hover {
+    background: $primary;
+    border-bottom: solid 1px $primary;
+    border-left: solid 0px $primary;
+    border-right: solid 1px $primary;
+  }
+  #digibib_feedback a {
+    color: #fff;
+  }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

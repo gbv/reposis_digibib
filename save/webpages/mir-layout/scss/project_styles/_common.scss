@@ -1,0 +1,60 @@
+/*  common settings
+ *  - for very basic settings
+ *  - and for styles with no extra file available
+ *  - at best, this file is nearly empty :)
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+
+  html body .jumbotron {
+    color: inherit;
+    background: none;
+    background-color: $gray-lighter;
+  }
+
+  // classification Browser
+  .classificationBrowser {
+    width: 800px;
+  }
+
+  // viewer
+  .viewer .navbar.navbar-default, .mycoreViewer .navbar {
+    background-image: none;
+  }
+  .mycoreViewer .altoLine {
+    text-align: left;
+    line-height: initial;
+    font-family: sans-serif;
+  }
+  .mycoreViewer .navbar {
+    position: relative;
+    min-height: 60px;
+    padding: 0px;
+  }
+  /* TODO: check for better solution to hide search field box on modal citation box*/
+  .modal {
+    z-index: 2050;
+  }
+
+  // Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

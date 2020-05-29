@@ -13,67 +13,84 @@
 
     <div id="header_box" class="clearfix container">
       <div id="options_nav_box" class="mir-prop-nav">
-
-        <!-- do not show on startpage -->
-        <xsl:if test="not(//div/@class='jumbotwo')">
-          <div class="searchfield_box">
-            <form action="{$WebApplicationBaseURL}servlets/solr/find" class="navbar-form navbar-left pull-right" role="search">
-              <div class="form-group">
-                <input name="condQuery" placeholder="{i18n:translate('mir.navsearch.placeholder')}" class="form-control search-query" id="searchInput" type="text" />
-                <xsl:choose>
-                  <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
-                    <input name="owner" type="hidden" value="createdby:*" />
-                  </xsl:when>
-                  <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
-                    <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
-                  </xsl:when>
-                </xsl:choose>
-              </div>
-              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-        </xsl:if>
-
         <nav>
-          <ul class="navbar-nav ml-auto flex-row">
-            <xsl:call-template name="mir.loginMenu" />
+          <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
             <xsl:call-template name="mir.languageMenu" />
+            <xsl:call-template name="mir.loginMenu" />
           </ul>
         </nav>
-        <br />
-        <a href="https://ub.tu-braunschweig.de/" id="bs-bibliothek"><xsl:value-of select="i18n:translate('digibib.bsLibrary')" /></a>
+        <a id="bs-bibliothek" href="https://ub.tu-braunschweig.de/">
+          <xsl:value-of select="i18n:translate('digibib.bsLibrary')" />
+        </a>
       </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="navbar navbar-expand-lg bg-primary mir-main-nav">
+    <div class="mir-main-nav bg-primary">
       <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <div class="navbar-header">
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".mir-main-nav-entries">
+          <a
+            id="project_logo_box"
+            class="navbar-brand hidden-xs"
+            href="http://www.tu-braunschweig.de"
+            title="{i18n:translate('digibib.goToMainSite')}">
+            <img
+              src="{$WebApplicationBaseURL}images/siegel_rot.png"
+              alt="{i18n:translate('digibib.logoTUBS')}" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#mir-main-nav-collapse-box"
+            aria-controls="mir-main-nav-collapse-box"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>	
-	  <div id="project_logo_box">
-            <a class="navbar-brand hidden-xs" href="http://www.tu-braunschweig.de" title="{i18n:translate('digibib.goToMainSite')}"><img src="{$WebApplicationBaseURL}images/siegel_rot.png" alt="{i18n:translate('digibib.logoTUBS')}" /></a>
-            <!-- a class="navbar-brand visible-xs-block" href="http://www.tu-braunschweig.de" title="zur Startseite der TU Braunschweig"><img src="{$WebApplicationBaseURL}images/siegel_rot_small.png" alt="Technische Universität Braunschweig" /></a -->
+          </button>
+
+          <div id="mir-main-nav-collapse-box" class="collapse navbar-collapse mir-main-nav__entries">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <xsl:call-template name="digibib.generate_single_menu_entry">
+                <xsl:with-param name="menuID" select="'brand'"/>
+              </xsl:call-template>
+              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
+              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
+              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
+              <xsl:call-template name="mir.basketMenu" />
+            </ul>
           </div>
-        </div>
 
-        <nav class="collapse navbar-collapse mir-main-nav-entries">
-          <ul class="navbar-nav mr-auto">
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='brand']/*" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
-            <xsl:call-template name="mir.basketMenu" />
-          </ul>
+          <form
+            action="{$WebApplicationBaseURL}servlets/solr/find"
+            class="bs-search form-inline"
+            role="search">
+            <input
+              name="condQuery"
+              placeholder="{i18n:translate('mir.navsearch.placeholder')}"
+              class="form-control search-query"
+              type="text" />
+            <xsl:choose>
+              <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
+                <input name="owner" type="hidden" value="createdby:*" />
+              </xsl:when>
+              <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
+                <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
+              </xsl:when>
+            </xsl:choose>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+
         </nav>
+      </div>
+    </div>
 
-        <div id="digibib_feedback">
-          <a href="mailto:digibib@tu-braunschweig.de">Feedback</a>
-        </div>
-
-      </div><!-- /container -->
+    <div id="digibib_feedback">
+      <a href="mailto:digibib@tu-braunschweig.de">Feedback</a>
     </div>
   </xsl:template>
 
@@ -86,7 +103,7 @@
       <div class="row">
         <div class="col-6 col-sm-9">
           <ul class="internal_links">
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" />
+            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" mode="footerMenu" />
           </ul>
         </div>
         <div class="col-6 col-sm-3">
@@ -96,12 +113,38 @@
               <img alt="Logo DINI-Zertifikat 2016" src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg" height="50" />
             </a>
             <a id="mycore_logo" href="http://www.mycore.de">
-              <img src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_small_invert.png" title="{$mcr_version}" alt="powered by MyCoRe" />
+              <img src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png" title="{$mcr_version}" alt="powered by MyCoRe" />
             </a>
           </div>
         </div>
       </div>
     </div>
+  </xsl:template>
+
+  <xsl:template name="digibib.generate_single_menu_entry">
+    <xsl:param name="menuID" />
+    <li class="nav-item">
+      <xsl:variable name="activeClass">
+        <xsl:choose>
+          <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item[@href = $browserAddress ]">
+          <xsl:text>active</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>not-active</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <a id="{$menuID}" href="{$WebApplicationBaseURL}{$loaded_navigation_xml/menu[@id=$menuID]/item/@href}" class="nav-link {$activeClass}" >
+        <xsl:choose>
+          <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)] != ''">
+            <xsl:value-of select="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)]" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($DefaultLang)]" />
+          </xsl:otherwise>
+        </xsl:choose>
+      </a>
+    </li>
   </xsl:template>
 
   <xsl:template name="mir.powered_by">

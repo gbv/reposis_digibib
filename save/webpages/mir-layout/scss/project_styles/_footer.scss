@@ -1,0 +1,54 @@
+/*
+ *  footer settings
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  html body #powered_by {
+    background-color: white;
+    border-top: 0px; /* unset border top from flatly */
+  }
+  .panel-footer {
+    padding: 0;
+  }
+  html body #powered_by {
+    background-color: #FFF;
+    padding: 5px 0 0 0;
+    text-align: right;
+  }
+  .flatmir-footer {
+    background-color: #fff;
+    color: #BE1D3C;
+    border-top: 1px solid #BE1D3C;
+  }
+  .flatmir-footer .col-md-9,
+  .flatmir-footer .navbar-nav > li > a {
+    padding: 5px 60px 0 0;
+  }
+  .flatmir-footer a {
+    color: #BE1D3C;
+  }
+  #dini_logo {
+    padding-right: 10px;
+  }
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

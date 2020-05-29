@@ -213,7 +213,7 @@
         </p>
         <iframe
             src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de"
-            style="border: 0; height: 100%; width: 100%;">&lt;/div&gt;
+            style="border: 0; width: 100%;">&lt;/div&gt;
         </iframe>
         <p>Die Daten dienen ausschließlich der Verbesserung des Publikationsservers, den die Betreiber der
           „Digitalen Bibliothek“ mit ihrer Dienstleistung anbieten.

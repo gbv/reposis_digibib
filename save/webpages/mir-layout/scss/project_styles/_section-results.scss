@@ -1,0 +1,60 @@
+/*  section results
+ *  - settings for the resultlist only
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  .result_body .result_filter .panel.oa li[data-fq="worldReadableComplete:false"] .title,
+  .result_body .result_filter .panel.oa li[data-fq="worldReadableComplete:false"] .title:hover,
+  .result_body .result_filter .panel.oa li[data-fq="worldReadableComplete:true"] .title,
+  .result_body .result_filter .panel.oa li[data-fq="worldReadableComplete:true"] .title:hover {
+    color: #666;
+  }
+  /* TODO: move to MIR layout ***************************************************/
+  .hit_oa > span {
+    background-color: transparent;
+    background-size: contain;
+    padding-bottom: 1px;
+    background-repeat: no-repeat;
+  }
+  .hit_oa > span.label-success {
+    background-image: url("#{$assetPathRoot}images/oa.png");
+  }
+  .hit_oa > span.label-warning {
+    background-image: url("#{$assetPathRoot}images/non_oa.png");
+    display: none;
+  }
+  .hit_oa i {
+    display: none;
+  }
+  .shariff .orientation-horizontal.button-style-standard li {
+    min-width: 82px;
+  }
+  .result_body .result_list #hit_list .hit_item .hit_icon_overlay {
+    position: absolute;
+    top: 20px;
+    left: -8px;
+    width: 50%;
+  }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

@@ -2,6 +2,8 @@
 // Variables
 // --------------------------------------------------
 
+$assetPathRoot : "../../../../";
+
 // --------------------------------------------------
 // Reset defaults
 // --------------------------------------------------
@@ -78,6 +80,19 @@ $nav-tabs-border-color: $gray-lighter;
 $nav-tabs-active-link-hover-color: $brand-primary;
 $nav-tabs-active-link-hover-border-color: $gray-lighter;
 $nav-tabs-justified-link-border-color: $gray-lighter;
+
+/*
+$navbar-dark-color:                 white;
+$navbar-dark-hover-color:           $danger;
+$navbar-dark-active-color:          white;
+$dropdown-color:                    white;
+$dropdown-bg:                       $danger;
+$dropdown-link-color:               white;
+$dropdown-link-hover-color:         $danger;
+$dropdown-link-hover-bg:            white;
+$dropdown-link-active-color:        white;
+$dropdown-link-active-bg:           #35c7ff;
+*/
 
 // Pagination
 // -------------------------

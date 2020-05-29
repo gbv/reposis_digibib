@@ -16,7 +16,7 @@ $(document).ready(function() {
       }).attr("disabled", true);
     return true;
   });
-  
+
   $.cookieBar({
     fixed: true,
     message: 'Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten zu können. Mit der Nutzung dieser Seiten erklären Sie, dass Sie die rechtlichen Hinweise gelesen haben und akzeptieren.',
@@ -25,7 +25,6 @@ $(document).ready(function() {
     policyText: 'Hinweise zum Datenschutz',
     policyURL: '/content/below/rights.xml',
     expireDays: 7,
-    zindex: '356',
     domain: 'publikationsserver.tu-braunschweig.de',
     referrer: 'publikationsserver.tu-braunschweig.de'
   });

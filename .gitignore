@@ -1,3 +1,7 @@
+# MyCoRe files
+data/
+lib/h2-1.4.196.jar
+
 # eclipse
 .project
 .settings/

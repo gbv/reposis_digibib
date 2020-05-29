@@ -1,0 +1,82 @@
+/*  cookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebarcookiebar settings
+ *  - styles for the cookiebar
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  #cookie-bar {
+    min-width: 320px;
+    background: rgba(0,0,0,0.9);
+    box-shadow:0px 5px 5px rgba(0,0,0,0.5);
+    height:auto;
+    line-height:24px;
+    color:#eeeeee;
+    text-align:center;
+    padding: 15px 15px;
+    &.fixed {
+      position:fixed;
+      z-index: 2050;
+      top:0;
+      left:0;
+      width:100%;
+      &.bottom {
+        bottom:0;
+        top:auto;
+      }
+    }
+    p {
+      padding:0;
+      margin: 0;
+      &:first-child {
+        margin: 0 0 15px 0;
+      }
+    }
+    a {
+      color:#ffffff;
+      display:inline-block;
+      border-radius:3px;
+      text-decoration:none;
+      padding:0 6px;
+      margin-left: 8px;}
+    .cb-enable {
+      background:#007700;
+      margin-bottom: 15px;
+      &:hover {
+        background:#009900;
+      }
+    }
+    .cb-disable {
+      background:#990000;
+      &:hover {
+        background:#bb0000;
+      }
+    }
+    .cb-policy {
+      background:#0033bb;
+      &:hover {background:#0055dd;}
+    }
+  }
+
+
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

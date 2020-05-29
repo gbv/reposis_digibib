@@ -1,0 +1,56 @@
+/*  searchfield settings
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  // search field in menu row
+  .bs-search {
+    .btn-primary {
+      color: #fff;
+      background-color: transparent;
+      border-width: 0px;
+      margin: 0px 0 0 5px;
+      padding:0;
+    }
+    input {
+      border-width: 0px;
+      border-radius: 0px;
+      background-color: #01597b;
+      color: white;
+    }
+    .search-query {
+      height: 22px;
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+    }
+  }
+  // show search field in menu not on home page
+  .mir-start_page {
+    .bs-search {
+      display: none;
+    }
+  }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

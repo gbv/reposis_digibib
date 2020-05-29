@@ -1,0 +1,126 @@
+/*  section collection
+ *  - settings for all collection pages only
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+
+  #digibib_brunsvicensien {
+    background-image: url("#{$assetPathRoot}images/braunschweiger-land_1c.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #digibib_vorlesung {
+    background-image:url('#{$assetPathRoot}images/sigel_4.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  #digibib_beytraege {
+    background-image:url('#{$assetPathRoot}images/loewe.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #digibib_adressbuecher {
+    background-image:url('#{$assetPathRoot}images/stadtarchiv.jpg');
+    background-repeat: no-repeat;
+    background-position: 100% 7%;
+  }
+
+  #digibib_bwg {
+    background-image:url('#{$assetPathRoot}images/bwg.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  #digibib_ph {
+    background-image:url('#{$assetPathRoot}images/Bernhard-Rust.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  #digibib_picturebooks, #digibib_childrensbooks {
+    background-image:url('#{$assetPathRoot}images/kinderbuch.jpg');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  #digibib_childrensbooks {
+    background-image:url('#{$assetPathRoot}images/kinderbuch.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    min-height: 450px;
+  }
+
+  #digibib_pharmacy {
+    background-image:url('#{$assetPathRoot}images/pharmazie.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #digibib_botanic {
+    background-image:url('#{$assetPathRoot}images/salamander.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+
+  #digibib_imagecollection {
+    background-image:url('#{$assetPathRoot}images/iris.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+
+  #digibib_institutes {
+    background-image:url('#{$assetPathRoot}images/sigel.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  #digibib_rarities {
+  /*  background-image:url('#{$assetPathRoot}images/spezial.png');*/
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #digibib_typ {
+    background-image:url('#{$assetPathRoot}images/logo_typ.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  #digibib_ivb {
+    background-image:url('#{$assetPathRoot}images/ivb.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 15%;
+  }
+
+  #digibib_hob {
+    background-image:url('#{$assetPathRoot}images/TUBraunschweig_CO.gif');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+}

@@ -1,0 +1,58 @@
+/*  typography settings
+ */
+
+// Extra large devices (large desktops)
+// set the defaults for all responsive levels here
+// no (xl) media query necessary (desktop first)
+
+  body {
+    font-size: 15px;
+  }
+  html body p {
+    line-height: 160%;
+  }
+  body,
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'NexusSansPro-Regular'
+  }
+  #headline > h1 {
+    font-size: 30px;
+  }
+  .datenschutz h4 {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .datenschutz h5 {
+    font-weight: bold;
+  }
+  .jumbotwo h1 {
+    font-size: 36px;
+  }
+  .fa {
+    font: normal normal normal 14px/1 FontAwesome;
+   }
+
+// Large devices (desktops) and below: <= 1200px
+@include media-breakpoint-down(lg) {
+  // add/overwrite styles for responsive level lg and lower
+}
+
+// Medium devices (tablets) and below: <= 992px
+@include media-breakpoint-down(md) {
+  // add/overwrite styles for responsive level md and lower
+}
+
+// Small devices (landscape phones) and below: <= 768px
+@include media-breakpoint-down(sm) {
+  // add/overwrite styles for responsive level sm and lower
+}
+
+// Extra small devices (portrait phones): <= 576px
+@include media-breakpoint-down(xs) {
+  // add/overwrite styles for responsive level xs
+  .jumbotwo h1 {
+    font-size: 24px;
+  }
+}

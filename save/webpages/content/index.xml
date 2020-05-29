@@ -3,15 +3,24 @@
   <section xml:lang="de" title="Willkommen bei der Digitalen Bibliothek">
     <div class="jumbotwo" id="bs-index-search" style="margin-top:50px;">
       <div class="row">
-        <div class="col-md-9 col-md-offset-2" lang="de">
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">
           <h1>
             Digitale Bibliothek <br />
             Der Publikationsserver der TU&#160;Braunschweig
           </h1>
-          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline" role="search" style="margin-top:30px;">
-            <div class="input-group" style="width: 100%;">
-              <input name="condQuery" placeholder="Suche in 16.000 Dokumenten" class="form-control search-query" id="bs-searchInput" type="text" />
-              <div class="input-group-btn"><button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button></div>
+          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
+            <div class="input-group input-group-lg w-100">
+              <input
+                name="condQuery"
+                placeholder="Suche in 16.000 Dokumenten"
+                class="form-control search-query"
+                id="bs-searchInput"
+                type="text"
+                aria-label=""
+                aria-describedby="" />
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              </div>
             </div>
           </form>
         </div>
@@ -42,7 +51,7 @@
           <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline" role="search" style="margin-top:30px;">
             <div class="input-group" style="width: 100%;">
               <input name="condQuery" placeholder="Search in 16.000 documents" class="form-control search-query" id="bs-searchInput" type="text" />
-              <div class="input-group-btn"><button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button></div>
+              <div class="input-group-btn"><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
             </div>
           </form>
         </div>
