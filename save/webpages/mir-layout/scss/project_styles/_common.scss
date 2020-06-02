@@ -39,6 +39,11 @@
     z-index: 2050;
   }
 
+  // fade to white  is not working on transparent background
+  .mir-abstract-overlay-tran {
+    background: transparent;
+  }
+
   // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower

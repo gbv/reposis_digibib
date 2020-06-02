@@ -9,10 +9,15 @@
   header {
     background-color: rgb(255, 255, 255);
   }
+  #header_box {
+    position: relative;
+  }
   #project_logo_box {
+    float: none !important;
     position: absolute;
-    left: -15px;
-    bottom: 0px;
+    left: 0;
+    bottom: -40px;
+    z-index: 1000;
   }
   #bs-bibliothek {
     color: $danger;
@@ -37,4 +42,11 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
+  #project_logo_box {
+
+    position: relative;
+    left: auto;
+    bottom: auto;
+    z-index: 1000;
+  }
 }

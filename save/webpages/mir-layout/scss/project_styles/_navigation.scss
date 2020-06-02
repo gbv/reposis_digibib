@@ -102,6 +102,24 @@
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
+  .mir-main-nav {
+    .navbar {
+      justify-content: flex-start;
+    }
+    .mir-main-nav__entries {
+      order: 4;
+    }
+    .navbar-toggler {
+      margin-left: 200px;
+    }
+    .bs-search {
+      margin-left: auto;
+      order: 3;
+      .form-control {
+        width: auto;
+      }
+    }
+  }
 }
 
 // Small devices (landscape phones) and below: <= 768px
@@ -112,4 +130,12 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
+  .mir-main-nav {
+    .navbar-toggler {
+      margin-left: 0px;
+    }
+    .navbar-nav {
+      padding-left: 0px;
+    }
+  }
 }

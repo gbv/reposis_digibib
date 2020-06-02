@@ -12,6 +12,17 @@
   <xsl:template name="mir.navigation">
 
     <div id="header_box" class="clearfix container">
+
+      <a
+        id="project_logo_box"
+        class="hidden-xs"
+        href="http://www.tu-braunschweig.de"
+        title="{i18n:translate('digibib.goToMainSite')}">
+        <img
+          src="{$WebApplicationBaseURL}images/siegel_rot.png"
+          alt="{i18n:translate('digibib.logoTUBS')}" />
+      </a>
+
       <div id="options_nav_box" class="mir-prop-nav">
         <nav>
           <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
@@ -28,18 +39,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="mir-main-nav bg-primary">
       <div class="container">
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-          <a
-            id="project_logo_box"
-            class="navbar-brand hidden-xs"
-            href="http://www.tu-braunschweig.de"
-            title="{i18n:translate('digibib.goToMainSite')}">
-            <img
-              src="{$WebApplicationBaseURL}images/siegel_rot.png"
-              alt="{i18n:translate('digibib.logoTUBS')}" />
-          </a>
-
           <button
             class="navbar-toggler"
             type="button"
