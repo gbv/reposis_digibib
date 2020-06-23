@@ -47,18 +47,20 @@
   <!-- ========== digibib specific templates ========== -->
   <xed:template id="digibib.ddc.repeat">
     <xed:repeat xpath="mods:classification[@authority='ddc'][@displayLabel='ddc']" min="1" max="10" method="build">
-      <div class="form-group {$xed-validation-marker}">
-        <label class="col-md-3 control-label required">
+      <div class="form-group row required {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="editor.search.digibib.ddc" />
           :
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
-            <option value="">
-              <xed:output i18n="mir.select" />
-            </option>
-            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:DDC" />
-          </select>
+          <div class="controls">
+            <select class="form-control form-control-inline">
+              <option value="">
+                <xed:output i18n="mir.select" />
+              </option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:DDC" />
+            </select>
+          </div>
         </div>
         <mir:help-pmud help-text="{i18n:digibib.help.ddc}" pmud="true" />
       </div>
@@ -98,8 +100,8 @@
   </xed:template>
 
   <xed:template id="digibib.class.location">
-    <div class="form-group">
-      <label class="col-md-3 control-label">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label text-right">
         <xed:output i18n="digibib.class.location" />
       </label>
       <xed:bind xpath="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/locations']/@displayLabel" set="locations" />
@@ -118,8 +120,8 @@
   </xed:template>
 
   <xed:template id="digibib.class.sponsors">
-    <div class="form-group">
-      <label class="col-md-3 control-label">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label text-right">
         <xed:output i18n="digibib.class.sponsors" />
       </label>
       <xed:bind xpath="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/sponsors']/@displayLabel" set="sponsors" />
@@ -139,8 +141,8 @@
 
   <xed:template id="digibib.access">
     <xed:bind xpath="mods:accessCondition[@type='restriction on access'][@xlink:href='http://www.mycore.org/classifications/mir_access']" initially="">
-      <div class="form-group required {$xed-validation-marker}">
-        <label class="col-md-3 control-label">
+      <div class="form-group row required {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="mir.access" />
         </label>
         <div class="col-md-6">
