@@ -5,40 +5,154 @@
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
     <xed:remove  ref="shelfmark" />
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
-    <xed:remove  ref="openAIRE" />
+    <xed:include ref="digibib.access"                    after="access" />
     <xed:remove  ref="access" />
-    <xed:include ref="digibib.ddc.repeat"                after="language" />
-    <xed:include ref="digibib.access"                    after="embargo" />
     <xed:include ref="digibib.class.location"            after="abstract.repeated" />
     <xed:include ref="digibib.class.sponsors"            after="digibib.class.location" />
+    <xed:remove  ref="openAIRE" />
     <xed:include ref="openAIRE"                          after="digibib.class.sponsors" />
   </xed:modify>
   
-  <xed:modify ref="genres.publication.common">
-
+  <xed:modify ref="genres.book.common">
+    <xed:remove  ref="shelfmark" />
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
   </xed:modify>
 
-  <xed:modify ref="hosts.journal">
-
-  </xed:modify>
-
-  <xed:modify ref="genres.thesis.common">
-
+  <xed:modify ref="genres.journal.common">
+    <xed:remove  ref="shelfmark" />
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
   </xed:modify>
 
   <xed:modify ref="genres.dissertation">
-
+    <xed:remove  ref="shelfmark" />
   </xed:modify>
 
-  <xed:modify ref="genres.master_thesis">
-
+  <xed:modify ref="genres.habilitation">
+    <xed:remove  ref="shelfmark" />
   </xed:modify>
 
-  <xed:modify ref="genres.diploma_thesis">
-
+  <xed:modify ref="genres.thesis.common">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
+    <xed:remove  ref="abstract.repeated" />
   </xed:modify>
 
+  <xed:modify ref="genres.teaching_material">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
+    <xed:remove  ref="abstract.repeated" />
+  </xed:modify>
+
+  <xed:modify ref="genres.publication.common">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
+    <xed:remove  ref="abstract.repeated" />
+  </xed:modify>
+
+  <xed:modify ref="genres.report.common">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+
+  <xed:modify ref="genres.entry">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
+    <xed:remove  ref="abstract.repeated" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.preface">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.interview">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.speech">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.patent">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.poster">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.av.common">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.research_data">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="access" />
+    <xed:remove  ref="access" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.lecture">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.picture">
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
+    <xed:remove  ref="abstract.repeated" />
+  </xed:modify>
 
   <!-- ========== validation ========== -->
 
@@ -81,8 +195,8 @@
       </legend>
       <xed:repeat xpath="mods:abstract" min="2" max="3">
         <div class="mir-fieldset-content">
-          <div class="form-group">
-            <label class="col-md-3 control-label">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="mir.abstract.in" />
             </label>
             <div class="col-md-6">
