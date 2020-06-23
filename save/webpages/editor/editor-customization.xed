@@ -1,8 +1,51 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
-  <xed:template id="ddc.repeat">
+  <!-- ========== extend editor-genres.xed ========== -->
+  <xed:modify ref="admin.fields">
+    <xed:remove  ref="shelfmark" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:remove  ref="openAIRE" />
+    <xed:remove  ref="access" />
+    <xed:include ref="digibib.ddc.repeat"                after="language" />
+    <xed:include ref="digibib.access"                    after="embargo" />
+    <xed:include ref="digibib.class.location"            after="abstract.repeated" />
+    <xed:include ref="digibib.class.sponsors"            after="digibib.class.location" />
+    <xed:include ref="openAIRE"                          after="digibib.class.sponsors" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.publication.common">
+
+  </xed:modify>
+
+  <xed:modify ref="hosts.journal">
+
+  </xed:modify>
+
+  <xed:modify ref="genres.thesis.common">
+
+  </xed:modify>
+
+  <xed:modify ref="genres.dissertation">
+
+  </xed:modify>
+
+  <xed:modify ref="genres.master_thesis">
+
+  </xed:modify>
+
+  <xed:modify ref="genres.diploma_thesis">
+
+  </xed:modify>
+
+
+  <!-- ========== validation ========== -->
+
+
+
+  <!-- ========== digibib specific templates ========== -->
+  <xed:template id="digibib.ddc.repeat">
     <xed:repeat xpath="mods:classification[@authority='ddc'][@displayLabel='ddc']" min="1" max="10" method="build">
       <div class="form-group {$xed-validation-marker}">
         <label class="col-md-3 control-label required">
@@ -24,12 +67,12 @@
       display="global" />
   </xed:template>
 
-  <xed:template id="thesis.author.repeated">
+  <xed:template id="digibib.thesis.author.repeated">
     <mir:role.extended.repeated role="aut" label="mir.role.author" class="required" required="true" required-i18n="mir.validation.author" help-text="{i18n:mir.help.role.author}" />
   </xed:template>
 
   <!-- copied from mir -> show two instead of one input fields -->
-  <xed:template id="abstract.repeated">
+  <xed:template id="digibib.abstract.repeated">
     <fieldset>
       <legend class="mir-fieldset-legend">
         <xed:output i18n="mir.abstract.text" />
@@ -94,7 +137,7 @@
     </div>
   </xed:template>
 
-  <xed:template id="access">
+  <xed:template id="digibib.access">
     <xed:bind xpath="mods:accessCondition[@type='restriction on access'][@xlink:href='http://www.mycore.org/classifications/mir_access']" initially="">
       <div class="form-group required {$xed-validation-marker}">
         <label class="col-md-3 control-label">
@@ -116,14 +159,15 @@
     </xed:bind>
   </xed:template>
 
-  <xed:template id="title.issue.relItemsearch">
+  <xed:template id="digibib.title.issue.relItemsearch">
     <mir:relItemsearch searchengine="title_ptitle" genre="issue" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title.issue"
       help-text="{i18n:mir.help.title.issue}" class="required" />
   </xed:template>
   
-  <xed:template id="identifier.issn.issue.relItemsearch">
+  <xed:template id="digibib.identifier.issn.issue.relItemsearch">
     <mir:relItemsearch searchengine="issn" genre="issue" responsefield="identifier.type.issn" xpath="mods:identifier[@type='issn']" label="mir.identifier.issn"
       help-text="{i18n:mir.help.identifier.issn}" />
   </xed:template>
 
 </xed:template>
+
