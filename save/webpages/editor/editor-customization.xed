@@ -14,7 +14,11 @@
     <xed:remove  ref="openAIRE" />
     <xed:include ref="openAIRE"                          after="digibib.class.sponsors" />
   </xed:modify>
-  
+
+  <xed:modify ref="genres.book">
+    <xed:include ref="title.translated"                  after="title.original" />
+  </xed:modify>
+
   <xed:modify ref="genres.book.common">
     <xed:remove  ref="shelfmark" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
@@ -22,6 +26,18 @@
     <xed:include ref="digibib.access"                    after="subject.simple" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.collection">
+    <xed:include ref="title.translated"                  after="title.original" />
+  </xed:modify>
+
+  <xed:modify ref="genres.festschrift">
+    <xed:include ref="title.translated"                  after="title.original" />
+  </xed:modify>
+  
+  <xed:modify ref="genres.proceedings">
+    <xed:include ref="title.translated"                  after="title.original" />
   </xed:modify>
 
   <xed:modify ref="genres.journal.common">
@@ -58,19 +74,31 @@
   </xed:modify>
 
   <xed:modify ref="genres.publication.common">
-    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
-    <xed:remove  ref="sdnb.repeat" />
-    <xed:include ref="digibib.access"                    after="subject.simple" />
-    <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
-    <xed:remove  ref="abstract.repeated" />
-  </xed:modify>
-
-  <xed:modify ref="genres.report.common">
+    <xed:include ref="title.translated"                  after="title.original" />
+    <xed:include ref="name.extended.repeated"            after="author.repeated" />
+    <xed:remove  ref="author.repeated" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="subject.simple" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
+  </xed:modify>
+
+  <xed:modify ref="genres.report.common">
+    <xed:include ref="title.original"                    after="title" />
+    <xed:include ref="title.translated"                  after="title.original" />
+    <xed:remove  ref="title" />
+    <xed:remove  ref="subtitle" />
+    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
+    <xed:remove  ref="sdnb.repeat" />
+    <xed:include ref="digibib.access"                    after="subject.simple" />
+    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
+    <xed:remove  ref="abstract.simple" />
+    <xed:include ref="identifier.repeated"               after="doi.handle.urn.repeated" />
+    <xed:remove  ref="doi.handle.urn.repeated" />
+    <xed:include ref="place"                             after="year.issued" />
+    <xed:include ref="publisher"                         after="place" />
+    <xed:include ref="extent"                            after="publisher" />
   </xed:modify>
 
   <xed:modify ref="genres.entry">
@@ -98,6 +126,10 @@
   </xed:modify>
   
   <xed:modify ref="genres.speech">
+    <xed:include ref="title.original"                    after="title" />
+    <xed:include ref="title.translated"                  after="title.original" />
+    <xed:remove  ref="title" />
+    <xed:remove  ref="subtitle" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="subject.simple" />
@@ -127,15 +159,22 @@
     <xed:include ref="digibib.access"                    after="subject.simple" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
+    <xed:include ref="extent"                            after="date.recorded.datetimepicker" />
   </xed:modify>
   
   <xed:modify ref="genres.research_data">
+    <xed:include ref="title.original"                    after="title" />
+    <xed:include ref="title.translated"                  after="title.original" />
+    <xed:remove  ref="title" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="access" />
     <xed:remove  ref="access" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
+
+    <xed:include ref="workaround.research.data.date.repeated"         after="research.data.date.repeated" />
+    <xed:remove  ref="research.data.date.repeated" />
   </xed:modify>
   
   <xed:modify ref="genres.lecture">
@@ -154,9 +193,18 @@
     <xed:remove  ref="abstract.repeated" />
   </xed:modify>
 
-  <!-- ========== validation ========== -->
-
-
+  <!-- ========== hosts ========== -->
+    <xed:modify ref="hosts.book">
+      <xed:remove ref="shelfmark.book.relItemsearch" />
+    </xed:modify>
+    
+    <xed:modify ref="hosts.journal">
+      <xed:remove ref="shelfmark.journal.relItemsearch" />
+    </xed:modify>
+    
+    <xed:modify ref="hosts.newspaper">
+      <xed:remove ref="shelfmark.newspaper.relItemsearch" />
+    </xed:modify>
 
   <!-- ========== digibib specific templates ========== -->
   <xed:template id="digibib.ddc.repeat">
@@ -284,6 +332,50 @@
     <mir:relItemsearch searchengine="issn" genre="issue" responsefield="identifier.type.issn" xpath="mods:identifier[@type='issn']" label="mir.identifier.issn"
       help-text="{i18n:mir.help.identifier.issn}" />
   </xed:template>
+
+
+
+<!--  TODO: remove me -->
+  <xed:template id="workaround.research.data.date.repeated">
+    <xed:repeat xpath="mods:originInfo" min="1" max="6">
+      <div class="form-group row">
+        <div class="col-md-3">
+          <xed:bind xpath="@eventType" default="creation">
+            <select class="form-control form-control-inline date-select">
+              <option value="creation">
+                <xed:output i18n="mir.date.created" />
+              </option>
+              <option value="collection">
+                <xed:output i18n="mir.date.collected" />
+              </option>
+              <option value="publication">
+                <xed:output i18n="mir.date.issued.10" />
+              </option>
+              <option value="review">
+                <xed:output i18n="mir.date.reviewed" />
+              </option>
+              <option value="update">
+                <xed:output i18n="mir.date.updated" />
+              </option>
+            </select>
+          </xed:bind>
+        </div>
+        <mir:dateRangeInput xpath="mods:dateCreated[@encoding='w3cdtf']" class="datetimepicker date-changeable col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="creation" />
+        <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']" class="datetimepicker date-changeable hidden col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="collection" />
+        <mir:dateRangeInput xpath="mods:dateIssued[@encoding='w3cdtf']" class="datetimepicker date-changeable hidden col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="publication" />
+        <mir:dateRangeInput xpath="mods:dateOther[@type='reviewed'][@encoding='w3cdtf']" class="datetimepicker date-changeable hidden col-md-6"
+          placeholder="{i18n:mir.placeholder.date}" type="review" />
+        <mir:dateRangeInput xpath="mods:dateModified[@encoding='w3cdtf']" class="datetimepicker date-changeable hidden col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="update" />
+        <mir:help-pmud help-text="{i18n:mir.help.date.repeated}" pmud="true" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+
 
 </xed:template>
 
