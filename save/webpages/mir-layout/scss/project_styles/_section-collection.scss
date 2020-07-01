@@ -105,6 +105,13 @@
     background-position: top right;
   }
 
+  #digibib_nfl {
+    background-image:url('#{$assetPathRoot}images/NFL_Logozusatz_TU.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 16%;
+}
+
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
