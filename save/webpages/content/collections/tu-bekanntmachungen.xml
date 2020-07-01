@@ -3,7 +3,7 @@
 <h2>Hochschulöffentliche Bekanntmachungen der TU Braunschweig</h2>
 
 <div class="row" id="digibib_hob">
-<div class="col-xs-9">
+<div class="col-9">
 <p>Eine chronologische Übersicht aller hochschulöffentlichen Bekanntmachungen finden Sie in unserer <a href="../../receive/dbbs_mods_00067012">Komplettliste</a>.</p>
 
 <form action="../../servlets/solr/find" class="form-inline" id="bs-searchMainPage" role="search" style="margin-top:30px;">
@@ -35,12 +35,12 @@
 <h2>University Public Announcements of TU Braunschweig</h2>
 
 <div class="row" id="digibib_hob">
-<div class="col-xs-9">
+<div class="col-9">
 <div>A chronological overview of all University Public Announcements can be found in our <a href="../../receive/dbbs_mods_00067012">complete list</a>.</div>
 
 <form action="../../servlets/solr/find" class="form-inline" id="bs-searchMainPage" role="search" style="margin-top:30px;">
 <div class="input-group" style="width: 100%;"><input class="form-control search-query" id="bs-searchInput" name="condQuery" placeholder="Search in University Public Announcements" type="text" /><input name="fq" type="hidden" value="mods.relatedItem:dbbs_mods_00067012" /><input name="sort" type="hidden" value="mods.dateIssued desc" />
-<div class="input-group-btn"><button class="btn btn-primary" type="submit"><i class="fa fa-search" /></button></div>
+<div class="input-group-btn"><button class="btn btn-primary" type="submit"><i class="fas fa-search" /></button></div>
 </div>
 </form>
 
