@@ -187,6 +187,10 @@
             <label xml:lang="de">Dokument einreichen (Admin)</label>
             <label xml:lang="en">Submit new document (admin)</label>
         </item>
+        <item href="/servlets/solr/select?q=state:%22submitted%22+%2Bcreatedby:USERNAME" type="intern" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">Meine Einreichungen</label>
+            <label xml:lang="en">My submitted documents</label>
+        </item>
         <item href="/content/publish/authors_area.xml" type="intern" replaceMenu="false" constrainPopUp="false">
             <label xml:lang="de">Hinweise für Autor/-innen</label>
             <label xml:lang="en">Hints for Authors</label>
