@@ -18,7 +18,7 @@ Wissenschaftler/innen der TU Braunschweig können für die Veröffentlichung von
     $( document ).ready(function() {
       $.ajax({
         type: "GET",
-        url: "../../api/v1/search?q=category.top:%22sponsors:fonds_tubs%22&amp;rows=2000&amp;fl=id,search_result_link_text,mods.author,mods.title.main,mods.dateIssued&amp;sort=mods.dateIssued+desc&amp;wt=json&amp;json.wrf=?",
+        url: "../../api/v1/search?q=state%3Apublished%20AND%20category.top:%22sponsors:fonds_tubs%22&amp;rows=2000&amp;fl=id,search_result_link_text,mods.author,mods.title.main,mods.dateIssued&amp;sort=mods.dateIssued+desc&amp;wt=json&amp;json.wrf=?",
         dataType: "jsonp",
         success: function (data) {
           $(data.response.docs).each(function(i, doc){
