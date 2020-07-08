@@ -13,9 +13,9 @@
   html body {
     color: #000000;
     background-image: url("#{$assetPathRoot}images/background_neubau.png");
-    background-size: auto auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: center center;
     background-color: #C1D0E6;
   }
   html body #page {
