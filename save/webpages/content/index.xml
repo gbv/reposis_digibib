@@ -9,7 +9,7 @@
             Der Publikationsserver der TU&#160;Braunschweig
           </h1>
           <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
-            <div class="input-group input-group-lg w-100">
+            <div class="input-group w-100">
               <input
                 name="condQuery"
                 placeholder="Suche in 16.000 Dokumenten"
