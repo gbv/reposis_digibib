@@ -66,7 +66,7 @@
 
           <form
             action="{$WebApplicationBaseURL}servlets/solr/find"
-            class="bs-search form-inline"
+            class="bs-search form-inline searchfield_box"
             role="search">
             <input
               name="condQuery"
