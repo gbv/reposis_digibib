@@ -1,6 +1,7 @@
 Sitemap: https://publikationsserver.tu-braunschweig.de/sitemap_google.xml
 User-agent: *
 Allow: /servlets/MCRFileNodeServlet/
+Allow: /rsc/sass/
 Disallow: /*?
 Disallow: /servlets/
 Disallow: /browse/
