@@ -44,6 +44,10 @@
     background: transparent;
   }
 
+  .shariff .orientation-horizontal li {
+    margin-right: 3px;
+  }
+
   // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
