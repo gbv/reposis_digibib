@@ -66,7 +66,7 @@
     <xed:include ref="title.translated"                  after="title.original" />
     <xed:include ref="name.extended.repeated"            after="author.repeated" />
     <xed:remove  ref="author.repeated" />
-    <xed:include ref="publisher"                         before="language" />
+    <xed:include ref="publisher"                         after="extent" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="subject.simple" />
