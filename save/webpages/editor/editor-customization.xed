@@ -4,7 +4,6 @@
 
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
-    <xed:remove  ref="shelfmark" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="access" />
@@ -20,7 +19,6 @@
   </xed:modify>
 
   <xed:modify ref="genres.book.common">
-    <xed:remove  ref="shelfmark" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="subject.simple" />
@@ -41,20 +39,11 @@
   </xed:modify>
 
   <xed:modify ref="genres.journal.common">
-    <xed:remove  ref="shelfmark" />
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="subject.simple" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
-  </xed:modify>
-
-  <xed:modify ref="genres.dissertation">
-    <xed:remove  ref="shelfmark" />
-  </xed:modify>
-
-  <xed:modify ref="genres.habilitation">
-    <xed:remove  ref="shelfmark" />
   </xed:modify>
 
   <xed:modify ref="genres.thesis.common">
@@ -173,7 +162,6 @@
     <xed:remove  ref="access" />
     <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
-
     <xed:include ref="workaround.research.data.date.repeated"         after="research.data.date.repeated" />
     <xed:remove  ref="research.data.date.repeated" />
   </xed:modify>
@@ -193,19 +181,6 @@
     <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
     <xed:remove  ref="abstract.repeated" />
   </xed:modify>
-
-  <!-- ========== hosts ========== -->
-    <xed:modify ref="hosts.book">
-      <xed:remove ref="shelfmark.book.relItemsearch" />
-    </xed:modify>
-
-    <xed:modify ref="hosts.journal">
-      <xed:remove ref="shelfmark.journal.relItemsearch" />
-    </xed:modify>
-
-    <xed:modify ref="hosts.newspaper">
-      <xed:remove ref="shelfmark.newspaper.relItemsearch" />
-    </xed:modify>
 
   <!-- ========== digibib specific templates ========== -->
   <xed:template id="digibib.ddc.repeat">
