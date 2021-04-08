@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="reseach_objects">
+  <label xml:lang="en" text="Research Objects" description="A list of research objects." />
+  <label xml:lang="de" text="Forschungsobjekte" description="Liste möglicher Forschungsobjekte." />
+  <!--<label xml:lang="x-uri" text="" />-->
+  <categories>
+    <category ID="fabric">
+      <label xml:lang="en" text="Fabric" />
+      <label xml:lang="de" text="Gewebe" />
+    </category>
+    <category ID="organism">
+      <label xml:lang="en" text="Organism" />
+      <label xml:lang="de" text="Organismus" />
+    </category>
+    <category ID="media">
+      <label xml:lang="en" text="Media" />
+      <label xml:lang="de" text="Medien" />
+    </category>
+    <category ID="people">
+      <label xml:lang="en" text="People" />
+      <label xml:lang="de" text="Personen" />
+    </category>
+    <category ID="physical_object">
+      <label xml:lang="en" text="Physical Object" />
+      <label xml:lang="de" text="Physisches Objekt" />
+    </category>
+    <category ID="non_physical_object">
+      <label xml:lang="en" text="Non-physical Object" />
+      <label xml:lang="de" text="Nicht-physisches Objekt" />
+    </category>
+    <category ID="substance">
+      <label xml:lang="en" text="Substance" />
+      <label xml:lang="de" text="Stoff/Substanz" />
+    </category>
+    <category ID="other">
+      <label xml:lang="en" text="Other" />
+      <label xml:lang="de" text="Anderes" />
+    </category>
+  </categories>
+</mycoreclass>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="software_types">
+  <label xml:lang="en" text="Software Types" description="A list of software types." />
+  <label xml:lang="de" text="Software-Typen" description="Liste von Software-Typen." />
+  <!--<label xml:lang="x-uri" text="" />-->
+  <categories>
+    <category ID="view">
+      <label xml:lang="en" text="View" />
+      <label xml:lang="de" text="Ansicht" />
+    </category>
+    <category ID="editing">
+      <label xml:lang="en" text="Editing" />
+      <label xml:lang="de" text="Bearbeitung" />
+    </category>
+    <category ID="generation">
+      <label xml:lang="en" text="Generation" />
+      <label xml:lang="de" text="Erzeugung" />
+    </category>
+    <category ID="other">
+      <label xml:lang="en" text="" />
+      <label xml:lang="de" text="Anderes" />
+    </category>
+  </categories>
+</mycoreclass>
