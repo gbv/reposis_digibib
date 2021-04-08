@@ -18,7 +18,7 @@
       <label xml:lang="de" text="Erzeugung" />
     </category>
     <category ID="other">
-      <label xml:lang="en" text="" />
+      <label xml:lang="en" text="Other" />
       <label xml:lang="de" text="Anderes" />
     </category>
   </categories>
