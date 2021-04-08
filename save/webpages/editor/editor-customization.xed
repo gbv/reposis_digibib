@@ -434,7 +434,7 @@
         <xed:output i18n="mir.researchData.deepDescription" />
       </legend>
       <xed:include ref="workaround.research.data.date.repeated" />
-      <!-- <xed:include uri="digibib.researchdata.deepdescription.cartographics" />-->
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="cartographics" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="identifier.repeated" />
       <!-- <xed:include ref="digibib.researchdata.deepdescription.filetype" />
       <xed:include ref="digibib.researchdata.deepdescription.descriptionfiletype" />
@@ -446,7 +446,7 @@
       <xed:include ref="digibib.researchdata.deepdescription.instruments" />
       <xed:include ref="digibib.researchdata.deepdescription.proccessing" />
       <xed:include ref="digibib.researchdata.deepdescription.software" />-->
-      <xed:include ref="digibib.researchdata.deepdescription.connectedpublication" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="related.item.link" /> <!-- TODO missing fieldset -->
      </fieldset>
   </xed:template>
 
@@ -455,8 +455,8 @@
       <legend class="mir-fieldset-legend">
         <xed:output i18n="mir.researchData.license" />
       </legend>
-      <!--<xed:include ref="digibib.researchdata.license.license" />
-      <xed:include ref="digibib.researchdata.license.holderrights" />-->
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="rights" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="copyrightMD" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="access" />
     </fieldset>
   </xed:template>
@@ -466,8 +466,8 @@
       <legend class="mir-fieldset-legend">
         <xed:output i18n="mir.researchData.other" />
       </legend>
-      <!--<xed:include ref="digibib.researchdata.other.commentsintern" />
-      <xed:include ref="digibib.researchdata.other.commentspublic" />-->
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="comment" />
+      <!--<xed:include ref="digibib.researchdata.other.commentspublic" />-->
     </fieldset>
   </xed:template>
 
