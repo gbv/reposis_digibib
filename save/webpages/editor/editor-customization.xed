@@ -168,17 +168,33 @@
   </xed:modify>
 
   <xed:modify ref="genres.research_data">
-    <xed:include ref="title.original"                    after="title" />
-    <xed:include ref="title.translated"                  after="title.original" />
     <xed:remove  ref="title" />
-    <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
-    <xed:include ref="digibib.access"                    after="access" />
     <xed:remove  ref="access" />
-    <xed:include ref="digibib.abstract.repeated"         after="abstract.simple" />
     <xed:remove  ref="abstract.simple" />
-    <xed:include ref="workaround.research.data.date.repeated"         after="research.data.date.repeated" />
     <xed:remove  ref="research.data.date.repeated" />
+    <xed:remove  ref="research.data.person.repeated" />
+    <xed:remove  ref="openAIRE" />
+    <xed:remove  ref="type.of.resource" />
+    <xed:remove  ref="language" />
+    <xed:remove  ref="identifier.managed" />
+    <xed:remove  ref="doi.handle.urn.repeated" />
+    <xed:remove  ref="subject.simple" />
+    <xed:remove  ref="rights" />
+    <xed:remove  ref="embargo.datetimepicker" />
+    <xed:remove  ref="copyrightMD" />
+    <xed:remove  ref="physical.description.note" />
+    <xed:remove  ref="cartographics" />
+    <xed:remove  ref="related.item.link" />
+    <xed:remove  ref="institutes" />
+    <xed:remove  ref="comment" />
+
+    <xed:include ref="digibib.researchdata.type" />
+    <xed:include ref="digibib.researchdata.basic" after="digibib.researchdata.type" />
+    <xed:include ref="digibib.researchdata.involved" after="digibib.researchdata.basic" />
+    <xed:include ref="digibib.researchdata.deep" after="digibib.researchdata.involved" />
+    <xed:include ref="digibib.researchdata.license" after="digibib.researchdata.deep" />
+    <xed:include ref="digibib.researchdata.other" after="digibib.researchdata.license" />
   </xed:modify>
 
   <xed:modify ref="genres.lecture">
@@ -374,6 +390,119 @@
     </xed:repeat>
   </xed:template>
 
+<!-- begin research data -->
 
+  <xed:template id="digibib.researchdata.type">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.type" />
+      </legend>
+      <!-- <xed:include ref="digibib.researchdata.type.type" />
+      <xed:include ref="digibib.researchdata.type.contact" />-->
+      <xed:include ref="embargo.datetimepicker" />
+      <!-- <xed:include ref="digibib.researchdata.type.embargo" />-->
+    </fieldset>
+    <!--<script type="text/javascript" src="{$WebApplicationBaseURL}js/custom.js" /> -->
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.basic">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.basic" />
+      </legend>
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="title" />
+      <xed:include ref="title.translated.body" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="subject.simple" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="abstract.simple" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="language" />
+    </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.involved">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.involved" />
+      </legend>
+      <!--<xed:include ref="digibib.researchdata.involved.person" />
+      <xed:include ref="digibib.researchdata.involved.project" />-->
+    </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.deepDescription" />
+      </legend>
+      <xed:include ref="workaround.research.data.date.repeated" />
+      <!-- <xed:include uri="digibib.researchdata.deepdescription.cartographics" />-->
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="identifier.repeated" />
+      <!-- <xed:include ref="digibib.researchdata.deepdescription.filetype" />
+      <xed:include ref="digibib.researchdata.deepdescription.descriptionfiletype" />
+      <xed:include ref="digibib.researchdata.deepdescription.researchobject" />
+      <xed:include ref="digibib.researchdata.deepdescription.descriptionresearchobject" />
+      <xed:include ref="digibib.researchdata.deepdescription.fileorigin" />
+      <xed:include ref="digibib.researchdata.deepdescription.fileoriginadditional" />
+      <xed:include ref="digibib.researchdata.deepdescription.methods" />
+      <xed:include ref="digibib.researchdata.deepdescription.instruments" />
+      <xed:include ref="digibib.researchdata.deepdescription.proccessing" />
+      <xed:include ref="digibib.researchdata.deepdescription.software" />-->
+      <xed:include ref="digibib.researchdata.deepdescription.connectedpublication" />
+     </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.license">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.license" />
+      </legend>
+      <!--<xed:include ref="digibib.researchdata.license.license" />
+      <xed:include ref="digibib.researchdata.license.holderrights" />-->
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="access" />
+    </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.other">
+    <fieldset>
+      <legend class="mir-fieldset-legend">
+        <xed:output i18n="mir.researchData.other" />
+      </legend>
+      <!--<xed:include ref="digibib.researchdata.other.commentsintern" />
+      <xed:include ref="digibib.researchdata.other.commentspublic" />-->
+    </fieldset>
+  </xed:template>
+
+
+  <!--copied form includes -->
+  <xed:template id="title.translated.body">
+    <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right mir-formgroup-label"> 
+            <xed:output i18n="mir.title" />
+          </label>
+          <div class="col-md-6">
+            <xed:bind xpath="mods:title">
+              <input type="text" class="form-control" placeholder="{i18n:mir.placeholder.title.translated}" />
+            </xed:bind>
+          </div>
+          <mir:help-pmud pmud="true" />
+        </div>
+        <mir:textfield xpath="mods:subTitle" label="mir.title.subTitle" />
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right mir-formgroup-label"> 
+            <xed:output i18n="mir.language" />
+          </label>
+          <div class="col-md-6">
+            <xed:bind xpath="@xml:lang" initially="de">
+              <xed:include ref="lang.list" />
+            </xed:bind>
+          </div>
+        </div>
+      </div>
+    </xed:repeat>
+  </xed:template>
+  <!-- -->
+
+<!-- end research data -->
 
 </xed:template>
