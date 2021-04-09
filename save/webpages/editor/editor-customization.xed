@@ -397,12 +397,31 @@
       <legend class="mir-fieldset-legend">
         <xed:output i18n="mir.researchData.type" />
       </legend>
-      <!-- <xed:include ref="digibib.researchdata.type.type" />
-      <xed:include ref="digibib.researchdata.type.contact" />-->
+      <xed:include ref="digibib.researchdata.type.type" />
+      <!--<xed:include ref="digibib.researchdata.type.contact" />-->
       <xed:include ref="embargo.datetimepicker" />
       <!-- <xed:include ref="digibib.researchdata.type.embargo" />-->
     </fieldset>
     <!--<script type="text/javascript" src="{$WebApplicationBaseURL}js/custom.js" /> -->
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.type.type">
+    <xed:bind xpath="todo">
+      <div class="row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.researchData.type.type" />
+        </label>
+        <div class="col-md-6">
+          <div class="controls">
+            <select class="form-control form-control-inline typeType">
+              <option value="oa"><xed:output i18n="mir.researchData.type.type.openAccess" /></option>
+              <option value="oae"><xed:output i18n="mir.researchData.type.type.openAccessEmbago" /></option>
+            </select>
+          </div>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.researchData.type.type.help}" pmud="false" />
+      </div>
+    </xed:bind>
   </xed:template>
 
   <xed:template id="digibib.researchdata.basic">
@@ -436,18 +455,163 @@
       <xed:include ref="workaround.research.data.date.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="cartographics" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="identifier.repeated" />
-      <!-- <xed:include ref="digibib.researchdata.deepdescription.filetype" />
-      <xed:include ref="digibib.researchdata.deepdescription.descriptionfiletype" />
-      <xed:include ref="digibib.researchdata.deepdescription.researchobject" />
-      <xed:include ref="digibib.researchdata.deepdescription.descriptionresearchobject" />
-      <xed:include ref="digibib.researchdata.deepdescription.fileorigin" />
-      <xed:include ref="digibib.researchdata.deepdescription.fileoriginadditional" />
+      <xed:include ref="digibib.researchdata.deep.filetypes" />
+      <xed:include ref="digibib.researchdata.deep.researchobjects" />
+      <xed:include ref="digibib.researchdata.deep.dataorigins" />
       <xed:include ref="digibib.researchdata.deepdescription.methods" />
       <xed:include ref="digibib.researchdata.deepdescription.instruments" />
       <xed:include ref="digibib.researchdata.deepdescription.proccessing" />
-      <xed:include ref="digibib.researchdata.deepdescription.software" />-->
+      <xed:include ref="digibib.researchdata.deep.software" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="related.item.link" /> <!-- TODO missing fieldset -->
      </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep.filetypes">
+    <xed:load-resource name="file_types" uri="classification:metadata:-1:children:file_types" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.fileType" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:file_types" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.fileTypeDescription" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep.researchobjects">
+    <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.researchObject" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:research_objects" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.researchObjectDescription" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep.researchobjects">
+    <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.researchObject" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:research_objects" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.researchObjectDescription" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep.dataorigins">
+    <xed:load-resource name="data_origins" uri="classification:metadata:-1:children:data_origins" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.dataOrigin" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:data_origins" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.dataOriginDescription" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deep.software">
+    <xed:load-resource name="software_types" uri="classification:metadata:-1:children:software_types" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.software" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:software_types" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.software.help}"/> 
+        </div>
+        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.name" />
+        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.version" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deepdescription.methods">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.methods" rows="2" help-text="{i18n:mir.researchData.deepDescription.methods.help}" />
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deepdescription.instruments">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.instruments" rows="2" help-text="{i18n:mir.researchData.deepDescription.instruments.help}" />
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.deepdescription.proccessing">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.processing" rows="2" help-text="{i18n:mir.researchData.deepDescription.processing.help}" />
   </xed:template>
 
   <xed:template id="digibib.researchdata.license">
@@ -467,12 +631,15 @@
         <xed:output i18n="mir.researchData.other" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="comment" />
-      <!--<xed:include ref="digibib.researchdata.other.commentspublic" />-->
+      <xed:include ref="digibib.researchdata.other.commentpublic" />
     </fieldset>
   </xed:template>
 
+  <xed:template id="digibib.researchdata.other.commentpublic">
+    <mir:textarea xpath="mods:note[@type='public']" label="mir.researchData.other.commentPublic" help-text="{i18n:mir.researchData.other.commentPublic.help}" rows="2" />
+  </xed:template>
 
-  <!--copied form includes -->
+  <!--copied from includes -->
   <xed:template id="title.translated.body">
     <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
       <div class="mir-fieldset-content">
@@ -501,6 +668,7 @@
       </div>
     </xed:repeat>
   </xed:template>
+
   <!-- -->
 
 <!-- end research data -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="reseach_objects">
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_objects">
   <label xml:lang="en" text="Research Objects" description="A list of research objects." />
   <label xml:lang="de" text="Forschungsobjekte" description="Liste möglicher Forschungsobjekte." />
   <!--<label xml:lang="x-uri" text="" />-->
