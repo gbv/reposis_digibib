@@ -394,7 +394,7 @@
 
   <xed:template id="digibib.researchdata.type">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.type" />
       </legend>
       <xed:include ref="digibib.researchdata.type.type" />
@@ -407,7 +407,7 @@
 
   <xed:template id="digibib.researchdata.type.type">
     <xed:bind xpath="todo">
-      <div class="row">
+      <div class="row form-group">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="mir.researchData.type.type" />
         </label>
@@ -426,7 +426,7 @@
 
   <xed:template id="digibib.researchdata.basic">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.basic" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="title" />
@@ -439,17 +439,40 @@
 
   <xed:template id="digibib.researchdata.involved">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.involved" />
       </legend>
-      <!--<xed:include ref="digibib.researchdata.involved.person" />
-      <xed:include ref="digibib.researchdata.involved.project" />-->
+      <!--<xed:include ref="digibib.researchdata.involved.person" /> -->
+      <xed:include ref="digibib.researchdata.involved.project" />
     </fieldset>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.involved.project">
+    <div class="row form-group">
+      <label class="col-md-3 col-form-label text-right">
+        <xed:output i18n="mir.researchData.involved.project.type" />
+      </label>
+      <div class="col-md-6">
+        <div class="controls">
+          <xed:bind xpath="type">
+            <select class="form-control form-control-inline">
+              <option value="">
+                <xed:output i18n="mir.select" />
+              </option>
+              <option value="">
+                OpenAIRE
+              </option>
+            </select>
+          </xed:bind>
+        </div>
+      </div>
+      <mir:help-pmud pmud="false" /> 
+    </div>
   </xed:template>
 
   <xed:template id="digibib.researchdata.deep">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.deepDescription" />
       </legend>
       <xed:include ref="workaround.research.data.date.repeated" />
@@ -524,7 +547,7 @@
     <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
-        <div class="form-group row">
+        <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="mir.researchData.deepDescription.researchObject" />
           </label>
@@ -551,7 +574,7 @@
     <xed:load-resource name="data_origins" uri="classification:metadata:-1:children:data_origins" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
-        <div class="form-group row">
+        <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="mir.researchData.deepDescription.dataOrigin" />
           </label>
@@ -616,7 +639,7 @@
 
   <xed:template id="digibib.researchdata.license">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.license" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="rights" />
@@ -627,7 +650,7 @@
 
   <xed:template id="digibib.researchdata.other">
     <fieldset>
-      <legend class="mir-fieldset-legend">
+      <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.other" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="comment" />
