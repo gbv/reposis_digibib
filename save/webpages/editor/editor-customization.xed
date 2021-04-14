@@ -397,9 +397,13 @@
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.type" />
       </legend>
-      <xed:include ref="digibib.researchdata.type.type" />
-      <!--<xed:include ref="digibib.researchdata.type.contact" />-->
-      <xed:include ref="embargo.datetimepicker" />
+      <div>
+        <xed:include ref="digibib.researchdata.type.type" />
+        <!--<xed:include ref="digibib.researchdata.type.contact" />-->
+        <div class="embargo-container mir-fieldset-content d-none">
+          <xed:include ref="embargo.datetimepicker" />
+        </div>
+      </div>
       <!-- <xed:include ref="digibib.researchdata.type.embargo" />-->
     </fieldset>
     <!--<script type="text/javascript" src="{$WebApplicationBaseURL}js/custom.js" /> -->
@@ -413,7 +417,10 @@
         </label>
         <div class="col-md-6">
           <div class="controls">
-            <select class="form-control form-control-inline typeType">
+            <select class="form-control form-control-inline publication-type-select">
+              <option value="">
+                <xed:output i18n="mir.select" />
+              </option>
               <option value="oa"><xed:output i18n="mir.researchData.type.type.openAccess" /></option>
               <option value="oae"><xed:output i18n="mir.researchData.type.type.openAccessEmbago" /></option>
             </select>
@@ -442,32 +449,114 @@
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.involved" />
       </legend>
-      <!--<xed:include ref="digibib.researchdata.involved.person" /> -->
+      <xed:include ref="digibib.researchdata.involved.person.repeated" />
       <xed:include ref="digibib.researchdata.involved.project" />
     </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.involved.project">
-    <div class="row form-group">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="mir.researchData.involved.project.type" />
-      </label>
-      <div class="col-md-6">
-        <div class="controls">
-          <xed:bind xpath="type">
-            <select class="form-control form-control-inline">
-              <option value="">
-                <xed:output i18n="mir.select" />
-              </option>
-              <option value="">
-                OpenAIRE
-              </option>
-            </select>
-          </xed:bind>
+
+  <xed:template id="digibib.researchdata.involved.person.repeated">
+    <xed:repeat xpath="mods:name[@type='personal'  or not(@type) or (@type='corporate' and not(@authorityURI='{$institute    sURI}'))]" min="1" max="100">
+      <xed:bind xpath="@type" initially="personal"/>
+      <fieldset class="personExtended_box">
+        <legend class="mir-fieldset-legend hiddenDetail">
+          <xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
+            <div class="form-group row">
+              <xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
+                <div class="col-md-3" style="text-align:right; font-weight:bold;">
+                  <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']" initially="aut">
+                    <select class="form-control form-control-inline">
+                      <option value="cre">
+                        <xed:output i18n="mir.researchData.involved.person.role.creator" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.coAuthor" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.supervisor" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.projectManager" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.projectStaff" />
+                      </option>
+                      <option value="oth">
+                        <xed:output i18n="mir.role.other" />
+                      </option>
+                    </select>
+                  </xed:bind>
+                </div>
+                <div class="col-md-6 center-vertical">
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.fields.noHidden" />
+                  <span class="fas fa-chevron-down expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
+                </div>
+                <mir:help-pmud help-text="{i18n:mir.researchData.deepDescription.software.help}" pmud="true" />
+              </xed:bind>
+            </div>
+         </xed:bind>
+        </legend>
+        <div class="mir-fieldset-content personExtended-container d-none">
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameType" />
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="namePart.repeated" />
+          <mir:textfield xpath="mods:affiliation" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.affiliation" />
+          <!-- <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.affiliation" /> -->
+          <mir:textfield xpath="mods:test" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.faculty" />
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameIdentifier.repeated"     />
         </div>
+      </fieldset>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="digibib.researchdata.involved.project">
+    <div> 
+      <div class="row form-group">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.researchData.involved.project.type" />
+        </label>
+        <div class="col-md-6">
+          <div class="controls">
+            <xed:bind xpath="type">
+              <select class="form-control form-control-inline project-type-select">
+                <option value="">
+                  <xed:output i18n="mir.select" />
+                </option>
+                <option value="oaire">
+                  OpenAIRE
+                </option>
+              </select>
+            </xed:bind>
+          </div>
+        </div>
+        <mir:help-pmud pmud="false" /> 
       </div>
-      <mir:help-pmud pmud="false" /> 
+      <div class="mir-openAIRE-container mir-fieldset-content d-none">
+        <mir:textfield.nobind id="name" label="mir.project.name" help-text="{i18n:mir.help.project.name}" autocomplete="off" />
+        <mir:textfield.nobind id="acronym" label="mir.project.acronym" help-text="{i18n:mir.help.project.acronym}" autocomplete="off" />
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right" />
+          <div class="col-md-6">
+            <div class="form-row">
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.grantID}" />
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.programmID}" />
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.organisationID}" />
+              </div>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:mir.help.project.grant}" pmud="false" />
+        </div>
+        <xed:bind xpath="mods:openAireID">
+          <input type="hidden" />
+        </xed:bind>
+      </div>
     </div>
+    <script type="text/javascript" src="{$WebApplicationBaseURL}js/digibib-editor.js" />
+    <script type="text/javascript" src="{$WebApplicationBaseURL}js/mir/openaire.min.js" />
   </xed:template>
 
   <xed:template id="digibib.researchdata.deep">
@@ -509,9 +598,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.fileType.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.fileTypeDescription" rows="2" />
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.fileType.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -536,9 +625,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.researchObject.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.researchObjectDescription" rows="2" />
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.researchObject.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -563,9 +652,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.researchObject.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.researchObjectDescription" rows="2" />
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.researchObject.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -590,9 +679,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.dataOriginDescription" rows="2" />
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -621,6 +710,10 @@
         </div>
         <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.name" />
         <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.version" />
+        <div class="mir-fieldset-content">
+          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.nameAlternative" />
+          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.versionAlternative" />
+        </div>
       </div>
     </xed:repeat>
   </xed:template>
@@ -643,9 +736,19 @@
         <xed:output i18n="mir.researchData.license" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="rights" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="copyrightMD" />
+      <!-- <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="copyrightMD" /> -->
+      <xed:include ref="digibib.researchdata.license.copyright" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="access" />
     </fieldset>
+  </xed:template>
+
+  <!-- same as 'copyrightMD' other naming -->
+  <xed:template id="digibib.researchdata.license.copyright">
+    <xed:bind
+      xpath="mods:accessCondition[@type='copyrightMD']/cmd:copyright[@copyright.status='copyrighted'][@publication.status='published'][@xsi:schemaLocation='http://www.cdlib.org/inside/diglib/copyrightMD https:     //www.cdlib.org/groups/rmg/docs/copyrightMD.xsd']"
+    >
+      <mir:textfield xpath="cmd:rights.holder/cmd:name" label="mir.researchData.license.copyright" help-text="{i18n:mir.researchData.license.copyright.help}" />
+    </xed:bind>
   </xed:template>
 
   <xed:template id="digibib.researchdata.other">
@@ -653,9 +756,15 @@
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.other" />
       </legend>
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="comment" />
+      <!--<xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="comment" />-->
+      <xed:include ref="digibib.researchdata.other.commentadmin" />
       <xed:include ref="digibib.researchdata.other.commentpublic" />
     </fieldset>
+  </xed:template>
+
+  <!-- same as 'comment' other naming -->
+  <xed:template id="digibib.researchdata.other.commentadmin">
+    <mir:textarea xpath="mods:note[@type='admin']" label="mir.researchData.other.commentAdmin" help-text="{i18n:mir.researchData.other.commentAdmin.help}" rows="2" />
   </xed:template>
 
   <xed:template id="digibib.researchdata.other.commentpublic">
