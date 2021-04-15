@@ -6,7 +6,7 @@
       <xed:bind xpath="todo">
         <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="mir.researchData.type.type" />
+            <xed:output i18n="digibib.researchData.type.type" />
           </label>
           <div class="col-md-6">
             <div class="controls">
@@ -14,12 +14,12 @@
                 <option value="">
                   <xed:output i18n="mir.select" />
                 </option>
-                <option value="oa"><xed:output i18n="mir.researchData.type.type.openAccess" /></option>
-                <option value="oae"><xed:output i18n="mir.researchData.type.type.openAccessEmbago" /></option>
+                <option value="oa"><xed:output i18n="digibib.researchData.type.type.openAccess" /></option>
+                <option value="oae"><xed:output i18n="digibib.researchData.type.type.openAccessEmbago" /></option>
               </select>
             </div>
           </div>
-          <mir:help-pmud help-text="{i18n:mir.researchData.type.type.help}" pmud="false" />
+          <mir:help-pmud help-text="{i18n:digibib.researchData.type.type.help}" pmud="false" />
         </div>
         <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
           <xed:include ref="embargo.datetimepicker" />
@@ -53,7 +53,7 @@
   </xed:template>
     
   <xed:template id="original-title">
-    <mir:textfield xpath="mods:titleInfo/mods:title" label="mir.researchData.basic.originalTitle" help-text="{i18n:mir.help.title}" class="required" required="true" required-i18n="mir.validation.title" />
+    <mir:textfield xpath="mods:titleInfo/mods:title" label="digibib.researchData.general.originalTitle" help-text="{i18n:mir.help.title}" class="required" required="true" required-i18n="mir.validation.title" />
   </xed:template>
 
   <!--copied from mir includes -->
@@ -88,7 +88,7 @@
   <!-- -->
 
   <xed:template id="abstract">
-    <mir:htmlArea xpath="mods:abstract[not(@xml:lang) or @xml:lang=../mods:language/mods:languageTerm[@authority='rfc5646' and @type='code']]" label="mir.researchData.basic.abstract" help-text="{i18n:mir.help.abstract}" rows="5" required="true" class="required" required-i18n="mir.researchData.basic.abstract.validation" />
+    <mir:htmlArea xpath="mods:abstract[not(@xml:lang) or @xml:lang=../mods:language/mods:languageTerm[@authority='rfc5646' and @type='code']]" label="digibib.researchData.general.abstract" help-text="{i18n:mir.help.abstract}" rows="5" required="true" class="required" required-i18n="digibib.researchData.general.abstract.validation" />
   </xed:template>
 
   <xed:template id="language">
@@ -121,19 +121,19 @@
                   <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']" initially="aut">
                     <select class="form-control form-control-inline">
                       <option value="cre">
-                        <xed:output i18n="mir.researchData.involved.person.role.creator" />
+                        <xed:output i18n="digibib.researchData.involved.person.role.creator" />
                       </option>
                       <option value="todo">
-                        <xed:output i18n="mir.researchData.involved.person.role.coAuthor" />
+                        <xed:output i18n="digibib.researchData.involved.person.role.coAuthor" />
                       </option>
                       <option value="todo">
-                        <xed:output i18n="mir.researchData.involved.person.role.supervisor" />
+                        <xed:output i18n="digibib.researchData.involved.person.role.supervisor" />
                       </option>
                       <option value="todo">
-                        <xed:output i18n="mir.researchData.involved.person.role.projectManager" />
+                        <xed:output i18n="digibib.researchData.involved.person.role.projectManager" />
                       </option>
                       <option value="todo">
-                        <xed:output i18n="mir.researchData.involved.person.role.projectStaff" />
+                        <xed:output i18n="digibib.researchData.involved.person.role.projectStaff" />
                       </option>
                       <option value="oth">
                         <xed:output i18n="mir.role.other" />
@@ -145,7 +145,7 @@
                   <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.fields.noHidden" />
                   <span class="fas fa-chevron-down expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
                 </div>
-                <mir:help-pmud help-text="{i18n:mir.researchData.deepDescription.software.help}" pmud="true" />
+                <mir:help-pmud help-text="{i18n:digibib.researchData.description.software.help}" pmud="true" />
               </xed:bind>
             </div>
          </xed:bind>
@@ -153,9 +153,9 @@
         <div class="mir-fieldset-content personExtended-container d-none">
           <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameType" />
           <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="namePart.repeated" />
-          <mir:textfield xpath="mods:affiliation" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.affiliation" />
+          <mir:textfield xpath="mods:affiliation" help-text="{i18n:mir.help.affiliation}" label="digibib.researchData.involved.person.affiliation" />
           <!-- <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.affiliation" /> -->
-          <mir:textfield xpath="mods:test" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.faculty" />
+          <mir:textfield xpath="mods:test" help-text="{i18n:mir.help.affiliation}" label="digibib.researchData.involved.person.faculty" />
           <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameIdentifier.repeated"     />
         </div>
       </fieldset>
@@ -164,7 +164,7 @@
 
   <xed:template id="supporter.repeated">
     <xed:repeat xpath="todo">
-      <mir:textfield xpath="." label="mir.researchData.involved.supporter" repeat="true" />
+      <mir:textfield xpath="." label="digibib.researchData.involved.supporter" repeat="true" />
     </xed:repeat>
   </xed:template>
 
@@ -172,7 +172,7 @@
     <div class="digibib-project"> 
       <div class="row form-group">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="mir.researchData.involved.project.type" />
+          <xed:output i18n="digibib.researchData.involved.project.type" />
         </label>
         <div class="col-md-6">
           <div class="controls">
@@ -248,7 +248,7 @@
       <div class="mir-fieldset-content">
         <div class="form-group row">
           <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="mir.researchData.deepDescription.fileType" />
+            <xed:output i18n="digibib.researchData.description.fileType" />
           </label>
           <div class="col-md-6">
                 <div class="controls">
@@ -262,9 +262,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.fileType.help}" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.fileType.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.fileType.description.help}" rows="2" />
+        <mir:textarea xpath="test" label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.fileType.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -275,7 +275,7 @@
       <div class="mir-fieldset-content">
         <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="mir.researchData.deepDescription.researchObject" />
+            <xed:output i18n="digibib.researchData.description.researchObject" />
           </label>
           <div class="col-md-6">
             <div class="controls">
@@ -289,9 +289,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.researchObject.help}" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.researchObject.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.researchObject.description.help}" rows="2" />
+        <mir:textarea xpath="test" label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.researchObject.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -302,7 +302,7 @@
       <div class="mir-fieldset-content">
         <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="mir.researchData.deepDescription.dataOrigin" />
+            <xed:output i18n="digibib.researchData.description.dataOrigin" />
           </label>
           <div class="col-md-6">
             <div class="controls">
@@ -316,9 +316,9 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.help}" /> 
+          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.dataOrigin.help}" /> 
         </div>
-        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.description.help}" rows="2" />
+        <mir:textarea xpath="test" label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.dataOrigin.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -329,7 +329,7 @@
       <div class="mir-fieldset-content">
         <div class="form-group row">
           <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="mir.researchData.deepDescription.software" />
+            <xed:output i18n="digibib.researchData.description.software" />
           </label>
           <div class="col-md-6">
             <div class="controls">
@@ -343,28 +343,28 @@
               </xed:bind>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.software.help}"/> 
+          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.software.help}"/> 
         </div>
-        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.name" />
-        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.version" />
+        <mir:textfield xpath="test" label="digibib.researchData.description.software.name" />
+        <mir:textfield xpath="test" label="digibib.researchData.description.software.version" />
         <div class="mir-fieldset-content">
-          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.nameAlternative" />
-          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.versionAlternative" />
+          <mir:textfield xpath="test" label="digibib.researchData.description.software.nameAlternative" />
+          <mir:textfield xpath="test" label="digibib.researchData.description.software.versionAlternative" />
         </div>
       </div>
     </xed:repeat>
   </xed:template>
 
   <xed:template id="methods">
-    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.methods" rows="2" help-text="{i18n:mir.researchData.deepDescription.methods.help}" />
+    <mir:textarea xpath="todo" label="digibib.researchData.description.methods" rows="2" help-text="{i18n:digibib.researchData.description.methods.help}" />
   </xed:template>
 
   <xed:template id="instruments">
-    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.instruments" rows="2" help-text="{i18n:mir.researchData.deepDescription.instruments.help}" />
+    <mir:textarea xpath="todo" label="digibib.researchData.description.instruments" rows="2" help-text="{i18n:digibib.researchData.description.instruments.help}" />
   </xed:template>
 
   <xed:template id="proccessing">
-    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.processing" rows="2" help-text="{i18n:mir.researchData.deepDescription.processing.help}" />
+    <mir:textarea xpath="todo" label="digibib.researchData.description.processing" rows="2" help-text="{i18n:digibib.researchData.description.processing.help}" />
   </xed:template>
 
   <!-- same as 'copyrightMD' other naming -->
@@ -372,17 +372,17 @@
     <xed:bind
       xpath="mods:accessCondition[@type='copyrightMD']/cmd:copyright[@copyright.status='copyrighted'][@publication.status='published'][@xsi:schemaLocation='http://www.cdlib.org/inside/diglib/copyrightMD https:     //www.cdlib.org/groups/rmg/docs/copyrightMD.xsd']"
     >
-      <mir:textfield xpath="cmd:rights.holder/cmd:name" label="mir.researchData.license.copyright" help-text="{i18n:mir.researchData.license.copyright.help}" />
+      <mir:textfield xpath="cmd:rights.holder/cmd:name" label="digibib.researchData.license.copyright" help-text="{i18n:digibib.researchData.license.copyright.help}" />
     </xed:bind>
   </xed:template>
 
   <!-- same as 'comment' other naming -->
   <xed:template id="comment-admin">
-    <mir:textarea xpath="mods:note[@type='admin']" label="mir.researchData.other.commentAdmin" help-text="{i18n:mir.researchData.other.commentAdmin.help}" rows="2" />
+    <mir:textarea xpath="mods:note[@type='admin']" label="digibib.researchData.other.commentAdmin" help-text="{i18n:digibib.researchData.other.commentAdmin.help}" rows="2" />
   </xed:template>
 
   <xed:template id="comment-public">
-    <mir:textarea xpath="mods:note[@type='public']" label="mir.researchData.other.commentPublic" help-text="{i18n:mir.researchData.other.commentPublic.help}" rows="2" />
+    <mir:textarea xpath="mods:note[@type='public']" label="digibib.researchData.other.commentPublic" help-text="{i18n:digibib.researchData.other.commentPublic.help}" rows="2" />
   </xed:template>
 
 </xed:template>

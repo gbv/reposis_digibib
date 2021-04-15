@@ -395,7 +395,7 @@
   <xed:template id="digibib-research-data-type">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.type" />
+        <xed:output i18n="digibib.researchData.type" />
       </legend>
         <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="type" />
     </fieldset>
@@ -404,7 +404,7 @@
   <xed:template id="digibib-research-data-general">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.basic" />
+        <xed:output i18n="digibib.researchData.general" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="original-title" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="translated-title.repeated" />
@@ -417,7 +417,7 @@
   <xed:template id="digibib-research-data-involved">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.involved" />
+        <xed:output i18n="digibib.researchData.involved" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="person.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="supporter.repeated" />
@@ -428,7 +428,7 @@
   <xed:template id="digibib-research-data-description">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.deepDescription" />
+        <xed:output i18n="digibib.researchData.description" />
       </legend>
       <xed:include ref="workaround.research.data.date.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="cartographics" />
@@ -447,7 +447,7 @@
   <xed:template id="digibib-research-data-license">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.license" />
+        <xed:output i18n="digibib.researchData.license" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="rights" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="copyright" />
@@ -457,7 +457,7 @@
   <xed:template id="digibib-research-data-other">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
-        <xed:output i18n="mir.researchData.other" />
+        <xed:output i18n="digibib.researchData.other" />
       </legend>
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="comment-admin" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="comment-public" />
