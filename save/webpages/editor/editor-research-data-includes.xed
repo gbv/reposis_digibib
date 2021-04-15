@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
+
+  <xed:template id="type">
+    <div class="mir-publication">
+      <xed:bind xpath="todo">
+        <div class="row form-group">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.type.type" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <select class="form-control form-control-inline mir-publication-type-select">
+                <option value="">
+                  <xed:output i18n="mir.select" />
+                </option>
+                <option value="oa"><xed:output i18n="mir.researchData.type.type.openAccess" /></option>
+                <option value="oae"><xed:output i18n="mir.researchData.type.type.openAccessEmbago" /></option>
+              </select>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:mir.researchData.type.type.help}" pmud="false" />
+        </div>
+        <div class="mir-publication-embargo-container mir-fieldset-content d-none">
+          <xed:include ref="embargo.datetimepicker" />
+        </div>
+      </xed:bind>
+    </div>
+    <script>
+      $(document).ready(function() {
+        function handlePublicationTypeSelect(value) {
+          const parent = $(".mir-publication");
+          const container = $(".mir-publication-embargo-container");
+          if (value == "oae") {
+            container.removeClass("d-none");
+            parent.addClass("mir-fieldset-content");
+          } else {
+            container.addClass("d-none");
+            parent.removeClass("mir-fieldset-content");
+          }
+        }
+        function init() {
+          const publicationType = $(".mir-publication-type-select").val();
+          handlePublicationTypeSelect(publicationType);
+        }
+        $("body").on("change", ".mir-publication-type-select", function () {
+          const value = $(this).val();
+          handlePublicationTypeSelect(value);
+        });
+        init();
+      });
+    </script>
+  </xed:template>
+    
+  <xed:template id="originaltitle">
+    <mir:textfield xpath="mods:titleInfo/mods:title" label="mir.researchData.basic.originalTitle" help-text="{i18n:mir.help.title}" class="required" required="true" required-i18n="mir.validation.title" />
+  </xed:template>
+
+  <!--copied from mir includes -->
+  <xed:template id="title.translated">
+    <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right mir-formgroup-label"> 
+            <xed:output i18n="mir.title" />
+          </label>
+          <div class="col-md-6">
+            <xed:bind xpath="mods:title">
+              <input type="text" class="form-control" placeholder="{i18n:mir.placeholder.title.translated}" />
+            </xed:bind>
+          </div>
+          <mir:help-pmud pmud="true" />
+        </div>
+        <mir:textfield xpath="mods:subTitle" label="mir.title.subTitle" />
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right mir-formgroup-label"> 
+            <xed:output i18n="mir.language" />
+          </label>
+          <div class="col-md-6">
+            <xed:bind xpath="@xml:lang" initially="de">
+              <xed:include ref="lang.list" />
+            </xed:bind>
+          </div>
+        </div>
+      </div>
+    </xed:repeat>
+  </xed:template>
+  <!-- -->
+
+  <xed:template id="abstract">
+    <mir:htmlArea xpath="mods:abstract[not(@xml:lang) or @xml:lang=../mods:language/mods:languageTerm[@authority='rfc5646' and @type='code']]" label="mir.researchData.basic.abstract" help-text="{i18n:mir.help.abstract}" rows="5" required="true" class="required" required-i18n="mir.researchData.basic.abstract.validation" />
+  </xed:template>
+
+  <xed:template id="language">
+    <xed:bind xpath="mods:language">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.language" />
+        </label>
+        <div class="col-md-6">
+          <xed:bind xpath="mods:languageTerm[@authority='rfc5646'][@type='code']" initially="de">
+            <div class="controls">
+              <xed:include ref="lang.list" />
+            </div>
+          </xed:bind>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.language}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="person.repeated">
+    <xed:repeat xpath="mods:name[@type='personal'  or not(@type) or (@type='corporate' and not(@authorityURI='{$institute    sURI}'))]" min="1" max="100">
+      <xed:bind xpath="@type" initially="personal"/>
+      <fieldset class="personExtended_box">
+        <legend class="mir-fieldset-legend hiddenDetail">
+          <xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
+            <div class="form-group row">
+              <xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
+                <div class="col-md-3" style="text-align:right; font-weight:bold;">
+                  <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']" initially="aut">
+                    <select class="form-control form-control-inline">
+                      <option value="cre">
+                        <xed:output i18n="mir.researchData.involved.person.role.creator" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.coAuthor" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.supervisor" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.projectManager" />
+                      </option>
+                      <option value="todo">
+                        <xed:output i18n="mir.researchData.involved.person.role.projectStaff" />
+                      </option>
+                      <option value="oth">
+                        <xed:output i18n="mir.role.other" />
+                      </option>
+                    </select>
+                  </xed:bind>
+                </div>
+                <div class="col-md-6 center-vertical">
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.fields.noHidden" />
+                  <span class="fas fa-chevron-down expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
+                </div>
+                <mir:help-pmud help-text="{i18n:mir.researchData.deepDescription.software.help}" pmud="true" />
+              </xed:bind>
+            </div>
+         </xed:bind>
+        </legend>
+        <div class="mir-fieldset-content personExtended-container d-none">
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameType" />
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="namePart.repeated" />
+          <mir:textfield xpath="mods:affiliation" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.affiliation" />
+          <!-- <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.affiliation" /> -->
+          <mir:textfield xpath="mods:test" help-text="{i18n:mir.help.affiliation}" label="mir.researchdata.involved.person.faculty" />
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameIdentifier.repeated"     />
+        </div>
+      </fieldset>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="supporter.repeated">
+    <xed:repeat xpath="todo">
+      <mir:textfield xpath="." label="mir.researchData.involved.supporter" repeat="true" />
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="project">
+    <div class="mir-project"> 
+      <div class="row form-group">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.researchData.involved.project.type" />
+        </label>
+        <div class="col-md-6">
+          <div class="controls">
+            <xed:bind xpath="type">
+              <select class="form-control form-control-inline mir-project-type-select">
+                <option value="">
+                  <xed:output i18n="mir.select.optional" />
+                </option>
+                <option value="oaire">
+                  OpenAIRE
+                </option>
+              </select>
+            </xed:bind>
+          </div>
+        </div>
+        <mir:help-pmud pmud="false" /> 
+      </div>
+      <div class="mir-project-openAIRE-container mir-fieldset-content d-none">
+        <mir:textfield.nobind id="name" label="mir.project.name" help-text="{i18n:mir.help.project.name}" autocomplete="off" />
+        <mir:textfield.nobind id="acronym" label="mir.project.acronym" help-text="{i18n:mir.help.project.acronym}" autocomplete="off" />
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right" />
+          <div class="col-md-6">
+            <div class="form-row">
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.grantID}" />
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.programmID}" />
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.organisationID}" />
+              </div>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:mir.help.project.grant}" pmud="false" />
+        </div>
+        <xed:bind xpath="mods:openAireID">
+          <input type="hidden" />
+        </xed:bind>
+      </div>
+    </div>
+    <script type="text/javascript" src="{$WebApplicationBaseURL}js/mir/openaire.min.js" />
+    <script>
+      $(document).ready(function() {
+        function handleProjectTypeSelect(value) {
+          const parent = $(".mir-project");
+          const container = $(".mir-project-openAIRE-container");
+          if (value == "oaire") {
+            container.removeClass("d-none");
+            parent.addClass("mir-fieldset-content");
+          } else {
+            container.addClass("d-none");
+            parent.removeClass("mir-fieldset-content");
+          }
+        }
+        function init() {
+          const projectType = $(".mir-project-type-select").val();
+          handleProjectTypeSelect(projectType);
+        }
+        $("body").on("change", ".mir-project-type-select", function () {
+          const value = $(this).val();
+          handleProjectTypeSelect(value);
+        });
+        init();
+      });
+    </script>
+  </xed:template>
+
+  <xed:template id="filetypes">
+    <xed:load-resource name="file_types" uri="classification:metadata:-1:children:file_types" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.fileType" />
+          </label>
+          <div class="col-md-6">
+                <div class="controls">
+                  <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select.optional" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:file_types" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.fileType.help}" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.fileType.description.help}" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="researchobjects">
+    <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="row form-group">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.researchObject" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select.optional" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:research_objects" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.researchObject.help}" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.researchObject.description.help}" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="dataorigins">
+    <xed:load-resource name="data_origins" uri="classification:metadata:-1:children:data_origins" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="row form-group">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.dataOrigin" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select.optional" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:data_origins" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.help}" /> 
+        </div>
+        <mir:textarea xpath="test" label="mir.researchData.deepDescription.description" help-text="{i18n:mir.researchData.deepDescription.dataOrigin.description.help}" rows="2" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="software">
+    <xed:load-resource name="software_types" uri="classification:metadata:-1:children:software_types" />
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="mir.researchData.deepDescription.software" />
+          </label>
+          <div class="col-md-6">
+            <div class="controls">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline">
+                  <option value="">
+                    <xed:output i18n="mir.select.optional" />
+                  </option>
+                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:software_types" />
+                </select>
+              </xed:bind>
+            </div>
+          </div>
+          <mir:help-pmud pmud="true" help-text="{i18n:mir.researchData.deepDescription.software.help}"/> 
+        </div>
+        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.name" />
+        <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.version" />
+        <div class="mir-fieldset-content">
+          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.nameAlternative" />
+          <mir:textfield xpath="test" label="mir.researchData.deepDescription.software.versionAlternative" />
+        </div>
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+
+
+  <xed:template id="methods">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.methods" rows="2" help-text="{i18n:mir.researchData.deepDescription.methods.help}" />
+  </xed:template>
+
+  <xed:template id="instruments">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.instruments" rows="2" help-text="{i18n:mir.researchData.deepDescription.instruments.help}" />
+  </xed:template>
+
+  <xed:template id="proccessing">
+    <mir:textarea xpath="todo" label="mir.researchData.deepDescription.processing" rows="2" help-text="{i18n:mir.researchData.deepDescription.processing.help}" />
+  </xed:template>
+
+  <!-- same as 'copyrightMD' other naming -->
+  <xed:template id="copyright">
+    <xed:bind
+      xpath="mods:accessCondition[@type='copyrightMD']/cmd:copyright[@copyright.status='copyrighted'][@publication.status='published'][@xsi:schemaLocation='http://www.cdlib.org/inside/diglib/copyrightMD https:     //www.cdlib.org/groups/rmg/docs/copyrightMD.xsd']"
+    >
+      <mir:textfield xpath="cmd:rights.holder/cmd:name" label="mir.researchData.license.copyright" help-text="{i18n:mir.researchData.license.copyright.help}" />
+    </xed:bind>
+  </xed:template>
+
+  <!-- same as 'comment' other naming -->
+  <xed:template id="commentadmin">
+    <mir:textarea xpath="mods:note[@type='admin']" label="mir.researchData.other.commentAdmin" help-text="{i18n:mir.researchData.other.commentAdmin.help}" rows="2" />
+  </xed:template>
+
+  <xed:template id="commentpublic">
+    <mir:textarea xpath="mods:note[@type='public']" label="mir.researchData.other.commentPublic" help-text="{i18n:mir.researchData.other.commentPublic.help}" rows="2" />
+  </xed:template>
+
+</xed:template>
+
