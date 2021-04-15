@@ -2,7 +2,7 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
   <xed:template id="type">
-    <div class="mir-publication">
+    <div class="digibib-publication">
       <xed:bind xpath="todo">
         <div class="row form-group">
           <label class="col-md-3 col-form-label text-right">
@@ -10,7 +10,7 @@
           </label>
           <div class="col-md-6">
             <div class="controls">
-              <select class="form-control form-control-inline mir-publication-type-select">
+              <select class="form-control form-control-inline digibib-publication-type-select">
                 <option value="">
                   <xed:output i18n="mir.select" />
                 </option>
@@ -21,7 +21,7 @@
           </div>
           <mir:help-pmud help-text="{i18n:mir.researchData.type.type.help}" pmud="false" />
         </div>
-        <div class="mir-publication-embargo-container mir-fieldset-content d-none">
+        <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
           <xed:include ref="embargo.datetimepicker" />
         </div>
       </xed:bind>
@@ -29,8 +29,8 @@
     <script>
       $(document).ready(function() {
         function handlePublicationTypeSelect(value) {
-          const parent = $(".mir-publication");
-          const container = $(".mir-publication-embargo-container");
+          const parent = $(".digibib-publication");
+          const container = $(".digibib-publication-embargo-container");
           if (value == "oae") {
             container.removeClass("d-none");
             parent.addClass("mir-fieldset-content");
@@ -40,10 +40,10 @@
           }
         }
         function init() {
-          const publicationType = $(".mir-publication-type-select").val();
+          const publicationType = $(".digibib-publication-type-select").val();
           handlePublicationTypeSelect(publicationType);
         }
-        $("body").on("change", ".mir-publication-type-select", function () {
+        $("body").on("change", ".digibib-publication-type-select", function () {
           const value = $(this).val();
           handlePublicationTypeSelect(value);
         });
@@ -52,12 +52,12 @@
     </script>
   </xed:template>
     
-  <xed:template id="originaltitle">
+  <xed:template id="original-title">
     <mir:textfield xpath="mods:titleInfo/mods:title" label="mir.researchData.basic.originalTitle" help-text="{i18n:mir.help.title}" class="required" required="true" required-i18n="mir.validation.title" />
   </xed:template>
 
   <!--copied from mir includes -->
-  <xed:template id="title.translated">
+  <xed:template id="translated-title.repeated">
     <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
       <div class="mir-fieldset-content">
         <div class="form-group row">
@@ -169,7 +169,7 @@
   </xed:template>
 
   <xed:template id="project">
-    <div class="mir-project"> 
+    <div class="digibib-project"> 
       <div class="row form-group">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="mir.researchData.involved.project.type" />
@@ -177,7 +177,7 @@
         <div class="col-md-6">
           <div class="controls">
             <xed:bind xpath="type">
-              <select class="form-control form-control-inline mir-project-type-select">
+              <select class="form-control form-control-inline digibib-project-type-select">
                 <option value="">
                   <xed:output i18n="mir.select.optional" />
                 </option>
@@ -190,7 +190,7 @@
         </div>
         <mir:help-pmud pmud="false" /> 
       </div>
-      <div class="mir-project-openAIRE-container mir-fieldset-content d-none">
+      <div class="digibib-project-openAIRE-container mir-fieldset-content d-none">
         <mir:textfield.nobind id="name" label="mir.project.name" help-text="{i18n:mir.help.project.name}" autocomplete="off" />
         <mir:textfield.nobind id="acronym" label="mir.project.acronym" help-text="{i18n:mir.help.project.acronym}" autocomplete="off" />
         <div class="form-group row">
@@ -219,8 +219,8 @@
     <script>
       $(document).ready(function() {
         function handleProjectTypeSelect(value) {
-          const parent = $(".mir-project");
-          const container = $(".mir-project-openAIRE-container");
+          const parent = $(".digibib-project");
+          const container = $(".digibib-project-openAIRE-container");
           if (value == "oaire") {
             container.removeClass("d-none");
             parent.addClass("mir-fieldset-content");
@@ -230,10 +230,10 @@
           }
         }
         function init() {
-          const projectType = $(".mir-project-type-select").val();
+          const projectType = $(".digibib-project-type-select").val();
           handleProjectTypeSelect(projectType);
         }
-        $("body").on("change", ".mir-project-type-select", function () {
+        $("body").on("change", ".digibib-project-type-select", function () {
           const value = $(this).val();
           handleProjectTypeSelect(value);
         });
@@ -242,7 +242,7 @@
     </script>
   </xed:template>
 
-  <xed:template id="filetypes">
+  <xed:template id="file-type.repeated">
     <xed:load-resource name="file_types" uri="classification:metadata:-1:children:file_types" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
@@ -269,7 +269,7 @@
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="researchobjects">
+  <xed:template id="research-object.repeated">
     <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
@@ -296,7 +296,7 @@
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="dataorigins">
+  <xed:template id="data-origin.repeated">
     <xed:load-resource name="data_origins" uri="classification:metadata:-1:children:data_origins" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
@@ -323,7 +323,7 @@
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="software">
+  <xed:template id="software.repeated">
     <xed:load-resource name="software_types" uri="classification:metadata:-1:children:software_types" />
     <xed:repeat xpath="mods:test" min="1" max="10">
       <div class="mir-fieldset-content">
@@ -355,8 +355,6 @@
     </xed:repeat>
   </xed:template>
 
-
-
   <xed:template id="methods">
     <mir:textarea xpath="todo" label="mir.researchData.deepDescription.methods" rows="2" help-text="{i18n:mir.researchData.deepDescription.methods.help}" />
   </xed:template>
@@ -379,11 +377,11 @@
   </xed:template>
 
   <!-- same as 'comment' other naming -->
-  <xed:template id="commentadmin">
+  <xed:template id="comment-admin">
     <mir:textarea xpath="mods:note[@type='admin']" label="mir.researchData.other.commentAdmin" help-text="{i18n:mir.researchData.other.commentAdmin.help}" rows="2" />
   </xed:template>
 
-  <xed:template id="commentpublic">
+  <xed:template id="comment-public">
     <mir:textarea xpath="mods:note[@type='public']" label="mir.researchData.other.commentPublic" help-text="{i18n:mir.researchData.other.commentPublic.help}" rows="2" />
   </xed:template>
 

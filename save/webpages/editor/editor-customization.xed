@@ -189,12 +189,12 @@
     <xed:remove  ref="institutes" />
     <xed:remove  ref="comment" />
 
-    <xed:include ref="digibib.researchdata.type" />
-    <xed:include ref="digibib.researchdata.basic" after="digibib.researchdata.type" />
-    <xed:include ref="digibib.researchdata.involved" after="digibib.researchdata.basic" />
-    <xed:include ref="digibib.researchdata.deep" after="digibib.researchdata.involved" />
-    <xed:include ref="digibib.researchdata.license" after="digibib.researchdata.deep" />
-    <xed:include ref="digibib.researchdata.other" after="digibib.researchdata.license" />
+    <xed:include ref="digibib-research-data-type" />
+    <xed:include ref="digibib-research-data-general" />
+    <xed:include ref="digibib-research-data-involved" />
+    <xed:include ref="digibib-research-data-description" />
+    <xed:include ref="digibib-research-data-license" />
+    <xed:include ref="digibib-research-data-other" />
   </xed:modify>
 
   <xed:modify ref="genres.lecture">
@@ -392,7 +392,7 @@
 
 <!-- begin research data -->
 
-  <xed:template id="digibib.researchdata.type">
+  <xed:template id="digibib-research-data-type">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.type" />
@@ -401,20 +401,20 @@
     </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.basic">
+  <xed:template id="digibib-research-data-general">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.basic" />
       </legend>
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="originaltitle" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="title.translated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="original-title" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="translated-title.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="subject.simple" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="abstract" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="language" />
     </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.involved">
+  <xed:template id="digibib-research-data-involved">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.involved" />
@@ -425,7 +425,7 @@
     </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.deep">
+  <xed:template id="digibib-research-data-description">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.deepDescription" />
@@ -433,18 +433,18 @@
       <xed:include ref="workaround.research.data.date.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="cartographics" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="identifier.repeated" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="filetypes" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="researchobjects" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="dataorigins" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="file-type.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="research-object.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="data-origin.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="methods" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="instruments" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="processing" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="software" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="software.repeated" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="related.item.link" /> <!-- TODO missing fieldset -->
      </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.license">
+  <xed:template id="digibib-research-data-license">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.license" />
@@ -454,13 +454,13 @@
     </fieldset>
   </xed:template>
 
-  <xed:template id="digibib.researchdata.other">
+  <xed:template id="digibib-research-data-other">
     <fieldset>
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.other" />
       </legend>
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="commentadmin" />
-      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="commentpublic" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="comment-admin" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="comment-public" />
     </fieldset>
   </xed:template>
 
