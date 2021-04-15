@@ -3,8 +3,8 @@
 
   <xed:template id="type">
     <div class="digibib-publication">
-      <xed:bind xpath="todo">
-        <div class="row form-group">
+      <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='publicationType']">
+        <div class="row form-group required {$xed-validation-marker}">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="digibib.researchData.type.type" />
           </label>
@@ -22,8 +22,9 @@
           <mir:help-pmud help-text="{i18n:digibib.researchData.type.type.help}" pmud="false" />
         </div>
         <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
-          <xed:include ref="embargo.datetimepicker" />
+          <xed:include ref="embargo.datetimepicker" /> <!-- TODO required if publicationType=oae -->
         </div>
+        <xed:validate required="true" i18n="digibib.researchData.type.type.validate" display="global" />
       </xed:bind>
     </div>
     <script>
@@ -347,10 +348,8 @@
         </div>
         <mir:textfield xpath="test" label="digibib.researchData.description.software.name" />
         <mir:textfield xpath="test" label="digibib.researchData.description.software.version" />
-        <div class="mir-fieldset-content">
-          <mir:textfield xpath="test" label="digibib.researchData.description.software.nameAlternative" />
-          <mir:textfield xpath="test" label="digibib.researchData.description.software.versionAlternative" />
-        </div>
+        <mir:textfield xpath="test" label="digibib.researchData.description.software.name" placeholder="{i18n:digibib.researchData.description.software.alternative}"/>
+        <mir:textfield xpath="test" label="digibib.researchData.description.software.version" placeholder="{i18n:digibib.researchData.description.software.alternative}" />
       </div>
     </xed:repeat>
   </xed:template>
