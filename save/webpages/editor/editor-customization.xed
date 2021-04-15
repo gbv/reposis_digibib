@@ -397,10 +397,10 @@
       <legend class="mir-fieldset-legend mb-3">
         <xed:output i18n="mir.researchData.type" />
       </legend>
-      <div>
+      <div class="mir-publication">
         <xed:include ref="digibib.researchdata.type.type" />
         <!--<xed:include ref="digibib.researchdata.type.contact" />-->
-        <div class="embargo-container mir-fieldset-content d-none">
+        <div class="mir-publication-embargo-container mir-fieldset-content d-none">
           <xed:include ref="embargo.datetimepicker" />
         </div>
       </div>
@@ -417,7 +417,7 @@
         </label>
         <div class="col-md-6">
           <div class="controls">
-            <select class="form-control form-control-inline publication-type-select">
+            <select class="form-control form-control-inline mir-publication-type-select">
               <option value="">
                 <xed:output i18n="mir.select" />
               </option>
@@ -509,7 +509,7 @@
   </xed:template>
 
   <xed:template id="digibib.researchdata.involved.project">
-    <div> 
+    <div class="mir-project"> 
       <div class="row form-group">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="mir.researchData.involved.project.type" />
@@ -517,7 +517,7 @@
         <div class="col-md-6">
           <div class="controls">
             <xed:bind xpath="type">
-              <select class="form-control form-control-inline project-type-select">
+              <select class="form-control form-control-inline mir-project-type-select">
                 <option value="">
                   <xed:output i18n="mir.select" />
                 </option>
@@ -530,7 +530,7 @@
         </div>
         <mir:help-pmud pmud="false" /> 
       </div>
-      <div class="mir-openAIRE-container mir-fieldset-content d-none">
+      <div class="mir-project-openAIRE-container mir-fieldset-content d-none">
         <mir:textfield.nobind id="name" label="mir.project.name" help-text="{i18n:mir.help.project.name}" autocomplete="off" />
         <mir:textfield.nobind id="acronym" label="mir.project.acronym" help-text="{i18n:mir.help.project.acronym}" autocomplete="off" />
         <div class="form-group row">
