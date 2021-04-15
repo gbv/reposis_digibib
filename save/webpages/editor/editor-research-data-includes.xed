@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
+  <!-- TODO
+    - xpath
+    - validation -> embargo-check if pubtype = oae
+    - include mail service for contact
+    - author more beautiful
+    - use placeholder instead of label -> empty label?
+    - CC + software-licenses
+    - GND/ORIC for sponsors -> API
+  -->
 
   <xed:template id="type">
     <div class="digibib-publication">
