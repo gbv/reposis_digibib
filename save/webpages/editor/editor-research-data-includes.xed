@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
   <!-- TODO
-    - xpath
-    - validation -> embargo-check if pubtype = oae
-    - include mail service for contact
-    - author more beautiful
-    - use placeholder instead of label -> empty label?
+    - xpath -> kathleen
+    - include mail service for contact -> me
+    - author more beautiful -> GND->VIAF->ORCID in Button direkt
+
+    - use placeholder instead of label -> empty label? -> Meeting
     - CC + software-licenses / ': ' 
     - GND/ORIC for sponsors -> API
   -->
@@ -30,12 +30,13 @@
           </div>
           <mir:help-pmud help-text="{i18n:digibib.researchData.type.type.help}" pmud="false" />
         </div>
-        <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
-          <xed:include ref="embargo.datetimepicker" /> <!-- TODO required if publicationType=oae -->
-        </div>
         <xed:validate required="true" i18n="digibib.researchData.type.type.validate" display="global" />
       </xed:bind>
+      <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
+        <mir:textfield xpath="mods:accessCondition[@type='embargo']" label="mir.embargo" help-text="{i18n:mir.help.embargo}" class="required datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
+      </div>
     </div>
+    <xed:validate xpath="//mods:accessCondition[@type='embargo'][../../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='publicationType']='oae']" test="(string-length(.) > 0)" i18n="digibib.researchData.type.embargo.validate" display="global" />
     <script>
       $(document).ready(function() {
         function handlePublicationTypeSelect(value) {
@@ -47,6 +48,7 @@
           } else {
             container.addClass("d-none");
             parent.removeClass("mir-fieldset-content");
+            container.find("input[name*='accessCondition']").val("");
           }
         }
         function init() {
