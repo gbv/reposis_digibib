@@ -2,6 +2,7 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
   <!-- TODO
     - xpath -> kathleen
+    - Type of Resource == Text?
     - include mail service for contact -> me
     - author more beautiful -> GND->VIAF->ORCID in Button direkt
 
@@ -176,7 +177,7 @@
 
   <xed:template id="supporter.repeated">
     <xed:repeat xpath="todo">
-      <mir:textfield xpath="." label="digibib.researchData.involved.supporter" repeat="true" />
+      <mir:textfield xpath="." label="digibib.researchData.involved.supporter" repeat="true" help-text="{i18n:digibib.researchData.involved.supporter.help}" />
     </xed:repeat>
   </xed:template>
 
