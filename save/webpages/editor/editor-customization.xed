@@ -12,6 +12,7 @@
     <xed:include ref="digibib.class.sponsors"            after="digibib.class.location" />
     <xed:remove  ref="openAIRE" />
     <xed:include ref="openAIRE"                          after="digibib.class.sponsors" />
+    <xed:include ref="digibib-research-data-admin"       after="institutes"/>
   </xed:modify>
 
   <xed:modify ref="genres.book">
@@ -212,7 +213,7 @@
     <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
     <xed:remove  ref="abstract.repeated" />
   </xed:modify>
-
+digibib.researchData
   <!-- ========== digibib specific templates ========== -->
   <xed:template id="digibib.ddc.repeat">
     <xed:repeat xpath="mods:classification[@authority='ddc'][@displayLabel='ddc']" min="1" max="10" method="build">
@@ -391,6 +392,21 @@
   </xed:template>
 
 <!-- begin research data -->
+  <xed:template id="digibib-research-data-admin">
+   <fieldset>
+      <legend class="mir-fieldset-legend mb-3">
+        <xed:output i18n="digibib.researchData" />
+      </legend>
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="file-type.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="research-object.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="data-origin.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="methods" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="instruments" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="processing" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="software.repeated" />
+      <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="supporter.repeated" />
+    </fieldset>
+  </xed:template>
 
   <xed:template id="digibib-research-data-type">
     <fieldset>
