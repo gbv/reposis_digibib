@@ -4,6 +4,22 @@
     <label xml:lang="x-uri" text="http://www.mycore.org/classifications/mir_licenses" />
     <label xml:lang="en" text="Licenses" />
     <categories>
+        <category ID="gpl3">
+            <label xml:lang="en" text="GNU GPLv3 (GNU General Public License 3)" />
+            <url xlink:href="https://www.gnu.org/licenses/gpl-3.0" xlink:type="locator" />
+        </category>
+        <category ID="mit">
+            <label xml:lang="en" text="MIT License" />
+            <url xlink:href="https://opensource.org/licenses/MIT" xlink:type="locator" />
+        </category>
+        <category ID="apache2">
+            <label xml:lang="en" text="Aapache License 2" />
+            <url xlink:href="https://www.apache.org/licenses/LICENSE-2.0" xlink:type="locator" />
+        </category>
+        <category ID="eupl_1.2">
+            <label xml:lang="en" text="European Union Public License, version 1.2 (EUPL-1.2)" />
+            <url xlink:href="https://joinup.ec.europa.eu/collection/eupl/eupl-guidelines-faq-infographics" xlink:type="locator" />
+        </category>
         <category ID="rights_reserved">
             <label xml:lang="de" text="Alle Rechte vorbehalten" />
             <label xml:lang="en" text="all rights reserved" />
@@ -14,7 +30,7 @@
         </category>
         <category ID="cc_4.0">
             <label xml:lang="de" text="Creative Commons 4.0 International Lizenzen" />
-            <label xml:lang="en" text="Creative Commons 4.0 International Lizences" />
+            <label xml:lang="en" text="Creative Commons 4.0 International Licenses" />
             <url xlink:href="https://creativecommons.org/licenses/" xlink:type="locator" />
             <category ID="cc_by_4.0">
                 <label xml:lang="en" text="CC BY 4.0" description="Attribution 4.0" />
