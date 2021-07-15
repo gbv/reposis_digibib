@@ -5,19 +5,27 @@
     <label xml:lang="en" text="Licenses" />
     <categories>
         <category ID="gpl3">
+            <label xml:lang="de" text="GNU GPLv3 (GNU General Public License 3)" />
             <label xml:lang="en" text="GNU GPLv3 (GNU General Public License 3)" />
+            <label xml:lang="x-genres" text="research_data" />
             <url xlink:href="https://www.gnu.org/licenses/gpl-3.0" xlink:type="locator" />
         </category>
         <category ID="mit">
+            <label xml:lang="de" text="MIT License" />
             <label xml:lang="en" text="MIT License" />
+            <label xml:lang="x-genres" text="research_data" />
             <url xlink:href="https://opensource.org/licenses/MIT" xlink:type="locator" />
         </category>
         <category ID="apache2">
-            <label xml:lang="en" text="Aapache License 2" />
+            <label xml:lang="de" text="Apache License 2" />
+            <label xml:lang="en" text="Apache License 2" />
+            <label xml:lang="x-genres" text="research_data" />
             <url xlink:href="https://www.apache.org/licenses/LICENSE-2.0" xlink:type="locator" />
         </category>
         <category ID="eupl_1.2">
+            <label xml:lang="de" text="European Union Public License, version 1.2 (EUPL-1.2)" />
             <label xml:lang="en" text="European Union Public License, version 1.2 (EUPL-1.2)" />
+            <label xml:lang="x-genres" text="research_data" />
             <url xlink:href="https://joinup.ec.europa.eu/collection/eupl/eupl-guidelines-faq-infographics" xlink:type="locator" />
         </category>
         <category ID="rights_reserved">
