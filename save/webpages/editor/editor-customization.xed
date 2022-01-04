@@ -189,14 +189,40 @@
     <xed:remove  ref="related.item.link" />
     <xed:remove  ref="institutes" />
     <xed:remove  ref="comment" />
-
-    <xed:include ref="digibib-research-data-type" />
-    <xed:include ref="digibib-research-data-general" />
-    <xed:include ref="digibib-research-data-involved" />
-    <xed:include ref="digibib-research-data-description" />
-    <xed:include ref="digibib-research-data-license" />
-    <xed:include ref="digibib-research-data-other" />
+    <xed:include ref="digibib-research-data" />
   </xed:modify>
+
+  <xed:template id="digibib-research-data">
+    <div class="card">
+      <h5 class="card-header">
+        <a data-toggle="collapse" href="#basic" role="button" aria-expanded="false" aria-controls="basic" style="color: black; text-decoration:none;">
+          Grundlegende Metadaten
+        </a>
+      </h5>
+      <div id="basic" class="collapse show">
+        <div class="card card-body">
+          <xed:include ref="digibib-research-data-type" />
+          <xed:include ref="digibib-research-data-general" />
+          <xed:include ref="digibib-research-data-involved" />
+          <xed:include ref="digibib-research-data-description" />
+          <xed:include ref="digibib-research-data-license" />
+          <xed:include ref="digibib-research-data-other" />
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h5 class="card-header">
+        <a data-toggle="collapse" href="#code-meta" role="button" aria-expanded="false" aria-controls="code-meta" style="color: black; text-decoration:none;">
+          CodeMeta
+        </a>
+      </h5>
+    </div>
+    <div id="code-meta" class="collapse">
+      <div class="card card-body">
+        TODO
+      </div>
+    </div>
+  </xed:template>
 
   <xed:modify ref="genres.lecture">
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
