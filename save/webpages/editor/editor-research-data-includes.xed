@@ -11,60 +11,6 @@
     - GND/ORIC for sponsors -> API
   -->
 
-  <xed:template id="type">
-    <div class="digibib-publication">
-      <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='publicationType']">
-        <div class="row form-group required {$xed-validation-marker}">
-          <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="digibib.researchData.type.type" />
-          </label>
-          <div class="col-md-6">
-            <div class="controls">
-              <select class="form-control form-control-inline digibib-publication-type-select">
-                <option value="">
-                  <xed:output i18n="mir.select" />
-                </option>
-                <option value="oa"><xed:output i18n="digibib.researchData.type.type.openAccess" /></option>
-                <option value="oae"><xed:output i18n="digibib.researchData.type.type.openAccessEmbago" /></option>
-              </select>
-            </div>
-          </div>
-          <mir:help-pmud help-text="{i18n:digibib.researchData.type.type.help}" pmud="false" />
-        </div>
-        <xed:validate required="true" i18n="digibib.researchData.type.type.validate" display="global" />
-      </xed:bind>
-      <div class="digibib-publication-embargo-container mir-fieldset-content d-none">
-        <mir:textfield xpath="mods:accessCondition[@type='embargo']" label="mir.embargo" help-text="{i18n:mir.help.embargo}" class="required datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
-      </div>
-    </div>
-    <xed:validate xpath="//mods:accessCondition[@type='embargo'][../../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='publicationType']='oae']" test="(string-length(.) > 0)" i18n="digibib.researchData.type.embargo.validate" display="global" />
-    <script>
-      $(document).ready(function() {
-        function handlePublicationTypeSelect(value) {
-          const parent = $(".digibib-publication");
-          const container = $(".digibib-publication-embargo-container");
-          if (value == "oae") {
-            container.removeClass("d-none");
-            parent.addClass("mir-fieldset-content");
-          } else {
-            container.addClass("d-none");
-            parent.removeClass("mir-fieldset-content");
-            container.find("input[name*='accessCondition']").val("");
-          }
-        }
-        function init() {
-          const publicationType = $(".digibib-publication-type-select").val();
-          handlePublicationTypeSelect(publicationType);
-        }
-        $("body").on("change", ".digibib-publication-type-select", function () {
-          const value = $(this).val();
-          handlePublicationTypeSelect(value);
-        });
-        init();
-      });
-    </script>
-  </xed:template>
-    
   <xed:template id="original-title">
     <xed:bind xpath="mods:titleInfo">
       <div class="mir-fieldset-content">
@@ -113,7 +59,6 @@
       </div>
     </xed:repeat>
   </xed:template>
-  <!-- -->
 
   <xed:template id="abstract">
     <mir:htmlArea xpath="mods:abstract[not(@xml:lang) or @xml:lang=../mods:language/mods:languageTerm[@authority='rfc5646' and @type='code']]" label="digibib.researchData.general.abstract" help-text="{i18n:mir.help.abstract}" rows="5" required="true" class="required" required-i18n="digibib.researchData.general.abstract.validation" />
@@ -137,6 +82,33 @@
     </xed:bind>
   </xed:template>
 
+  <xed:template id="identifier.repeated">
+    <xed:repeat xpath="mods:identifier" min="1" max="10">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="digibib.researchData.identifier" />
+        </label>
+        <div class="col-md-2" style="padding-right: 2px">
+          <xed:bind xpath="@type" name="type">
+            <select class="form-control identifierSelect">
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:identifier" />
+              <xed:load-resource name="identifier" uri="classification:metadata:-1:children:identifier" />
+              <xed:if test="not($identifier//category[@ID=$type]) and not($type='')">
+                <option value="{$type}" selected="">
+                  <xed:output value="$type" i18n="mir.identifier.other" />
+                </option>
+              </xed:if>
+            </select>
+          </xed:bind>
+        </div>
+        <div class="col-md-4" style="padding-left: 2px">
+          <input type="text" size="30" class="form-control form-control-inline" />
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.identifier}" pmud="true" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
   <xed:template id="person.repeated">
     <xed:repeat xpath="mods:name[@type='personal'  or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))]" min="1" max="100">
       <xed:bind xpath="@type" initially="personal"/>
@@ -145,9 +117,9 @@
           <xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
             <div class="form-group row">
               <xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
-                <div class="col-md-3" style="text-align:right; font-weight:bold;">
+                <div class="col-md-3">
                   <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']" initially="aut">
-                    <select class="form-control form-control-inline">
+                    <select class="form-control form-control-inline" style="text-align:right; font-weight:bold;">
                       <option value="cre">
                         <xed:output i18n="digibib.researchData.involved.person.role.creator" />
                       </option>
@@ -190,7 +162,7 @@
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="supporter.repeated">
+  <xed:template id="supporter.repeated"> <!-- TODO -->
     <xed:repeat xpath="todo">
       <mir:textfield xpath="." label="digibib.researchData.involved.supporter" repeat="true" help-text="{i18n:digibib.researchData.involved.supporter.help}" />
     </xed:repeat>
@@ -198,68 +170,81 @@
 
   <xed:template id="project">
     <div class="digibib-project"> 
-      <div class="row form-group">
+      <div class="form-group row d-flex align-items-center">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="digibib.researchData.involved.project.type" />
         </label>
-        <div class="col-md-6">
-          <div class="controls">
-            <xed:bind xpath="type">
-              <select class="form-control form-control-inline digibib-project-type-select">
-                <option value="">
-                  <xed:output i18n="mir.select.optional" />
-                </option>
-                <option value="oaire">
-                  OpenAIRE
-                </option>
-              </select>
-            </xed:bind>
+        <div class="col-md-6 controls">
+          <div class="row">
+            <div class="col">
+              <xed:bind xpath="type">
+                <select class="form-control form-control-inline digibib-project-type-select">
+                  <option value="">
+                    <xed:output i18n="mir.select.optional" />
+                  </option>
+                  <option value="openAIRE">
+                    OpenAIRE
+                  </option>
+                </select>
+              </xed:bind>
+            </div>
           </div>
-        </div>
-        <mir:help-pmud pmud="false" /> 
-      </div>
-      <div class="digibib-project-openAIRE-container mir-fieldset-content d-none">
-        <mir:textfield.nobind id="name" label="mir.project.name" help-text="{i18n:mir.help.project.name}" autocomplete="off" />
-        <mir:textfield.nobind id="acronym" label="mir.project.acronym" help-text="{i18n:mir.help.project.acronym}" autocomplete="off" />
-        <div class="form-group row">
-          <label class="col-md-3 col-form-label text-right" />
-          <div class="col-md-6">
-            <div class="form-row">
-              <div class="col-md-4">
+          <div id="openAIRE" class="digibib-project-container mir-openAIRE-container d-none" data-help="HELP!!!">
+            <div class="row">
+              <div class="col">
+                <input type="text" id="name" class="form-control form-control-inline" placeholder="{i18n:mir.project.name}" autocomplete="off" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" id="acronym" class="form-control form-control-inline" placeholder="{i18n:mir.project.acronym}" autocomplete="off" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4" style="padding-right:0px">
                 <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.grantID}" />
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4" style="padding-left:4px; padding-right:4px">
                 <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.programmID}" />
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4" style="padding-left:0px;">
                 <input type="text" class="form-control inputWarning" name="" placeholder="{i18n:mir.project.sponsor.organisationID}" />
               </div>
             </div>
+            <xed:bind xpath="mods:openAireID">
+              <input type="hidden" />
+            </xed:bind>
           </div>
-          <mir:help-pmud help-text="{i18n:mir.help.project.grant}" pmud="false" />
         </div>
-        <xed:bind xpath="mods:openAireID">
-          <input type="hidden" />
-        </xed:bind>
+        <mir:help-pmud help-text="{i18n:digibib.researchData.description.fileType.help}" pmud="false" />
       </div>
     </div>
     <script type="text/javascript" src="{$WebApplicationBaseURL}js/mir/openaire.min.js" />
     <script>
+      const parent = $(".digibib-project");
+      const projectContainer = parent.find(".digibib-project-container");
+      const infoButton = parent.find(".info-button");
+      let defaultHelpText = "";
       $(document).ready(function() {
         function handleProjectTypeSelect(value) {
-          const parent = $(".digibib-project");
-          const container = $(".digibib-project-openAIRE-container");
-          if (value == "oaire") {
-            container.removeClass("d-none");
-            parent.addClass("mir-fieldset-content");
+          if (value !== "") {
+            projectContainer.addClass("d-none");
+            const section = parent.find("#" + value);
+            section.removeClass("d-none");
+            parent.addClass("mir-fieldset-content-centered");
+            infoButton.attr("data-content", section.attr("data-help"));
           } else {
-            container.addClass("d-none");
-            parent.removeClass("mir-fieldset-content");
+            projectContainer.addClass("d-none");
+            infoButton.attr("data-content", defaultHelpText);
+            parent.removeClass("mir-fieldset-content-centered");
           }
         }
         function init() {
+          defaultHelpText = infoButton.attr("data-content");
           const projectType = $(".digibib-project-type-select").val();
-          handleProjectTypeSelect(projectType);
+          if (projectType !== "") {
+            handleProjectTypeSelect(projectType);
+          }
         }
         $("body").on("change", ".digibib-project-type-select", function () {
           const value = $(this).val();
@@ -273,53 +258,69 @@
   <xed:template id="file-type.repeated">
     <xed:load-resource name="file_types" uri="classification:metadata:-1:children:mir_filetype" />
     <xed:repeat xpath="mods:note[@type='file type']" min="1" max="10">
-      <div class="mir-fieldset-content">
-        <div class="form-group row">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="digibib.researchData.description.fileType" />
           </label>
-          <div class="col-md-6">
-            <div class="controls">
-              <xed:bind xpath="@altRepGroup" initially="">
-                <select class="form-control form-control-inline">
-                  <option value="">
-                    <xed:output i18n="mir.select.optional" />
-                  </option>
-                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:file_types" />
-                </select>
-              </xed:bind>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <textarea class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.fileType.description}" rows="2" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@altRepGroup" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="mir.select.optional" />
+                    </option>
+                    <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:file_types" />
+                  </select>
+                </xed:bind>
+              </div>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.fileType.help}" /> 
+          <mir:help-pmud help-text="{i18n:digibib.researchData.description.fileType.help}" pmud="true" />
         </div>
-        <mir:textarea xpath="." label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.fileType.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="research-object.repeated">
+  <xed:template id="file-type.repeated">
     <xed:load-resource name="research_objects" uri="classification:metadata:-1:children:research_objects" />
     <xed:repeat xpath="mods:note[@type='research object']" min="1" max="10">
-      <div class="mir-fieldset-content">
-        <div class="row form-group">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="digibib.researchData.description.researchObject" />
           </label>
-          <div class="col-md-6">
-            <div class="controls">
-              <xed:bind xpath="@altRepGroup" initially="">
-                <select class="form-control form-control-inline">
-                  <option value="">
-                    <xed:output i18n="mir.select.optional" />
-                  </option>
-                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:research_objects" />
-                </select>
-              </xed:bind>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <textarea class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.researchObject.description}" rows="2" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@altRepGroup" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="mir.select.optional" />
+                    </option>
+                    <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:research_objects" />
+                  </select>
+                </xed:bind>
+              </div>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.researchObject.help}" /> 
+          <mir:help-pmud help-text="{i18n:digibib.researchData.description.researchObject.help}" pmud="true" />
         </div>
-        <mir:textarea xpath="." label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.researchObject.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -327,56 +328,90 @@
   <xed:template id="data-origin.repeated">
     <xed:load-resource name="data_origins" uri="classification:metadata:-1:children:data_origins" />
     <xed:repeat xpath="mods:note[@type='data origin']" min="1" max="10">
-      <div class="mir-fieldset-content">
-        <div class="row form-group">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="digibib.researchData.description.dataOrigin" />
           </label>
-          <div class="col-md-6">
-            <div class="controls">
-              <xed:bind xpath="@altRepGroup" initially="">
-                <select class="form-control form-control-inline">
-                  <option value="">
-                    <xed:output i18n="mir.select.optional" />
-                  </option>
-                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:data_origins" />
-                </select>
-              </xed:bind>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <textarea class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.dataOrigin.description}" rows="2" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@altRepGroup" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="mir.select.optional" />
+                    </option>
+                    <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:data_origins" />
+                  </select>
+                </xed:bind>
+              </div>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.dataOrigin.help}" /> 
+          <mir:help-pmud help-text="{i18n:digibib.researchData.description.dataOrigin.help}" pmud="true" />
         </div>
-        <mir:textarea xpath="." label="digibib.researchData.description.description" help-text="{i18n:digibib.researchData.description.dataOrigin.description.help}" rows="2" />
       </div>
     </xed:repeat>
   </xed:template>
 
-  <xed:template id="software.repeated"> <!-- TODO -->
+  <xed:template id="software.repeated">
     <xed:load-resource name="software_types" uri="classification:metadata:-1:children:software_types" />
     <xed:repeat xpath="mods:test" min="1" max="10">
-      <div class="mir-fieldset-content">
-        <div class="form-group row">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="digibib.researchData.description.software" />
           </label>
-          <div class="col-md-6">
-            <div class="controls">
-              <xed:bind xpath="type">
-                <select class="form-control form-control-inline">
-                  <option value="">
-                    <xed:output i18n="mir.select.optional" />
-                  </option>
-                  <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:software_types" />
-                </select>
-              </xed:bind>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.software.name}" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.software.version}" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@altRepGroup" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="mir.select.optional" />
+                    </option>
+                    <xed:include uri="xslStyle:items2options:classification:editorComplete:1:children:software_types" />
+                  </select>
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.software.nameAlternative}" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.description.software.versionAlternative}" />
+                </xed:bind>
+              </div>
             </div>
           </div>
-          <mir:help-pmud pmud="true" help-text="{i18n:digibib.researchData.description.software.help}"/> 
+          <mir:help-pmud help-text="{i18n:digibib.researchData.description.software.help}" pmud="true" />
         </div>
-        <mir:textfield xpath="test" label="digibib.researchData.description.software.name" />
-        <mir:textfield xpath="test" label="digibib.researchData.description.software.version" />
-        <mir:textfield xpath="test" label="digibib.researchData.description.software.name" placeholder="{i18n:digibib.researchData.description.software.alternative}"/>
-        <mir:textfield xpath="test" label="digibib.researchData.description.software.version" placeholder="{i18n:digibib.researchData.description.software.alternative}" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -403,13 +438,95 @@
   </xed:template>
 
   <!-- same as 'comment' other naming -->
-  <xed:template id="comment-admin">
-    <mir:textarea xpath="mods:note[@type='admin']" label="digibib.researchData.other.commentAdmin" help-text="{i18n:digibib.researchData.other.commentAdmin.help}" rows="2" />
+  <xed:template id="comment">
+    <xed:repeat xpath="mods:note" min="1" max="10">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="digibib.researchData.other.comment" />
+          </label>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@type" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="digibib.researchData.select.option.choose" />
+                    </option>
+                    <option value="content">
+                      <xed:output i18n="digibib.researchData.other.comment.select.option.public" />
+                    </option>
+                    <option value="admin">
+                      <xed:output i18n="digibib.researchData.other.comment.select.option.admin" />
+                    </option>
+                  </select>
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <textarea class="form-control form-control-inline" rows="2" />
+                </xed:bind>
+              </div>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:digibib.researchData.other.comment.help}" pmud="true" />
+        </div>
+      </div>
+    </xed:repeat>
   </xed:template>
 
-  <xed:template id="comment-public">
-    <mir:textarea xpath="mods:note[@type='content']" label="digibib.researchData.other.commentPublic" help-text="{i18n:digibib.researchData.other.commentPublic.help}" rows="2" />
+  <xed:template id="relatedPublication.repeated">
+    <xed:repeat xpath="mods:test" min="1" max="10">
+      <div class="mir-fieldset-content-centered">
+        <div class="form-group row d-flex align-items-center">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="digibib.researchData.relatedPublication" />
+          </label>
+          <div class="col-md-6 controls">
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath="@type" initially="">
+                  <select class="form-control form-control-inline">
+                    <option value="">
+                      <xed:output i18n="digibib.researchData.select.option.choose" />
+                    </option>
+                    <option value="publication">
+                      <xed:output i18n="digibib.researchData.relatedPublication.select.option.publication" />
+                    </option>
+                    <option value="research data">
+                      <xed:output i18n="digibib.researchData.relatedPublication.select.option.researchData" />
+                    </option>
+                    <option value="research data software">
+                      <xed:output i18n="digibib.researchData.relatedPublication.select.option.researchDataSoftware" />
+                    </option>
+                    <option value="presentation">
+                      <xed:output i18n="digibib.researchData.relatedPublication.select.option.presentation" />
+                    </option>
+                  </select>
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.relatedPublication.name}" />
+                </xed:bind>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <xed:bind xpath=".">
+                  <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.relatedPublication.link}" />
+                </xed:bind>
+              </div>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:digibib.researchData.relatedPublication.help}" pmud="true" />
+        </div>
+      </div>
+    </xed:repeat>
   </xed:template>
-
 </xed:template>
 

@@ -13,6 +13,21 @@
     font-weight: 700;
   }
 
+  .mir-fieldset-content-centered > div > .controls {
+    border-style: solid;
+    border-width: 0px 0px 0px 2px;
+    border-color: #ccc;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .mir-fieldset-content-centered>div>.controls>.digibib-project-container>.row:not(:last-child),
+  .mir-fieldset-content-centered>div>.controls>.row:not(:last-child) {
+     padding-bottom:4px
+  }
+
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
