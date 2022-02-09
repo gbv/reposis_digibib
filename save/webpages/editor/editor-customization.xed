@@ -197,10 +197,10 @@
     <xed:remove  ref="related.item.link" />
     <xed:remove  ref="institutes" />
     <xed:remove  ref="comment" />
-    <xed:include ref="digibib-research-data" />
+    <xed:include ref="digibib-research-data-a" />
   </xed:modify>
 
-  <xed:template id="digibib-research-data">
+  <xed:template id="digibib-research-data-a">
     <div>TODO Einleitung</div>
     <div class="card">
       <h5 class="card-header">
@@ -208,13 +208,12 @@
           Grundlegende Metadaten
         </a>
       </h5>
-
       <div id="basic" class="collapse show metadata-box">
         <div class="card card-body">
           <xed:include ref="digibib-research-data-general" />
-          <!--<xed:include ref="digibib-research-data-involved" />-->
+          <xed:include ref="digibib-research-data-involved" />
           <xed:include ref="digibib-research-data-license" />
-          <!--<xed:include ref="digibib-research-data-other" />-->
+          <xed:include ref="digibib-research-data-other" />
         </div>
       </div>
     </div>
@@ -237,7 +236,49 @@
         </a>
       </h5>
       <div id="code-meta" class="collapse metadata-box">
-        <xed:include ref="digibib-research-data-codemeta" />
+        <xed:bind xpath="mods:extension">
+          <xed:bind xpath="rdf:RDF" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+            xmlns:codemeta="https://codemeta.github.io/terms/">
+            <xed:bind xpath="rdf:Description[@nodeID='codemeta-base']"
+              rdf:nodeID="codemeta">
+              <div class="card card-body">
+                <fieldset>
+                  <legend class="mir-fieldset-legend mb-3">
+                    <xed:output i18n="digibib.researchData.codeMeta.facts" />
+                  </legend>
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.developement-status" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.version" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.application-category" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.application-sub-category" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.programming-language" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.operating-system" />
+               </fieldset>
+                <fieldset>
+                  <legend class="mir-fieldset-legend mb-3">
+                    <xed:output i18n="digibib.researchData.codeMeta.instance" />
+                  </legend>
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.processor-requirements" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.memory-requirements" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.storage-requirements" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.runtime-platform" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.software-requirements" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.software-suggestions" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.permissions" />
+               </fieldset>
+                <fieldset>
+                  <legend class="mir-fieldset-legend mb-3">
+                    <xed:output i18n="digibib.researchData.codeMeta.other" />
+                  </legend>
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.code-repository" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.build-instructions" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.release-notes" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.cont-integration" />
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="codemeta.issue-tracker" />
+               </fieldset>
+              </div>
+            </xed:bind>
+          </xed:bind>
+        </xed:bind>
       </div>
     </div>
     <script>
@@ -252,154 +293,6 @@
         }
       }
     </script>
-    <button type="submit" xed:target="debug" />
-  </xed:template>
-
-  <xed:template id="digibib-research-data-codemeta">
-    <xed:bind xpath="mods:extension">
-      <xed:bind xpath="rdf:RDF" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/" xmlns:codemeta="https://codemeta.github.io/terms/">
-        <xed:bind xpath="rdf:Description[@nodeID='codemeta-base']" rdf:nodeID="codemeta">
-          <div class="card card-body">
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.facts" />
-              </legend>
-              <xed:bind xpath="codemeta:developmentStatus" initially="">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label text-right">
-                    <xed:output i18n="digibib.researchData.codeMeta.developmentStatus" />
-                  </label>
-                  <div class="col-md-6">
-                    <select class="form-control form-control-inline">
-                      <option value="">
-                        <xed:output i18n="mir.select" />
-                      </option>
-                      <option value="concept"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.concept" /></option>
-                      <option value="wip"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.wip" /></option>
-                      <option value="suspended"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.suspended" /></option>
-                      <option value="abandoned"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.abandoned" /></option>
-                      <option value="active"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.active" /></option>
-                      <option value="inactive"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.inactive" /></option>
-                      <option value="unsupported"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.unsupported" /></option>
-                      <option value="moved"><xed:output i18n="digibib.researchData.codeMeta.developmentStatus.option.moved" /></option>
-                    </select>
-                  </div>
-                  <mir:help-pmud help-text="{i18n:digibib.researchData.codeMeta.developmentStatus.help}" pmud="false" />
-                </div>
-              </xed:bind>
-              <mir:textfield xpath="schema:version" label="digibib.researchData.codeMeta.versionNumber" help-text="{i18n:digibib.researchData.codeMeta.versionNumber.help}" />
-              <mir:textfield xpath="schema:applicationCategory" label="digibib.researchData.codeMeta.applicationCategory" help-text="{i18n:digibib.researchData.codeMeta.applicationCategory.help}" repeat="true" />
-              <mir:textfield xpath="schema:applicationSubCategory" label="digibib.researchData.codeMeta.applicationSubCategory" help-text="{i18n:digibib.researchData.codeMeta.applicationSubCategory.help}" repeat="true" />
-              <mir:textfield xpath="schema:programmingLanguage" label="digibib.researchData.codeMeta.programmingLanguage" help-text="{i18n:digibib.researchData.codeMeta.programmingLanguage.help}" repeat="true" />
-              <mir:textfield xpath="schema:operatingSystem" label="digibib.researchData.codeMeta.operatingSystem" help-text="{i18n:digibib.researchData.codeMeta.programmingLanguage.help}" repeat="true" />
-            </fieldset>
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.instance" />
-              </legend>
-              <mir:textfield xpath="schema:processorRequirements" label="digibib.researchData.codeMeta.processorRequirements" help-text="{i18n:digibib.researchData.codeMeta.processorRequirements.help}" repeat="true" />
-              <mir:textfield xpath="schema:memoryRequirements" label="digibib.researchData.codeMeta.memoryRequirements" help-text="{i18n:digibib.researchData.codeMeta.memoryRequirements.help}" repeat="true" />
-              <mir:textfield xpath="schema:storageRequirements" label="digibib.researchData.codeMeta.storageRequirements" help-text="{i18n:digibib.researchData.codeMeta.storageRequirements.help}" repeat="false" />
-              <mir:textfield xpath="schema:operatingSystem" label="digibib.researchData.codeMeta.operatingSystem" help-text="{i18n:digibib.researchData.codeMeta.operatingSystem.help}" repeat="true" />
-              <mir:textfield xpath="schema:runtimePlatform" label="digibib.researchData.codeMeta.runtimePlatform" help-text="{i18n:digibib.researchData.codeMeta.runtimePlatform.help}" repeat="true" />
-              <mir:textfield xpath="schema:softwareRequirements" label="digibib.researchData.codeMeta.softwareRequirements" help-text="{i18n:digibib.researchData.codeMeta.softwareRequirements.help}" repeat="true" />
-
-              <xed:repeat xpath="schema:softwareRequirements">
-                <xed:bind xpath="rdf:Description">
-                  <div class="mir-fieldset-content-centered">
-                    <div class="form-group row d-flex align-items-center">
-                      <label class="col-md-3 col-form-label text-right">
-                        <xed:output i18n="digibib.researchData.codeMeta.softwareRequirements" />
-                      </label>
-                      <div class="col-md-6 controls">
-                        <div class="row">
-                          <div class="col">
-                            <xed:bind xpath="schema:name">
-                              <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.codeMeta.softwareRequirements.name}"/>
-                            </xed:bind>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <xed:bind xpath="schema:codeRepository">
-                              <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.codeMeta.softwareRequirements.link}" />
-                            </xed:bind>
-                          </div>
-                        </div>
-                      </div>
-                      <mir:help-pmud help-text="{i18n:digibib.researchData.codeMeta.softwareRequirements.help}" pmud="true" />
-                    </div>
-                  </div>
-                </xed:bind>
-              </xed:repeat>
-              <xed:repeat xpath="codemeta:softwareSuggestions">
-                <xed:bind xpath="rdf:Description">
-                  <div class="mir-fieldset-content-centered">
-                    <div class="form-group row d-flex align-items-center">
-                      <label class="col-md-3 col-form-label text-right">
-                        <xed:output i18n="digibib.researchData.codeMeta.softwareSuggestions" />
-                      </label>
-                      <div class="col-md-6 controls">
-                        <div class="row">
-                          <div class="col">
-                            <xed:bind xpath="schema:name">
-                              <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.codeMeta.softwareSuggestions.name}"/>
-                            </xed:bind>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <xed:bind xpath="schema:codeRepository">
-                              <input type="text" class="form-control form-control-inline" placeholder="{i18n:digibib.researchData.codeMeta.softwareSuggestions.link}" />
-                            </xed:bind>
-                          </div>
-                        </div>
-                      </div>
-                      <mir:help-pmud help-text="{i18n:digibib.researchData.codeMeta.softwareSuggestions.help}" pmud="true" />
-                    </div>
-                  </div>
-                </xed:bind>
-              </xed:repeat>
-              <mir:textfield xpath="schema:permissions" label="digibib.researchData.codeMeta.permissions" help-text="{i18n:digibib.researchData.codeMeta.permissions.help}" repeat="true" />
-            </fieldset>
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.other" />
-              </legend>
-              <xed:repeat xpath="schema:codeRepository">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label text-right">
-                    <xed:output i18n="digibib.researchData.codeMeta.codeRepo" />
-                  </label>
-                  <div class="col-md-6">
-                    <xed:bind xpath="@rdf:resource">
-                      <input type="text" class="form-control" />
-                    </xed:bind>
-                  </div>
-                  <mir:help-pmud help-text="{i18n:digibib.researchData.codeMeta.codeRepository.help}" pmud="true" />
-                </div>
-              </xed:repeat>
-              <mir:textfield xpath="codemeta:buildInstructions/@rdf:resource" label="digibib.researchData.codeMeta.buildInstructions" help-text="{i18n:digibib.researchData.codeMeta.buildInstructions.help}" />
-              <mir:textarea xpath="schema:releaseNotes" label="digibib.researchData.codeMeta.releaseNotes" help-text="{i18n:digibib.researchData.codeMeta.releaseNotes.help}" />
-              <xed:repeat xpath="codemeta:contIntegration">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label text-right">
-                    <xed:output i18n="digibib.researchData.codeMeta.continuousIntegration" />
-                  </label>
-                  <div class="col-md-6">
-                    <xed:bind xpath="@rdf:resource">
-                      <input type="text" class="form-control" />
-                    </xed:bind>
-                  </div>
-                  <mir:help-pmud help-text="{i18n:digibib.researchData.codeMeta.continuousIntegration.help}" pmud="true" />
-                </div>
-              </xed:repeat>
-              <mir:textfield xpath="codemeta:issueTracker/@rdf:resource" label="digibib.researchData.codeMeta.issueTracker" help-text="{i18n:digibib.researchData.codeMeta.issueTracker.help}" />
-            </fieldset>
-          </div>
-        </xed:bind>
-      </xed:bind>
-    </xed:bind>
   </xed:template>
 
   <xed:modify ref="genres.lecture">
@@ -545,7 +438,7 @@
       help-text="{i18n:mir.help.identifier.issn}" />
   </xed:template>
 
-<xed:template id="digibib.thesis.advisor.repeated">
+  <xed:template id="digibib.thesis.advisor.repeated">
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ths']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ths']" />
@@ -553,7 +446,6 @@
       <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
     </mir:person.repeated>
   </xed:template>
-
 
 <!--  TODO: remove me -->
   <xed:template id="workaround.research.data.date.repeated">
@@ -659,7 +551,8 @@
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="rights" />
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="copyright" />
       <div class="digibib-publication-embargo-container">
-        <mir:textfield xpath="mods:accessCondition[@type='embargo']" label="mir.embargo" help-text="{i18n:mir.help.embargo}" class="datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
+        <mir:textfield xpath="mods:accessCondition[@type='embargo']" class="datetimepicker" label="mir.embargo"
+          help-text="{i18n:mir.help.embargo}" placeholder="{i18n:mir.placeholder.date}" />
       </div>
     </fieldset>
   </xed:template>
@@ -676,7 +569,6 @@
       <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-research-data-includes.xed" ref="comment" />
     </fieldset>
   </xed:template>
-
 <!-- end research data -->
 
 </xed:template>
