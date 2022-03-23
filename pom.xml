@@ -28,12 +28,42 @@
   <version>2021.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
+    <!-- we can use single files from main version -->
+    <Mycore.Main.Version>2022.02-SNAPSHOT</Mycore.Main.Version>
   </properties>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+      </plugin>
+      <!-- copy files from mir main version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>resource-dependencies</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.mycore.mir</groupId>
+                  <artifactId>mir-module</artifactId>
+                  <version>${Mycore.Main.Version}</version>
+                  <type>jar</type>
+                  <overWrite>true</overWrite>
+                </artifactItem>
+              </artifactItems>
+              <!-- files comma separated -->
+              <includes>META-INF/resources/content/publish/importPPN.xml</includes>
+              <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
