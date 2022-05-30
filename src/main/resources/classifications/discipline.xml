@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="discipline">
+    <label xml:lang="de" text="Fachrichtung" />
+    <label xml:lang="en" text="discipline" />
+    <categories>
+        <category ID="lectureship">
+            <label xml:lang="de" text="Lehramt" />
+            <label xml:lang="en" text="lectureship" />
+        </category>
+        <category ID="social_sciences">
+            <label xml:lang="de" text="Sozialwissenschaften" />
+            <label xml:lang="en" text="social sciences" />
+        </category>
+        <category ID="arts">
+            <label xml:lang="de" text="Geisteswissenschaften" />
+        </category>
+        <category ID="economics">
+            <label xml:lang="de" text="Wirtschaftswissenschaftliche Kombinationsstudiengänge" />
+        </category>
+        <category ID="computer_science">
+            <label xml:lang="de" text="Informatik" />
+            <label xml:lang="en" text="computer science" />
+        </category>
+        <category ID="engineering">
+            <label xml:lang="en" text="engineering" />
+            <label xml:lang="de" text="Ingenieurwissenschaften" />
+        </category>
+        <category ID="maths">
+            <label xml:lang="de" text="Mathematik" />
+            <label xml:lang="en" text="maths" />
+        </category>
+        <category ID="sciences">
+            <label xml:lang="en" text="sciences" />
+            <label xml:lang="de" text="Naturwissenschaften" />
+        </category>
+    </categories>
+</mycoreclass>

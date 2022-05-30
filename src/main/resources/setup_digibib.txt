@@ -5,3 +5,4 @@ update classification from uri resource:classifications/mir_institutes.xml
 update classification from uri resource:classifications/mir_licenses.xml
 update classification from uri resource:classifications/rfc5646.xml
 update classification from uri resource:classifications/sponsors.xml
+update classification from uri resource:classifications/discipline.xml

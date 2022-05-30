@@ -41,6 +41,8 @@
 
     <xsl:mode on-no-match="shallow-copy"/>
 
+    <xsl:key name="logDiv" match="mets:div" use="@ID"/>
+
     <xsl:template match="/mycoreobject">
         <xsl:if test="count(structure/derobjects/derobject)=0">
             <xsl:message terminate="yes">Object has no derivates!</xsl:message>
@@ -82,80 +84,97 @@
 
     <xsl:template match="mets:mets">
         <xsl:param name="derID"/>
+        <xsl:variable name="result">
+            <xsl:copy>
+                <mets:amdSec ID="amd_{$objectID}">
+                    <mets:rightsMD ID="rightsMD_263566811">
+                        <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS">
+                            <mets:xmlData>
+                                <dv:rights xmlns:dv="http://dfg-viewer.de/">
+                                    <!-- owner name -->
+                                    <dv:owner>
+                                        <xsl:value-of select="$MIR.DFGViewer.DV.Owner"/>
+                                    </dv:owner>
+                                    <dv:ownerLogo>
+                                        <xsl:value-of select="$MIR.DFGViewer.DV.OwnerLogo"/>
+                                    </dv:ownerLogo>
+                                    <dv:ownerSiteURL>
+                                        <xsl:value-of select="$MIR.DFGViewer.DV.OwnerSiteURL"/>
+                                    </dv:ownerSiteURL>
+                                    <dv:ownerContact/>
+                                    <dv:license>
+                                        <xsl:choose>
+                                            <xsl:when
+                                                    test="$object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']">
+                                                <xsl:variable name="licenseClass" select="'mir_licenses'"/>
+                                                <xsl:variable name="licenseId"
+                                                              select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink-href, '#')"/>
+                                                <xsl:value-of
+                                                        select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]/label[@xml:lang=$CurrentLang or position()=0]"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$license"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </dv:license>
+                                </dv:rights>
+                            </mets:xmlData>
+                        </mets:mdWrap>
+                    </mets:rightsMD>
+                    <mets:digiprovMD>
+                        <xsl:attribute name="ID">
+                            <xsl:value-of select="concat('digiprovMD',$objectID)"/>
+                        </xsl:attribute>
+                        <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVLINKS">
+                            <mets:xmlData>
+                                <dv:links xmlns:dv="http://dfg-viewer.de/">
+                                    <xsl:variable name="ppn"
+                                                  select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:identifier[@type='uri'], ':ppn:')"/>
+                                    <xsl:if test="$ppn">
+                                        <dv:reference>
+                                            <xsl:variable name="catalogURL"
+                                                          select="concat(substring-before($MIR.DFGViewer.DV.OPAC.CATALOG.URL, '{PPN}'), $ppn , substring-after($MIR.DFGViewer.DV.OPAC.CATALOG.URL, '{PPN}'))"/>
+                                            <xsl:variable name="uriResolved"
+                                                          select="document(concat($catalogURL,'?format=xml'))//rdf:Description[@rdf:about=normalize-space($catalogURL)]/*[local-name() = 'page']/@rdf:resource"/>
+                                            <xsl:value-of select="$uriResolved"/>
+                                        </dv:reference>
+                                    </xsl:if>
+                                    <dv:presentation>
+                                        <xsl:value-of select="concat($WebApplicationBaseURL,'receive/',$objectID)"/>
+                                    </dv:presentation>
+                                </dv:links>
+                            </mets:xmlData>
+                        </mets:mdWrap>
+                    </mets:digiprovMD>
+                </mets:amdSec>
+                <mets:dmdSec ID="dmd_{$objectID}">
+                    <mets:mdWrap MDTYPE="MODS">
+                        <mets:xmlData>
+                            <xsl:apply-templates select="document(concat('xslTransform:mods:mcrobject:', $objectID))"/>
+                        </mets:xmlData>
+                    </mets:mdWrap>
+                </mets:dmdSec>
+                <xsl:apply-templates>
+                    <xsl:with-param name="derID" select="$derID"/>
+                </xsl:apply-templates>
+            </xsl:copy>
+        </xsl:variable>
+        <xsl:apply-templates select="$result" mode="filter" />
+    </xsl:template>
+
+    <xsl:template match="@*|node()" mode="filter">
         <xsl:copy>
-            <mets:amdSec ID="amd_{$objectID}">
-                <mets:rightsMD ID="rightsMD_263566811">
-                    <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS">
-                        <mets:xmlData>
-                            <dv:rights xmlns:dv="http://dfg-viewer.de/">
-                                <!-- owner name -->
-                                <dv:owner>
-                                    <xsl:value-of select="$MIR.DFGViewer.DV.Owner"/>
-                                </dv:owner>
-                                <dv:ownerLogo>
-                                    <xsl:value-of select="$MIR.DFGViewer.DV.OwnerLogo"/>
-                                </dv:ownerLogo>
-                                <dv:ownerSiteURL>
-                                    <xsl:value-of select="$MIR.DFGViewer.DV.OwnerSiteURL"/>
-                                </dv:ownerSiteURL>
-                                <dv:ownerContact/>
-                                <dv:license>
-                                    <xsl:choose>
-                                        <xsl:when
-                                                test="$object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']">
-                                            <xsl:variable name="licenseClass" select="'mir_licenses'"/>
-                                            <xsl:variable name="licenseId"
-                                                          select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink-href, '#')"/>
-                                            <xsl:value-of
-                                                    select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]/label[@xml:lang=$CurrentLang or position()=0]"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:value-of select="$license"/>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </dv:license>
-                            </dv:rights>
-                        </mets:xmlData>
-                    </mets:mdWrap>
-                </mets:rightsMD>
-                <mets:digiprovMD>
-                    <xsl:attribute name="ID">
-                        <xsl:value-of select="concat('digiprovMD',$objectID)"/>
-                    </xsl:attribute>
-                    <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVLINKS">
-                        <mets:xmlData>
-                            <dv:links xmlns:dv="http://dfg-viewer.de/">
-                                <xsl:variable name="ppn"
-                                              select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:identifier[@type='uri'], ':ppn:')"/>
-                                <xsl:if test="$ppn">
-                                    <dv:reference>
-                                        <xsl:variable name="catalogURL"
-                                                      select="concat(substring-before($MIR.DFGViewer.DV.OPAC.CATALOG.URL, '{PPN}'), $ppn , substring-after($MIR.DFGViewer.DV.OPAC.CATALOG.URL, '{PPN}'))"/>
-                                        <xsl:variable name="uriResolved"
-                                                      select="document(concat($catalogURL,'?format=xml'))//rdf:Description[@rdf:about=normalize-space($catalogURL)]/*[local-name() = 'page']/@rdf:resource"/>
-                                        <xsl:value-of select="$uriResolved"/>
-                                    </dv:reference>
-                                </xsl:if>
-                                <dv:presentation>
-                                    <xsl:value-of select="concat($WebApplicationBaseURL,'receive/',$objectID)"/>
-                                </dv:presentation>
-                            </dv:links>
-                        </mets:xmlData>
-                    </mets:mdWrap>
-                </mets:digiprovMD>
-            </mets:amdSec>
-            <mets:dmdSec ID="dmd_{$objectID}">
-                <mets:mdWrap MDTYPE="MODS">
-                    <mets:xmlData>
-                        <xsl:apply-templates select="document(concat('xslTransform:mods:mcrobject:', $objectID))"/>
-                    </mets:xmlData>
-                </mets:mdWrap>
-            </mets:dmdSec>
-            <xsl:apply-templates>
-                <xsl:with-param name="derID" select="$derID"/>
-            </xsl:apply-templates>
+            <xsl:apply-templates select="@*|node()" mode="filter"/>
         </xsl:copy>
     </xsl:template>
+
+    <xsl:template match="mets:smLink" mode="filter">
+        <xsl:variable name="logDiv" select="key('logDiv', @xlink:to)"/>
+        <xsl:if test="count($logDiv)&gt;0">
+            <xsl:copy-of select="." />
+        </xsl:if>
+    </xsl:template>
+
 
     <xsl:template match="mods:*[(@authority or @authorityURI) and @valueURI and string-length(text())=0]">
         <xsl:copy>
@@ -229,6 +248,51 @@
         </xsl:copy>
     </xsl:template>
 
+    <!-- insert all links to parents log -->
+    <xsl:template match="mets:smLink">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+        <xsl:call-template name="traverseSmLink">
+            <xsl:with-param name="from" select="@xlink:from"/>
+            <xsl:with-param name="to" select="@xlink:to"/>
+        </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template name="traverseSmLink">
+        <xsl:param name="from"/>
+        <xsl:param name="to"/>
+        <xsl:variable name="logDiv" select="key('logDiv', $from)/parent::mets:div/@ID"/>
+        <xsl:if test="$logDiv">
+            <mets:smLink xlink:from="{$logDiv}" xlink:to="{$to}"/>
+            <xsl:call-template name="traverseSmLink">
+                <xsl:with-param name="from" select="$logDiv"/>
+                <xsl:with-param name="to" select="$to"/>
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="mets:structMap[@TYPE='PHYSICAL']/mets:div[@TYPE='physSequence']/mets:div">
+        <xsl:if test="count(mets:fptr)&gt;0">
+            <xsl:variable name="result">
+                <xsl:copy>
+                    <xsl:copy-of select="@*"/>
+                    <xsl:if test="not(@ORDER)">
+                        <xsl:attribute name="ORDER">
+                            <xsl:value-of select="count(preceding-sibling::mets:div)+1"/>
+                        </xsl:attribute>
+                    </xsl:if>
+
+                    <xsl:apply-templates/>
+                </xsl:copy>
+            </xsl:variable>
+
+            <xsl:if test="count($result/mets:div/mets:fptr)&gt;0">
+                <xsl:copy-of select="$result"/>
+            </xsl:if>
+        </xsl:if>
+    </xsl:template>
+
     <xsl:template match="mets:structMap[@TYPE='LOGICAL']/mets:div">
         <xsl:copy>
             <xsl:attribute name="DMDID">
@@ -237,8 +301,12 @@
             <xsl:attribute name="ADMID">
                 <xsl:value-of select="concat('amd_', $objectID)"/>
             </xsl:attribute>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="mets:mptr">
+        <!-- remove em -->
     </xsl:template>
 
 </xsl:stylesheet>

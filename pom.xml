@@ -30,6 +30,8 @@
     <MCR.AppName>digibib</MCR.AppName>
     <!-- we can use single files from main version -->
     <Mycore.Main.Version>2022.02-SNAPSHOT</Mycore.Main.Version>
+    <yarn.version>v1.22.18</yarn.version>
+    <node.version>v14.19.3</node.version>
   </properties>
   <build>
     <plugins>
@@ -63,6 +65,48 @@
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
             </configuration>
           </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <configuration>
+          <nodeVersion>${node.version}</nodeVersion>
+          <yarnVersion>${yarn.version}</yarnVersion>
+          <installDirectory>${settings.localRepository}/node-yarn-${node.version}-${yarn.version}</installDirectory>
+        </configuration>
+        <executions>
+        <execution>
+          <!-- optional: you don't really need execution ids, but it looks nice in your build log. -->
+          <id>install node and yarn</id>
+          <goals>
+            <goal>install-node-and-yarn</goal>
+          </goals>
+          <!-- optional: default phase is "generate-resources" -->
+          <phase>generate-resources</phase>
+        </execution>
+        <execution>
+          <id>yarn-install-module_handbuecher</id>
+          <goals>
+            <goal>yarn</goal>
+          </goals>
+          <phase>process-resources</phase>
+          <configuration>
+            <arguments>install</arguments>
+            <workingDirectory>src/main/vue/modul_handbuecher/</workingDirectory>
+          </configuration>
+        </execution>
+        <execution>
+          <id>yarn-build-modul_handbuecher</id>
+          <goals>
+            <goal>yarn</goal>
+          </goals>
+          <phase>process-resources</phase>
+          <configuration>
+            <arguments>build</arguments>
+            <workingDirectory>src/main/vue/modul_handbuecher/</workingDirectory>
+          </configuration>
+        </execution>
         </executions>
       </plugin>
     </plugins>
@@ -128,7 +172,7 @@
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-base</artifactId>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -139,6 +183,20 @@
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-api</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom2</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>

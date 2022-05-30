@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
+<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir"
+              xmlns:xsl="http://www.mycore.de/xeditor">
 
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
@@ -198,6 +199,25 @@
     <xed:include ref="digibib.abstract.repeated"         after="abstract.repeated" />
     <xed:remove  ref="abstract.repeated" />
   </xed:modify>
+
+  <xed:template id="genres.module_manual">
+    <xed:bind xpath="mods:originInfo[@eventType='publication']/mods:place/mods:placeTerm[@type='text']" initially="Braunschweig" />
+    <xed:bind xpath="mods:language/mods:languageTerm[@authority='rfc5646'][@type='code']" initially="de" />
+    <xed:bind xpath="mods:classification[@authority='ddc'][@displayLabel='ddc']" initially="378" />
+    <xed:bind xpath="mods:accessCondition[@type='restriction on access']" initially="unlimited" />
+    <xed:bind xpath="mods:accessCondition[@type='restriction on access']/@xlink:href" initially="http://www.mycore.org/classifications/mir_access" />
+    <xed:bind xpath="mods:accessCondition[@type='use and reproduction']" initially="rights_reserved" />
+    <xed:bind xpath="mods:accessCondition[@type='use and reproduction']/@xlink:href" initially="http://www.mycore.org/classifications/mir_licenses" />
+    <xed:include ref="title.original" />
+    <xed:include ref="title.translated" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="date.issued.datetimepicker" />
+    <xed:include ref="extent" />
+    <xed:include ref="institutes" />
+    <xed:include ref="digibib.class.discipline" />
+    <xed:include ref="digibib.subject.autocomplete" />
+    <xed:include ref="comment" />
+  </xed:template>
 
 
   <!-- ========== overwrite MIR templates ========== -->
@@ -507,10 +527,50 @@
           <mir:textarea xpath="mods:subTitle" rows="2" label="mir.title.subTitle" help-text="{i18n:mir.help.title.subTitle}" />
           <mir:textfield xpath="mods:partName" rows="2" label="mir.title.partName" help-text="{i18n:mir.help.title.partName}" />
           <mir:textfield xpath="mods:partNumber" rows="2" label="mir.title.partNumber" help-text="{i18n:mir.help.title.partNumber}" />
-          
+
         </div>
       </xed:repeat>
     </fieldset>
+  </xed:template>
+
+  <xsl:template id="digibib.subject.autocomplete">
+    <xed:bind xpath="mods:subject/mods:topic">
+      <div class="form-group row required {$xed-val-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="digibib.subject"/>
+        </label>
+
+        <div class="col-md-6">
+          <input type="text" size="26" class="form-control form-control-inline" />
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.digibib.subject}" pmud="false"/>
+        <xed:validate required="true" display="global">
+        </xed:validate>
+      </div>
+    </xed:bind>
+  </xsl:template>
+
+
+  <xed:template id="digibib.class.discipline">
+    <div class="form-group row required {$xed-val-marker}">
+      <label class="col-md-3 col-form-label text-right">
+        <xed:output i18n="digibib.class.discipline" />
+      </label>
+      <xed:bind xpath="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/discipline']/@displayLabel" set="discipline" />
+      <xed:bind xpath="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/discipline']/@valueURIxEditor" initially="">
+        <div class="col-md-6">
+          <div class="controls">
+            <select class="form-control form-control-inline">
+              <option value=""><xed:output i18n="mir.select.optional" /></option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:discipline" />
+            </select>
+          </div>
+        </div>
+        <mir:help-pmud help-text="{i18n:digibib.help.class.discipline}" pmud="false" />
+        <xed:validate required="true" display="global">
+        </xed:validate>
+      </xed:bind>
+    </div>
   </xed:template>
 
 </xed:template>

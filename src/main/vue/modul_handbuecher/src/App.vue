@@ -1,0 +1,228 @@
+<template>
+  <nav class="navbar navbar-light bg-light">
+    <ol class="breadcrumb" v-if="model.classLoaded">
+      <li class="breadcrumb-item">
+        <router-link to="/">{{ model.i18n["digibib.module.crumb.root"] }}</router-link>
+      </li>
+      <li class="breadcrumb-item" v-for="crumb in model.crumbs" :key="crumb.to">
+        <router-link :to="crumb.to">{{ crumb.label }}</router-link>
+      </li>
+    </ol>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Suche" v-on:change="queryChanged"
+             v-on:keyup.prevent="" v-model="queryForm">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click.prevent="queryChanged">Suche</button>
+    </form>
+  </nav>
+  <router-view/>
+</template>
+<script lang="ts">
+import {Options, Vue} from 'vue-class-component';
+import {Classification, ClassificationCategory, Model, modelGlobal as globalModel} from "@/Model";
+import {ClassficationAPI} from "@/ClassficationAPI";
+import {LinkAPI} from "@/LinkAPI";
+import {i18n} from "@/I18N";
+
+@Options({
+  components: {},
+})
+export default class App extends Vue {
+
+
+  model: Model = globalModel;
+
+  queryForm: string | undefined = undefined;
+
+  queryChanged() {
+    this.$router.push(LinkAPI.getLink(this.model.faculty,this.model.discipline,this.model.subject, this.model.start, this.queryForm));
+  }
+
+  async created() {
+
+    const i18n_digibib_module_crumb_root = "digibib.module.crumb.root";
+    const i18n_digibib_module_search = "digibib.module.search";
+    const [
+      discipline,
+      genre,
+      mir_institutes,
+      i18ndmcr,
+      i18ndms
+    ] = await Promise.all([
+      this.loadClassification("discipline"),
+      this.loadClassification("mir_genres"),
+      this.loadClassification("mir_institutes"),
+      i18n(this.model.baseURL,this.model.currentLang, i18n_digibib_module_crumb_root),
+      i18n(this.model.baseURL, this.model.currentLang, i18n_digibib_module_search)
+    ]);
+
+    this.model.i18n[i18n_digibib_module_crumb_root] = i18ndmcr;
+    this.model.i18n[i18n_digibib_module_search] = i18ndms;
+    this.model.classLoaded = true;
+
+    this.model.classifications["discipline"] = discipline;
+    this.model.classifications["mir_genres"] = genre;
+    this.model.classifications["mir_institutes"] = mir_institutes;
+
+    this.$watch(
+        () => this.$route.params,
+        (toParams: any, previousParams: any) => {
+
+          if (toParams.faculty != this.model.faculty ||
+              toParams.subject != this.model.subject ||
+              toParams.discipline != this.model.discipline) {
+            this.model.faculty = toParams.faculty;
+            this.model.subject = toParams.subject;
+            this.model.discipline = toParams.discipline;
+            this.model.start = this.$route.query.start == undefined || this.$route.query.start instanceof Array ? 0 : parseInt(this.$route.query.start, 10);
+
+            this.refreshBreadcrumb();
+            this.requestSolr();
+            console.log("ParamsChanged");
+          }
+        }
+    )
+
+    this.$watch(() => this.$route.query.start,
+        (p: any, prevP: any) => {
+          if (prevP != p) {
+            this.model.start = p == undefined ? 0 : parseInt(p, 10);
+            this.requestSolr();
+            console.log("page changed");
+          }
+        });
+
+    this.$watch(()=> this.$route.query.query,
+        (query: any, prevQ: any) => {
+          if(query!=this.model.query) {
+            this.model.query = query;
+            this.queryForm = query;
+            this.requestSolr();
+            console.log("query changed");
+          }
+        }
+    );
+
+    if (this.$route.params.faculty instanceof Array || this.$route.params.subject instanceof Array || this.$route.params.discipline instanceof Array) {
+      return
+    }
+
+    this.model.faculty = this.$route.params.faculty;
+    this.model.subject = this.$route.params.subject;
+    this.model.discipline = this.$route.params.discipline;
+    this.model.start = this.$route.query.start == undefined || this.$route.query.start instanceof Array ? undefined : parseInt(this.$route.query.start, 10);
+    this.model.query = this.queryForm= this.$route.query.query == undefined || this.$route.query.query instanceof Array ? undefined : this.$route.query.query;
+
+    this.refreshBreadcrumb();
+    await this.requestSolr();
+  }
+
+  private refreshBreadcrumb() {
+    while (this.model.crumbs.length > 0) {
+      this.model.crumbs.pop();
+    }
+
+    let pre = [];
+
+    if (this.model.faculty != undefined) {
+      pre.push({
+        id: this.model.faculty,
+        label: ClassficationAPI.getLabel(this.model.classifications["mir_institutes"], this.model.faculty, this.model.currentLang) || this.model.faculty
+      });
+    }
+
+    if (this.model.discipline != undefined) {
+      pre.push({
+        id: this.model.discipline,
+        label: ClassficationAPI.getLabel(this.model.classifications["discipline"], this.model.discipline, this.model.currentLang) || this.model.discipline
+      });
+    }
+
+    if (this.model.subject != undefined) {
+      pre.push({
+        id: this.model.subject,
+        label: this.model.subject
+      });
+    }
+
+    let untilPath = ""
+    for (let i = 0; i < pre.length; i++) {
+      let curPre = pre[i];
+      untilPath += "/" + curPre.id;
+      this.model.crumbs.push(
+          {to: untilPath, label: pre[i].label}
+      );
+    }
+  }
+
+  private async loadClassification(id: string): Promise<Classification> {
+    let response = await fetch(`${this.model.baseURL}api/v1/classifications/${id}?format=json`);
+    return await response.json();
+  }
+
+  private escape(value:string){
+    if (value.match(/[ :/"]/) && !value.match(/[[{]\S+ TO \S+[\]}]/) && !value.match(/^["(].*[")]$/)) {
+      return '"' + value.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
+    }
+    return value;
+  }
+
+  private async requestSolr() {
+    this.model.searchComplete = false;
+    let {baseURL, faculty, subject, discipline, start, query} = this.model;
+    let queryParam = `+objectType:"mods" +category:"mir_genres:module_manual"`;
+    let facetSubject = `facet.field=digibib.mods.subject.string`;
+    let facetInstitute = `facet.field=digibib.mods.faculty`;
+    let facetDiscipline = `facet.field=digibib.mods.discipline`;
+    let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&wt=json&rows=10`;
+
+
+
+    if (faculty != undefined) {
+      url += `&fq=digibib.mods.faculty:${this.escape(faculty)}`;
+    }
+
+    if (discipline != undefined) {
+      url += `&fq=digibib.mods.discipline:${this.escape(discipline)}`;
+    }
+
+    if (subject != undefined) {
+      url += `&fq=digibib.mods.subject.string:${this.escape(subject)}`;
+    }
+
+    if (start != undefined) {
+      url += `&start=${encodeURIComponent(start)}`
+    }
+
+    if(query!=undefined && query.length>0){
+      url+="&q=%2ballMeta:"+this.escape(query);
+    } else {
+      url+="&q=*:*";
+    }
+
+    let response = await fetch(url);
+
+    this.model.search = await response.json();
+
+    this.convertFacetToStringArray(this.model.subjects, this.model.search.facet_counts.facet_fields["digibib.mods.subject.string"]);
+    this.convertFacetToStringArray(this.model.faculties, this.model.search.facet_counts.facet_fields["digibib.mods.faculty"]);
+    this.convertFacetToStringArray(this.model.disciplines, this.model.search.facet_counts.facet_fields["digibib.mods.discipline"]);
+
+    this.model.searchComplete = true;
+  }
+
+
+  private convertFacetToStringArray(target: Array<string>, facet: any) {
+    while (target.length > 0) {
+      target.pop()
+    }
+    for (let i = 0; i < facet.length; i += 2) {
+      const str = facet[i];
+      target.push(str);
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

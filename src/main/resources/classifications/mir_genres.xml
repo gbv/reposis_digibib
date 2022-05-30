@@ -88,6 +88,10 @@
         <label xml:lang="de" text="Pressemitteilung" />
         <label xml:lang="en" text="Press Release" />
       </category>
+      <category ID="module_manual">
+        <label xml:lang="de" text="Modulhandbuch" />
+        <label xml:lang="en" text="Module Manual" />
+      </category>
     </category>
     <category ID="teaching_material">
       <label xml:lang="de" text="Lehrmaterial" />

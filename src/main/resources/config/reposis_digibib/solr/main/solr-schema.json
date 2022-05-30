@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "add-field": {
+      "name": "digibib.mods.subject.string",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "multiValued": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "digibib.mods.discipline",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "multiValued": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "digibib.mods.faculty",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "multiValued": true
+    }
+  }
+]
