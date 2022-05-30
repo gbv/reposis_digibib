@@ -534,6 +534,7 @@
   </xed:template>
 
   <xsl:template id="digibib.subject.autocomplete">
+
     <xed:bind xpath="mods:subject/mods:topic">
       <div class="form-group row required {$xed-val-marker}">
         <label class="col-md-3 col-form-label text-right">
@@ -541,8 +542,9 @@
         </label>
 
         <div class="col-md-6">
-          <input type="text" size="26" class="form-control form-control-inline" />
-        </div>
+          <input class="form-control itemsearch" data-searchengine="digibib_subject"
+                 data-provide="typeahead" type="text" data-responsefield="digibib.mods.subject.string" />
+         </div>
         <mir:help-pmud help-text="{i18n:mir.help.digibib.subject}" pmud="false"/>
         <xed:validate required="true" display="global">
         </xed:validate>
