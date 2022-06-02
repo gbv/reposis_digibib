@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="validity_state">
+    <label xml:lang="de" text="Gültigkeitszustand" />
+    <label xml:lang="en" text="Validity state" />
+    <categories>
+        <category ID="valid">
+            <label xml:lang="de" text="Gültig" />
+            <label xml:lang="en" text="valid" />
+        </category>
+        <category ID="invalid">
+            <label xml:lang="de" text="Ungültig" />
+            <label xml:lang="en" text="invalid" />
+        </category>
+    </categories>
+</mycoreclass>

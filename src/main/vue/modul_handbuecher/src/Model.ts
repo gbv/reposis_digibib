@@ -16,10 +16,12 @@ export const modelGlobal: Model = reactive({
     faculties: [],
     disciplines: [],
     classLoaded: false,
-    query: undefined
+    query: undefined,
+    onlyValid: true
 })
 
 export interface Model {
+    onlyValid: boolean;
     query: undefined|string;
     classLoaded: boolean;
     currentLang: string;

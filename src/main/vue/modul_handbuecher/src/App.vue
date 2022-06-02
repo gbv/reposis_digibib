@@ -9,9 +9,15 @@
       </li>
     </ol>
     <form class="form-inline">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="activeModuleCheckbox" v-model="model.onlyValid">
+        <label class="form-check-label"
+               for="activeModuleCheckbox">{{model.i18n["digibib.module.active.modules"]}}</label>
+      </div>
       <input class="form-control mr-sm-2" type="search" placeholder="Suche" v-on:change="queryChanged"
              v-on:keyup.prevent="" v-model="queryForm">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click.prevent="queryChanged">Suche</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click.prevent="queryChanged">Suche
+      </button>
     </form>
   </nav>
   <router-view/>
@@ -41,22 +47,26 @@ export default class App extends Vue {
 
     const i18n_digibib_module_crumb_root = "digibib.module.crumb.root";
     const i18n_digibib_module_search = "digibib.module.search";
+    const i18n_digibib_module_active_modules = "digibib.module.active.modules";
     const [
       discipline,
       genre,
       mir_institutes,
       i18ndmcr,
-      i18ndms
+      i18ndms,
+      i18nmdam
     ] = await Promise.all([
       this.loadClassification("discipline"),
       this.loadClassification("mir_genres"),
       this.loadClassification("mir_institutes"),
-      i18n(this.model.baseURL,this.model.currentLang, i18n_digibib_module_crumb_root),
-      i18n(this.model.baseURL, this.model.currentLang, i18n_digibib_module_search)
+      i18n(this.model.baseURL, this.model.currentLang, i18n_digibib_module_crumb_root),
+      i18n(this.model.baseURL, this.model.currentLang, i18n_digibib_module_search),
+      i18n(this.model.baseURL, this.model.currentLang, i18n_digibib_module_active_modules)
     ]);
 
     this.model.i18n[i18n_digibib_module_crumb_root] = i18ndmcr;
     this.model.i18n[i18n_digibib_module_search] = i18ndms;
+    this.model.i18n[i18n_digibib_module_active_modules] = i18nmdam;
     this.model.classLoaded = true;
 
     this.model.classifications["discipline"] = discipline;
@@ -77,10 +87,13 @@ export default class App extends Vue {
 
             this.refreshBreadcrumb();
             this.requestSolr();
-            console.log("ParamsChanged");
           }
         }
     )
+
+    this.$watch(() => this.model.onlyValid, (to: boolean, from: boolean) => {
+      this.requestSolr();
+    });
 
     this.$watch(() => this.$route.query.start,
         (p: any, prevP: any) => {
@@ -97,7 +110,6 @@ export default class App extends Vue {
             this.model.query = query;
             this.queryForm = query;
             this.requestSolr();
-            console.log("query changed");
           }
         }
     );
@@ -169,7 +181,7 @@ export default class App extends Vue {
   private async requestSolr() {
     this.model.searchComplete = false;
     let {baseURL, faculty, subject, discipline, start, query} = this.model;
-    let queryParam = `+objectType:"mods" +category:"mir_genres:module_manual"`;
+    let queryParam = `+objectType:"mods" +category:"mir_genres:module_manual"${this.model.onlyValid ? " +digibib.mods.validity_state:valid" : ""}`;
     let facetSubject = `facet.field=digibib.mods.subject.string`;
     let facetInstitute = `facet.field=digibib.mods.faculty`;
     let facetDiscipline = `facet.field=digibib.mods.discipline`;
@@ -223,6 +235,8 @@ export default class App extends Vue {
 }
 </script>
 
-<style>
-
+<style scoped>
+.navbar {
+  flex-direction: column;
+}
 </style>

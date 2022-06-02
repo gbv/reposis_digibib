@@ -16,6 +16,14 @@
       "stored": true,
       "multiValued": true
     }
+  },  {
+    "add-field": {
+      "name": "digibib.mods.validity_state",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "multiValued": false
+    }
   },
   {
     "add-field": {

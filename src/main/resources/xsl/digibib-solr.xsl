@@ -18,6 +18,7 @@
     <xsl:template match="mods:mods" mode="digibib">
         <xsl:apply-templates select="mods:subject/mods:topic" mode="digibib" />
         <xsl:apply-templates select="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/discipline']" mode="digibib" />
+        <xsl:apply-templates select="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/validity_state']" mode="digibib" />
         <xsl:apply-templates select="mods:name[@type='corporate' and @authorityURI='http://www.mycore.org/classifications/mir_institutes']" mode="digibib" />
     </xsl:template>
 
@@ -29,6 +30,12 @@
 
     <xsl:template match="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/discipline']" mode="digibib">
         <field name="digibib.mods.discipline">
+            <xsl:value-of select="substring-after(@valueURI, '#')" />
+        </field>
+    </xsl:template>
+
+    <xsl:template match="mods:classification[@authorityURI='http://www.digibib.tu-bs.de/validity_state']" mode="digibib">
+        <field name="digibib.mods.validity_state">
             <xsl:value-of select="substring-after(@valueURI, '#')" />
         </field>
     </xsl:template>

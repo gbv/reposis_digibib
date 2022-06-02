@@ -50,8 +50,6 @@ $(document).ready(function() {
     return true;
   });
 
-  $("[data-autocomple-digibib='true']").
-
   $.cookieBar({
     fixed: true,
     message: 'Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten zu können. Mit der Nutzung dieser Seiten erklären Sie, dass Sie die rechtlichen Hinweise gelesen haben und akzeptieren.',
