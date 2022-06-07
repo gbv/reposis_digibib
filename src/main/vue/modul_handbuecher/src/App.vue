@@ -185,8 +185,8 @@ export default class App extends Vue {
     let facetSubject = `facet.field=digibib.mods.subject.string`;
     let facetInstitute = `facet.field=digibib.mods.faculty`;
     let facetDiscipline = `facet.field=digibib.mods.discipline`;
-    let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&wt=json&rows=10`;
-
+    let facetSort = `facet.sort=index`;
+    let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
 
 
     if (faculty != undefined) {
