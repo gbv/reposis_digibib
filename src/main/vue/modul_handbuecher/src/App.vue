@@ -1,36 +1,115 @@
 <template>
-  <nav class="navbar navbar-light bg-light">
-    <ol class="breadcrumb" v-if="model.classLoaded">
-      <li class="breadcrumb-item">
-        <router-link to="/">{{ model.i18n["digibib.module.crumb.root"] }}</router-link>
-      </li>
-      <li class="breadcrumb-item" v-for="crumb in model.crumbs" :key="crumb.to">
-        <router-link :to="crumb.to">{{ crumb.label }}</router-link>
-      </li>
-    </ol>
-    <form class="form-inline">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="activeModuleCheckbox" v-model="model.onlyValid">
-        <label class="form-check-label"
-               for="activeModuleCheckbox">{{model.i18n["digibib.module.active.modules"]}}</label>
+  <div class="row">
+    <div class="col-12">
+
+      <h2>Modulhandbücher</h2>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8">
+
+      <search />
+
+    </div>
+    <div class="col-12 col-md-4">
+
+      <h3>Ergebnisse einschränken</h3>
+
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Suchbegriff</h4>
+        </div>
+        <div class="card-body">
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Schlagwort"
+              v-on:change="queryChanged"
+              v-on:keyup.prevent=""
+              v-model="queryForm">
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+              v-on:click.prevent="queryChanged">
+              finden
+            </button>
+          </form>
+        </div>
       </div>
-      <input class="form-control mr-sm-2" type="search" placeholder="Suche" v-on:change="queryChanged"
-             v-on:keyup.prevent="" v-model="queryForm">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click.prevent="queryChanged">Suche
-      </button>
-    </form>
-  </nav>
-  <router-view/>
+
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Kategorie</h4>
+        </div>
+        <div class="card-body">
+          <ul
+            v-if="model.classLoaded"
+            class="mm-selected-categories">
+
+            <li class="level-0">
+              <router-link v-if="model.crumbs.length>0" to="/" >
+                {{ model.i18n["digibib.module.crumb.root"] }}
+              </router-link>
+              <span v-else>
+                {{ model.i18n["digibib.module.crumb.root"] }}
+              </span>
+            </li>
+
+            <li
+              v-for="(crumb, index) in model.crumbs"
+              :key="crumb.to"
+              :class="'level-' + parseInt(index + 1)">
+              <router-link v-if="model.crumbs.length !== index + 1" :to="crumb.to">
+                {{ crumb.label }}
+              </router-link>
+              <span v-else>
+                {{ crumb.label }}
+              </span>
+            </li>
+
+          </ul>
+          <router-view/>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Archiv</h4>
+        </div>
+        <div class="card-body">
+          <div
+            class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="activeModuleCheckbox"
+              v-model="model.onlyValid">
+            <label
+              class="form-check-label font-weight-normal"
+              for="activeModuleCheckbox">
+              {{model.i18n["digibib.module.active.modules"]}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
 <script lang="ts">
 import {Options, Vue} from 'vue-class-component';
+import Search from "@/components/Search.vue";
 import {Classification, ClassificationCategory, Model, modelGlobal as globalModel} from "@/Model";
 import {ClassficationAPI} from "@/ClassficationAPI";
 import {LinkAPI} from "@/LinkAPI";
 import {i18n} from "@/I18N";
 
 @Options({
-  components: {},
+  components: {
+    Search
+  },
 })
 export default class App extends Vue {
 
@@ -167,7 +246,8 @@ export default class App extends Vue {
   }
 
   private async loadClassification(id: string): Promise<Classification> {
-    let response = await fetch(`${this.model.baseURL}api/v1/classifications/${id}?format=json`);
+    //let response = await fetch(`${this.model.baseURL}api/v1/classifications/${id}?format=json`);
+    let response = await fetch(`https://reposis-test.gbv.de/digibib/api/v1/classifications/${id}?format=json`);
     return await response.json();
   }
 
@@ -186,7 +266,8 @@ export default class App extends Vue {
     let facetInstitute = `facet.field=digibib.mods.faculty`;
     let facetDiscipline = `facet.field=digibib.mods.discipline`;
     let facetSort = `facet.sort=index`;
-    let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
+    //let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
+    let url = `https://reposis-test.gbv.de/digibib/servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
 
 
     if (faculty != undefined) {
@@ -236,7 +317,5 @@ export default class App extends Vue {
 </script>
 
 <style scoped>
-.navbar {
-  flex-direction: column;
-}
+
 </style>

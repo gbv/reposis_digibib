@@ -1,17 +1,13 @@
 <template>
   <div>
-    <search />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import Search from "@/components/Search.vue";
 
 @Options({
-  components: {
-    Search
-  },
+  components: {},
 })
 export default class PlainView extends Vue {
 }

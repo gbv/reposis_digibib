@@ -6,7 +6,16 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-
+#app {
+  .card-title {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 0px;
+  }
+  .card {
+    border: 1px solid #ccc;
+  }
+}
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {

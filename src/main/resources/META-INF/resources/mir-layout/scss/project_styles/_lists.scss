@@ -6,6 +6,57 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+.mm-selected-categories,
+.mm-category-selection {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mm-selected-categories,
+.mm-category-selection {
+  .level-1 {
+    padding-left: 1rem;
+  }
+  .level-2 {
+    padding-left: 2rem;
+  }
+  .level-3 {
+    padding-left: 3rem;
+  }
+  .active {
+    &:first-child {
+      margin-top: .5rem;
+      padding-top: .5rem;
+      border-top: 1px solid rgba(0,0,0,0.125);
+    }
+  }
+  li:not(.active):not(.level-0) {
+    position: relative;
+    &::before {
+      content: "└";
+      color: rgba(0,0,0,0.125);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &.level-2 {
+      &::before {
+        left: 1rem;
+      }
+    }
+    &.level-3 {
+      &::before {
+        left: 2rem;
+      }
+    }
+  }
+}
+
+.mm-results {
+  margin: 1rem 0 2rem 0;
+}
+
 
 
 // Large devices (desktops) and below: <= 1200px
