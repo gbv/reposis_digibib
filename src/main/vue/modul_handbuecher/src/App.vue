@@ -246,8 +246,8 @@ export default class App extends Vue {
   }
 
   private async loadClassification(id: string): Promise<Classification> {
-    //let response = await fetch(`${this.model.baseURL}api/v1/classifications/${id}?format=json`);
-    let response = await fetch(`https://reposis-test.gbv.de/digibib/api/v1/classifications/${id}?format=json`);
+    let response = await fetch(`${this.model.baseURL}api/v1/classifications/${id}?format=json`);
+    //let response = await fetch(`https://reposis-test.gbv.de/digibib/api/v1/classifications/${id}?format=json`);
     return await response.json();
   }
 
@@ -266,8 +266,8 @@ export default class App extends Vue {
     let facetInstitute = `facet.field=digibib.mods.faculty`;
     let facetDiscipline = `facet.field=digibib.mods.discipline`;
     let facetSort = `facet.sort=index`;
-    //let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
-    let url = `https://reposis-test.gbv.de/digibib/servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=10`;
+    let url = `${baseURL}servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=20`;
+    //let url = `https://reposis-test.gbv.de/digibib/servlets/solr/select?fq=${encodeURIComponent(queryParam)}&${facetSubject}&${facetInstitute}&${facetDiscipline}&${facetSort}&wt=json&rows=20`;
 
 
     if (faculty != undefined) {
