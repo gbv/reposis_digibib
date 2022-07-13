@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  * <code>
  * function getContext() {
  *   const el = document.createElement('a');
- *   el.href = (<any>window).webApplicationBaseURL;
+ *   el.href = (&lt;any&gt;window).webApplicationBaseURL;
  *   return el.pathname;
  * }
  *
