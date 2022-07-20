@@ -7,6 +7,24 @@
 // no (xl) media query necessary (desktop first)
 
   .mir-start_page {
+
+    // center search box horizontal and vertical
+    #page {
+      height: 100%;
+      padding-top:90px;
+    }
+    #main_content {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #bs-index-search {
+      width: 100%;
+      margin-bottom: 150px;
+    }
+    // end: center
+
     h1 {
       color: $leoBlueDark;
       line-height: 2.5rem;

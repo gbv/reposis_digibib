@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage>
   <section xml:lang="de" title="Willkommen bei der Digitalen Bibliothek">
-    <div class="jumbotwo" id="bs-index-search" style="margin-top:50px;">
+    <div class="jumbotwo" id="bs-index-search">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">
           <h1>
