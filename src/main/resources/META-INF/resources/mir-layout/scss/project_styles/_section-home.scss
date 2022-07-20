@@ -6,12 +6,27 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-  body.mir-start_page #page {
-    background-color: transparent;
-  }
+  .mir-start_page {
+    h1 {
+      color: $leoBlueDark;
+      line-height: 2.5rem;
+    }
+    .leo-project-name {
+      display: block;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .leo-project-slogan {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
 
-  body.mir-start_page #page h1 {
-    color: $danger;
+    #main_content {
+      background-image: url("#{$assetPathRoot}images/back-leopard.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+    }
   }
 
 // Large devices (desktops) and below: <= 1200px

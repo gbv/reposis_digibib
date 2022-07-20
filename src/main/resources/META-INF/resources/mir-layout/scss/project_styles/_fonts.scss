@@ -10,17 +10,6 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-@font-face {
-  font-family: 'NexusSansPro-Regular';
-  src: url('#{$assetPathRoot}fonts/NexusSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-       url('#{$assetPathRoot}fonts/NexusSansPro-Regular.otf')  format('opentype'),
-       url('#{$assetPathRoot}fonts/NexusSansPro-Regular.woff') format('woff'),
-       url('#{$assetPathRoot}fonts/NexusSansPro-Regular.ttf')  format('truetype'),
-       url('#{$assetPathRoot}fonts/NexusSansPro-Regular.svg#NexusSansPro-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower

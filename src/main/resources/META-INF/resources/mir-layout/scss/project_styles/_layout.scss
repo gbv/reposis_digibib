@@ -10,20 +10,12 @@
     position: relative;
     min-height: 100%;
   }
-  html body {
-    color: #000000;
-    background-image: url("#{$assetPathRoot}images/background_neubau.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #C1D0E6;
-  }
   html body #page {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px 40px;
+    padding: 40px 40px 40px 40px;
   }
   section {
-    padding: 2em 0;
+    padding: 120px 0 2em 0;
   }
 
 // Large devices (desktops) and below: <= 1200px

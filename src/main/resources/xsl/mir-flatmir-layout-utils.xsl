@@ -11,111 +11,175 @@
 
   <xsl:template name="mir.navigation">
 
-    <div id="header_box" class="clearfix container">
+    <div class="leo-header">
 
-      <a
-        id="project_logo_box"
-        class="hidden-xs"
-        href="http://www.tu-braunschweig.de"
-        title="{i18n:translate('digibib.goToMainSite')}">
-        <img
-          src="{$WebApplicationBaseURL}images/siegel_rot.png"
-          alt="{i18n:translate('digibib.logoTUBS')}" />
-      </a>
-
-      <div id="options_nav_box" class="mir-prop-nav">
-        <nav>
-          <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
-            <xsl:call-template name="mir.languageMenu" />
-            <xsl:call-template name="mir.loginMenu" />
-          </ul>
-        </nav>
-        <a id="bs-bibliothek" href="https://ub.tu-braunschweig.de/">
-          <xsl:value-of select="i18n:translate('digibib.bsLibrary')" />
-        </a>
+      <div class="leo-header__logo">
+        <xsl:call-template name="leo.page-logo" />
       </div>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="mir-main-nav bg-primary">
-      <div class="container">
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mir-main-nav-collapse-box"
-            aria-controls="mir-main-nav-collapse-box"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div id="mir-main-nav-collapse-box" class="collapse navbar-collapse mir-main-nav__entries">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <xsl:call-template name="digibib.generate_single_menu_entry">
-                <xsl:with-param name="menuID" select="'brand'"/>
-              </xsl:call-template>
-              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
-              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
-              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
-              <xsl:call-template name="mir.basketMenu" />
-            </ul>
-          </div>
-
-          <form
-            action="{$WebApplicationBaseURL}servlets/solr/find"
-            class="bs-search form-inline searchfield_box"
-            role="search">
-            <input
-              name="condQuery"
-              placeholder="{i18n:translate('mir.navsearch.placeholder')}"
-              class="form-control search-query"
-              type="text" />
-            <xsl:choose>
-              <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
-                <input name="owner" type="hidden" value="createdby:*" />
-              </xsl:when>
-              <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
-                <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
-              </xsl:when>
-            </xsl:choose>
-            <button type="submit" class="btn btn-primary">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-
-        </nav>
+      <div class="leo-header__nav">
+        <xsl:call-template name="leo.page-nav" />
       </div>
+
     </div>
 
     <div id="digibib_feedback">
       <a href="mailto:digibib@tu-braunschweig.de">Feedback</a>
     </div>
+
   </xsl:template>
+
+  <xsl:template name="leo.page-logo">
+    <a
+      class="leo-logo-link hidden-xs"
+      href="http://www.tu-braunschweig.de"
+      title="{i18n:translate('digibib.goToMainSite')}">
+      <img
+        src="{$WebApplicationBaseURL}images/tu_braunschweig_logo.svg"
+        width="260"
+        height="74"
+        alt="{i18n:translate('digibib.logoTUBS')}" />
+    </a>
+  </xsl:template>
+
+  <xsl:template name="leo.page-nav">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+          <div class="mir-main-nav">
+            <nav class="navbar navbar-expand-lg">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#mir-main-nav-collapse-box"
+                aria-controls="mir-main-nav-collapse-box"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                id="mir-main-nav-collapse-box"
+                class="collapse navbar-collapse mir-main-nav__entries">
+                <ul class="navbar-nav">
+                  <xsl:call-template name="digibib.generate_single_menu_entry">
+                    <xsl:with-param name="menuID" select="'brand'"/>
+                  </xsl:call-template>
+                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
+                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
+                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
+                  <xsl:call-template name="mir.basketMenu" />
+                  <li class="socialbar-wrapper">
+                    <ul class="socialbar"></ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+
+          <button
+            class="btn search-toggler js-search-toggler"
+            type="button">
+            <i class="fas fa-search"></i>
+          </button>
+
+          <div class="searchfield_box">
+            <form
+              action="{$WebApplicationBaseURL}servlets/solr/find"
+              class="bs-search form-inline"
+              role="search">
+              <div id="leo-searchbar">
+                <input
+                  name="condQuery"
+                  placeholder="{i18n:translate('mir.navsearch.placeholder')}"
+                  class="form-control search-query"
+                  type="text" />
+                <xsl:choose>
+                  <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
+                    <input name="owner" type="hidden" value="createdby:*" />
+                  </xsl:when>
+                  <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
+                    <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
+                  </xsl:when>
+                </xsl:choose>
+                <button type="submit" class="btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div id="options_nav_box" class="mir-prop-nav">
+            <nav>
+              <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
+                <xsl:call-template name="mir.languageMenu" />
+                <xsl:call-template name="mir.loginMenu" />
+                <li>
+                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
+                    <img
+                    src="{$WebApplicationBaseURL}images/logo-leopard.png"
+                    class="leo-logo"
+                    alt="leoPARD Logo" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+  </xsl:template>
+
 
   <xsl:template name="mir.jumbotwo">
     <!-- do nothing special -->
   </xsl:template>
 
   <xsl:template name="mir.footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-6 col-sm-9">
-          <ul class="internal_links">
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" mode="footerMenu" />
-          </ul>
+    <div class="leo-footer-menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
+              <img
+                src="{$WebApplicationBaseURL}images/logo-leopard-white.png"
+                class="leo-logo"
+                alt="leoPARD Logo" />
+            </a>
+          </div>
+          <div class="col">
+            <h2>Anschrift</h2>
+            <p>
+              Technische Universität Braunschweig<br/>
+              <strong>Universitätsbibliothek Braunschweig</strong><br />
+              Universitätsplatz 1<br/>
+              38106 Braunschweig<br/>
+              Postfach: 38092 Braunschweig<br/>
+              Telefon: +49 (0) 531 391-5018
+            </p>
+          </div>
+          <div class="col">
+            <h2>Projekt</h2>
+            <ul class="internal_links">
+              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" mode="footerMenu" />
+            </ul>
+          </div>
         </div>
-        <div class="col-6 col-sm-3">
-          <xsl:variable name="mcr_version" select="concat('MyCoRe ',mcrver:getCompleteVersion())" />
-          <div id="powered_by">
-            <a id="dini_logo" href="https://www.dini.de/dienste-projekte/dini-zertifikat/" title="{i18n:translate('digibib.diniCertificate2016')}">
-              <img alt="Logo DINI-Zertifikat 2016" src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg" height="50" />
-            </a>
-            <a id="mycore_logo" href="http://www.mycore.de">
-              <img src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png" title="{$mcr_version}" alt="powered by MyCoRe" />
-            </a>
+      </div>
+    </div>
+    <div class="leo-copyright-menu">
+      <div class="container">
+        <div class="row ">
+          <div class="col">
+            <div class="d-flex justify-content-between align-items-center">
+              © Technische Universität Braunschweig
+              <xsl:variable name="mcr_version" select="concat('MyCoRe ',mcrver:getCompleteVersion())" />
+              <div id="powered_by" class="d-flex align-items-center">
+                <a id="dini_logo" href="https://www.dini.de/dienste-projekte/dini-zertifikat/" title="{i18n:translate('digibib.diniCertificate2016')}">
+                  <img alt="Logo DINI-Zertifikat 2016" src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg" height="50" />
+                </a>
+                <a id="mycore_logo" href="http://www.mycore.de">
+                  <img src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png" title="{$mcr_version}" alt="powered by MyCoRe" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

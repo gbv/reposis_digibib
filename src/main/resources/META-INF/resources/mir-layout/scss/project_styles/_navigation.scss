@@ -10,74 +10,113 @@
   .mir-prop-nav {
     // inverted flex order!
     // means: all but the first
+    .navbar-nav {
+      padding-right: 1.25rem;
+      & > li > a {
+        display:block;
+        padding:0;
+        height: 5.4375rem;
+        line-height: 5.4375rem;
+        color: $leoBlueDark;
+        font-size: .875rem;
+        font-weight: 500;
+        &:focus,
+        &:hover {
+          color: $leoBlueDark;
+        }
+      }
+    }
     .nav-item:not(:last-child) {
-      margin-left: 15px;
+      margin-left: 20px;
     }
   }
 
   // main menu
   .mir-main-nav {
-    .container {
-      position: relative;
-    }
     .navbar {
-      padding: 0;
+      padding:0;
     }
-    .navbar-nav {
-      padding-left: 200px;
+    .nav-item:not(:first-child),
+    #basket-list-item {
+      margin-left: 3.125rem;
+    }
+    .nav-item,
+    #basket-list-item {
+      height: 5.4375rem;
     }
     .nav-link {
-      border-left: 1px solid #fff;
-      padding: 0px 1em;
-      line-height: 2em;
-      border-top: 1px solid transparent;
+      display:block;
+      padding:0;
+      height: 5.4375rem;
+      line-height: 5.4375rem;
+      color: $leoBlueDark;
+      font-size: 1.125rem;
+      font-weight: 500;
+
       // active nav link (no dropdown)
       &.active {
-        background-color: $danger;
       }
       &:hover,
       &:focus,
       &:active {
-        color: $danger !important;
-        background-color: white;
+
       }
     }
     .dropdown-menu {
-      background-color: $danger;
     }
     .dropdown-item {
-      color: white;
       &:hover,
       &:focus,
       &:active {
-        color: $danger;
-        background-color: white;
+        text-decoration: underline;
       }
     }
     // active sub menu link (dropdown)
     .active {
       .nav-link {
-        color: white !important;
-        background-color: $danger;
       }
       > .dropdown-item {
-        background-color: #35c7ff;
         &:hover,
         &:focus,
         &:active {
-          background-color: white;
         }
       }
     }
   }
+
+  .search-toggler {
+    color: $leoBlueDark;
+    margin-left: 3.125rem;
+    border-top: 0;
+  }
+
+  .search-toggler,
+  .mir-main-nav .nav-item,
+  .mir-prop-nav .nav-item,
+  #basket-list-item {
+    position: relative;
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 100%;
+      height: .1875rem;
+      background: $leoBlueDark;
+      transition: right .6s cubic-bezier(.19,1,.22,1);
+    }
+    &.active,
+    &:hover {
+      &::before {
+          right: 0;
+      }
+    }
+  }
+
   // overwrite bs settings
   .mir-main-nav.bg-primary .navbar-nav .active > .nav-link {
-    color: white !important;
-    background-color: $danger;
   }
   .mir-main-nav .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
   }
 
   // footer menu
@@ -94,6 +133,44 @@
     }
   }
 
+  // settings from https://www.tu-braunschweig.de/
+  // for left side nav bar
+  .socialbar-wrapper {
+    position: fixed;
+    left: 50%;
+    top: .625rem;
+    width: 100%;
+    max-width: 120rem;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+    .socialbar {
+      width: 2.625rem;
+      height: calc(100vh - .625rem);
+      background-color: #fff;
+      color: #003f57;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-right: 1px solid #e2e2e2;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      pointer-events: all;
+    }
+  }
+
+
+
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
@@ -104,19 +181,16 @@
   // add/overwrite styles for responsive level md and lower
   .mir-main-nav {
     .navbar {
-      justify-content: flex-start;
+
     }
     .mir-main-nav__entries {
-      order: 4;
+
     }
     .navbar-toggler {
-      margin-left: 200px;
+
     }
     .bs-search {
-      margin-left: auto;
-      order: 3;
       .form-control {
-        width: auto;
       }
     }
   }
@@ -132,10 +206,8 @@
   // add/overwrite styles for responsive level xs
   .mir-main-nav {
     .navbar-toggler {
-      margin-left: 0px;
     }
     .navbar-nav {
-      padding-left: 0px;
     }
   }
 }

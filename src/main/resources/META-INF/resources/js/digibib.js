@@ -64,4 +64,22 @@ $(document).ready(function() {
     referrer: 'publikationsserver.tu-braunschweig.de'
   });
 
+  // open search bar
+  $( ".js-search-toggler" ).click(function() {
+    $( ".searchfield_box" ).addClass('open');
+  });
+  // close searchbar
+  // listen to all clicks
+  $(document).click(function(event) {
+    var $target = $(event.target);
+    // search bar is visible AND
+    // ( clicked element is not inside of the search bar OR
+    //   clicked element is not the toggle itself )
+    if( $('.searchfield_box').hasClass("open") &&
+        !$target.closest('#leo-searchbar').length &&
+        !$target.closest('.js-search-toggler').length ) {
+      $( ".searchfield_box" ).removeClass('open');
+    }
+  });
+
 });

@@ -4,145 +4,54 @@
 
 $assetPathRoot : "../../../../";
 
-// --------------------------------------------------
-// Reset defaults
-// --------------------------------------------------
+// Project colors
+// -------------------------
+$leoBlue:       #00709b;
+$leoBlueLight:  #4b8fbb;
+$leoBlueDark:   #003f57;
+$leoGreen:      #6eba6b;
+$leoOrange:     #f39c12;
+$leoRed:        #be1e3c;
 
-$web-font-path: "https://webfonts.gbv.de/css?family=Lato:400,700,400italic";
-$text-color: #333333;
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gray-dark:     #7b8a8b;
+$gray:          #95a5a6;
+$gray-light:    #b4bcc2;
+$gray-lighter:  #ecf0f1;
+
+
+// Bootstrap Variables
+// -------------------------
+
+$primary: $leoBlueDark;
+$success: $leoGreen;
+$info: $leoBlue;
+$warning: $leoOrange;
+$danger: $leoRed;
+
+// outdated but needed for mir
+$brand-warning: $warning;
+
+$web-font-path: "https://webfonts.gbv.de/css2?family=Open+Sans:wght@400;500;700&display=swap";
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$text-color: black;
 $font-size-base: 0.9375rem;
+
 $h1-font-size: 2.25rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.5rem;
 $h4-font-size: 1.2rem;
 
-$padding-base-vertical: 10px;
-$padding-base-horizontal: 15px;
-$padding-large-vertical: 18px;
-$padding-large-horizontal: 27px;
-$padding-small-vertical: 6px;
-$padding-small-horizontal: 9px;
-
-
-// Brand colors
-// -------------------------
-$primary: #00709b;
-$success: #6eba6b;
-$info: #4b8fbb;
-$warning: #f39c12;
-$danger: #be1e3c;
-
-$brand-primary: $primary;
-$brand-success: $success;
-$brand-info:    $info;
-$brand-warning: $warning;
-$brand-danger:  $danger;
-
-$gray-dark: #7b8a8b;
-$gray: #95a5a6;
-$gray-light: #b4bcc2;
-$gray-lighter: #ecf0f1;
-
-
-// Links
-// -------------------------
-$link-color: $brand-info;
+$link-color: $info;
 $link-hover-color: $link-color;
 
-
-// Navbar
-// -------------------------
-$navbar-height: 60px;
-$navbar-default-color: #ffffff;
-$navbar-default-bg: $brand-primary;
-$navbar-default-border: transparent;
-$navbar-default-link-color: #ffffff;
-$navbar-default-link-hover-color: $brand-warning;
-$navbar-default-link-active-color: #ffffff;
-$navbar-default-link-active-bg: $brand-danger;
-$navbar-default-brand-hover-color: $navbar-default-link-hover-color;
-$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 10%);
-$navbar-default-toggle-icon-bar-bg: #ffffff;
-$navbar-default-toggle-border-color: darken($navbar-default-bg, 10%);
-$navbar-inverse-color: #ffffff;
-$navbar-inverse-bg: $brand-warning;
-$navbar-inverse-border: transparent;
-$navbar-inverse-link-color: #ffffff;
-$navbar-inverse-link-hover-color: $brand-primary;
-$navbar-inverse-link-hover-bg: $brand-warning;
-$navbar-inverse-link-active-color: #ffffff;
-$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 5%);
-$navbar-inverse-link-disabled-color: #cccccc;
-$navbar-inverse-brand-hover-color: $navbar-inverse-link-hover-color;
-$navbar-inverse-toggle-hover-bg: darken($navbar-inverse-bg, 10%);
-$navbar-inverse-toggle-border-color: darken($navbar-inverse-bg, 10%);
-$nav-tabs-border-color: $gray-lighter;
-$nav-tabs-active-link-hover-color: $brand-primary;
-$nav-tabs-active-link-hover-border-color: $gray-lighter;
-$nav-tabs-justified-link-border-color: $gray-lighter;
-
-// Pagination
-// -------------------------
-$pagination-color: #ffffff;
-$pagination-bg: $brand-success;
-$pagination-border: transparent;
-$pagination-hover-color: #ffffff;
-$pagination-hover-bg: darken($brand-success, 15%);
-$pagination-hover-border: transparent;
-$pagination-active-bg: darken($brand-success, 15%);
-$pagination-active-border: transparent;
-$pagination-disabled-color: $gray-lighter;
-$pagination-disabled-bg: lighten($brand-success, 15%);
-$pagination-disabled-border: transparent;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
 
-// Buttons
-// -------------------------
-$btn-default-color: #ffffff;
-$btn-default-bg: $gray;
-
-
-// Forms
-// -------------------------
-$input-color: $text-color;
-$input-border: #dce4ec;
-$input-border-focus: $brand-primary;
-$input-color-placeholder: #acb6c0;
-$legend-color: $text-color;
-$legend-border-color: transparent;
-$pager-disabled-color: $gray;
-$state-success-text: #ffffff;
-$state-success-bg: $brand-success;
-$state-success-border: $brand-success;
-$state-info-text: #ffffff;
-$state-info-bg: $brand-info;
-$state-info-border: $brand-info;
-$state-warning-text: #ffffff;
-$state-warning-bg: $brand-warning;
-$state-warning-border: $brand-warning;
-$state-danger-text: #ffffff;
-$state-danger-bg: $brand-danger;
-$state-danger-border: $brand-danger;
-$label-default-bg: $btn-default-bg;
-// $modal-inner-padding: 20px;
-$progress-bg: $gray-lighter;
-$list-group-border: $gray-lighter;
-$list-group-hover-bg: $gray-lighter;
-$panel-inner-border: $gray-lighter;
-$panel-footer-bg: $gray-lighter;
-$panel-default-text: $text-color;
-$panel-default-border: $gray-lighter;
-$panel-default-heading-bg: $gray-lighter;
-$thumbnail-border: $gray-lighter;
-$well-bg: $gray-lighter;
-$well-border: transparent;
-$badge-bg: $brand-primary;
-$badge-active-color: $brand-primary;
-$breadcrumb-bg: $gray-lighter;
-$breadcrumb-active-color: $gray;
-$close-text-shadow: none;
-$pre-bg: $gray-lighter;
-$page-header-border-color: transparent;
-$table-bg-hover: $gray-lighter;
-$table-border-color: $gray-lighter;
+$dropdown-spacer: 0;
+$dropdown-color: white;
+$dropdown-bg: $leoBlueDark;
+$dropdown-link-color: white;
+$dropdown-link-hover-color: white;
+$dropdown-link-hover-bg: $leoBlueDark;

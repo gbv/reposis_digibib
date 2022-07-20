@@ -5,11 +5,11 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">
           <h1>
-            Digitale Bibliothek <br />
-            Der Publikationsserver der TU&#160;Braunschweig
+            <span class="leo-project-name">LeoPARD</span>
+            <span class="leo-project-slogan">TU Braunschweig Publication And Research Data</span>
           </h1>
           <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
-            <div class="input-group w-100">
+            <div class="input-group">
               <input
                 name="condQuery"
                 placeholder="Suche in 16.000 Dokumenten"
