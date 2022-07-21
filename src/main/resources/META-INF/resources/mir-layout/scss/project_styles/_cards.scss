@@ -6,6 +6,8 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+// TODO: make mir result cards standard or provide at least a mir class
+// until then: use the the settings from result cards for manuals too
 #app {
   .card-title {
     font-size: 1rem;
@@ -13,6 +15,7 @@
     margin-bottom: 0px;
   }
   .card {
+    color: #666;
     border: 1px solid #ccc;
   }
 }

@@ -61,9 +61,9 @@
                 id="mir-main-nav-collapse-box"
                 class="collapse navbar-collapse mir-main-nav__entries">
                 <ul class="navbar-nav">
-                  <xsl:call-template name="digibib.generate_single_menu_entry">
+                  <!--xsl:call-template name="digibib.generate_single_menu_entry">
                     <xsl:with-param name="menuID" select="'brand'"/>
-                  </xsl:call-template>
+                  </xsl:call-template-->
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
