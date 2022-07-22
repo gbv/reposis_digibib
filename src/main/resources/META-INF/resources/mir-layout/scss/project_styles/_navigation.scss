@@ -63,6 +63,8 @@
       }
     }
     .dropdown-menu {
+      padding: 2rem 4rem;
+      margin-left: -4rem;
     }
     .dropdown-item {
       &:hover,
@@ -82,6 +84,12 @@
         }
       }
     }
+  }
+  .dropdown-menu {
+    font-size: 1rem;
+    border: 1px solid white;
+    border-top: none;
+    box-shadow: none;
   }
 
   .search-toggler {

@@ -34,15 +34,17 @@ $brand-warning: $warning;
 $web-font-path: "https://webfonts.gbv.de/css2?family=Open+Sans:wght@400;500;700&display=swap";
 $font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 $text-color: black;
-$font-size-base: 0.9375rem;
+$font-size-base: 1rem;
 
-$h1-font-size: 2.25rem;
+$h1-font-size: 3.375rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.5rem;
 $h4-font-size: 1.2rem;
 
 $link-color: $info;
 $link-hover-color: $link-color;
+$link-decoration: underline;
+$link-hover-decoration: none;
 
 $border-radius: 0;
 $border-radius-lg: 0;

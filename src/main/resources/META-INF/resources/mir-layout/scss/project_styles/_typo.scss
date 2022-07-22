@@ -11,6 +11,18 @@
   body,
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $leoBlueDark;
+  }
+  h1.leo-page-headline {
+    margin-bottom: 2.5rem;
+    &:after {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: -.8rem 0 0 0;
+      background: #e2e2e2;
+    }
   }
   #headline > h1 {
     font-size: 30px;

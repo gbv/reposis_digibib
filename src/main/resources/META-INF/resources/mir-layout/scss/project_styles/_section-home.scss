@@ -44,7 +44,7 @@
     }
 
     #main_content {
-      background-image: url("#{$assetPathRoot}images/back-leopard.svg");
+      background-image: url("#{$assetPathRoot}images/back-leopard-180.svg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: 50% 50%;
@@ -59,6 +59,11 @@
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
+  .mir-start_page {
+    #main_content {
+      background-position: 100%% 65%;
+    }
+  }
 }
 
 // Small devices (landscape phones) and below: <= 768px

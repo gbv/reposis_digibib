@@ -144,7 +144,7 @@
                 alt="leoPARD Logo" />
             </a>
           </div>
-          <div class="col">
+          <div class="col-auto mr-5">
             <h2>Anschrift</h2>
             <p>
               Technische Universität Braunschweig<br/>

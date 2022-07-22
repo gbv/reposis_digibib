@@ -3,7 +3,7 @@
   <section xml:lang="de" title="Willkommen bei der Digitalen Bibliothek">
     <div class="jumbotwo" id="bs-index-search">
       <div class="row">
-        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">
+        <div class="col-12 col-lg-9 offset-lg-3 col-xl-8 offset-xl-4" lang="de">
           <h1>
             <span class="leo-project-name">LeoPARD</span>
             <span class="leo-project-slogan">TU Braunschweig Publication And Research Data</span>
