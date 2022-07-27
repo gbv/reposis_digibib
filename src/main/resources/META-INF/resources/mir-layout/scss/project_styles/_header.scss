@@ -30,21 +30,22 @@
     max-width: 120rem;
     margin-left: auto;
     margin-right: auto;
-
     display: flex;
+    position: relative;
     &__logo {
       margin-top: .625rem;
       flex: 0 0 auto;
-      position: relative;
-      z-index: 10;
+      position: absolute;
+      z-index: 2050;
       img {
         max-width: 100%;
         height: auto;
+        width: 260px;
       }
     }
     &__nav {
       flex: 1 1 auto;
-      margin-left: 5.625rem;
+      margin-left: calc(260px + 5.625rem);
       display: flex;
     }
   }
@@ -56,11 +57,22 @@
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
+  .leo-header {
+    &__nav {
+      margin-left: calc(260px + 3rem);
+    }
+  }
 }
 
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
+  .leo-header {
+    &__logo {
+      position: relative;
+      z-index: 10;
+    }
+  }
 }
 
 // Small devices (landscape phones) and below: <= 768px
@@ -72,10 +84,20 @@
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
   #project_logo_box {
-
     position: relative;
     left: auto;
     bottom: auto;
     z-index: 1000;
+  }
+  .leo-logo-link {
+    border-left: 1rem solid $leoRed;
+    height: 100%;
+    display: block;
+    img {
+      display:none;
+    }
+  }
+  header .leo-logo {
+    height: 70%;
   }
 }

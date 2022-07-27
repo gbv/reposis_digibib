@@ -11,18 +11,19 @@
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     height: 5.4375rem;
-
     opacity: 0;
     visibility: hidden;
     animation: fadeOut .15s linear;
     transition: opacity .15s ease-out;
+    background-color: white;
+    z-index: 2040;
     &.open {
       opacity: 1;
       visibility: visible;
@@ -30,26 +31,26 @@
     }
   }
 
-
-
   .bs-search {
-    margin-left: 5.625rem;
     .btn {
       color: $leoBlueDark;
     }
   }
 
 
-
-
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
+  .searchfield_box {
+  }
 }
 
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
+  .searchfield_box {
+    margin-left: 0;
+  }
 }
 
 // Small devices (landscape phones) and below: <= 768px

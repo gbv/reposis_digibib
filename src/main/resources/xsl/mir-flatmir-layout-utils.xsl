@@ -36,8 +36,6 @@
       title="{i18n:translate('digibib.goToMainSite')}">
       <img
         src="{$WebApplicationBaseURL}images/tu_braunschweig_logo.svg"
-        width="260"
-        height="74"
         alt="{i18n:translate('digibib.logoTUBS')}" />
     </a>
   </xsl:template>
@@ -45,8 +43,8 @@
   <xsl:template name="leo.page-nav">
         <!-- Collect the nav links, forms, and other content for toggling -->
 
-          <div class="mir-main-nav">
-            <nav class="navbar navbar-expand-lg">
+          <div class="mir-main-nav d-flex order-3 order-lg-1">
+            <nav class="navbar navbar-expand-lg navbar-light">
               <button
                 class="navbar-toggler"
                 type="button"
@@ -61,9 +59,9 @@
                 id="mir-main-nav-collapse-box"
                 class="collapse navbar-collapse mir-main-nav__entries">
                 <ul class="navbar-nav">
-                  <!--xsl:call-template name="digibib.generate_single_menu_entry">
+                  <xsl:call-template name="digibib.generate_single_menu_entry">
                     <xsl:with-param name="menuID" select="'brand'"/>
-                  </xsl:call-template-->
+                  </xsl:call-template>
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
                   <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
@@ -77,10 +75,27 @@
           </div>
 
           <button
-            class="btn search-toggler js-search-toggler"
+            class="btn search-toggler js-search-toggler order-1 order-lg-2"
             type="button">
             <i class="fas fa-search"></i>
           </button>
+
+          <div id="options_nav_box" class="mir-prop-nav order-2 order-lg-3">
+            <nav>
+              <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
+                <xsl:call-template name="mir.languageMenu" />
+                <xsl:call-template name="mir.loginMenu" />
+                <li>
+                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
+                    <img
+                    src="{$WebApplicationBaseURL}images/logo-leopard.png"
+                    class="leo-logo"
+                    alt="leoPARD Logo" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
           <div class="searchfield_box">
             <form
@@ -106,23 +121,6 @@
                 </button>
               </div>
             </form>
-          </div>
-
-          <div id="options_nav_box" class="mir-prop-nav">
-            <nav>
-              <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
-                <xsl:call-template name="mir.languageMenu" />
-                <xsl:call-template name="mir.loginMenu" />
-                <li>
-                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
-                    <img
-                    src="{$WebApplicationBaseURL}images/logo-leopard.png"
-                    class="leo-logo"
-                    alt="leoPARD Logo" />
-                  </a>
-                </li>
-              </ul>
-            </nav>
           </div>
 
   </xsl:template>
@@ -158,7 +156,9 @@
           <div class="col">
             <h2>Projekt</h2>
             <ul class="internal_links">
-              <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='below']/*" mode="footerMenu" />
+              <xsl:apply-templates
+                select="$loaded_navigation_xml/menu[@id='below']/*"
+                mode="footerMenu" />
             </ul>
           </div>
         </div>
@@ -168,15 +168,26 @@
       <div class="container">
         <div class="row ">
           <div class="col">
-            <div class="d-flex justify-content-between align-items-center">
-              © Technische Universität Braunschweig
+            <div class="d-flex justify-content-between align-items-center flex-wrap flex-sm-nowrap">
+              <span>© Technische Universität Braunschweig</span>
               <xsl:variable name="mcr_version" select="concat('MyCoRe ',mcrver:getCompleteVersion())" />
-              <div id="powered_by" class="d-flex align-items-center">
-                <a id="dini_logo" href="https://www.dini.de/dienste-projekte/dini-zertifikat/" title="{i18n:translate('digibib.diniCertificate2016')}">
-                  <img alt="Logo DINI-Zertifikat 2016" src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg" height="50" />
+              <div
+                id="powered_by"
+                class="d-flex align-items-center justify-content-center justify-content-sm-start w-sm-auto mt-3 mt-sm-0">
+                <a
+                  id="dini_logo"
+                  href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
+                  title="{i18n:translate('digibib.diniCertificate2016')}">
+                  <img
+                    alt="Logo DINI-Zertifikat 2016"
+                    src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg"
+                    height="50" />
                 </a>
                 <a id="mycore_logo" href="http://www.mycore.de">
-                  <img src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png" title="{$mcr_version}" alt="powered by MyCoRe" />
+                  <img
+                    src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png"
+                    title="{$mcr_version}"
+                    alt="powered by MyCoRe" />
                 </a>
               </div>
             </div>

@@ -29,6 +29,7 @@
       }
     }
     .search-query {
+      width: 30vw;
       margin-right: 0;
       margin-bottom: 0;
       font-size: 1.125rem;
@@ -74,6 +75,11 @@
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
+  #leo-searchbar {
+    .search-query {
+      width: 30vw;
+    }
+  }
 }
 
 // Medium devices (tablets) and below: <= 992px
@@ -84,9 +90,19 @@
 // Small devices (landscape phones) and below: <= 768px
 @include media-breakpoint-down(sm) {
   // add/overwrite styles for responsive level sm and lower
+  #leo-searchbar {
+    .search-query {
+      width: 50vw;
+    }
+  }
 }
 
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
+  #leo-searchbar {
+    .search-query {
+      width: 90vw;
+    }
+  }
 }

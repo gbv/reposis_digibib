@@ -182,40 +182,96 @@
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
+  .mir-main-nav {
+    .nav-item:not(:first-child),
+    #basket-list-item {
+      margin-left: 1rem;
+    }
+  }
+  .search-toggler {
+    margin-left: 1rem;
+  }
 }
 
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
+  header {
+    position: static;
+  }
+  .leo-header__logo {
+    margin-top: 0;
+    img {
+      width: auto;
+      height: 5.4375rem;
+    }
+  }
+  .leo-header__nav {
+    margin-left: 1rem;
+  }
+  .search-toggler {
+    margin-left: 1rem;
+  }
   .mir-main-nav {
-    .navbar {
-
-    }
-    .mir-main-nav__entries {
-
-    }
     .navbar-toggler {
-
+      color: $leoBlueDark;
+      border-color: $gray-light;
+      height: 100%;
+      border-width: 0 0 0 1px;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
-    .bs-search {
-      .form-control {
-      }
+    .navbar-nav {
+      margin-bottom: 1rem;
     }
+    .dropdown-menu {
+      padding: 0.5rem 0;
+      margin-left: 0;
+      border-width: 0 0 0 1px;
+    }
+  }
+  #mir-main-nav-collapse-box {
+    position: absolute;
+    top: 5.4375rem;
+    right: 0;
+    background-color: $leoBlueDark;
+    padding: 0 3rem;
+    min-width: 320px;
+    width: 100vw;
+    border-bottom: 1px solid white;
+  }
+  .navbar-light .navbar-nav .nav-link,
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .show > .nav-link,
+  .navbar-light .navbar-nav .active > .nav-link,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .nav-link.active {
+    color: white;
+  }
+  .mir-main-nav .nav-item,
+  .mir-main-nav .nav-item:not(:first-child),
+  .mir-main-nav #basket-list-item {
+    margin-left: 0rem;
+    height: auto;
+  }
+  .socialbar-wrapper {
+    display: none;
   }
 }
 
 // Small devices (landscape phones) and below: <= 768px
 @include media-breakpoint-down(sm) {
   // add/overwrite styles for responsive level sm and lower
+  .search-toggler {
+    margin-left: 0rem;
+  }
 }
 
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
-  .mir-main-nav {
-    .navbar-toggler {
-    }
-    .navbar-nav {
-    }
+  .leo-header__nav {
+    margin-left: 0rem;
   }
 }

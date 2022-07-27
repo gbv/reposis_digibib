@@ -94,4 +94,7 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
+  #powered_by {
+    width: 100%;
+  }
 }
