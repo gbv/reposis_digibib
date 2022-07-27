@@ -99,10 +99,11 @@
 
           <div class="searchfield_box">
             <form
+              id="bs-searchHeader"
               action="{$WebApplicationBaseURL}servlets/solr/find"
               class="bs-search form-inline"
               role="search">
-              <div id="leo-searchbar">
+              <div class="input-group">
                 <input
                   name="condQuery"
                   placeholder="{i18n:translate('mir.navsearch.placeholder')}"

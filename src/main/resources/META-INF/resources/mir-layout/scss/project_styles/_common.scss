@@ -8,18 +8,6 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-
-  html body .jumbotron {
-    color: inherit;
-    background: none;
-    background-color: $gray-lighter;
-  }
-
-  // classification Browser
-  .classificationBrowser {
-    width: 800px;
-  }
-
   // viewer
   .viewer .navbar.navbar-default, .mycoreViewer .navbar {
     background-image: none;

@@ -6,38 +6,15 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-  footer {
+ .flatmir-footer {
+    background-color: #fff;
+    border: none;
     .leo-logo {
-      height: 5.4375rem;
+      height: $menuHeight;
       padding-bottom: 1rem;
     }
   }
-  html body #powered_by {
-    background-color: white;
-    border-top: 0px; /* unset border top from flatly */
-  }
-  .panel-footer {
-    padding: 0;
-  }
-  html body #powered_by {
-    background-color: #FFF;
-    padding: 5px 0 0 0;
-    text-align: right;
-  }
-  .flatmir-footer {
-    background-color: #fff;
-    border: none;
-  }
-  .flatmir-footer .col-md-9,
-  .flatmir-footer .navbar-nav > li > a {
-    padding: 5px 60px 0 0;
-  }
-  .flatmir-footer a {
-    color: black;
-  }
-  #dini_logo {
-    margin-right: 1rem;
-  }
+
   .leo-footer-menu {
     color: white;
     background-color: $leoBlueDark;
@@ -63,19 +40,23 @@
       }
     }
   }
+
   .leo-copyright-menu {
     color: black;
     background-color: white;
   }
-  .internal_links {
-    .nav-link {
-      display: block;
-      padding: .25rem 0;
-      a {
-        color: white;
-      }
-    }
+
+  #dini_logo {
+    margin-right: 1rem;
   }
+
+  html body #powered_by {
+    background-color: white;
+    border-top: 0px; /* unset border top from flatly */
+    padding: 5px 0 0 0;
+    text-align: right;
+  }
+
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower

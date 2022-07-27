@@ -8,15 +8,13 @@
 
   // options menu
   .mir-prop-nav {
-    // inverted flex order!
-    // means: all but the first
     .navbar-nav {
       padding-right: 1.25rem;
       & > li > a {
         display:block;
         padding:0;
-        height: 5.4375rem;
-        line-height: 5.4375rem;
+        height: $menuHeight;
+        line-height: $menuHeight;
         color: $leoBlueDark;
         font-size: .875rem;
         font-weight: 500;
@@ -42,25 +40,16 @@
     }
     .nav-item,
     #basket-list-item {
-      height: 5.4375rem;
+      height: $menuHeight;
     }
     .nav-link {
       display:block;
       padding:0;
-      height: 5.4375rem;
-      line-height: 5.4375rem;
+      height: $menuHeight;
+      line-height: $menuHeight;
       color: $leoBlueDark;
       font-size: 1.125rem;
       font-weight: 500;
-
-      // active nav link (no dropdown)
-      &.active {
-      }
-      &:hover,
-      &:focus,
-      &:active {
-
-      }
     }
     .dropdown-menu {
       padding: 2rem 4rem;
@@ -71,17 +60,6 @@
       &:focus,
       &:active {
         text-decoration: underline;
-      }
-    }
-    // active sub menu link (dropdown)
-    .active {
-      .nav-link {
-      }
-      > .dropdown-item {
-        &:hover,
-        &:focus,
-        &:active {
-        }
       }
     }
   }
@@ -121,12 +99,6 @@
     }
   }
 
-  // overwrite bs settings
-  .mir-main-nav.bg-primary .navbar-nav .active > .nav-link {
-  }
-  .mir-main-nav .navbar-expand-lg .navbar-nav .nav-link {
-  }
-
   // footer menu
   .internal_links {
     width: 100%;
@@ -139,7 +111,15 @@
         background-color: transparent;
       }
     }
+    .nav-link {
+      display: block;
+      padding: .25rem 0;
+      a {
+        color: white;
+      }
+    }
   }
+
 
   // settings from https://www.tu-braunschweig.de/
   // for left side nav bar
@@ -196,16 +176,6 @@
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
-  header {
-    position: static;
-  }
-  .leo-header__logo {
-    margin-top: 0;
-    img {
-      width: auto;
-      height: 5.4375rem;
-    }
-  }
   .leo-header__nav {
     margin-left: 1rem;
   }
@@ -232,7 +202,7 @@
   }
   #mir-main-nav-collapse-box {
     position: absolute;
-    top: 5.4375rem;
+    top: $menuHeight;
     right: 0;
     background-color: $leoBlueDark;
     padding: 0 3rem;
