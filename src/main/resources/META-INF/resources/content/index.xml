@@ -6,7 +6,7 @@
         <div class="col-12 col-lg-9 offset-lg-3 col-xl-8 offset-xl-4" lang="de">
           <h1>
             <span class="leo-project-name">LeoPARD</span>
-            <span class="leo-project-slogan">TU Braunschweig Publication And Research Data</span>
+            <span class="leo-project-slogan">TU Braunschweig Publications And Research Data</span>
           </h1>
           <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
             <div class="input-group">
@@ -40,18 +40,28 @@
       });
     </script>
   </section>
+
   <section xml:lang="en" title="Welcome to the Digital Library">
-    <div class="jumbotwo" id="bs-index-search" style="margin-top:50px;">
+    <div class="jumbotwo" id="bs-index-search">
       <div class="row">
-        <div class="col-md-9 col-md-offset-2" lang="en">
+        <div class="col-12 col-lg-9 offset-lg-3 col-xl-8 offset-xl-4" lang="de">
           <h1>
-            Digital Library <br />
-            Institutional Repository of TU&#160;Braunschweig
+            <span class="leo-project-name">LeoPARD</span>
+            <span class="leo-project-slogan">TU Braunschweig Publications And Research Data</span>
           </h1>
-          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline" role="search" style="margin-top:30px;">
-            <div class="input-group" style="width: 100%;">
-              <input name="condQuery" placeholder="Search in 16.000 documents" class="form-control search-query" id="bs-searchInput" type="text" />
-              <div class="input-group-btn"><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
+            <div class="input-group">
+              <input
+                name="condQuery"
+                placeholder="Search in 16.000 documents"
+                class="form-control search-query"
+                id="bs-searchInput"
+                type="text"
+                aria-label=""
+                aria-describedby="" />
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              </div>
             </div>
           </form>
         </div>
@@ -60,18 +70,19 @@
     <script type="text/javascript" src="../js/jquery.number.js"></script>
     <script>
       $( document ).ready(function() {
-      $.ajax({
-      type: "GET",
-      url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
-      dataType: "jsonp",
-      success: function (data) {
-      $('#bs-searchInput').attr('placeholder', 'Search in ' + $.number(data.response.numFound,0, ',', '.') + ' documents');
-      },
-      });
+        $.ajax({
+          type: "GET",
+          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
+          dataType: "jsonp",
+          success: function (data) {
+            $('#bs-searchInput').attr('placeholder', 'Search in ' + $.number(data.response.numFound,0, ',', '.') + ' documents');
+          },
+        });
       });
     </script>
   </section>
+
   <meta>
-    <log lastEditor="administrator" date="2018-04-23" time="12:46"/>
+    <log lastEditor="administrator" date="2022-08-22" time="12:46"/>
   </meta>
 </MyCoReWebPage>
