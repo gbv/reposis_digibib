@@ -120,6 +120,9 @@
     }
   }
 
+  .breadcrumb-item.active {
+    color: $gray-dark;
+  }
 
   // settings from https://www.tu-braunschweig.de/
   // for left side nav bar

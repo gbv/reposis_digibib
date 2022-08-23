@@ -12,16 +12,17 @@
   .result_body .result_filter .panel.oa li[data-fq="worldReadableComplete:true"] .title:hover {
     color: #666;
   }
-  
+
   .filter .hits {
-    color: #95a5a6;
+    //color: #95a5a6;
+    color: #555;
   }
-  
+
   .filter label {
     font-weight: normal;
     color: #555;
   }
-  
+
   /* TODO: move to MIR layout ***************************************************/
   .hit_oa > span {
     background-color: transparent;

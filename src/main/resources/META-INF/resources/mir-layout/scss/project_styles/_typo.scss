@@ -8,11 +8,13 @@
   html body p {
     line-height: 160%;
   }
+
   body,
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
     color: $leoBlueDark;
   }
+
   h1.leo-page-headline {
     margin-bottom: 2.5rem;
     &:after {
@@ -24,9 +26,11 @@
       background: #e2e2e2;
     }
   }
+
   #headline > h1 {
     font-size: 30px;
   }
+
   .datenschutz h4 {
     font-weight: bold;
     margin-top: 15px;
@@ -35,8 +39,14 @@
   .datenschutz h5 {
     font-weight: bold;
   }
+
   .jumbotwo h1 {
     font-size: 36px;
+  }
+
+  .detail_row .main_col h1,
+  .result_headline h1 {
+    font-size: 2rem;
   }
 
 // Large devices (desktops) and below: <= 1200px

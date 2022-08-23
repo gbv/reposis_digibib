@@ -6,19 +6,39 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-// TODO: make mir result cards standard or provide at least a mir class
-// until then: use the the settings from result cards for manuals too
-#app {
-  .card-title {
-    font-size: 1rem;
-    color: #999;
-    margin-bottom: 0px;
+#app .card,
+.detail_row .east .card,
+.result_body .result_filter .card {
+  border: none;
+  margin-top: .4375rem;
+  margin-bottom: 3.875rem;
+  .card-header {
+    background-color: white;
+    border: none;
+    .card-title {
+      color: #003f57;
+      font-weight: 500;
+      font-size: 1rem;
+      &::before {
+        content: " ";
+        display: inline-block;
+        width: .75rem;
+        height: .75rem;
+        margin-left: -1.25rem;
+        margin-right: .5rem;
+        background-position: center;
+        background-size: .75rem auto;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 320 512%27%3E%3Cpath fill=%27%23003F57%27 d=%27M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z%27/%3E%3C/svg%3E");
+      }
+    }
   }
-  .card {
-    color: #666;
-    border: 1px solid #ccc;
+  .card-body {
+    border-top: .125rem solid #66b4d3;
+    border-bottom: .125rem solid #66b4d3;
   }
 }
+
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
