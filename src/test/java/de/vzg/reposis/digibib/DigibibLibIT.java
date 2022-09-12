@@ -30,8 +30,8 @@ public class DigibibLibIT extends MCRSeleniumTestBase {
     public void testStart() throws InterruptedException {
         Thread.sleep(10000);
         driver.get("http://localhost:9107/digibib/content/index.xml");
-        driver.waitFor(ExpectedConditions.titleContains("Willkommen bei der Digitalen Bibliothek"));
-        driver.waitAndFindElement(By.xpath("//*[contains(text(), 'Digitale Bibliothek')]"));
+        driver.waitFor(ExpectedConditions.titleContains("LeoPARD - Start"));
+        driver.waitAndFindElement(By.xpath("//*[contains(text(), 'LeoPARD')]"));
     }
 
     @After
