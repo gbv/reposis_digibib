@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Kontakt"><div>
+<MyCoReWebPage><section xml:lang="de" title="LeoPARD - Kontakt"><div>
 <h2>Kontakt</h2>
 
 <div class="row">
 <div class="col-md-12">
-<p>Referatsleiter Digitale Bibliothek und Publikationsservices<br />
+<p>Referatsleiter Publikationsservices<br />
 - Open Access Koordinator -<br />
 Carsten Elsner<br />
 E-Mail: <span class="madress">carsten.elsner [at] tu-braunschweig.de</span><br />
-Telefon: +49 (0)531 391 5067</p>
+Telefon: +49 (0)531 391-5067</p>
 
 <p>Für Fragen zur Publikation von elektronischen Dokumenten wenden Sie sich bitte an:<br />
 Claudia Blanck / Christine Fischer / Matthias Kissler<br />
-E-Mail: <span class="madress">digibib [at] tu-braunschweig.de</span><br />
-Telefon: +49 (0)531 391 5052</p>
+E-Mail: <span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span><br />
+Telefon: +49 (0)531 391-5052</p>
 
 <p>Für Fragen zur Publikation und Archivierung von Forschungsdaten wenden Sie sich bitte an:<br />
 Laura Grunwald / Dr. Jana Mersmann / Robert Strötgen<br />
 E-Mail: <span class="madress">forschungsdaten [at] tu-braunschweig.de</span><br />
-Telefon: +49 (0)531 391 5019</p>
+Telefon: +49 (0)531 391-5019</p>
 
 <p>Für Fragen zu Dissertationen wenden Sie sich bitte an die Dissertationsstelle:<br />
 Anja Globisch<br />
 E-Mail: <span class="madress">ub-diss [at] tu-bs.de</span><br />
-Telefon: +49 (0)531 391 5024 (Mo-Fr: 9.00-12.00 Uhr)</p>
+Telefon: +49 (0)531 391-5024 (Mo-Fr: 9.00-12.00 Uhr)</p>
 
 <p>Fragen an das Universitätsarchiv richten Sie bitte an:<br />
 E-Mail: <span class="madress">archiv [at] tu-bs.de</span></p>
@@ -33,12 +33,64 @@ E-Mail: <span class="madress">archiv [at] tu-bs.de</span></p>
 <p>Verbundzentrale des GBV (VZG)<br />
 Platz der Göttinger Sieben 1<br />
 37073 Göttingen<br />
-Tel.: 0551 39 5207<br />
-Fax: 0551 39 13980<br />
+Tel.: +49 (0) 551 39 5207<br />
+Fax: +49 (0) 551 39 13980<br />
 <b>Digitale Bibliothek, Reposis</b><br />
 Internet: <a href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service">https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service</a><br />
 E-Mail: <span class="madress">dms-list [at] lists.gbv.de</span></p>
 </div>
 </div>
 </div>
-</section><meta><log lastEditor="dbbs_admin" date="2020-08-24" time="11:06" /></meta></MyCoReWebPage>
+</section>
+<section xml:lang="en" title="LeoPARD - Contact"><div>
+<h2>Contact</h2>
+
+<div class="row">
+<div class="col-md-12">
+<h4>Head of Publication Services Unit</h4>
+
+<p>- Open Access Coordinator -<br />
+Carsten Elsner<br />
+E-Mail: carsten.elsner [at] tu-braunschweig.de<br />
+Phone: +49 (0)531 391-5067</p>
+
+
+<h4>For questions regarding the publication of electronic documents, please contact:</h4>
+
+<p>Claudia Blanck / Christine Fischer / Matthias Kissler<br />
+E-Mail: ub-publikationsservices [at] tu-braunschweig.de<br />
+Phone: +49 (0)531 391-5052</p>
+
+<h4>For questions regarding the publication and archiving of research data, please contact:</h4>
+
+<p>Dr. Laura Grunwald-Eckhardt / Dr. Jana Mersmann / Robert Strötgen<br />
+E-Mail: forschungsdaten [at] tu-braunschweig.de<br />
+Phone: +49 (0)531 391-5019</p>
+
+<h4>For questions regarding dissertations, please contact the Thesis Office:</h4>
+
+<p>Anja Globisch<br />
+E-Mail: ub-diss [at] tu-bs.de<br />
+Phone: +49 (0)531 391-5024 (Mo-Fr: 9.00-12.00 Uhr)</p>
+
+
+<h4>Questions regarding the University Archives should be directed to:</h4>
+
+<p>E-Mail: archiv [at] tu-bs.de</p>
+
+<h4>Questions about the repository framework MyCoRe and the database server can be answered by the</h4>
+
+<p>Verbundzentrale des GBV (VZG)<br />
+Platz der Göttinger Sieben 1<br />
+37073 Göttingen<br />
+Tel.: +49 (0)551 39-5207<br />
+Fax: +49 (0)551 39-13980<br />
+<b>Digitale Bibliothek, Reposis</b><br />
+Internet: <a href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service">https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service</a><br />
+E-Mail: dms-list [at] lists.gbv.de</p>
+</div>
+</div>
+</div>
+</section>
+
+<meta><log lastEditor="celsner" date="2022-09-12" time="09:10" /></meta></MyCoReWebPage>

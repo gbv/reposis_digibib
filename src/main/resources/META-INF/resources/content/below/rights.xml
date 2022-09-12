@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Hinweise zur Nutzung und zur rechtlichen Situation"><div>
+<MyCoReWebPage><section xml:lang="de" title="LeoPARD - Datenschutz"><div>
 <h2>Datenschutzerklärung</h2>
 
 <div class="row datenschutz">
@@ -13,7 +13,7 @@
 	<li>Technische Universität Braunschweig</li>
 	<li>Universitätsplatz 2</li>
 	<li>38106 Braunschweig</li>
-	<li>Tel.: +49 (531) 391- 0</li>
+	<li>Tel.: +49 (0) 531 391-0</li>
 	<li>E-Mail: praesidentin(at)tu-braunschweig.de</li>
 </ol>
 </address>
@@ -27,14 +27,14 @@ vertreten durch die Präsidentin, <a href="https://www.tu-braunschweig.de/praesi
 	<li>Dr. Bernd Nörtemann</li>
 	<li>Bienroder Weg 80</li>
 	<li>38106 Braunschweig</li>
-	<li>Tel.: +49 (531) 391 - 7654</li>
+	<li>Tel.: +49 (0) 531 391-7654</li>
 	<li>E-Mail: datenschutz(at) tu-braunschweig.de</li>
 	<li><a href="https://www.tu-braunschweig.de/datenschutz">https://www.tu-braunschweig.de/datenschutz</a></li>
 </ol>
 
 <h3>III. Allgemeines zur Datenverarbeitung</h3>
 
-<p>Diese Datenschutzerklärung soll die Nutzer*innen dieses Repositoriums über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch die Betreiber (Universitätsbibliothek Braunschweig, Mail ub(at)tu-braunschweig.de) informieren.</p>
+<p>Diese Datenschutzerklärung soll die Nutzer*innen dieses Repositoriums über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch die Betreiber (Universitätsbibliothek Braunschweig, Mail ub [at] tu-braunschweig.de) informieren.</p>
 
 <p>Die Technische Universität Braunschweig nimmt den Datenschutz sehr ernst und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Da durch neue Technologien und die ständige Weiterentwicklung dieses Service Änderungen an dieser Datenschutzerklärung vorgenommen werden können, empfehlen wir Ihnen sich die Datenschutzerklärung in regelmäßigen Abständen wieder durchzulesen.</p>
 
@@ -142,7 +142,7 @@ vertreten durch die Präsidentin, <a href="https://www.tu-braunschweig.de/praesi
 <p>Für die Optimierung unserer Angebote liefern personenbezogene Daten keinerlei Mehrwert. Für die Webanalyse setzten wir daher die von Datenschützern empfohlene Nutzungsanalyse-Software Matomo ein. Durch eine automatische Anonymisierung der IP-Adressen mit dem Plugin AnonymizeIP können die erhobenen Daten nicht mehr bestimmten Personen zugeordnet werden. Damit ist ausgeschlossen, dass Nutzungsdaten oder Nutzungsprofile mit personenbezogenen Daten in Verbindung gebracht werden.</p>
 <iframe src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de" style="border: 0; width: 100%;">&lt;/div&gt;</iframe>
 
-<p>Die Daten dienen ausschließlich der Verbesserung des Publikationsservers, den die Betreiber der „Digitalen Bibliothek“ mit ihrer Dienstleistung anbieten.</p>
+<p>Die Daten dienen ausschließlich der Verbesserung von LeoPARD, den die Betreiber mit ihrer Dienstleistung anbieten.</p>
 
 <h3>VI. Kontaktaufnahme</h3>
 
@@ -166,4 +166,275 @@ vertreten durch die Präsidentin, <a href="https://www.tu-braunschweig.de/praesi
 </div>
 </div>
 </div>
-</section><meta><log lastEditor="dbbs_admin" date="2022-03-10" time="10:59" /></meta></MyCoReWebPage>
+</section>
+<section xml:lang="en" title="Data Protection Declaration"><div>
+<h2>Data Protection Declaration</h2>
+
+<p>This is a translation of LeoPARD's <em>Datenschutzerklärung </em>(Data Protection Declaration). Only the German version is legally valid. In case of any differences in wording, meaning, or interpretation between the German and English versions, the German version shall prevail. </p>
+
+<p> </p>
+
+<div class="row datenschutz">
+<div class="col-md-12">
+<h3>I. Name and Address of the Controller</h3>
+
+<p>The controller as described in the General Data Protection Regulation (GDPR) and other national data protection acts as a member states as well as other data protection provisions is:</p>
+
+<p style="margin-left: 40px;">Technische Universität Braunschweig<br />
+Universitätsplatz 2<br />
+38106 Braunschweig<br />
+Tel.: +49 (531) 391-0<br />
+E-Mail: praesidentin [at] tu-braunschweig.de</p>
+
+<p>represented by the President, <a href="https://www.tu-braunschweig.de/praesidentin">Prof. Dr. Angela Ittel</a></p>
+
+<p> </p>
+
+<h3>II. Name and Address of the Data Protection Officer</h3>
+
+<p>The data protection officer at Technische Universität Braunschweig is:</p>
+
+<p style="margin-left: 40px;">Dr. Bernd Nörtemann<br />
+Bienroder Weg 80<br />
+38106 Braunschweig<br />
+Tel.: +49 (0) 531 391-7654<br />
+E-Mail: datenschutz [at] tu-braunschweig.de<br />
+<a href="https://www.tu-braunschweig.de/datenschutz">https://www.tu-braunschweig.de/datenschutz</a></p>
+
+<p style="margin-left: 40px;"> </p>
+
+<h3>III. General Information on Data Processing</h3>
+
+<p>This data protection declaration is intended to inform the users of this repository about the nature, scope and purpose of the collection and use of personal data by the operators (Braunschweig University Library, mail ub [at] tu-braunschweig.de).</p>
+
+<p>Technische Universität Braunschweig takes data protection very seriously and treats your personal data confidentially and in accordance with the statutory provisions. Since new technologies and the continuous development of this service may result in changes to this data protection declaration, we recommend that you read it again at regular intervals.</p>
+
+<h4 style="margin-left: 40px;">1. Scope of personal data processing</h4>
+
+<p style="margin-left: 40px;">A registration (login) with personal data is only required for the submission of publications by university members, not for the search for or the read access to publications. To publish, university members log in with their TU identifier. Authorization is provided through the IDP (Identity Provider - DFN-AAI Shibboleth) of Technische Universität Braunschweig. The repository processes and stores the following user data:</p>
+
+<ul>
+	<li style="margin-left: 40px;">Name</li>
+	<li style="margin-left: 40px;">User ID</li>
+	<li style="margin-left: 40px;">E-Mail-Address</li>
+	<li style="margin-left: 40px;">Time and date of last login</li>
+	<li style="margin-left: 40px;">User roles (employee, student)</li>
+	<li style="margin-left: 40px;">Link to the publications released in this repository, incl. date and time of the last modification The storage and processing of this data is done for the performance of the task assigned to us of supporting teaching and research according to Art. 6 para. 1 lit. e GDPR in conjunction with § 3 NDSG and is required</li>
+	<li style="margin-left: 40px;">to prove the authorization for publication in our repository</li>
+	<li style="margin-left: 40px;">for communication with authors in the context of the publication process</li>
+	<li style="margin-left: 40px;">to prove authorship of e-publications</li>
+</ul>
+
+<h4 style="margin-left: 40px;">2. Legal basis for processing of personal data</h4>
+
+<p style="margin-left: 40px;">If the data subjects must consent to their personal data being processed for certain procedures, point (a) of Article 6(1) of the EU General Data Protection Regulation (GDPR) serves as the legal basis.</p>
+
+<p style="margin-left: 40px;">When processing personal data required to fulfil a contract to which the data subject is a party, point (b) of Article 6(1) GDPR serves as the legal basis. This also applies to processes required for carrying out pre-contractual matters.</p>
+
+<p style="margin-left: 40px;">If it is necessary to process personal data to fulfil one of TU Braunschweig’s legal obligations, point (c) of Article 6(1) GDPR serves as the legal basis.</p>
+
+<p style="margin-left: 40px;">If vital interests of the data subject or another natural person require personal data to be processed, point (d) of Article 6(1) GDPR serves as the legal basis.</p>
+
+<p style="margin-left: 40px;">If the processing is required to fulfil a task that is in the public interest or that is a part of exercising official authority that was transferred to TU Braunschweig, point (e) of Article 6(1) GDPR in conjunction with § 3 NDSG serve as the legal basis for processing the data.</p>
+
+<p style="margin-left: 40px;">If it is necessary to process the data to preserve TU Braunschweig’s legitimate interests or those of the third-party, and if the interests, basic rights and freedoms of the data subject do not override the aforementioned interests, point (f) of Article 6(1) GDPR serves as the legal basis.</p>
+
+<h4 style="margin-left: 40px;">3. Publication data</h4>
+
+<p style="margin-left: 40px;">The aim of this repository is the worldwide publication and provision of electronic publications (e-publications and e-dissertations) in the sense of Open Access. For this purpose, we also store, process and publish personal data of the persons involved in publications:</p>
+
+<ul>
+	<li style="margin-left: 40px;">Names und Roles (e.g. author, editor)</li>
+	<li style="margin-left: 40px;">Unique author identifiers (e.g. ORCiD, GND)</li>
+	<li style="margin-left: 40px;">Information on organizational affiliation (e.g. university, faculty, institute)</li>
+</ul>
+
+<p style="margin-left: 40px;">This serves to provide unambiguous confirmation and acknowledgement of authorship, citability, and better findability of the publications. With the release of the publication, we also transfer this personal data to third parties and make it available via interfaces:</p>
+
+<ul>
+	<li style="margin-left: 40px;">to the German National Library within the scope of the reporting obligations for the purpose of archiving and proof in the German National Bibliography</li>
+	<li style="margin-left: 40px;">to the registration agency DataCite for the unique assignment of permanent publication identifiers (DOI)</li>
+	<li style="margin-left: 40px;">to scientific and general search engines like Google, Google Scholar, BASE</li>
+	<li style="margin-left: 40px;">to third parties worldwide, via interfaces such as OAI (Open Archives Initiative) and the Google Sitemap protocol</li>
+</ul>
+
+<p style="margin-left: 40px;">Publication and thus distribution and worldwide accessibility will only take place with the consent of the authors or editors and only after signing the publication contract.</p>
+
+<h4 style="margin-left: 40px;">4. Duration of personal data storage</h4>
+
+<p style="margin-left: 40px;">The personal data of the data subject will be stored by TU Braunschweig only as long as the purpose of the storage exists. If the processing is based on the data subject's consent, the data will only be stored until the consent is revoked, unless there is another legal basis for the processing.</p>
+
+<h4 style="margin-left: 40px;">5. Rights of the person concerned</h4>
+
+<p style="margin-left: 80px;"><strong>5.1 Information rights</strong></p>
+
+<p style="margin-left: 80px;">The data subject shall have the right to obtain from the controller confirmation as to whether or not personal data concerning him or her are being processed by TU Braunschweig. If that is the case, he or she has a right of access to the personal data and the following information:</p>
+
+<p style="margin-left: 80px;">a) the purposes of the processing;</p>
+
+<p style="margin-left: 80px;">b) the categories of personal data concerned;</p>
+
+<p style="margin-left: 80px;">c) the recipients or categories of recipient to whom the personal data have been or will be disclosed;</p>
+
+<p style="margin-left: 80px;">d) where possible, the envisaged period for which the personal data will be stored, or, if not possible, the criteria used to determine that period;</p>
+
+<p style="margin-left: 80px;">e) the existence of the right to request from the controller rectification or erasure of personal data or restriction of processing of personal data concerning the data subject or to object to such processing;</p>
+
+<p style="margin-left: 80px;">f) the existence of the right to lodge a complaint with a supervisory authority.</p>
+
+<p style="margin-left: 80px;"><strong>5.2 Right to rectification</strong></p>
+
+<p style="margin-left: 80px;">The data subject shall have the right to obtain from the controller without undue delay the rectification of inaccurate personal data concerning him or her. The controller shall immediately rectify the data.</p>
+
+<p style="margin-left: 80px;"><strong>5.3 Right to restriction of processing</strong></p>
+
+<p style="margin-left: 80px;">The data subject shall have the right to obtain from the controller restriction of processing where one of the following applies:</p>
+
+<p style="margin-left: 80px;">a) the accuracy of the personal data is contested by the data subject, for a period enabling the controller to verify the accuracy of the personal data;</p>
+
+<p style="margin-left: 80px;">b) the processing is unlawful and the data subject opposes the erasure of the personal data and requests the restriction of their use instead;</p>
+
+<p style="margin-left: 80px;">c) the controller no longer needs the personal data for the purposes of the processing, but they are required by the data subject for the establishment, exercise or defence of legal claims;</p>
+
+<p style="margin-left: 80px;">d) the data subject has objected to processing pursuant to Article 21(1) pending the verification whether the legitimate grounds of the controller override those of the data subject.</p>
+
+<p style="margin-left: 80px;">Where processing has been restricted, such personal data shall, with the exception of storage, only be processed with the data subject's consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the Union or of a Member State.</p>
+
+<p style="margin-left: 80px;">A data subject who has obtained restriction of processing shall be informed by the controller before the restriction of processing is lifted.</p>
+
+<p style="margin-left: 80px;"><strong>5.4 Right to erasure</strong></p>
+
+<p style="margin-left: 80px;">A) OBLIGATION TO ERASE</p>
+
+<p style="margin-left: 80px;">The data subject shall have the right to obtain from the controller the erasure of personal data concerning him or her without undue delay and the controller shall have the obligation to erase personal data without undue delay where one of the following grounds applies:</p>
+
+<p style="margin-left: 80px;">a) the personal data are no longer necessary in relation to the purposes for which they were collected or otherwise processed;</p>
+
+<p style="margin-left: 80px;">b) the data subject withdraws consent on which the processing is based according to point (a) of Article 6(1), or point (a) of Article 9(2), and where there is no other legal ground for the processing;</p>
+
+<p style="margin-left: 80px;">c) the data subject objects to the processing pursuant to Article 21(1) and there are no overriding legitimate grounds for the processing, or the data subject objects to the processing pursuant to Article 21(2);</p>
+
+<p style="margin-left: 80px;">d) the personal data have been unlawfully processed;</p>
+
+<p style="margin-left: 80px;">e) the personal data have to be erased for compliance with a legal obligation in Union or Member State law to which the controller is subject;</p>
+
+<p style="margin-left: 80px;">f) the personal data have been collected in relation to the offer of information society services referred to in Article 8(1).</p>
+
+<p style="margin-left: 80px;">B) EXCEPTIONS FROM THE OBLIGATION TO ERASE</p>
+
+<p style="margin-left: 80px;">The right to have data erased shall not apply to the extent that processing is necessary:</p>
+
+<p style="margin-left: 80px;">a) for exercising the right of freedom of expression and information;</p>
+
+<p style="margin-left: 80px;">b) for compliance with a legal obligation which requires processing by Union or Member State law to which the controller is subject or for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;</p>
+
+<p style="margin-left: 80px;">c) for reasons of public interest in the area of public health in accordance with points (h) and (i) of Article 9(2) as well as Article 9(3);</p>
+
+<p style="margin-left: 80px;">d) for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes in accordance with Article 89(1) in so far as the right referred to in paragraph 1 is likely to render impossible or seriously impair the achievement of the objectives of that processing; or</p>
+
+<p style="margin-left: 80px;">e) for the establishment, exercise or defence of legal claims.</p>
+
+<p style="margin-left: 80px;"><strong>5.5 Right to notification</strong></p>
+
+<p style="margin-left: 80px;">The controller shall communicate any rectification or erasure of personal data or restriction of processing carried out in accordance with Article 16, Article 17(1) and Article 18 to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort.</p>
+
+<p style="margin-left: 80px;">The controller shall inform the data subject about those recipients if the data subject requests it.</p>
+
+<p style="margin-left: 80px;"><strong>5.6 Right to data portability</strong></p>
+
+<p style="margin-left: 80px;">The data subject shall have the right to receive the personal data concerning him or her, which he or she has provided to a controller, in a structured, commonly used and machine-readable format. In addition, the data subjects have the right to transmit those data to another controller without hindrance from the controller to which the personal data have been provided, where:</p>
+
+<p style="margin-left: 80px;">a) the processing is based on consent pursuant to point (a) of Article 6(1) or point (a) of Article 9(2) or on a contract pursuant to point (b) of Article 6(1); and</p>
+
+<p style="margin-left: 80px;">b) the processing is carried out by automated means.</p>
+
+<p style="margin-left: 80px;">In exercising his or her right to data portability pursuant to paragraph 1, the data subject shall have the right to have the personal data transmitted directly from one controller to another, where technically feasible. This right shall not adversely affect the rights and freedoms of others.</p>
+
+<p style="margin-left: 80px;">The right to data portability shall not apply to processing necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller.</p>
+
+<p style="margin-left: 80px;"><strong>5.7 Right to object</strong></p>
+
+<p style="margin-left: 80px;">Affected persons have the right to revoke their declaration of consent under data protection law at any time. The revocation of consent does not affect the lawfulness of the processing carried out on the basis of the consent until the revocation. If you wish to correct, block, delete or obtain information about the personal data stored about you, or if you have any questions regarding the collection, processing or use of your personal data, or if you wish to revoke any consent you have given, please contact us at the following address:</p>
+
+<p style="margin-left: 120px;">Publication Services Unit at University Library of TU Braunschweig<br />
++49 (0)531 391-5052 / - 5067<br />
+ub-publikationsservices [at] tu-braunschweig.de</p>
+
+<p style="margin-left: 80px;"><strong>5.8 Right to lodge a complaint with a supervisory authority</strong></p>
+
+<p style="margin-left: 80px;">Without prejudice to any other administrative or judicial remedy, every data subject shall have the right to lodge a complaint with a supervisory authority, in particular in the Member State of his or her habitual residence, place of work or place of the alleged infringement if the data subject considers that the processing of personal data relating to him or her infringes the GDPR.</p>
+
+<p style="margin-left: 80px;">The supervisory authority with which the complaint has been lodged shall inform the complainant on the progress and the outcome of the complaint including the possibility of a judicial remedy pursuant to Article 78.</p>
+
+<p style="margin-left: 40px;"> </p>
+
+<h3>IV. Description of the website and creation of log files</h3>
+
+<h4 style="margin-left: 40px;">1. Description and scope of data processing</h4>
+
+<p style="margin-left: 40px;">Each time a website of TU Braunschweig is accessed, the system automatically collects data and information from the computer system of the accessing computer. In detail, the following data is collected:</p>
+
+<ul>
+	<li style="margin-left: 40px;">Information about the browser type and version used</li>
+	<li style="margin-left: 40px;">The operating system of the user's system</li>
+	<li style="margin-left: 40px;">The IP address of the user's system</li>
+	<li style="margin-left: 40px;">Date and time of access</li>
+	<li style="margin-left: 40px;">Web pages that are accessed by the user's system via TU Braunschweig website</li>
+</ul>
+
+<p style="margin-left: 40px;">The data is also stored in the log files of the system. This data is not stored together with other personal data of the user.</p>
+
+<h4 style="margin-left: 40px;">2. Legal basis for data processing</h4>
+
+<p style="margin-left: 40px;">The legal basis for temporarily saving the data is point (f) of Article 6(1) GDPR.</p>
+
+<h4 style="margin-left: 40px;">3. Purpose of data processing</h4>
+
+<p style="margin-left: 40px;">The system must save IP addresses temporarily to ensure services operate properly. For this purpose, the user's IP address must be saved for the duration of the session.</p>
+
+<p style="margin-left: 40px;">The storage in log files is done to ensure the functionality of the website. In addition, the TU Braunschweig uses the data to optimize the website and to ensure the security of the information technology systems. An evaluation of the data for marketing purposes does not take place in this context. These purposes also constitute the legitimate interest in data processing according to Art. 6 Para. 1 lit. f GDPR.</p>
+
+<p style="margin-left: 40px;">The purposes listed above encompass the legitimate interest in data processing according to point (f) of Article 6(1) GDPR.</p>
+
+<h4 style="margin-left: 40px;">4. Duration of the storage</h4>
+
+<p style="margin-left: 40px;">The data is deleted when the respective session has ended. In the case of storage of data in log files, this is the case after seven days at the latest. Storage beyond this period is possible. In this case, the IP addresses of the users are deleted or alienated, so that an assignment of the calling client is no longer possible.</p>
+
+<p style="margin-left: 40px;"> </p>
+
+<h3>V. Use of Cookies</h3>
+
+<p>This service uses cookies for pseudonymized reach measurement. Cookies are small files that are stored on your terminal device. Your browser accesses these files. The use of cookies increases the user-friendliness and security of this platform. Usage data is only collected and stored in anonymized form for optimization purposes.</p>
+
+<p>For the optimization of our offers, personal data do not provide any added value. For web analysis, we therefore use the usage analysis software Matomo, which is recommended by data protection experts. By automatically anonymizing the IP addresses with the AnonymizeIP plugin, the collected data can no longer be assigned to specific individuals. This excludes the possibility of usage data or usage profiles being associated with personal data.</p>
+
+<p>The data is used exclusively for the improvement of LeoPARD, which the operators offer with their service.</p>
+
+<p> </p>
+
+<h3>VI. Contact</h3>
+
+<h4 style="margin-left: 40px;">1. Description and scope of data processing</h4>
+
+<p style="margin-left: 40px;">On the web pages of TU Braunschweig it is also possible to contact us via forms or e-mail addresses provided in each case. In this case, the transmitted personal data of the user will be stored. In this context, the data will not be passed on to third parties. The data is used exclusively for the processing of the stated purpose.</p>
+
+<h4 style="margin-left: 40px;">2. Legal basis for data processing</h4>
+
+<p style="margin-left: 40px;">The legal basis for the processing of the transmitted data in the context of contacting us is Art. 6 para. 1 GDPR.</p>
+
+<h4 style="margin-left: 40px;">3. Purpose of data processing</h4>
+
+<p style="margin-left: 40px;">The processing of personal data serves TU Braunschweig solely to process the contact. This is also the legitimate interest in processing the data.</p>
+
+<h4 style="margin-left: 40px;">4. Duration of storage, possibility of objection and deletion</h4>
+
+<p style="margin-left: 40px;">The personal data that has been transmitted will be deleted when the respective purpose has been fulfilled.</p>
+
+<p style="margin-left: 40px;">If the user contacts TU Braunschweig, he or she can object to the storage of his or her personal data at any time. In such a case, communication cannot be continued or resumed. All personal data stored in the course of contacting the TU Braunschweig will be deleted in this case.</p>
+</div>
+</div>
+</div>
+</section>
+<meta><log lastEditor="celsner" date="2022-09-06" time="15:15" /></meta></MyCoReWebPage>
+
+

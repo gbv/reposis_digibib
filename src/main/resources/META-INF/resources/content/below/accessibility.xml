@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Hinweis zur Barrierefreiheit"><div>
+<MyCoReWebPage><section xml:lang="de" title="LeoPARD - Barrierefreiheit"><div>
 <div class="row">
 <div class="col-12">
-<h2>Erklärung zur Barrierefreiheit <small class="text-muted">(Stand der Erklärung: 17.09.2020)</small></h2>
+<h2>Erklärung zur Barrierefreiheit <small class="text-muted">(Stand der Erklärung: 12.09.2022)</small></h2>
 </div>
 </div>
 
 <div class="row mt-3">
 <div class="col-12">
-<p>Die Technische Universität Braunschweig ist bemüht, ihre Website im Einklang mit dem Niedersächsischen Behindertengleichstellungsgesetz (NBGG) zur Umsetzung der Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates barrierefrei zugänglich zu machen.</p>
+<p>Die Universitätsbibliothek Braunschweig ist bemüht, ihre Website im Einklang mit dem Niedersächsischen Behindertengleichstellungsgesetz (NBGG) zur Umsetzung der Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates barrierefrei zugänglich zu machen.</p>
 
-<p>Diese Erklärung zur Barrierefreiheit gilt für <a href="https://publikationsserver.tu-braunschweig.de">https://publikationsserver.tu-braunschweig.de</a>.</p>
+<p>Diese Erklärung zur Barrierefreiheit gilt für <a href="https://leopard.tu-braunschweig.de">https://leopard.tu-braunschweig.de</a> und <a href="https://publikationsserver.tu-braunschweig.de">https://publikationsserver.tu-braunschweig.de</a>.</p>
 </div>
 </div>
 
@@ -21,22 +21,21 @@
 <p>Aufgrund der Überprüfung ist die Webseite mit den zuvor genannten Anforderungen nicht an allen Stellen vereinbar. Die Webseite <a href="https://publikationsserver.tu-braunschweig.de">https://publikationsserver.tu-braunschweig.de</a> ist aus den folgenden Gründen noch nicht abschließend barrierefrei:</p>
 
 <dl>
-	<dt>Im Webauftritt eingebundene Dokumente (.pdf, .doc, etc.)</dt>
+	<dt>Im Webauftritt eingebundene Dokumente (.pdf, .doc(x), etc.)</dt>
 	<dd class="ml-4">Dokumente, die vor September 2020 eingestellt wurden, sind gegebenenfalls nicht barrierefrei. Aufgrund der sehr großen Anzahl der Dokumente, können diese nicht in ein barrierefreies Format umgewandelt werden, da zum Teil die Ausgangsformate fehlen und eine nachträgliche Bearbeitung der Dokumente unverhältnismäßig arbeitsaufwendig ist.<br />
 	Dokumente, die von Dritten bereitgestellt werden, liegen eventuell nicht barrierefrei vor (siehe § 9 Abs. 2 Satz 2 NBGG).<br />
-	Bei neu erscheinenden Dokumenten die in den Verantwortungsbereich der Universitätsbibliothek fallen, streben wir an, künftig zeitnah eine barrierefreie Version zur Verfügung zu stellen. Für alle weiteren Dokumente halten wir unsere Datenlieferanten an, die Anforderungen zur Barrierefreiheit zu beachten.</dd>
+	Bei neu erscheinenden Dokumenten die in den Verantwortungsbereich der Universitätsbibliothek Braunschweig fallen, streben wir an, künftig zeitnah eine barrierefreie Version zur Verfügung zu stellen. Für alle weiteren Dokumente halten wir unsere Datenlieferanten an, die Anforderungen zur Barrierefreiheit zu beachten.</dd>
 	<dt>Im Webauftritt enthaltene Informationen in Gebärdensprache und in leichter Sprache</dt>
 	<dd class="ml-4">Wir streben an, eine möglichst einfache Sprache zu benutzen. Auf Grund der komplexen Inhalte, die zumindest teilweise in unseren Webauftritten veröffentlicht werden, ist eine einfache Sprachgestaltung (beispielsweise der Verzicht auf Fachbegriffe) nicht immer möglich.</dd>
 	<dt>Im Webauftritt eingebundene Videos</dt>
 	<dd class="ml-4">Die Bereitstellung der Videos mit einer Audiodeskription konnte bislang nicht realisiert werden.</dd>
 	<dt>Alternativtexte (1.1.1 a-c )</dt>
-	<dd class="ml-4">An einigen Stellen fehlen die Alternativtexte. Bei einem nächsten Update werden diese ergänzt werden.</dd>
+	<dd class="ml-4">An einigen Stellen fehlen die Alternativtexte. Diese werden sukzessive ergänzt.</dd>
 	<dt>HTML-Strukurelemente (1.3.1 a-f )</dt>
 	<dd class="ml-4">Einige HTML-Strukurelemente sind nur teilweise barrierefrei, da die entsprechenden Bootstrap-Klassen fehlen. Eine Überarbeitung ist in Arbeit.</dd>
 	<dt>Eingabefelder zu Nutzerdaten vermitteln den Zweck (1.3.5a)</dt>
 	<dd class="ml-4">Formulare nutzen keine Autovervollständigung. Bei Formularen fehlen die „autocomplete“-Attribute, was das Ausfüllen der Formulare erschwert. Bei einem Update soll die Funktionalität künftig ergänzt werden.</dd>
-	<dt>Kontraste von Texten ausreichend (1.4.3)</dt>
-	<dd class="ml-4">Da das grundsätzliche Layout der Webseite vor dem Erscheinen der Richtlinie (EU) 2016/2102 erstellt wurde, ist das Kontrastverhältnis von 4,5:1 nicht grundsätzlich sichergestellt. An einer Lösung wird gearbeitet.</dd>
+
 	<dt>Aktuelle Position des Fokus deutlich (2.4.7a)</dt>
 	<dd class="ml-4">Der Fokus ist bei der Bedienung mit der Tastatur nicht immer erkennbar. Die Anpassung des Fokus-Managements erfolgt bei der nächsten grundlegenden Überarbeitung der Website.</dd>
 	<dt>Fehlererkennung (3.3.1a)</dt>
@@ -53,7 +52,7 @@
 <div class="col-12">
 <h3>Erstellung dieser Erklärung zur Barrierefreiheit</h3>
 
-<p>Diese Erklärung wurde am 31.08.2020 erstellt und am 17.09.2020 zuletzt aktualisiert. Die Einschätzung basiert auf einer Selbstbewertung.</p>
+<p>Diese Erklärung wurde am 31.08.2020 erstellt und am 12.09.2022 zuletzt aktualisiert. Die Einschätzung basiert auf einer Selbstbewertung.</p>
 </div>
 </div>
 
@@ -66,8 +65,8 @@
 <p class="border-left pl-5">Technische Universität Braunschweig<br />
 Universitätsbibliothek<br />
 Universitätsplatz 1<br />
-Telefon: 0531/391 5018<br />
-E-Mail: <a href="mailto:digibib@tu-braunschweig.de?subject=Anfrage%20zur%20Barrierefreiheit">digibib@tu-braunschweig.de</a></p>
+Telefon: +49 (0)531 391-5018<br />
+E-Mail: ub-publikationsservices [at] tu-braunschweig.de</p>
 </div>
 </div>
 
@@ -80,10 +79,149 @@ E-Mail: <a href="mailto:digibib@tu-braunschweig.de?subject=Anfrage%20zur%20Barr
 <p class="border-left pl-5"><strong>Landesbeauftragte für Menschen mit Behinderungen</strong><br />
 Hannah-Arendt-Platz 2<br />
 30159 Hannover<br />
-Telefon: 0511/120-4010<br />
-Fax: 0511/120-99 4010<br />
-E-Mail: <a href="mailto:schlichtungsstelle@ms.niedersachsen.de">schlichtungsstelle@ms.niedersachsen.de</a></p>
+Telefon: +49 (0)511 120-4007<br />
+Fax: +49 (0)511 120-99-4036<br />
+E-Mail: Landesbeauftragte [at] ms.niedersachsen.de</p>
 </div>
 </div>
 </div>
-</section><meta><log lastEditor="dbbs_admin" date="2020-11-20" time="11:49" /></meta></MyCoReWebPage>
+</section>
+<section xml:lang="en" title="LeoPARD - Accessibility"><div>
+<div class="row">
+<div class="col-12">
+<h2>Accessibility Statement <small class="text-muted">(Statement status: 08/09/2022)</small></h2>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col-12">
+<p>Technische Universität Braunschweig is committed to making its website accessible, in accordance with the Niedersächsisches Behindertengleichstellungsgesetz (NBGG) (Lower Saxony Disability Equality Act), transposing Directive (EU) 2016/2102 of the European Parliament and of the Council.</p>
+
+<p>This accessibity statement applies to the websites <a href="https://leopard.tu-braunschweig.de">https://leopard.tu-braunschweig.de</a> and <a href="https://publikationsserver.tu-braunschweig.de">https://publikationsserver.tu-braunschweig.de</a>.</p>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col-12">
+
+<h3>Compliance Status</h3>
+
+<p>Based on the review, the website is not compliant with the aforementioned requirements in all places. The website <a href="https://leopard.tu-braunschweig.de">https://leopard.tu-braunschweig.de</a> is not yet finally barrier-free for the following reasons:</p>
+
+
+<dl>
+	<dt>Documents embedded in the web presence (.pdf, .doc(x), etc.).</dt>
+	<dd class="ml-4">Documents posted before September 2020 may not be barrier-free. Due to the very large number of documents, they cannot be converted into an barrier-free format, as some of the source formats are missing and subsequent editing of the documents is disproportionately work-intensive. Documents provided by third parties may not be available in an accessible format (see Section 9 (2) sentence 2 NBGG). For newly published documents that fall under the responsibility of Braunschweig University Library, we strive to provide an accessible version in the future in a timely manner. For all other documents, we ask our data suppliers to observe the accessibility requirements.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>Information contained in the website in sign language and in easy language.</dt>
+	<dd class="ml-4">We strive to use language that is as simple as possible. Due to the complex content that is published, at least in part, on our websites, it is not always possible to use simple language (for example, not using technical terms).</dd>
+</dl>
+
+
+
+<dl>
+	<dt>Videos integrated in the web presence</dt>
+	<dd class="ml-4">It has not yet been possible to provide videos with an audio description.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>Alternative texts (1.1.1 a-c )</dt>
+	<dd class="ml-4">In some places, the alternative texts are missing. These will be added successively.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>HTML structure elements (1.3.1 a-f )</dt>
+	<dd class="ml-4">Some HTML structure elements are only partially accessible because the corresponding bootstrap classes are missing. A revision is in progress.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>User data input fields convey purpose (1.3.5a)</dt>
+	<dd class="ml-4">Forms do not use autocomplete. Forms lack "autocomplete" attributes, making them difficult to complete. Functionality should be added in an update in the future.</dd>
+</dl>
+
+
+<dl>
+	<dt>Current position of the focus clearly (2.4.7a)</dt>
+	<dd class="ml-4">The focus is not always visible when using the keyboard. Adjustment of the focus management will be done in the next fundamental revision of the website.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>Error detection (3.3.1a)</dt>
+	<dd class="ml-4">Information in forms is not automatically checked before submission. This functionality will be added in the next major revision of the website.</dd>
+</dl>
+
+
+
+<dl>
+	<dt>Status messages available programmatically (4.1.3a)</dt>
+	<dd class="ml-4">There is no indication, either visually or in the screen reader, that the document has been placed on the watch list. The corresponding "Role" will be added as part of an update.</dd>
+</dl>
+
+<p>The identified technical deficits and deficiencies are currently in a continuous improvement process that is being successively worked through.</p>
+
+<dl>
+</dl>
+
+<dl>
+</dl>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col-12">
+
+
+<h3>Preparation of this Accessibilty Statement</h3>
+
+<p>This statement was created on 08/31/2020 and last updated on 08/09/2022. The evaluation is based on a self-assessment.</p>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col-12">
+
+
+<h3>Feedback and Contact Information</h3>
+
+<p>Use the following contact to report deficiencies in compliance with accessibility requirements and to request information about content that is exempt from the policy:</p>
+
+<p class="border-left pl-5">Technische Universität Braunschweig<br />
+Universitätsbibliothek<br />
+Universitätsplatz 1<br />
+Phone: +49 (0)531 391-5018<br />
+E-Mail: ub-publikationsservices [at] tu-braunschweig.de</p>
+</div>
+</div>
+
+
+
+
+<div class="row mt-3">
+<div class="col-12">
+<h3>Enforcement procedure</h3>
+<p>If you have not received a satisfactory response to any notifications or enquiries about accessibility within six weeks, you can contact the State Representative for People with Disabilities in Lower Saxony.</p>
+
+<p class="border-left pl-5"><strong>State Commissioner for People with Disabilities</strong><br />
+Hannah-Arendt-Platz 2<br />
+30159 Hannover<br />
+Telefon: +49 (0)511 120-4007<br />
+Fax: +49 (0)511 120-99-4036<br />
+E-Mail: Landesbeauftragte [at] ms.niedersachsen.de</p>
+</div>
+</div>
+</div>
+</section>
+
+<meta><log lastEditor="celsner" date="2022-09-12" time="11:49" /></meta></MyCoReWebPage>

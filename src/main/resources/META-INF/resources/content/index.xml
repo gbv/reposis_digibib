@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage>
-  <section xml:lang="de" title="Willkommen bei der Digitalen Bibliothek">
+  <section xml:lang="de" title="LeoPARD - Start">
     <div class="jumbotwo" id="bs-index-search">
       <div class="row">
         <div class="col-12 col-lg-9 offset-lg-3 col-xl-8 offset-xl-4" lang="de">
@@ -41,7 +41,7 @@
     </script>
   </section>
 
-  <section xml:lang="en" title="Welcome to the Digital Library">
+  <section xml:lang="en" title="LeoPARD - Start">
     <div class="jumbotwo" id="bs-index-search">
       <div class="row">
         <div class="col-12 col-lg-9 offset-lg-3 col-xl-8 offset-xl-4" lang="de">

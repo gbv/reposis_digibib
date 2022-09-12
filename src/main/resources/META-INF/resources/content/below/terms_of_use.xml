@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage>
-<section xml:lang="de" title="Nutzungsbedingungen">
-  <h2>Nutzungsbedingungen für die Digitale Bibliothek Braunschweig</h2>
+<section xml:lang="de" title="LeoPARD - Nutzungsbedingungen">
+  <h2>Nutzungsbedingungen für LeoPARD</h2>
  
   <div class="row">
     <div class="col-md-12">
-
-<p>Die Digitalisate werden, sofern möglich, unter einer <a href="https://creativecommons.org/share-your-work/licensing-types-examples/licensing-examples" title="CC-Lizenz">CC-Lizenz</a> veröffentlicht. Die Metadaten aus der Digitalen Bibliothek Braunschweig werden unter der <a href="https://creativecommons.org/choose/zero/?lang=de">CC0-Lizenz</a> freigegeben.</p>
+<p>Die Digitalisate werden, sofern möglich, unter einer <a href="https://creativecommons.org/share-your-work/licensing-types-examples/licensing-examples" title="CC-Lizenz">CC-Lizenz</a> veröffentlicht. Die Metadaten aus LeoPARD werden unter der <a href="https://creativecommons.org/choose/zero/?lang=de">CC0-Lizenz</a> freigegeben.</p>
 Bitte geben Sie bei Nutzung die vollständige Quellenangabe an (siehe unten). Bitte schicken Sie uns bei der Verwendung auf Webseiten zur Information den Link auf die entsprechende Stelle per E-Mail. Wir würden uns freuen, wenn Sie uns bei der Verwendung in wissenschaftlichen Publikationen ein Belegexemplar der Publikation zusenden könnten.
 
 
 <h3>Quellenangabe:</h3>
 
-<p>Digitale Bibliothek Braunschweig + PURL (Persistent Uniform Resource Locator) des digitalen Objects</p>
+<p>TU Braunschweig - LeoPARD + PURL (Persistent Uniform Resource Locator) des digitalen Objects</p>
 
 <p>Beispiele:<br />
-<em>Digitale Bibliothek Braunschweig, <a href="https://doi.org/10.24355/dbbs.084-201802231113">https://doi.org/10.24355/dbbs.084-201802231113</a> (DOI)<br />
-Digitale Bibliothek Braunschweig, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257">http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257</a> (URN)</em></p>
+<em>TU Braunschweig - LeoPARD, <a href="https://doi.org/10.24355/dbbs.084-201802231113">https://doi.org/10.24355/dbbs.084-201802231113</a> (DOI)<br />
+TU Braunschweig - LeoPARD, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257">http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257</a> (URN)</em></p>
 
 
 <h3>OAI-Schnittstelle zum Metadata Harvesting unter:</h3>
@@ -28,24 +27,23 @@ Digitale Bibliothek Braunschweig, <a href="http://nbn-resolving.de/urn:nbn:de:g
 
 </section>
  
-<section xml:lang="en" title="Terms of use">
+<section xml:lang="en" title="LeoPARD - Terms of use">
   
-  <h2>Digitale Bibliothek Braunschweig - Terms of Use</h2>
+  <h2>LeoPARD - Terms of Use</h2>
  
    <div class="row">
     <div class="col-md-12">
-
-<p>The digitised reproductions will be made available under <span style="font-size:14px;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://creativecommons.org/share-your-work/licensing-types-examples/licensing-examples">CC-license</a></span></span> if applicable. The meta data from Digitale Bibliothek Braunschweig will be released under the <span style="font-size:14px;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://creativecommons.org/choose/zero/?lang=en" target="_blank">CC0-license</a></span></span>.</p>
-In case of reproduction please cite the entire source reference (see below). Should any Digitale Bibliothek Braunschweig material be used on a website, please send us an e-mail containing a link to the corresponding page. We would appreciate being sent a copy of any academic publications in which Digitale Bibliothek Braunschweig material is included.
+<p>The digitized reproductions will be made available under <a href="https://creativecommons.org/share-your-work/licensing-types-examples/licensing-examples">CC-license</a> if applicable. All metadata from LeoPARD will be released under the <a href="https://creativecommons.org/choose/zero/?lang=en">CC0-license</a>.</p>
+In case of reproduction please cite the entire source reference (see below). Should you use any LeoPARD material on a website, please send us an e-mail containing a link to the corresponding page. We would appreciate being sent a copy of any academic publications in which LeoPARD material is included.
 
 
 <h3>Reference:</h3>
 
-<p>Digitale Bibliothek Braunschweig + PURL (Persistent Uniform Resource Locator) of the digital object</p>
+<p>TU Braunschweig - LeoPARD + PURL (Persistent Uniform Resource Locator) of the digital object</p>
 
 <p>Examples:<br />
-<em>Digitale Bibliothek Braunschweig, <a href="https://doi.org/10.24355/dbbs.084-201802231113">https://doi.org/10.24355/dbbs.084-201802231113</a> (DOI)<br />
-Digitale Bibliothek Braunschweig, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257">http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257</a></em><em> (URN)</em></p>
+<em>TU Braunschweig - LeoPARD, <a href="https://doi.org/10.24355/dbbs.084-201802231113">https://doi.org/10.24355/dbbs.084-201802231113</a> (DOI)<br />
+TU Braunschweig - LeoPARD, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257">http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257</a> (URN)</em></p>
 
 
 <h3>OAI Interface for Metadata Harvesting:</h3>
@@ -57,4 +55,4 @@ Digitale Bibliothek Braunschweig, <a href="http://nbn-resolving.de/urn:nbn:de:g
 
 </section>
  
- <meta><log lastEditor="dbbs_admin" date="2018-03-12" time="16:27" /></meta></MyCoReWebPage>
+<meta><log lastEditor="celsner" date="2022-09-09" time="16:18" /></meta></MyCoReWebPage>

@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage><section xml:lang="de" title="Leitlinie"><div>
-<h2>Leitlinie zum Publizieren in der Digitalen Bibliothek Braunschweig</h2>
+<h2>Leitlinie zum Publizieren in LeoPARD</h2>
 
-<div class="row">
-<div class="col-md-12">
-<p>Die Digitale Bibliothek Braunschweig ist das institutionelle Publikationsrepositorium der Technischen Universität Braunschweig und wird von der Universitätsbibliothek betrieben. Sie dient der Veröffentlichung von Forschungsergebnissen und -dokumentationen von Wissenschaftlerinnen und Wissenschaftlern der TU Braunschweig, von Spezialsammlungen der TU Braunschweig und von regionalen Einrichtungen sowie von digitalisierten Zeugnissen des regionalen kulturellen Erbes.  <br />
-<span class="inline-comment-marker" data-ref="5f1c6bfb-1e9a-4614-a0b6-5e466a7b3af9">Dabei macht die Universitätsbibliothek Braunschweig unter anderem zeitgeschichtliche Dokumente aus ihren Beständen für wissenschaftliche Zwecke, Forschung und Lehre in der Digitalen Bibliothek  zugänglich.</span> Diese Bestände unterliegen keiner Bewertung bzw. Zensur durch die Universitätsbibliothek. Die Universitätsbibliothek Braunschweig distanziert sich ausdrücklich von allen diskriminierenden, rassistischen, gewaltverherrlichenden, sexistischen oder nationalsozialistischen Inhalten.</p>
+<p> </p>
 
-<p>Die Digitale Bibliothek Braunschweig bietet die organisatorischen und technischen Rahmenbedingungen, um die dauerhafte Verfügbarkeit der publizierten <span class="inline-comment-marker" data-ref="3addfde5-9ad1-437c-a3b3-6825ca513d29">Objekte</span> zu gewährleisten.</p>
+<p>LeoPARD ist das institutionelle Publikationsrepositorium der Technischen Universität (TU) Braunschweig und wird von der Universitätsbibliothek betrieben. Er dient der Veröffentlichung von Forschungsergebnissen und -dokumentationen von Wissenschaftlerinnen und Wissenschaftlern der TU Braunschweig, von Spezialsammlungen der TU Braunschweig und von regionalen Einrichtungen sowie von digitalisierten Zeugnissen des regionalen kulturellen Erbes.  <br />
+<span class="inline-comment-marker" data-ref="5f1c6bfb-1e9a-4614-a0b6-5e466a7b3af9">Dabei macht die Universitätsbibliothek Braunschweig unter anderem zeitgeschichtliche Dokumente aus ihren Beständen für wissenschaftliche Zwecke, Forschung und Lehre auf LeoPARD zugänglich.</span> Diese Bestände unterliegen keiner Bewertung bzw. Zensur durch die Universitätsbibliothek. Die Universitätsbibliothek Braunschweig distanziert sich ausdrücklich von allen diskriminierenden, rassistischen, gewaltverherrlichenden, sexistischen oder nationalsozialistischen Inhalten.</p>
 
-<p>Der technische Betrieb des Publikationsservers erfolgt durch die Universitätsbibliothek Braunschweig in Zusammenarbeit mit der Verbundzentrale des Gemeinsamen Bibliotheksverbundes Göttingen (<a class="external-link" href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service" rel="nofollow" target="_blank">Reposis-Dienst</a>).</p>
+<p>LeoPARD bietet die organisatorischen und technischen Rahmenbedingungen, um die dauerhafte Verfügbarkeit der publizierten <span class="inline-comment-marker" data-ref="3addfde5-9ad1-437c-a3b3-6825ca513d29">Objekte</span> zu gewährleisten.</p>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-ErklärungzuOpenAccess">Erklärung zu Open Access</h3>
+<p>Der technische Betrieb von LeoPARD erfolgt durch die Universitätsbibliothek Braunschweig in Zusammenarbeit mit der Verbundzentrale des Gemeinsamen Bibliotheksverbundes Göttingen (<a class="external-link" href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service" rel="nofollow" target="_blank">Reposis-Dienst</a>).</p>
+
+<h3> </h3>
+
+<h3>Erklärung zu Open Access</h3>
 
 <p>Die Technische Universität Braunschweig fördert den freien Austausch von Forschungsergebnissen (Open Access) und empfiehlt ihren Wissenschaftlerinnen und Wissenschaftlern in einer vom Senat verabschiedeten <a class="external-link" href="https://www.tu-braunschweig.de/fileadmin/Redaktionsgruppen/Einrichtungen/UB/PDF/OA/Leitlinie_zu_Open_Access_an_der_TU_Braunschweig.pdf" rel="nofollow" target="_blank">Leitlinie</a>, ihre Publikationen in Open-Access-Journalen und auf Open-Access-Plattformen zu veröffentlichen bzw. auf frei zugänglichen Repositorien verfügbar zu machen.</p>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-Waskannveröffentlichtwerden?">Was kann veröffentlicht werden?</h3>
+<h3> </h3>
+
+<h3>Was kann veröffentlicht werden?</h3>
 
 <ul>
 	<li>Publikationen und Forschungsdaten mit wissenschaftlichem Charakter aus der Forschungstätigkeit der TU Braunschweig, insbesondere
@@ -36,35 +40,39 @@
 	<li>Digitalisierte Objekte des regionalen Kulturerbes</li>
 </ul>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-DaselektronischeDokument">Das elektronische Dokument</h3>
+<h3> </h3>
+
+<h3>Das elektronische Dokument</h3>
 
 <p>Es handelt sich um ein Werk oder eine relevante Quelle, das die genannten Kriterien erfüllt und zur Verbreitung in der Öffentlichkeit bestimmt ist.</p>
 
 <p>Das elektronische Dokument ist kein sich dynamisch veränderndes Dokument. Sind Veränderungen notwendig, wird das geänderte Dokument als neue Version gespeichert. Bereits publizierte Dokumente werden nicht gelöscht oder verändert, es sei denn, es liegen schwerwiegende rechtliche Gründe vor.</p>
 
-<p>Das elektronische Dokument basiert auf Text, Grafik, Audio- oder Videosequenzen oder sonstigen Daten. Es ist in digitaler Form auf einem Datenträger gespeichert und wird über Rechnernetze verbreitet. Die Digitale Bibliothek Braunschweig unterstützt alle Dateiformate, empfiehlt jedoch die Nutzung offener Formate, die zur Langzeitarchivierung geeignet sind und über frei zugängliche Darstellungsprogramme angezeigt werden können (z. B. PDF/A, TeX, XML). Ergänzend kann auch das Originalformat des Dokuments archiviert werden.</p>
+<p>Das elektronische Dokument basiert auf Text, Grafik, Audio- oder Videosequenzen oder sonstigen Daten. Es ist in digitaler Form auf einem Datenträger gespeichert und wird über Rechnernetze verbreitet. LeoPARD unterstützt alle Dateiformate, empfiehlt jedoch die Nutzung offener Formate, die zur Langzeitarchivierung geeignet sind und über frei zugängliche Darstellungsprogramme angezeigt werden können (z. B. PDF/A, TeX, XML). Ergänzend kann auch das Originalformat des Dokuments archiviert werden.</p>
 
 <p>Das elektronische Dokument muss frei sein von jeglichen technischen Schutzvorrichtungen und Verfahren des Digitalen Rechtemanagements (DRM). Formatmigrationen werden bei Bedarf vorgenommen, um z. B. die Langzeitverfügbarkeit zu gewährleisten. Formatmigrationen gelten nicht als Veränderung des elektronischen Dokuments.</p>
 
 <p>Es gibt keine Layout-Vorgaben.</p>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-Wiekannveröffentlichtwerden?">Wie kann veröffentlicht werden?</h3>
+<h3> </h3>
 
-<p>Es steht ein <a class="external-link" href="https://publikationsserver.tu-braunschweig.de/editor/submit_request.xed" rel="nofollow" target="_blank">Formular zum Hochladen</a> des Dokuments bzw. der Dokumente und der zugehörigen Metadaten zur Verfügung. Nach Absprache sind weitere Übermittlungsformen möglich.</p>
+<h3>Wie kann veröffentlicht werden?</h3>
 
-<p>Die elektronischen Dokumente werden durch die Universitätsbibliothek geprüft und nach Eingang der <a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung für Publikationen</a> oder der <a href="/content/publish/deposit-rd.pdf">Einwilligung zur Veröffentlichung für Forschungsdaten</a> freigeschaltet und damit veröffentlicht.</p>
+<p>Es steht ein <a class="external-link" href="https://leopard.tu-braunschweig.de/editor/submit_request.xed" rel="nofollow" target="_blank">Formular zum Hochladen</a> des Dokuments bzw. der Dokumente und der zugehörigen Metadaten zur Verfügung. Nach Absprache sind weitere Übermittlungsformen möglich.</p>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-RechtlicheRahmenbedingungen">Rechtliche Rahmenbedingungen</h3>
+<p>Die elektronischen Dokumente werden durch die Universitätsbibliothek geprüft und nach Eingang der <a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung für Publikationen</a> oder der <a href="/content/publish/deposit-rd.pdf">Einwilligung zur Veröffentlichung für Forschungsdaten</a> freigeschaltet und damit veröffentlicht.</p>
 
-<p>Die Autorinnen bzw. Autoren übertragen der Universitätsbibliothek ein einfaches und unbefristetes Nutzungsrecht. Die Urheberrechte der Autorinnen bzw. Autoren bleiben gewahrt. Eine Publikation in der Digitalen Bibliothek steht einer weiteren Veröffentlichung (z.B. in Fachzeitschriften oder auf anderen Servern) nicht entgegen. Umgekehrt werden auch Zweitveröffentlichungen akzeptiert, sofern rechtliche oder vertragliche Regelungen dies zulassen.</p>
+<h3>Rechtliche Rahmenbedingungen</h3>
+
+<p>Die Autorinnen bzw. Autoren übertragen der Universitätsbibliothek ein einfaches und unbefristetes Nutzungsrecht. Die Urheberrechte der Autorinnen bzw. Autoren bleiben gewahrt. Eine Publikation in LeoPARD steht einer weiteren Veröffentlichung (z.B. in Fachzeitschriften oder auf anderen Servern) nicht entgegen. Umgekehrt werden auch Zweitveröffentlichungen akzeptiert, sofern rechtliche oder vertragliche Regelungen dies zulassen.</p>
 
 <p>Die Rechteübertragung bedarf grundsätzlich der Schriftform.</p>
 
-<p><a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung </a><a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">für Publikationen</a></p>
-
-<p><a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung</a><a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/deposit-rd.pdf" rel="nofollow" target="_blank"> von Forschungsdaten</a></p>
-
-<p><a class="external-link" href="https://publikationsserver.tu-braunschweig.de/content/publish/contract.xml" rel="nofollow" target="_blank">Vertragsbedingungen der Digitalen Bibliothek</a></p>
+<ul>
+	<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung für Publikationen</a></li>
+	<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-rd.pdf" rel="nofollow" target="_blank">Einwilligung zur Veröffentlichung von Forschungsdaten</a></li>
+	<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/contract.xml" rel="nofollow" target="_blank">Vertragsbedingungen von LeoPARD</a></li>
+</ul>
 
 <p>Die Einhaltung von Urheber- und Verwertungsrechten Dritter liegt in der Verantwortung der Autorinnen bzw. Autoren .</p>
 
@@ -72,11 +80,11 @@
 
 <p>Die Universitätsbibliothek behält sich das Recht vor, den öffentlichen Zugriff auf eine Publikation zu sperren, sofern konkrete Anhaltspunkte für eine Rechtsverletzung bestehen. Die Universitätsbibliothek haftet nicht für aus der Verletzung von Urheber- und Verwertungsrechten resultierende Schäden, sofern kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden ihrerseits vorliegt. Die Autorinnen bzw. Autoren versichern, in Zweifelsfällen oder bei Entstehen vermeintlicher oder tatsächlicher Rechtsverletzungen die Universitätsbibliothek hiervon unverzüglich in Kenntnis zu setzen.</p>
 
-<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-ServicesderUniversitätsbibliothek">Services der Universitätsbibliothek</h3>
+<h3>Services der Universitätsbibliothek</h3>
 
-<p>Die Veröffentlichung auf der Digitalen Bibliothek ist kostenfrei. Für die Veröffentlichung notwendige Tätigkeiten (z.B. Aufbereitung der elektronischen Dokumente, Formatkonvertierung) werden von der Universitätsbibliothek nach Absprache unterstützt bzw. durchgeführt. Tätigkeiten, die einen bedeutenden Mehraufwand erfordern, können in Rechnung gestellt werden.</p>
+<p>Die Veröffentlichung auf LeoPARD ist kostenfrei. Für die Veröffentlichung notwendige Tätigkeiten (z.B. Aufbereitung der elektronischen Dokumente, Formatkonvertierung) werden von der Universitätsbibliothek nach Absprache unterstützt bzw. durchgeführt. Tätigkeiten, die einen bedeutenden Mehraufwand erfordern, können in Rechnung gestellt werden.</p>
 
-<p>Die Universitätsbibliothek bietet Beratung und Unterstützung bei allen Fragen zum Publizieren auf der Digitalen Bibliothek an. Sie vergibt dauerhafte persistente und zitierfähige Identifier wie URL, URN und DOI, um die Dokumente langfristig zugänglich und auffindbar zu machen. Sie übernimmt sowohl die formale als auch die inhaltliche Erschließung der Dokumente (mittels Dewey-Klassifikation) sowie die Prüfung und Pflege der Metadaten. Zusätzliche Schlagwörter können von den Autorinnen bzw. Autoren selbst vergeben werden.<br />
+<p>Die Universitätsbibliothek bietet Beratung und Unterstützung bei allen Fragen zum Publizieren auf LeoPARD an. Sie vergibt dauerhafte persistente und zitierfähige Identifier wie URL, URN und DOI, um die Dokumente langfristig zugänglich und auffindbar zu machen. Sie übernimmt sowohl die formale als auch die inhaltliche Erschließung der Dokumente (mittels Dewey-Klassifikation) sowie die Prüfung und Pflege der Metadaten. Zusätzliche Schlagwörter können von den Autorinnen bzw. Autoren selbst vergeben werden.<br />
 Die Metadaten der Dokumente und deren Link zum Volltext werden im Katalog der Universitätsbibliothek und in anderen Katalogen öffentlich-rechtlicher Einrichtungen nachgewiesen. Im Rahmen der gesetzlich geregelten Pflichtabgabe von Netzpublikationen erfolgt die Weitergabe der Metadaten sowie der elektronischen Dokumente an die Deutsche Nationalbibliothek.<br />
 <br />
 Die Universitätsbibliothek garantiert für elektronische Publikationen einen Archivierungszeitraum von mindestens fünf Jahren. Für Dokumente, die der gesetzlich geregelten Pflichtabgabe unterliegen, werden die Anforderungen an eine Langzeitarchivierung durch Ablieferung an die Deutsche Nationalbibliothek erfüllt. Darüber hinaus verpflichtet sich die Universitätsbibliothek, nicht unter die Pflichtablieferung fallende Dokumente zukünftig auch der Langzeitarchivierung zuzuführen. Dabei wird sie mit Dienstleistern bzw. Kooperationspartnern kooperieren.</p>
@@ -85,24 +93,123 @@ Die Universitätsbibliothek garantiert für elektronische Publikationen einen Ar
 
 <p><strong>Ansprechpartner für Publikationen:</strong></p>
 
-<p>Frau Blanck / Herr Kissler</p>
-
-<p>E-Mail: <a href="mailto:digibib@tu-braunschweig.de">digibib@tu-braunschweig.de</a></p>
-
-<p>Telefon: +49 (0)531 391 5052</p>
+<p>Frau Blanck / Herr Kissler<br />
+E-Mail: ub-publikatiosnservices [at] tu-braunschweig.de<br />
+Telefon: +49 (0)531 391-5052</p>
 
 <p><strong>Ansprechpartner für Forschungsdaten:</strong></p>
 
-<p>Frau Dr. Laura <span style="color: rgb(0,0,0);">Grunwald-Eckhardt</span></p>
-
-<p>E-Mail: <a href="mailto:forschungsdaten@tu-braunschweig.de">forschungsdaten@tu-braunschweig.de</a></p>
-
-<p>Telefon: +49 (0)531 391 5019</p>
+<p>Frau Dr. Laura Grunwald-Eckhardt<br />
+E-Mail: forschungsdaten [at] tu-braunschweig.de<br />
+Telefon: +49 (0)531 391-5019</p>
 
 <p> </p>
 
-<p style="text-align: right;"><em>Stand: 30.03.2021</em></p>
+<p style="text-align: right;"><em>Stand: 12.08.2022</em></p>
 </div>
-</div>
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2021-03-30" time="17:35" /></meta></MyCoReWebPage>
+</section><section xml:lang="en" title="Policy"><div>
+<h2>Policy for publishing in LeoPARD</h2>
+
+<p> </p>
+
+<p>LeoPARD is the institutional repository of Technische Universität (TU) Braunschweig and is operated by the university library. It facilitates the publication of research results and documentation of scientists of the TU Braunschweig, of special collections of the TU Braunschweig and of regional institutions as well as of digitized evidence of the regional cultural heritage.</p>
+
+<p>Among other things, Braunschweig University Library makes contemporary historical documents from its collections available on LeoPARD for academic purposes, research and teaching. These collections are not subject to any evaluation or censorship by the University Library. Braunschweig University Library expressly distances itself from all discriminatory, racist, violence-glorifying, sexist or national socialist content.</p>
+
+<p>LeoPARD provides the organizational and technical framework to ensure the permanent availability of the published objects.</p>
+
+<p>The technical operation of LeoPARD is carried out by the University Library of Braunschweig in cooperation with the Head Office of the Common Library Network Göttingen. (<a class="external-link" href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service" rel="nofollow" target="_blank">Reposis-Dienst</a>).</p>
+
+<h3> </h3>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-ErklärungzuOpenAccess">Open Access declaration</h3>
+
+<p>The Technische Universität Braunschweig promotes the free exchange of research results (Open Access) and recommends its scientists in a guideline adopted by the Senate to release their publications in Open Access journals and on Open Access platforms or to make them available on freely accessible repositories.</p>
+
+<h3> </h3>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-Waskannveröffentlichtwerden?">What can be published?</h3>
+
+<ul>
+<li>Publications and research data of scientific character from the research activities of the TU Braunschweig, in particular
+<ul>
+<li>Publications by members and affiliates of the TU Braunschweig,</li>
+<li>Publications from projects in which the TU Braunschweig is involved, even if the authors do not belong to the TU Braunschweig,</li>
+<li>Publications whose release is required by examination regulations (e.g. theses),</li>
+<li>Student theses at the TU Braunschweig (master's, diploma, master's and state examination theses or comparable), if their release is expressly endorsed by the supervisor or another member of the teaching staff,</li>
+<li>Publications and publication series of organizational units of the TU Braunschweig.</li>
+</ul>
+</li>
+<li>Other official publications of the TU Braunschweig</li>
+<li>Publications accompanying events as well as presentations at or about the TU Braunschweig</li>
+<li>Publications related to the research region Braunschweig</li>
+<li>Documents with reference to the Specialized Information Service Pharmacy</li>
+<li>Documents related to the Specialized Information Service BAUdigital</li>
+<li>Digitized objects from the collections and special collections of the Braunschweig University Library and the University Archives of the TU Braunschweig as well as from other regional institutions</li>
+<li>Digitized objects of the regional cultural heritage</li>
+</ul>
+
+<h3> </h3>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-DaselektronischeDokument">The electronic document</h3>
+
+<p>It is a work or relevant source that meets the above criteria and is intended for distribution to the public.</p>
+
+<p>The electronic document is not a dynamically changing document. If changes are necessary, the changed document is saved as a new version. Documents that have already been published will not be deleted or changed unless there are serious legal reasons.</p>
+
+<p>The electronic document is based on text, graphics, audio or video sequences or other data. It is stored in digital form on a data carrier and is distributed via computer networks. LeoPARD supports all file formats, but recommends the use of open formats that are suitable for long-term archiving and can be displayed via freely accessible display programs (e.g. PDF/A, TeX, XML). In addition, the original format of the document can also be archived.</p>
+
+<p>The electronic document must be free of any technical protection measures and digital rights management (DRM) processes. Format migrations are made when necessary, for example, to ensure long-term availability. Format migrations are not considered to be a modification of the electronic document.</p>
+
+<p>There are no layout defaults</p>
+
+<h3> </h3>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-Wiekannveröffentlichtwerden?">How to publish?</h3>
+
+<p>A <a class="external-link" href="https://leopard.tu-braunschweig.de/editor/submit_request.xed" rel="nofollow" target="_blank">form</a> is available for uploading the document(s) and associated metadata. Other forms of transmission are possible by arrangement.</p>
+
+<p>The electronic documents are checked by the university library and released and thus published after receiving the <a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">consent for publication (publications)</a> or the <a href="/content/publish/deposit-rd.pdf">consent for publication (research data)</a>.</p>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-RechtlicheRahmenbedingungen">Legal framework</h3>
+
+<p>The authors transfer a simple and unlimited right of use to the University Library. The copyrights of the authors are preserved. Publication in LeoPARD does not preclude further publication (e.g. in journals or on other servers). Conversely, secondary publications are also accepted, provided that legal or contractual regulations permit this.</p>
+
+<p>The transfer of rights must be in writing.</p>
+
+<ul>
+<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-single.pdf" rel="nofollow" target="_blank">Consent for publication (publications)</a></li>
+<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/deposit-rd.pdf" rel="nofollow" target="_blank">Consent for publication research data)</a></li>
+<li><a class="external-link" href="https://leopard.tu-braunschweig.de/content/publish/contract.xml" rel="nofollow" target="_blank">Terms and Conditions of LeoPARD</a></li>
+</ul>
+
+<p>The compliance with copyrights and exploitation rights of third parties is the responsibility of the authors.</p>
+
+<p>The authors decide whether and under which CC license their document is published. The University Library recommends the use of the <a class="external-link" href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" rel="nofollow" target="_blank">Creative Commons license CC-BY</a>.</p>
+
+<p>The University Library reserves the right to block public access to a publication if there are specific indications of an infringement. The University Library is not liable for damages resulting from the violation of copyrights and exploitation rights, provided that there is no demonstrable intentional or grossly negligent fault on its part. The authors assure to inform the University Library immediately in case of doubt or if alleged or actual infringements of rights occur.</p>
+
+<h3 id="LeitliniezumPubliziereninderDigitalenBibliothekBraunschweig(WiP)-ServicesderUniversitätsbibliothek">Services of the University Library</h3>
+
+<p>Publication on LeoPARD is free of charge. Activities necessary for publication (e.g. preparation of electronic documents, format conversion) are supported or carried out by the University Library by arrangement. Activities that require significant additional effort may be invoiced.</p>
+
+<p>The University Library offers advice and support on all matters relating to publishing on LeoPARD. It assigns persistent and citable identifiers such as URL, URN and DOI to make the documents accessible and findable in the long term. It handles both the formal and content indexing of documents (using Dewey classification) as well as the review and maintenance of metadata. Additional keywords can be assigned by the authors themselves.<br />
+The metadata of the documents and their link to the full text are indexed in the catalog of the University Library and in other catalogs of public institutions. As part of the legally regulated mandatory submission of net publications, the metadata as well as the electronic documents are passed on to the German National Library.</p>
+
+<p>The University Library guarantees an archiving period of at least five years for electronic publications. For documents subject to the legally regulated mandatory delivery, the requirements for long-term archiving are met by delivery to the German National Library. In addition, the University Library is committed to providing long-term archiving in the future for documents that are not subject to mandatory delivery. In doing so, it will cooperate with service providers or cooperation partners.</p>
+
+<p> </p>
+
+<p><strong>Contact for publications:</strong></p>
+
+<p>Ms. Blanck / Mr. Kissler<br />
+E-Mail: ub-publikationsservices [at] tu-braunschweig.de<br />
+Telephone: +49 (0)531 391-5052</p>
+
+<p><strong>Contact for research data:</strong></p>
+
+<p>Dr. Laura <span style="color: rgb(0, 0, 0);">Grunwald-Eckhardt</span><br />
+E-Mail: forschungsdaten [at] tu-braunschweig.de<br />
+Telephone: +49 (0)531 391-5019</p>
+
+</div></section><meta><log lastEditor="celsner" date="2022-09-09" time="16:54" /></meta></MyCoReWebPage>

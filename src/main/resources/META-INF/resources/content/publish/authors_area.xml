@@ -3,16 +3,18 @@
 <h2>Hinweise für Autorinnen und Autoren</h2>
 
 <ol>
-	<li>    Publizieren für Wissenschaftlerinnen und Wissenschaftler</li>
-	<li>    Publizieren und Archivieren von Forschungsdaten</li>
-	<li>    Voraussetzungen und Empfehlungen</li>
-	<li>    Vorgehensweise</li>
-	<li>    Kontakt</li>
+	<li>    <a href="#1_Publizieren_allgemein">Publizieren für Wissenschaftlerinnen und Wissenschaftler</a></li>
+	<li>    <a href="#2_Publizieren_Forschungsdaten">Publizieren und Archivieren von Forschungsdaten</a></li>
+	<li>    <a href="#3_Voraussetzungen">Voraussetzungen und Empfehlungen</a></li>
+	<li>    <a href="#4_Vorgehensweise">Vorgehensweise</a></li>
+	<li>    <a href="#5_Kontakt">Kontakt</a></li>
 </ol>
 
-<p class="moz-quote-pre"><strong>1. Publizieren <span style="color: rgb(255,153,0);"> </span>für Wissenschaftlerinnen und Wissenschaftler der TU Braunschweig </strong></p>
 
-<p>Als Wissenschaftlerin bzw. Wissenschaftler der TU Braunschweig können Sie Ihre elektronischen Publikationen (Aufsätze aus Zeitschriften und Büchern, Tagungsbände, Forschungsberichte, Dissertationen, etc.) kostenlos und zeitlich unbegrenzt auf dem Publikationsserver der TU Braunschweig, Open Access veröffentlichen.</p>
+
+<h3><a id="1_Publizieren_allgemein" name="1_Publizieren_allgemein" />1. Publizieren <span style="color: rgb(255,153,0);"> </span>für Wissenschaftlerinnen und Wissenschaftler der TU Braunschweig</h3>
+
+<p>Als Wissenschaftlerin bzw. Wissenschaftler der TU Braunschweig können Sie Ihre elektronischen Publikationen (Aufsätze aus Zeitschriften und Büchern, Tagungsbände, Forschungsberichte, Dissertationen, etc.) kostenlos und zeitlich unbegrenzt auf LeoPARD, Open Access veröffentlichen.</p>
 
 <p>Es gibt zwei Möglichkeiten zur Veröffentlichung:</p>
 
@@ -25,17 +27,17 @@
 
 <p>Ihre Publikationen werden unter Wahrung des <a class="external-link" href="http://www.gesetze-im-internet.de/urhg/index.html" rel="nofollow" target="_blank">geltenden deutschen Urheberrechts</a> veröffentlicht, d.h. das Urheberrecht verbleibt bei Ihnen. Sie übertragen lediglich der Universitätsbibliothek Braunschweig das einfache, zeitlich unbefristete Nutzungsrecht, die eingereichten Publikationen auf ihren Servern zu vervielfältigen, zu speichern, öffentlich zugänglich zu machen<span style="color: rgb(0,51,102);">.</span> Bitte beachten Sie, dass Sie ggf. das Einverständnis zur Veröffentlichung von Co-Autorinnen bzw. Co-Autoren einzuholen müssen. Die Einhaltung von Urheber- und Verwertungsrechten Dritter liegt in Ihrer Verantwortung.</p>
 
-<p>Ihre Publikation erhält einen persistenten Identifier (DOI, URN), wird langzeitarchiviert und kann mit Ihrem ORCiD-Account verknüpft werden. Die Metadaten<span style="color: rgb(0,0,0);"> werden in gängigen Bibliothekskatalogen indexiert und regelmäßig von Suchmaschinen geharvestet </span>(z.B. Deutsche Nationalbibliothek, BASE, GoogleScholar, OpenAire).<span style="color: rgb(0,0,0);"> Der Publikationsserver ist OpenAire3.0-kompatibel und erfüllt damit die Voraussetzungen für eine Horizon2020-geförderte Publikation.</span></p>
+<p>Ihre Publikation erhält einen persistenten Identifier (DOI, URN), wird langzeitarchiviert und kann mit Ihrem ORCiD-Account verknüpft werden. Die Metadaten<span style="color: rgb(0,0,0);"> werden in gängigen Bibliothekskatalogen indexiert und regelmäßig von Suchmaschinen geharvestet </span>(z.B. Deutsche Nationalbibliothek, BASE, GoogleScholar, OpenAire).<span style="color: rgb(0,0,0);"> LeoPARD ist OpenAire3.0-kompatibel und erfüllt damit die Voraussetzungen für eine Horizon2020-geförderte Publikation.</span></p>
 
-<p> </p>
 
-<p><strong>2. <span class="inline-comment-marker valid" data-ref="8677e5dd-d6a3-4090-bad1-9aeb63077ff3">Publizieren</span> und Archivieren von Forschungsdaten</strong></p>
 
-<p>Als Wissenschaftlerin bzw. Wissenschaftler der TU Braunschweig können Sie Ihre Forschungsdaten auf dem Publikationsserver der TU Braunschweig publizieren und archivieren. Beim Publizieren erhält Ihr veröffentlichter Datensatz einen persistenten Identifier (DOI, URN), wird archiviert (derzeit lediglich Bitstream Preservation) und kann mit Ihrem ORCiD-Account verknüpft werden. Veröffentlichte Datensätze können frei oder eingeschränkt zugänglich gemacht werden. Nähere Informationen erhalten Sie in diesem<a href="/content/publish/Leitfaden_Forschungsdatenpublikation_TUBS.pdf"> Leitfaden</a>.</p>
+<h3><a id="2_Publizieren_Forschungsdaten" name="Publizieren_Forschungsdaten" />2. <span class="inline-comment-marker valid" data-ref="8677e5dd-d6a3-4090-bad1-9aeb63077ff3">Publizieren</span> und Archivieren von Forschungsdaten</h3>
 
-<p> </p>
+<p>Als Wissenschaftlerin bzw. Wissenschaftler der TU Braunschweig können Sie Ihre Forschungsdaten auf LeoPARD publizieren und archivieren. Beim Publizieren erhält Ihr veröffentlichter Datensatz einen persistenten Identifier (DOI, URN), wird archiviert (derzeit lediglich Bitstream Preservation) und kann mit Ihrem ORCiD-Account verknüpft werden. Veröffentlichte Datensätze können frei oder eingeschränkt zugänglich gemacht werden. Nähere Informationen erhalten Sie in diesem<a href="/content/publish/Leitfaden_Forschungsdatenpublikation_TUBS.pdf"> Leitfaden</a>.</p>
 
-<p class="moz-quote-pre"><strong>3. Voraussetzungen und Empfehlungen</strong></p>
+
+
+<h3 class="moz-quote-pre"><a id="3_Voraussetzungen" name="3_Voraussetzungen" />3. Voraussetzungen und Empfehlungen</h3>
 
 <ul>
 	<li class="moz-quote-pre"><span style="color: rgb(0,0,0);"><strong>Zugehörigkeit</strong>: Sie sind Mitglied oder Angehörige bzw. Angehöriger der TU Braunschweig oder publizieren mit Bezug zur Forschungsregion Braunschweig.</span></li>
@@ -47,9 +49,8 @@
 	<li class="moz-quote-pre"><strong>Forschungsdaten: </strong>Beachten Sie bei einer Publikation bzw. Archivierung Ihrer Forschungsdaten eine <span class="inline-comment-marker valid" data-ref="07eba22e-99e0-416e-8091-27cb5553af68">nachvollziehbare Ordnerstruktur und Dateibenennung.</span> Zudem sollte Ihrem Datensatz eine <a href="/content/publish/README_Template_TUBS.pdf">README-Datei</a> mit beschreibenden Metadaten beiliegen.</li>
 </ul>
 
-<p class="moz-quote-pre"> </p>
 
-<p class="moz-quote-pre"><strong>4. Vorgehensweise</strong></p>
+<h3 class="moz-quote-pre"><a id="4_Vorgehensweise" name="4_Vorgehensweise" />4. Vorgehensweise</h3>
 
 <p class="moz-quote-pre"><strong>Schritt 1:</strong></p>
 
@@ -65,7 +66,7 @@
 
 <p>Sie akzeptieren die Vertragsbedingungen mit Ihrer Unterschrift auf der letzten Seite.</p>
 
-<p>Das unterschriebene Formular senden Sie bitte per <strong>E-Mail</strong> an <span class="madress">digibib [at] tu-braunschweig.de</span>, oder im Falle von Forschungsdaten an <span class="madress">forschungsdaten [at] tu-braunschweig.de</span>, per <strong>Fax: </strong>0531 391 5836, oder <strong>(Haus-)Post</strong> an die Universitätsbibliothek.</p>
+<p>Das unterschriebene Formular senden Sie bitte per <strong>E-Mail</strong> an ub-publikationsservices [at] tu-braunschweig.de, oder im Falle von Forschungsdaten an forschungsdaten [at] tu-braunschweig.de, per <strong>Fax: </strong>0531 391 5836, oder <strong>(Haus-)Post</strong> an die Universitätsbibliothek.</p>
 
 <p><strong>Schritt 2:</strong></p>
 
@@ -75,7 +76,7 @@
 
 <ul>
 	<li>per <a href="/editor/submit_request.xed">Webformular</a>,</li>
-	<li>per E-Mail an <span class="madress">digibib [at] tu-braunschweig.de</span> (Dateigröße max. 50 MB),</li>
+	<li>per E-Mail an ub-publikationsservices [at] tu-braunschweig.de (Dateigröße max. 50 MB),</li>
 	<li>oder auf einem geeigneten Datenträger, den Sie uns per (Haus-)Post zusenden.</li>
 </ul>
 
@@ -90,29 +91,29 @@
 
 <p>Wir prüfen formal Ihr eingereichtes Dokument bzw. ihre eingereichten Daten und veröffentlichen bzw. archivieren diese auf dem Publikationsserver. Sie erhalten innerhalb einer Woche eine Rückmeldung per E-Mail.</p>
 
-<p> </p>
 
-<p class="moz-quote-pre"><strong>5. Kontakt</strong></p>
+
+<h3 class="moz-quote-pre"><a id="5_Kontakt" name="5_Kontakt" />5. Kontakt</h3>
 
 <p>Wir unterstützen Sie gern bei Ihren Erst- und Zweitveröffentlichungen, bei Fragen wenden Sie sich an:</p>
 
-<p><span style="color: rgb(0,0,0);">Referat </span>Digitale Bibliothek und Publikationsservices</p>
+<p><span style="color: rgb(0,0,0);">Referat </span>Publikationsservices</p>
 
 <p><span style="color: rgb(0,0,0);"><span class="inline-comment-marker" data-ref="655a4f90-3824-4c47-8f7f-cff1efee22f4">Frau Blanck / Herr Kissler</span></span><br />
-E-Mail: <span class="madress">digibib [at] tu-braunschweig.de</span> <br />
+E-Mail: ub-publikationsservices [at] tu-braunschweig.de <br />
 Telefon: +49 (0)531 391 5052</p>
 
-<p> </p>
+
 
 <p>Bei Fragen zum Publizieren und Archivieren von Forschungsdaten, wenden Sie sich bitte an:</p>
 
-<p><span style="color: rgb(0,0,0);">Referat Forschungsnahe Dienstleistungen</span></p>
+<p><span style="color: rgb(0,0,0);">Referat Forschungsnahe Services</span></p>
 
 <p><span style="color: rgb(0,0,0);">Frau Dr. Grunwald-Eckhardt</span><br />
 E-Mail: <span class="madress">forschungsdaten [at] tu-braunschweig.de</span><br />
 Telefon: +49 (0)531 391 5019</p>
 
-<p> </p>
+
 
 <p><span style="color: rgb(0,0,0);">Bei Fragen zur Veröffentlichung von Dissertationen wenden Sie sich bitte an: </span></p>
 <span style="color: rgb(0,0,0);">Dissertationstelle</span>
@@ -121,23 +122,23 @@ Telefon: +49 (0)531 391 5019</p>
 E-Mail: <span class="madress">ub-diss [at] tu-braunschweig.de</span><br />
 Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
 
-<p> </p>
+
 </div>
 </section><section xml:lang="en" title="Notes for authors"><div>
 <h2>Notes for authors</h2>
 
 <ol>
-	<li>Publishing for scientists</li>
-	<li>Archiving and publishing of research data</li>
-	<li>Requirements</li>
-	<li>Procedure of submitting</li>
-	<li>Contact</li>
+	<li><a href="#1_publishing_general">Publishing for researchers</a></li>
+	<li><a href="#2_research_data">Archiving and publishing of research data</a></li>
+	<li><a href="#3_requirements">Requirements</a></li>
+	<li><a href="#4_submitting">Procedure of submitting</a></li>
+	<li><a href="#5_contact">Contact</a></li>
 </ol>
 
 <div>
-<p><strong>1 Publishing for scientists of TU Braunschweig </strong></p>
+<h3><a id="1_publishing_general" name="1_publishing_general" />1 Publishing for researchers of TU Braunschweig </h3>
 
-<p>As a scientist of TU Braunschweig, you can publish your electronic publications (articles from journals and books, conference proceedings, research reports, dissertations, etc.) Open Access, free of charge and for an unlimited period of time in the Digital Library, the institutional repository of TU Braunschweig.</p>
+<p>As a researcher of TU Braunschweig, you can publish your electronic publications (articles from journals and books, conference proceedings, research reports, dissertations, etc.) Open Access, free of charge and for an unlimited period of time on LeoPARD, the institutional repository of TU Braunschweig.</p>
 
 <p>There are two ways to publish:</p>
 
@@ -154,23 +155,23 @@ Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
 
 <p> </p>
 
-<p><strong>2 Archiving and publishing of research data</strong><br />
-As a researcher of TU Braunschweig you can archive and publish your research data on the official repository of TU Braunschweig. Your published dataset receives a persistent identifier (DOI, URN), is archived (currently only bitstream preservation) and can be linked to your ORCiD account. Published datasets can be provided open access or with restricted access. More information on archiving and publishing research data can be found <a href="/content/publish/Guideline_Research_data_publication_TUBS.pdf">in this guide</a>.</p>
+<h3><a id="2_research_data" name="2_research_data" />2 Archiving and publishing of research data</h3>
 
-<p> </p>
+<p>As a researcher of TU Braunschweig you can archive and publish your research data on the official repository (LeoPARD) of TU Braunschweig. Your published dataset receives a persistent identifier (DOI, URN), is archived (currently only bitstream preservation) and can be linked to your ORCiD account. Published datasets can be provided open access or with restricted access. More information on archiving and publishing research data can be found <a href="/content/publish/Guideline_Research_data_publication_TUBS.pdf">in this guide</a>.</p>
 
-<p><strong>3 Requirements</strong></p>
+
+<h3><a id="3_requirements" name="3_requirements" />3 Requirements</h3>
 
 <ul>
 	<li><strong>Affiliation:</strong> You are a member of TU Braunschweig or you publish work is related to the research region Braunschweig.</li>
 	<li><strong>Preservation of copyright:</strong> You need to have the copyright of the publication or, in case of co-authorship, you need to have the permission for publishing by your co-authors. </li>
-	<li><strong>Consent to the terms of the contract:</strong> You need to agree to our <a href="/content/publish/contract.xml">terms of contract</a> for publishing your documents in the Digital Library. This is done by signing the application form (see "3. Procedure", step 1).  </li>
-	<li><strong>Technical formats:</strong> You can publish any type of document (text, graphics, audio or video sequences, research data, etc.). The documents are not allowed to have any access restrictions. The Digital Library supports all file formats, but recommends the use of open formats (e.g. PDF/A, TeX, XML) that are suitable for long-term archiving and can be displayed by freely accessible viewing programs. In addition, the original format of the document can also be archived.</li>
+	<li><strong>Consent to the terms of the contract:</strong> You need to agree to our <a href="/content/publish/contract.xml">terms of contract</a> for publishing your documents on LeoPARD. This is done by signing the application form (see "3. Procedure", step 1).  </li>
+	<li><strong>Technical formats:</strong> You can publish any type of document (text, graphics, audio or video sequences, research data, etc.). The documents are not allowed to have any access restrictions. LeoPARD supports all file formats, but recommends the use of open formats (e.g. PDF/A, TeX, XML) that are suitable for long-term archiving and can be displayed by freely accessible viewing programs. In addition, the original format of the document can also be archived.</li>
 	<li><strong>Accessibility:</strong> Please note the accessibility requirements for your publication according to section 3 paragraph 1 to 4 and section 4 of the Barrier-Free Information Technology Ordinance (BITV 2.0), which were issued on the basis of section 12d of the Disability Equality Act (BGG). </li>
 	<li><strong>Research data:</strong> When archiving or publishing your research data, please make sure that the folder structure and file naming are comprehensible. In addition, your data set should include a <a href="/content/publish/README_Template_TUBS.pdf">README file</a> with descriptive metadata.</li>
 </ul>
 
-<p><strong>4 Procedure of Submitting</strong></p>
+<h3><a id="4_submitting" name="4_submitting" />4 Procedure of Submitting</h3>
 
 <p><strong>Step 1:</strong></p>
 
@@ -186,7 +187,7 @@ As a researcher of TU Braunschweig you can archive and publish your research dat
 
 <p>You accept the terms of contract with your signature on the last page.</p>
 
-<p>Please send the signed form by e-mail: <span class="madress">digibib [at] tu-braunschweig.de</span> or <span class="madress">forschungsdaten [at] tu-braunschweig.de</span> fax: 0531 391 5836, or (in-house)post to the University Library.</p>
+<p>Please send the signed form by e-mail: <span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span> or <span class="madress">forschungsdaten [at] tu-braunschweig.de</span> fax: 0531 391 5836, or (in-house)post to the University Library.</p>
 
 <p><strong>Step 2:</strong></p>
 
@@ -194,7 +195,7 @@ As a researcher of TU Braunschweig you can archive and publish your research dat
 
 <ul>
 	<li>via <a href="/editor/submit_request.xed">web form</a>,</li>
-	<li>by e-mail to <span class="madress">digibib [at] tu-braunschweig.de</span> (file size max. 50 MB),</li>
+	<li>by e-mail to <span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span> (file size max. 50 MB),</li>
 	<li>or on a suitable storage medium, which you send to us by (in-house) post.</li>
 </ul>
 
@@ -209,35 +210,33 @@ As a researcher of TU Braunschweig you can archive and publish your research dat
 
 <p>We check your submitted document and upload it to the publication server. You will receive a response by e-mail within one week.</p>
 
-<p><strong>5. Contact</strong></p>
+<h3><a id="5_contact" name="5_contact" />5. Contact</h3>
 
 <p>We support you with your primary and self archiving publications. If you have any questions, please contact:</p>
 
-<p><span style="color: rgb(0,0,0);">Referat </span>Digitale Bibliothek und Publikationsservices</p>
+<p><span style="color: rgb(0,0,0);">Publication services unit</span></p>
 
-<p>Frau Blanck / Herr Kissler<br />
-E-mail: <span class="madress">digibib [at] tu-braunschweig.de</span> <br />
+<p>Mrs. Blanck / Mr. Kissler<br />
+E-mail: <span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span> <br />
 Phone: +49 (0)531 391 5052</p>
 
 <p><br />
 For questions about publishing and archiving research data, please contact:</p>
 
-<p><span style="color: rgb(0,0,0);">Referat Forschungsnahe Dienstleistungen</span></p>
+<p>Research-related services unit</p>
 
-<p>Frau Dr. Grunwald-Eckhardt<br />
+<p>Mrs. Dr. Grunwald-Eckhardt<br />
 E-mail: <span class="madress">forschungsdaten [at] tu-braunschweig.de</span> <br />
 Phone: +49 (0)531 391 5019</p>
 
 <p><br />
 For questions regarding the publication of dissertations, please contact:</p>
 
-<p><span style="color: rgb(0,0,0);">Dissertationsstelle</span></p>
+<p><span style="color: rgb(0,0,0);">Thesis Office</span><br />
 
-<p>Frau Globisch</p>
-
-<p>E-mail: <span class="madress">ub-diss [at] tu-braunschweig.de</span></p>
-
-<p>Phone: +49 (0)531 391 5024 (Mon - Fri: 9.00 to 12.00)</p>
+Mrs. Globisch<br />
+E-mail: <span class="madress">ub-diss [at] tu-braunschweig.de</span><br />
+Phone: +49 (0)531 391 5024 (Mon - Fri: 9.00 to 12.00)</p>
 </div>
 </div>
-</section><meta><log lastEditor="kneumann" date="2021-11-16" time="16:51" /></meta></MyCoReWebPage>
+</section><meta><log lastEditor="celsner" date="2022-09-09" time="16:32" /></meta></MyCoReWebPage>
