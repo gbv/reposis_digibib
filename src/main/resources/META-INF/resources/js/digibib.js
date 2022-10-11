@@ -71,13 +71,13 @@ $(document).ready(function() {
   // close searchbar
   // listen to all clicks
   $(document).click(function(event) {
-    var $target = $(event.target);
+    var $click = $(event.target);
     // search bar is visible AND
-    // ( clicked element is not inside of the search bar OR
-    //   clicked element is not the toggle itself )
+    // clicked element is not inside of the search bar AND
+    // clicked element is not the toggle itself
     if( $('.searchfield_box').hasClass("open") &&
-        !$target.closest('#leo-searchbar').length &&
-        !$target.closest('.js-search-toggler').length ) {
+        !$click.closest('.js-leo-searchbar').length &&
+        !$click.closest('.js-search-toggler').length ) {
       $( ".searchfield_box" ).removeClass('open');
     }
   });

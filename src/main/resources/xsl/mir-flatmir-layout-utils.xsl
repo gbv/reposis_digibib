@@ -103,7 +103,7 @@
               action="{$WebApplicationBaseURL}servlets/solr/find"
               class="bs-search form-inline"
               role="search">
-              <div class="input-group">
+              <div class="input-group js-leo-searchbar">
                 <input
                   name="condQuery"
                   placeholder="{i18n:translate('mir.navsearch.placeholder')}"
