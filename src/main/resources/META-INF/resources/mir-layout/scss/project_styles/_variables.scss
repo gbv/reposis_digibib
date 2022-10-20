@@ -62,21 +62,21 @@ $dropdown-link-hover-color: white;
 $dropdown-link-hover-bg: $leoBlueDark;
 
 // Paginations
-$pagination-color: white;
-$pagination-bg: $primary;
-$pagination-border-color: $primary;
+$pagination-color: $info;
+$pagination-bg: white;
+$pagination-border-color: white;
 
 $pagination-hover-color: white;
 $pagination-hover-bg: $secondary;
 $pagination-hover-border-color: $secondary;
 
 $pagination-active-color: white;
-$pagination-active-bg: $secondary;
-$pagination-active-border-color: $secondary;
+$pagination-active-bg: $info;
+$pagination-active-border-color: $info;
 
-$pagination-disabled-color: white;
-$pagination-disabled-bg: $gray-dark;
-$pagination-disabled-border-color: $gray-dark;
+$pagination-disabled-color: $gray;
+$pagination-disabled-bg: white;
+$pagination-disabled-border-color: white;
 
 $grid-breakpoints: (
   xs: 0,
