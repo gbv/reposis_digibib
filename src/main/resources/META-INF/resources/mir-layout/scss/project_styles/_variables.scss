@@ -13,7 +13,7 @@ $leoBlueDark:   #003f57;
 $leoGreen:      #008500;
 $leoOrange:     #d48200;
 $leoRed:        #be1e3c;
-
+$leoPurple:     #8a307f;
 $gray-dark:     #676767;
 $gray:          #95a5a6;
 $gray-light:    #b4bcc2;
@@ -23,6 +23,7 @@ $gray-lighter:  #ecf0f1;
 // -------------------------
 
 $primary: $leoBlueDark;
+$secondary: $leoPurple;
 $success: $leoGreen;
 $info: $leoBlue;
 $warning: $leoOrange;
@@ -59,6 +60,23 @@ $dropdown-bg: $leoBlueDark;
 $dropdown-link-color: white;
 $dropdown-link-hover-color: white;
 $dropdown-link-hover-bg: $leoBlueDark;
+
+// Paginations
+$pagination-color: white;
+$pagination-bg: $primary;
+$pagination-border-color: $primary;
+
+$pagination-hover-color: white;
+$pagination-hover-bg: $secondary;
+$pagination-hover-border-color: $secondary;
+
+$pagination-active-color: white;
+$pagination-active-bg: $secondary;
+$pagination-active-border-color: $secondary;
+
+$pagination-disabled-color: white;
+$pagination-disabled-bg: $gray-dark;
+$pagination-disabled-border-color: $gray-dark;
 
 $grid-breakpoints: (
   xs: 0,
