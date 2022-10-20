@@ -6,21 +6,23 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-  header {
-    position: fixed;
-    display: block;
-    width: 100%;
-    height: $menuHeight;
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,.2);
-    z-index: 1500;
-    .leo-logo {
+  body {
+    > header {
+      position: fixed;
+      display: block;
+      width: 100%;
       height: $menuHeight;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-    a {
-      text-decoration: none;
+      background-color: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,.2);
+      z-index: 1500;
+      .leo-logo {
+        height: $menuHeight;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      a {
+        text-decoration: none;
+      }
     }
   }
 
@@ -36,7 +38,7 @@
       margin-top: .625rem;
       flex: 0 0 auto;
       position: absolute;
-      z-index: 1600;
+      z-index: 1035;
       img {
         max-width: 100%;
         height: auto;
