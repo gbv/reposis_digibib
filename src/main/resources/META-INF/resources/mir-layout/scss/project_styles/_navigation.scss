@@ -52,10 +52,11 @@
       font-weight: 500;
     }
     .dropdown-menu {
-      padding: 2rem 4rem;
-      margin-left: -4rem;
+      padding: 1.25rem;
     }
     .dropdown-item {
+      padding-left: 0;
+      padding-right: 0;
       &:hover,
       &:focus,
       &:active {
