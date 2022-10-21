@@ -47,7 +47,7 @@
     }
     &__nav {
       flex: 1 1 auto;
-      margin-left: calc(260px + 5.625rem);
+      margin-left: calc(260px + 5.125rem - .5rem); // image width plus margin from home minus menu padding
       display: flex;
     }
   }
