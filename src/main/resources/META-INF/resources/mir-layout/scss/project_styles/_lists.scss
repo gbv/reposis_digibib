@@ -64,6 +64,7 @@
 
 // overwrite mir rule to prevent space by hidden elements
 .result_body .result_list #hit_list .hit_item .hit_tnd_content > div:nth-child(n+1) {
+  margin-left: 0;
   margin-right: 5px;
 }
 
