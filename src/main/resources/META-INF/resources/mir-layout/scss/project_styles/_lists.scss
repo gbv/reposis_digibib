@@ -62,6 +62,11 @@
   color: $gray-dark;
 }
 
+// overwrite mir rule to prevent space by hidden elements
+.result_body .result_list #hit_list .hit_item .hit_tnd_content > div:nth-child(n+1) {
+  margin-right: 5px;
+}
+
 
 
 // Large devices (desktops) and below: <= 1200px
