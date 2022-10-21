@@ -105,11 +105,6 @@
     li {
       width: auto;
       display: inline-block;
-      > a:hover,
-      > a:focus {
-        text-decoration: underline;
-        background-color: transparent;
-      }
     }
     .nav-link {
       display: block;
@@ -122,6 +117,18 @@
 
   .breadcrumb-item.active {
     color: $gray-dark;
+  }
+
+  // no link decoration
+  .no-decoration,
+  a.btn,
+  a.badge,
+  .hit_item a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 
   // settings from https://www.tu-braunschweig.de/
