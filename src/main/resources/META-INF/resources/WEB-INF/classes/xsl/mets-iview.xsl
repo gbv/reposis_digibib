@@ -138,7 +138,7 @@
           <xsl:when test="$use='DOWNLOAD' and $MCR.Viewer.PDFCreatorURI">
             <mets:file ID="{concat($use,'_',$ncName)}" MIMETYPE="application/pdf">
               <mets:FLocat LOCTYPE="URL"
-                xlink:href="{concat($MCR.Viewer.PDFCreatorURI, '?mets=', encoder:encode(concat($WebApplicationServletsURL, 'MCRMETSServlet', '/',$derivateID, '/mets.xml?XSL.Style=pdf'), 'UTF-8'), '&amp;pages=', position())}" />
+                           xlink:href="{concat($WebApplicationBaseURL, 'rsc/pdf', '/',$derivateID, '?pages=', position())}" />
             </mets:file>
           </xsl:when>
           <xsl:otherwise>
