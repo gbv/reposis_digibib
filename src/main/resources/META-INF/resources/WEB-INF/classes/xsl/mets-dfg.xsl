@@ -6,9 +6,11 @@
   <xsl:param name="ThumbnailBaseURL" select="concat($ServletsBaseURL,'MCRDFGThumbnail/')" />
   <xsl:param name="ImageBaseURL" select="concat($ServletsBaseURL,'MCRDFGServlet/')"/>
     <xsl:param name="prepareGroup">
-        <mets:fileGrp id="ALTO" USE="FULLTEXT">
-            <xsl:copy-of select=".//mets:fileGrp[@USE='ALTO']/*"/>
-        </mets:fileGrp>
+        <xsl:if test="count(.//mets:fileGrp[@USE='ALTO'])=1">
+            <mets:fileGrp id="ALTO" USE="FULLTEXT">
+                <xsl:copy-of select=".//mets:fileGrp[@USE='ALTO']/*"/>
+            </mets:fileGrp>
+        </xsl:if>
     </xsl:param>
     <xsl:param name="copyFileGrp" select="exslt:node-set($prepareGroup)"/>
   <xsl:include href="mets-dfgProfile.xsl" />
