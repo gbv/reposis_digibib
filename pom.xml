@@ -29,7 +29,7 @@
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
     <!-- we can use single files from main version -->
-    <Mycore.Main.Version>2022.02-SNAPSHOT</Mycore.Main.Version>
+    <Mycore.Main.Version>2022.06.2-SNAPSHOT</Mycore.Main.Version>
     <node.version>v14.19.3</node.version>
     <yarn.version>v1.22.18</yarn.version>
   </properties>

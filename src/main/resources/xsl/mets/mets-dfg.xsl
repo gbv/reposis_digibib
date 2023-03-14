@@ -13,5 +13,5 @@
         </xsl:if>
     </xsl:param>
     <xsl:param name="copyFileGrp" select="exslt:node-set($prepareGroup)"/>
-  <xsl:include href="mets-dfgProfile.xsl" />
+  <xsl:include href="resource:xsl/mets/mets-dfgProfile.xsl" />
 </xsl:stylesheet>
