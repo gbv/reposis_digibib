@@ -41,4 +41,12 @@ public class CORSFilterStarter implements MCRStartupHandler.AutoExecutable, Filt
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+    @Override
+    public void destroy() {
+    }
 }
