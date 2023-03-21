@@ -16,7 +16,8 @@
       "stored": true,
       "multiValued": true
     }
-  },  {
+  },
+  {
     "add-field": {
       "name": "digibib.mods.validity_state",
       "type": "string",
@@ -29,6 +30,76 @@
     "add-field": {
       "name": "digibib.mods.faculty",
       "type": "string",
+      "indexed": true,
+      "stored": true,
+      "multiValued": true
+    }
+  },
+  {
+    "add-field-type": {
+      "name": "digibib.text_general",
+      "class": "solr.TextField",
+      "positionIncrementGap": "100",
+      "multiValued": true,
+      "indexAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "charFilters": [
+          {
+            "class": "solr.MappingCharFilterFactory",
+            "mapping": "mycore_default_mapping.txt"
+          }
+        ],
+        "filters": [
+          {
+            "class": "solr.StopFilterFactory",
+            "words": "stopwords.txt",
+            "ignoreCase": "true"
+          },
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          }
+        ]
+      },
+      "queryAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "charFilters": [
+          {
+            "class": "solr.MappingCharFilterFactory",
+            "mapping": "mycore_default_mapping.txt"
+          }
+        ],
+        "filters": [
+          {
+            "class": "solr.StopFilterFactory",
+            "words": "stopwords.txt",
+            "ignoreCase": "true"
+          },
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "expand": "true",
+            "ignoreCase": "true",
+            "synonyms": "synonyms.txt"
+          },
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "delete-field": {
+      "name": "mods.title"
+    }
+  },
+  {
+    "add-field": {
+      "name": "mods.title",
+      "type": "digibib.text_general",
       "indexed": true,
       "stored": true,
       "multiValued": true
