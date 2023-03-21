@@ -309,7 +309,9 @@ export default class App extends Vue {
     this.convertFacetToStringArray(this.model.faculties, this.model.search.facet_counts.facet_fields["digibib.mods.faculty"]);
     this.convertFacetToStringArray(this.model.disciplines, this.model.search.facet_counts.facet_fields["digibib.mods.discipline"]);
 
-    if (this.model.subjects.length == 0 || this.model.faculties.length == 0 || this.model.disciplines.length == 0) {
+    let hasNoHits = this.model.subjects.length == 0 || this.model.faculties.length == 0 || this.model.disciplines.length == 0;
+    let hasQuery = query != undefined && query.trim().length > 0;
+    if (hasNoHits && !hasQuery) {
       window.location.replace((window as any).webApplicationBaseURL + "handbuecher/404");
     }
 
