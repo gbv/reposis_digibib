@@ -181,7 +181,7 @@
                   title="{i18n:translate('digibib.diniCertificate2016')}">
                   <img
                     alt="Logo DINI-Zertifikat 2016"
-                    src="{$WebApplicationBaseURL}images/dini_zertifikat_2016.svg"
+                    src="{$WebApplicationBaseURL}images/DINI_Siegel_FINAL_22.png"
                     height="50" />
                 </a>
                 <a id="mycore_logo" href="http://www.mycore.de">
