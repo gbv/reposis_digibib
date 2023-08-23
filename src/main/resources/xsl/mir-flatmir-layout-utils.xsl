@@ -180,7 +180,7 @@
                   href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
                   title="{i18n:translate('digibib.diniCertificate2016')}">
                   <img
-                    alt="Logo DINI-Zertifikat 2016"
+                    alt="Logo DINI-Zertifikat 2022"
                     src="{$WebApplicationBaseURL}images/DINI_Siegel_FINAL_22.png"
                     height="50" />
                 </a>
