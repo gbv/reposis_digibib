@@ -162,6 +162,17 @@
                 mode="footerMenu" />
             </ul>
           </div>
+          <div class="col dini-certificate">
+            <h2>Dini Zertifikat</h2>
+            <a
+              id="dini_logo"
+              href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
+              title="{i18n:translate('digibib.diniCertificate2022')}">
+              <img
+                alt="Logo DINI-Zertifikat 2022"
+                src="{$WebApplicationBaseURL}images/DINI_Siegel_22.svg" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -175,15 +186,6 @@
               <div
                 id="powered_by"
                 class="d-flex align-items-center justify-content-center justify-content-sm-start w-sm-auto mt-3 mt-sm-0">
-                <a
-                  id="dini_logo"
-                  href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
-                  title="{i18n:translate('digibib.diniCertificate2016')}">
-                  <img
-                    alt="Logo DINI-Zertifikat 2022"
-                    src="{$WebApplicationBaseURL}images/DINI_Siegel_FINAL_22.png"
-                    height="50" />
-                </a>
                 <a id="mycore_logo" href="http://www.mycore.de">
                   <img
                     src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_powered_120x30_blaue_schrift_frei.png"

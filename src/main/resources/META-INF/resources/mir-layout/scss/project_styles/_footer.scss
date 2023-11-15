@@ -39,6 +39,15 @@
         margin-bottom: 1.125rem;
       }
     }
+    .dini-certificate {
+      h2 {
+        margin-bottom: 0;
+        &:after {
+          background-color: transparent;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .leo-copyright-menu {
@@ -46,8 +55,11 @@
     background-color: white;
   }
 
-  #dini_logo {
-    margin-right: 1rem;
+  .dini-certificate {
+    text-align: right;
+    img {
+      width: 200px;
+    }
   }
 
   html body #powered_by {
