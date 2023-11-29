@@ -7,6 +7,7 @@
   version="1.0">
   <xsl:param name="MCR.Handle.Resolver.MasterURL" />
   <xsl:param name="MCR.DOI.Resolver.MasterURL" />
+  <xsl:param name="MCR.Scopus.Backlink" select="''" />
   <xsl:param name="MCR.Mods.SherpaRomeo.ApiKey" select="''" />
   <xsl:param name="ServletsBaseURL" />
   <xsl:param name="wcms.useTargets" select="'no'" /><!-- TODO: refacture! -->
@@ -14,6 +15,27 @@
   <xsl:key use="mods:role/mods:roleTerm" name="name-by-role" match="mods:mods/mods:name" />
 
   <xsl:template name="printMetaDate.mods">
+    <!-- prints a table row for a given nodeset -->
+    <xsl:param name="nodes" />
+    <xsl:param name="label" select="i18n:translate(concat('component.mods.metaData.dictionary.',local-name($nodes[1])))" />
+    <xsl:param name="sep" select="''" />
+    <xsl:param name="property" select="''" />
+    <xsl:param name="filter" select="'true'" />
+    <xsl:variable name="selectPresentLang">
+      <xsl:call-template name="selectPresentLang">
+        <xsl:with-param name="nodes" select="$nodes" />
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="filteredNodes" select="$nodes[not($filter='true') or (not(@xml:lang) or @xml:lang=$selectPresentLang)]"/>
+    <xsl:call-template name="printMetaDate.mods.filtered">
+      <xsl:with-param name="nodes" select="$filteredNodes"/>
+      <xsl:with-param name="label" select="$label"/>
+      <xsl:with-param name="sep" select="$sep"/>
+      <xsl:with-param name="property" select="$property"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="printMetaDate.mods.filtered">
     <!-- prints a table row for a given nodeset -->
     <xsl:param name="nodes" />
     <xsl:param name="label" select="i18n:translate(concat('component.mods.metaData.dictionary.',local-name($nodes[1])))" />
@@ -30,11 +52,6 @@
               <xsl:value-of select="$property" />
             </xsl:attribute>
           </xsl:if>
-          <xsl:variable name="selectPresentLang">
-            <xsl:call-template name="selectPresentLang">
-              <xsl:with-param name="nodes" select="$nodes" />
-            </xsl:call-template>
-          </xsl:variable>
           <xsl:for-each select="$nodes">
             <xsl:if test="position()!=1">
               <xsl:choose>
@@ -46,14 +63,12 @@
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:if>
-            <xsl:if test="not(@xml:lang) or @xml:lang=$selectPresentLang">
               <xsl:call-template name="lf2br">
                 <xsl:with-param name="string" select="normalize-space(.)" />
               </xsl:call-template>
               <xsl:if test="@authority='gnd' and @valueURI">
                 <xsl:apply-templates select="." mode="gnd"/>
               </xsl:if>
-            </xsl:if>
           </xsl:for-each>
         </td>
       </tr>
@@ -752,6 +767,20 @@
     </tr>
   </xsl:template>
 
+  <xsl:template match="mods:identifier[@type='scopus']" mode="present">
+    <tr>
+      <td valign="top" class="metaname">
+        <xsl:value-of select="concat(i18n:translate('component.mods.metaData.dictionary.identifier.scopus'),':')" />
+      </td>
+      <td class="metavalue">
+        <xsl:variable name="scopus" select="." />
+        <a href="{$MCR.Scopus.Backlink}{$scopus}">
+          <xsl:value-of select="$scopus" />
+        </a>
+      </td>
+    </tr>
+  </xsl:template>
+
   <xsl:template match="mods:classification" mode="present">
     <tr>
       <td valign="top" class="metaname">
@@ -892,41 +921,6 @@
     </xsl:for-each>
   </xsl:template>
 
-  <xsl:template name="getGenreName">
-    <xsl:param name="genre" />
-    <xsl:variable name="genreID" select="substring-after($genre/@valueURI, '#')" />
-      <xsl:value-of select="document(concat('classification:metadata:-1:children:mir_genres:', $genreID))/mycoreclass/categories/category/label[@xml:lang=$CurrentLang]/@text" />
-  </xsl:template>
-
-  <xsl:template name="printRelatedItemAsAPA">
-    <xsl:param name="mods" />
-    <xsl:if test="$mods/mods:titleInfo/mods:title">
-      <i>
-        <xsl:value-of select="$mods/mods:titleInfo/mods:title" />
-      </i>
-    </xsl:if>
-    <xsl:if test="$mods/mods:genre[@type='intern']">
-      <xsl:variable name="genreName">
-        <xsl:call-template name="getGenreName">
-          <xsl:with-param name="genre" select="$mods/mods:genre[@type='intern']" />
-        </xsl:call-template>
-      </xsl:variable>
-      <xsl:value-of select="concat(' [', $genreName, ']')" />
-    </xsl:if>
-    <xsl:value-of select="'. '" />
-    <xsl:choose>
-      <xsl:when test="$mods/mods:identifier[@type='doi']">
-        <xsl:value-of select="$mods/mods:identifier[@type='doi']" />
-      </xsl:when>
-      <xsl:when test="$mods/mods:identifier[@type='isbn']">
-        <xsl:value-of select="concat('ISBN:', $mods/mods:identifier[@type='isbn'])" />
-      </xsl:when>
-      <xsl:when test="$mods/mods:location/mods:url[@access='raw object']">
-        <xsl:value-of select="$mods/mods:location/mods:url[@access='raw object']" />
-      </xsl:when>
-    </xsl:choose>
-  </xsl:template>
-
   <xsl:template name="printMetaDate.mods.relatedItems">
     <xsl:param name="parentID" />
     <xsl:param name="label" />
@@ -940,11 +934,6 @@
         <xsl:when test="string-length($parentID)!=0">
           <xsl:call-template name="objectLink">
             <xsl:with-param select="$parentID" name="obj_id" />
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test="mods:titleInfo/mods:title and (mods:identifier or mods:location/mods:url[@access='raw object'])">
-          <xsl:call-template name="printRelatedItemAsAPA">
-            <xsl:with-param name="mods" select="." />
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
@@ -988,6 +977,11 @@
         <xsl:text>(</xsl:text>
         <xsl:value-of select="$dateIssued" />
         <xsl:text>)</xsl:text>
+      </xsl:if>
+      <!-- Articlenumber -->
+      <xsl:if test="mods:part/mods:detail[@type='article_number']/mods:number">
+        <xsl:value-of
+          select="concat(i18n:translate('mir.articlenumber.short'),mods:part/mods:detail[@type='article_number']/mods:number)" />
       </xsl:if>
       <!-- Pages -->
       <xsl:if test="mods:part/mods:extent[@unit='pages']">
@@ -1760,4 +1754,3 @@
   <!-- END: view av nedia metadata -->
 
 </xsl:stylesheet>
-
