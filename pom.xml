@@ -21,15 +21,15 @@
   <parent>
     <groupId>de.gbv.reposis</groupId>
     <artifactId>reposis_mir_parent</artifactId>
-    <version>2021.06-SNAPSHOT</version>
+    <version>2022.06-SNAPSHOT</version>
   </parent>
 
   <artifactId>reposis_digibib</artifactId>
-  <version>2021.06-SNAPSHOT</version>
+  <version>2022.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
     <!-- we can use single files from main version -->
-    <Mycore.Main.Version>2022.06.2-SNAPSHOT</Mycore.Main.Version>
+    <Mycore.Main.Version>2023.06.0-SNAPSHOT</Mycore.Main.Version>
     <node.version>v14.19.3</node.version>
     <yarn.version>v1.22.18</yarn.version>
   </properties>
@@ -190,6 +190,10 @@
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.eclipse.rdf4j</groupId>
