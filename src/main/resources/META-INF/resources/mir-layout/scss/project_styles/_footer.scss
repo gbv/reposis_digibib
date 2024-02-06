@@ -39,15 +39,6 @@
         margin-bottom: 1.125rem;
       }
     }
-    .dini-certificate {
-      h2 {
-        margin-bottom: 0;
-        &:after {
-          background-color: transparent;
-          margin-bottom: 0;
-        }
-      }
-    }
   }
 
   .leo-copyright-menu {
@@ -56,9 +47,12 @@
   }
 
   .dini-certificate {
-    text-align: right;
+    margin-top: 1rem;
+    h2 {
+      display: none;
+    }
     img {
-      width: 200px;
+      width: 7rem;
     }
   }
 

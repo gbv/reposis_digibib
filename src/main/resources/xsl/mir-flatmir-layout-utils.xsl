@@ -142,6 +142,17 @@
                 class="leo-logo"
                 alt="leoPARD Logo" />
             </a>
+            <div class="dini-certificate">
+              <h2>Dini Zertifikat</h2>
+              <a
+                id="dini_logo"
+                href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
+                title="{i18n:translate('digibib.diniCertificate2022')}">
+                <img
+                  alt="Logo DINI-Zertifikat 2022"
+                  src="{$WebApplicationBaseURL}images/DINI_Siegel_22.svg" />
+              </a>
+            </div>
           </div>
           <div class="col-auto mr-5">
             <h2>Anschrift</h2>
@@ -161,17 +172,6 @@
                 select="$loaded_navigation_xml/menu[@id='below']/*"
                 mode="footerMenu" />
             </ul>
-          </div>
-          <div class="col dini-certificate">
-            <h2>Dini Zertifikat</h2>
-            <a
-              id="dini_logo"
-              href="https://www.dini.de/dienste-projekte/dini-zertifikat/"
-              title="{i18n:translate('digibib.diniCertificate2022')}">
-              <img
-                alt="Logo DINI-Zertifikat 2022"
-                src="{$WebApplicationBaseURL}images/DINI_Siegel_22.svg" />
-            </a>
           </div>
         </div>
       </div>
