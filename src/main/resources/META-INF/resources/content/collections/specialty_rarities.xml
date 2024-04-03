@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Spezialgebiete und Raritäten"><div>
-<h2>Spezialgebiete und Raritäten</h2>
+<MyCoReWebPage><section xml:lang="de" title="Spezialgebiete und Raritäten"><h2>Spezialgebiete und Raritäten</h2>
 
 <p>Auf dieser Seite stellen wir in unregelmäßigen Abständen Spezialgebiete und Raritäten des Publikationsservers der TU Braunschweig vor.</p>
 
+<h3> </h3>
+
+<h3>Braunschweigisches Landesmuseum</h3>
+
+<p><img alt="" src="Logo_BLM.png" style="width: 234px; height: 74px; float: left;" />Das <a href="https://3landesmuseen-braunschweig.de/braunschweigisches-landesmuseum">Braunschweigische Landesmuseum</a> wurde 1891 als Vaterländisches Museum aus bürgerschaftlichem Engagement gegründet. Seit mehr als 120 Jahren werden hier die Zeugnisse der Geschichte und Kultur des Braunschweigischen Landes gesammelt, bewahrt, erforscht sowie ausgestellt und vermittelt.<br />
+Kontinuierlich untersuchen Wissenschaftler*innen die Geschichte Braunschweigs anhand unserer Sammlung. Mithilfe Historischer Quellenrecherchen, naturwissenschaftlicher Untersuchungen und Analysen zu Technologien werden neue Erkenntnisse über das Leben im Braunschweiger Land gewonnen. In vier Publikationsreihen veröffentlicht das Braunschweigische Landesmuseum diese Forschungsergebnisse analog und seit 2021 auch digital im Open Access Format.<br />
+Sollten Sie Forschungsvorhaben zum Braunschweiger Land planen und Zugang zu unseren Sammlungen benötigen, freuen wir uns, von Ihnen zu hören.</p>
+
+<p><br />
+<a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00069575">Forschungen und Berichte des Braunschweigischen Landesmuseums</a><br />
+<a href="https://leopard.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A%22Judaica+des+Braunschweigischen+Landesmuseums%22+%2BobjectType%3A%22mods%22&amp;amp;fl=*&amp;amp;sort=mods.dateIssued+desc&amp;amp;rows=20&amp;amp;version=4.5&amp;amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Judaica des Braunschweigischen Landesmuseums</a><br />
+<a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00071917">Neue Studien zur Sachsenforschung</a></p>
+
 <p> </p>
 
+<hr />
 <h3><a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00065903"><u>Sammlungskataloge des Herzog Anton Ulrich-Museums Braunschweig</u></a></h3>
 
 <p> </p>
@@ -32,7 +45,8 @@
 
 <div class="row" id="digibib_rarities">
 <div class="col-md-10">
-<p> </p>
+<p><br />
+ </p>
 </div>
 </div>
 <!--
@@ -42,6 +56,4 @@
 <ul>
 	<li><a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00065903">Sammlungskataloge des Herzog Anton Ulrich-Museums</a></li>
 	<li><a href="https://publikationsserver.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A&quot;revolution+1918&quot;+%2BobjectType%3A&quot;mods&quot;&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Dokumente zur Novemberrevolution in Braunschweig</a></li>
-</ul>-->
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2019-02-06" time="12:50" /></meta></MyCoReWebPage>
+</ul>--></section><meta><log lastEditor="celsner" date="2024-01-16" time="17:49" /></meta></MyCoReWebPage>

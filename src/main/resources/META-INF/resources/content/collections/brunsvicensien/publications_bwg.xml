@@ -6,6 +6,7 @@
 <div class="col-md-10">
 <ul>
 	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64801">Die Jahrbücher der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1983</a></li>
+	<li><a href="https://doi.org/10.24355/dbbs.084-202403181138-0"><span class="ibw_diagnostic"><span class="ibw_format_d"><span class="ibw_isbd">Sitzungsberichte und Mitteilungen der Braunschweigischen Wissenschaftlichen Gesellschaft</span></span></span> 1975 - 1982</a></li>
 	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64802">Abhandlungen der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1949</a></li>
 	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64907">Akademie-Vorlesungen im Schloss</a></li>
 	<li><a href="../../../servlets/solr/select?q=state%3Apublished+AND+mods.subject%3A%22Jahrbuch+der+BWG%22&amp;wt=xml">Zur Suche in den Veröffentlichungen der BWG</a></li>
@@ -60,5 +61,4 @@ With symposia and speeches a connection to the public is established in order to
 <p><a href="../brunsvicensien.xml">Back to the Brunsvicensien of the Universitätsbibliothek Braunschweig</a></p>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2018-04-20" time="12:00" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2024-03-18" time="16:46" /></meta></MyCoReWebPage>

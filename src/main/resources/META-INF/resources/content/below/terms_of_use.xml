@@ -8,7 +8,6 @@
 
 <p>Bitte geben Sie bei Nutzung die vollständige Quellenangabe an (siehe unten). Bitte schicken Sie uns bei der Verwendung auf Webseiten zur Information den Link auf die entsprechende Stelle per E-Mail. Wir würden uns freuen, wenn Sie uns bei der Verwendung in wissenschaftlichen Publikationen ein Belegexemplar der Publikation zusenden könnten.</p>
 
-
 <h3>Quellenangabe:</h3>
 
 <p>TU Braunschweig - LeoPARD + PURL (Persistent Uniform Resource Locator) des digitalen Objects</p>
@@ -17,10 +16,9 @@
 <em>TU Braunschweig - LeoPARD, <a href="https://doi.org/10.24355/dbbs.084-201802231113">https://doi.org/10.24355/dbbs.084-201802231113</a> (DOI)<br />
 TU Braunschweig - LeoPARD, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257">http://nbn-resolving.de/urn:nbn:de:gbv:084-2017111012257</a> (URN)</em></p>
 
-
 <h3>OAI-Schnittstelle zum Metadata Harvesting unter:</h3>
 
-<p><a href="../../servlets/OAIDataProvider">https://publikationsserver.tu-braunschweig.de/servlets/OAIDataProvider</a></p>
+<p><a href="../../servlets/OAIDataProvider">https://leopard.tu-braunschweig.de/servlets/OAIDataProvider</a></p>
 </div>
 </div>
 </div>
@@ -44,8 +42,7 @@ TU Braunschweig - LeoPARD, <a href="http://nbn-resolving.de/urn:nbn:de:gbv:084-
 
 <h3>OAI Interface for Metadata Harvesting:</h3>
 
-<p><a href="../../servlets/OAIDataProvider">https://publikationsserver.tu-braunschweig.de/servlets/OAIDataProvider</a></p>
+<p><a href="../../servlets/OAIDataProvider">https://leopard.tu-braunschweig.de/servlets/OAIDataProvider</a></p>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="celsner" date="2022-09-13" time="11:34" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2022-09-27" time="12:21" /></meta></MyCoReWebPage>

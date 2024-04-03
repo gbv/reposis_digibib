@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage><section xml:lang="de" title="Hinweise für Autorinnen und Autoren"><div>
 <h1 class="leo-page-headline">Hinweise für Autorinnen und Autoren</h1>
+
 <div class="row">
 <div class="col-12">
 <ol>
@@ -24,7 +25,7 @@
 	<li><strong>Zweitveröffentlichung</strong>: ist die Veröffentlichung einer bereits erschienenen Verlagspublikation. Viele Zeitschriftenverlage gestatten eine weitere Veröffentlichung auf einem institutionellen Repositorium unter bestimmen Bedingungen (z. B. nach einer definierten Embargofrist, Veröffentlichung von Preprints, Postprints). Mit Hilfe der <a class="external-link" href="http://www.sherpa.ac.uk/romeo/index.php" rel="nofollow" target="_blank">SHERPA/RoMEO-Liste</a> können Sie herausfinden, welche Bedingungen die einzelnen Zeitschriften stellen. Die Universitätsbibliothek unterstützt Sie gern dabei, Ihre Publikation auf eine mögliche Zweitveröffentlichung hin zu prüfen.</li>
 </ul>
 
-<p>Für die elektronische Veröffentlichung von <strong>Dissertationen</strong> ist die Dissertationsstelle zuständig. Ausführliche Informationen erhalten Sie auf deren <a class="external-link" href="https://www.tu-braunschweig.de/ub/publizieren-und-open-access/dissertationsstelle" rel="nofollow" target="_blank">Webseite</a>.</p>
+<p>Für die elektronische Veröffentlichung von <strong>Dissertationen</strong> ist die Dissertationsstelle zuständig. Ausführliche Informationen erhalten Sie auf deren <a class="external-link" href="https://www.tu-braunschweig.de/ub/publizieren-open-access/dissertationsstelle" rel="nofollow" target="_blank">Webseite</a>.</p>
 
 <p>Ihre Publikationen werden unter Wahrung des <a class="external-link" href="http://www.gesetze-im-internet.de/urhg/index.html" rel="nofollow" target="_blank">geltenden deutschen Urheberrechts</a> veröffentlicht, d.h. das Urheberrecht verbleibt bei Ihnen. Sie übertragen lediglich der Universitätsbibliothek Braunschweig das einfache, zeitlich unbefristete Nutzungsrecht, die eingereichten Publikationen auf ihren Servern zu vervielfältigen, zu speichern, öffentlich zugänglich zu machen. Bitte beachten Sie, dass Sie ggf. das Einverständnis zur Veröffentlichung von Co-Autorinnen bzw. Co-Autoren einzuholen müssen. Die Einhaltung von Urheber- und Verwertungsrechten Dritter liegt in Ihrer Verantwortung.</p>
 
@@ -85,7 +86,7 @@
 <p><strong>Forschungsdaten</strong></p>
 
 <ul>
-	<li>per <a href="/servlets/MCRShibbolethLoginServlet?url=https%3A%2F%2Fpublikationsserver.tu-braunschweig.de%2Fcontent%2Findex.xml">Shibboleth</a> - <a href="/content/publish/Anleitung_Repositorium_TUBS.pdf">(Anleitung)</a></li>
+	<li>per <a href="/servlets/MCRShibbolethLoginServlet?url=https%3A%2F%2Fleopard.tu-braunschweig.de%2Fcontent%2Findex.xml">Shibboleth</a> - <a href="/content/publish/Anleitung_Repositorium_TUBS.pdf">(Anleitung)</a></li>
 	<li>per E-Mail an <span class="madress">forschungsdaten [at] tu-braunschweig.de</span></li>
 </ul>
 
@@ -101,7 +102,7 @@
 
 <p><strong>Referat Publikationsservices</strong></p>
 
-<p><span class="inline-comment-marker" data-ref="655a4f90-3824-4c47-8f7f-cff1efee22f4">Frau Blanck / Frau Fischer / Herr Kissler</span><br />
+<p><span class="inline-comment-marker" data-ref="655a4f90-3824-4c47-8f7f-cff1efee22f4">Frau Blanck / Herr Kissler</span><br />
 E-Mail: <span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span> <br />
 Telefon: +49 (0)531 391 5052</p>
 
@@ -119,7 +120,6 @@ Telefon: +49 (0)531 391 5019</p>
 <p>Frau Globisch<br />
 E-Mail: <span class="madress">ub-diss [at] tu-braunschweig.de</span><br />
 Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
-
 </div>
 </div>
 </div>
@@ -128,7 +128,6 @@ Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
 
 <div class="row">
 <div class="col-12">
-
 <ol>
 	<li><a href="#1_publishing_general">Publishing for researchers</a></li>
 	<li><a href="#2_research_data">Archiving and publishing of research data</a></li>
@@ -149,7 +148,7 @@ Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
 	<li><strong>Self archiving:</strong> publishing a publication that has already been published by a publisher. Many journal publishers allow a further release on an institutional repository under certain conditions (e.g. after a defined embargo period, release of preprints, postprints). You can use the <a class="external-link" href="https://v2.sherpa.ac.uk/romeo/" rel="nofollow" target="_blank">SHERPA/RoMEO list</a> to find out what conditions each journal requires. The University Libraryoffers you support in checking your publication for a possible further release.</li>
 </ul>
 
-<p>The Thesis Office is responsible for the electronic release of dissertations and habilitations. Detailed information is available on <a class="external-link" href="https://www.tu-braunschweig.de/en/ub/publishing-and-open-access/thesis-office" rel="nofollow" target="_blank">their website</a>.</p>
+<p>The Thesis Office is responsible for the electronic release of dissertations and habilitations. Detailed information is available on <a class="external-link" href="https://www.tu-braunschweig.de/en/ub/publishing-open-access/thesis-office" rel="nofollow" target="_blank">their website</a>.</p>
 
 <p>Your publications will be published in compliance with the applicable <a class="external-link" href="http://www.gesetze-im-internet.de/urhg/index.html" rel="nofollow" target="_blank">German copyright law</a>, which means that the copyright remains with you. You only transfer the simple, unlimited right of use to Braunschweig University Library to reproduce, store, make the submitted publication publicly accessible on its servers. Please note that you may need to obtain the consent of co-authors for publishing. It is your responsibility to fulfill the copyright and exploitation rights of third parties.</p>
 
@@ -204,7 +203,7 @@ Telefon: +49 (0)531 391 5024 (Mo-Fr 9-12 Uhr)</p>
 <p><strong>Research data</strong></p>
 
 <ul>
-	<li>per <a href="/servlets/MCRShibbolethLoginServlet?url=https%3A%2F%2Fpublikationsserver.tu-braunschweig.de%2Fcontent%2Findex.xml">Shibboleth</a> - <a href="/content/publish/Instruction_Repository_TUBS.pdf">(Instructions)</a></li>
+	<li>per <a href="/servlets/MCRShibbolethLoginServlet?url=https%3A%2F%2Fleopard.tu-braunschweig.de%2Fcontent%2Findex.xml">Shibboleth</a> - <a href="/content/publish/Instruction_Repository_TUBS.pdf">(Instructions)</a></li>
 	<li>per E-Mail to <span class="madress">forschungsdaten [at] tu-braunschweig.de</span> </li>
 </ul>
 
@@ -240,4 +239,4 @@ Phone: +49 (0)531 391 5024 (Mon - Fri: 9.00 to 12.00)</p>
 </div>
 </div>
 </div>
-</section><meta><log lastEditor="celsner" date="2022-09-13" time="17:25" /></meta></MyCoReWebPage>
+</section><meta><log lastEditor="dbbs_admin" date="2023-04-18" time="14:59" /></meta></MyCoReWebPage>

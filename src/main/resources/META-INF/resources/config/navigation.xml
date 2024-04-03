@@ -166,6 +166,10 @@
             <label xml:lang="de">Braunschweigisches Landesmuseum</label>
             <label xml:lang="en">Brunswick State Museum</label>
         </item>
+        <item href="/content/collections/brunsvicensien/borek.xml" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">Richard Borek Stiftung</label>
+            <label xml:lang="en">new entry</label>
+        </item>
     </menu>
     <menu id="institute_series">
         <label xml:lang="de">Institutsreihen</label>
@@ -194,6 +198,14 @@
         <item href="/content/collections/institute_series/publications_ifn.xml" replaceMenu="false" constrainPopUp="false">
             <label xml:lang="de">Veröffentlichungen des Instituts für Nachrichtentechnik</label>
             <label xml:lang="en">Publications of the Institute for Communications Technology</label>
+        </item>
+        <item href="/content/collections/institute_series/publications_ibmb.xml" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">Veröffentlichungen des iBMB</label>
+            <label xml:lang="en">Publications of iBMB</label>
+        </item>
+        <item href="/content/collections/institute_series/oer_teach_it_digital.xml" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">OER Teach It Digital (TIDig)</label>
+            <label xml:lang="en"></label>
         </item>
     </menu>
     <menu id="publish" dir="/content/publish">
