@@ -1,4 +1,4 @@
-package de.gbv.reposis.util;
+package de.vzg.reposis.digibib.util;
 
 import java.net.URL;
 import java.net.MalformedURLException;

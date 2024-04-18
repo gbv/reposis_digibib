@@ -1,4 +1,4 @@
-package de.gbv.reposis.util;
+package de.vzg.reposis.digibib.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
