@@ -288,6 +288,10 @@
                 <label xml:lang="de">Rollen administrieren</label>
                 <label xml:lang="en">Manage roles</label>
             </item>
+            <item href="/contact-request-manager" type="extern" replaceMenu="false" constrainPopUp="false">
+                <label xml:lang="de">Kontaktanfragen</label>
+                <label xml:lang="en">Contact Requests</label>
+            </item>
         </group>
         <group id="miscadmin">
             <item href="/modules/webcli/launchpad.xml" type="extern" replaceMenu="false" constrainPopUp="false">
