@@ -11,6 +11,9 @@
                 exclude-result-prefixes="i18n mcr mods acl xlink embargo piUtil"
 >
   <xsl:import href="xslImport:modsmeta:metadata/mir-collapse-files.xsl" />
+   <!-- BEGIN leopard specific changes -->
+  <xsl:param name="Digibib.ContactRequest.RequestForm.EnabledGenres" />
+  <!-- END leopard specific changes -->
   <xsl:param name="MIR.NotFullAccessInfo.Genres" />
   <xsl:template match="/">
     <xsl:variable xmlns:encoder="xalan://java.net.URLEncoder" name="loginURL"
@@ -51,6 +54,16 @@
                 <xsl:if test="count(mycoreobject/structure/derobjects/derobject) &gt; count(mycoreobject/structure/derobjects/derobject[key('rights', @xlink:href)/@read])">
                   <div class="alert alert-warning" role="alert">
                     <xsl:value-of select="i18n:translate('mir.derivate.not_full_access')" />
+                    <!-- BEGIN leopard specific changes -->
+                    <xsl:if test="contains($Digibib.ContactRequest.RequestForm.EnabledGenres, $mods-type)">
+                      <xsl:value-of select="' '" />
+                      <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.before')" />
+                      <a data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objectId}">
+                        <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink')" />
+                      </a>
+                      <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.after')" />
+                    </xsl:if>
+                    <!-- END leopard specific changes -->
                   </div>
                 </xsl:if>
               </xsl:if>
