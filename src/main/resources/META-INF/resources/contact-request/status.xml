@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyCoReWebPage>
+  <section xml:lang="de" title="LeoPARD - Kontaktanfrage-Status">
+    <h2>Status der Kontaktanfrage</h2>
+    <div id="status-container">
+      Die Anfrage hat folgenden Status:
+      <span id="status-text" />
+    </div>
+    <br />
+    <div id="email-container" class="d-none">
+      An folgende Emails wurde die Anfrage bereits weitergeleitet:
+      <ul />
+    </div>
+    <script>
+			const searchParams = new URLSearchParams(window.location.search);
+			const rid = searchParams.get('rid');
+
+			const getStatus = async() => {
+				const response = await fetch("../rsc/contact-request/status?rid=" + rid);
+				return await response.json();
+			};
+      const create = (status) => {
+        document.querySelector('#status-container > #status-text')
+          .appendChild(document.createTextNode(status.status));
+        if (status.emails &amp;&amp; status.emails.length > 0) {
+          status.emails.forEach((email) => {
+            const listItemElement = document.createElement('li');
+            listItemElement.appendChild(document.createTextNode(email));
+            document.querySelector('#email-container > ul').appendChild(listItemElement);
+          });
+          document.getElementById('email-container').classList.remove('d-none');
+        }
+      }
+      document.addEventListener("DOMContentLoaded", async () => {
+        const status = await getStatus();
+        create(status);
+      });
+  	</script>
+  </section>
+</MyCoReWebPage>

@@ -12,4 +12,13 @@
         <url-pattern>/handbuecher/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>MCRVueContactServlet</servlet-name>
+        <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MCRVueContactServlet</servlet-name>
+        <url-pattern>/contact-request-manager/*</url-pattern>
+    </servlet-mapping>
+
 </web-fragment>

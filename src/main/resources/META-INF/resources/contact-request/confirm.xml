@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyCoReWebPage>
+  <section xml:lang="de" title="LeoPARD - Kontaktanfrage bestätigen">
+    <h2>Kontaktanfrage bestätigen</h2>
+    <p>
+      Sofern Sie Kontakt aufgenommen haben, können Sie dies bestätigen.
+      Optional können Sie die Anfrage mit einem Kommentar bestätigen.
+      Ein Kommentar ist für den weiteren Prozess der Bearbeitung der Kontaktanfrage möglicherweise sinnvoll,
+      jener ist nicht öffentlich einsehbar.
+    </p>
+    <div class="form-group">
+      <label for="commentTextarea">Kommentar</label>
+      <textarea class="form-control" id="commentTextarea" rows="3"></textarea>
+    </div>
+    <button id="confirm-btn" class="btn btn-primary" type="submit" onclick="answer()">Bestätigen</button>
+    <br />
+    <div id="answer-success" class="d-none">Die Bestätigung war erfolgreich, vielen Dank!</div>
+    <script>
+			const searchParams = new URLSearchParams(window.location.search);
+			const rid = searchParams.get('rid');
+			const email = searchParams.get('m')
+
+			const answer = async () => {
+        const comment = document.getElementById('commentTextarea').value;
+				const response = await fetch("../rsc/contact-request/confirm?rid=" + rid + "&amp;m=" + email, {
+					method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ comment }),
+				});
+        if (response.ok) {
+          document.getElementById('answer-success').classList.remove('d-none');
+          document.getElementById('confirm-btn').disabled = true;
+        }
+			}
+  	</script>
+  </section>
+</MyCoReWebPage>
