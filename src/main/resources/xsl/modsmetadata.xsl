@@ -921,6 +921,43 @@
     </xsl:for-each>
   </xsl:template>
 
+  <!-- START leopard specific changes -->
+  <xsl:template name="getGenreName">
+    <xsl:param name="genre" />
+    <xsl:variable name="genreID" select="substring-after($genre/@valueURI, '#')" />
+      <xsl:value-of select="document(concat('classification:metadata:-1:children:mir_genres:', $genreID))/mycoreclass/categories/category/label[@xml:lang=$CurrentLang]/@text" />
+  </xsl:template>
+
+  <xsl:template name="printRelatedItemAsAPA">
+    <xsl:param name="mods" />
+    <xsl:if test="$mods/mods:titleInfo/mods:title">
+      <i>
+        <xsl:value-of select="$mods/mods:titleInfo/mods:title" />
+      </i>
+    </xsl:if>
+    <xsl:if test="$mods/mods:genre[@type='intern']">
+      <xsl:variable name="genreName">
+        <xsl:call-template name="getGenreName">
+          <xsl:with-param name="genre" select="$mods/mods:genre[@type='intern']" />
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:value-of select="concat(' [', $genreName, ']')" />
+    </xsl:if>
+    <xsl:value-of select="'. '" />
+    <xsl:choose>
+      <xsl:when test="$mods/mods:identifier[@type='doi']">
+        <xsl:value-of select="$mods/mods:identifier[@type='doi']" />
+      </xsl:when>
+      <xsl:when test="$mods/mods:identifier[@type='isbn']">
+        <xsl:value-of select="concat('ISBN:', $mods/mods:identifier[@type='isbn'])" />
+      </xsl:when>
+      <xsl:when test="$mods/mods:location/mods:url[@access='raw object']">
+        <xsl:value-of select="$mods/mods:location/mods:url[@access='raw object']" />
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  <!-- END leopard specific changes -->
+
   <xsl:template name="printMetaDate.mods.relatedItems">
     <xsl:param name="parentID" />
     <xsl:param name="label" />
@@ -936,6 +973,13 @@
             <xsl:with-param select="$parentID" name="obj_id" />
           </xsl:call-template>
         </xsl:when>
+        <!-- START leopard specific changes -->
+        <xsl:when test="mods:titleInfo/mods:title and (mods:identifier or mods:location/mods:url[@access='raw object'])">
+          <xsl:call-template name="printRelatedItemAsAPA">
+            <xsl:with-param name="mods" select="." />
+          </xsl:call-template>
+        </xsl:when>
+        <!-- END leopard specific changes -->
         <xsl:otherwise>
           <xsl:value-of select="mods:titleInfo/mods:title" />
         </xsl:otherwise>
