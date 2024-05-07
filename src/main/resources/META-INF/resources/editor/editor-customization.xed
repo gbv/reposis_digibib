@@ -10,8 +10,6 @@
     <xed:include ref="digibib.ddc.repeat"                after="sdnb.repeat" />
     <xed:remove  ref="sdnb.repeat" />
     <xed:include ref="digibib.access"                    after="access" />
-    <xed:include ref="name.extended.full.repeated"       after="name.extended.repeated" />
-    <xed:remove  ref="name.extended.repeated" />
     <xed:remove  ref="access" />
     <xed:include ref="digibib.class.location"            after="abstract.repeated" />
     <xed:include ref="digibib.class.sponsors"            after="digibib.class.location" />
