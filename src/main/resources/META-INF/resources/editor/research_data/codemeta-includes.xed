@@ -305,7 +305,7 @@
                 <xed:bind xpath="fn:string[@key='codeRepository']">
                   <input type="text" class="form-control form-control-inline"
                     placeholder="{i18n:digibib.researchData.codeMeta.softwareRequirements.link}" />
-                  <xed:validate class="de.gbv.reposis.util.ValidationHelper" method="validateURL"
+                  <xed:validate class="de.vzg.reposis.digibib.util.ValidationHelper" method="validateURL"
                     i18n="digibib.invalidURL" display="global" />
                 </xed:bind>
               </div>
@@ -342,7 +342,7 @@
                 <xed:bind xpath="fn:string[@key='codeRepository']">
                   <input type="text" class="form-control form-control-inline"
                     placeholder="{i18n:digibib.researchData.codeMeta.softwareSuggestions.link}" />
-                  <xed:validate class="de.gbv.reposis.util.ValidationHelper" method="validateURL"
+                  <xed:validate class="de.vzg.reposis.digibib.util.ValidationHelper" method="validateURL"
                     i18n="digibib.invalidURL" display="global" />
                 </xed:bind>
               </div>
@@ -366,7 +366,7 @@
   <xed:template id="code-repository">
     <mir:textfield xpath="fn:string[@key='codeRepository']" label="digibib.researchData.codeMeta.codeRepository"
       help-text="{i18n:digibib.researchData.codeMeta.codeRepository.help}" />
-    <xed:validate xpath="//fn:string[@key='codeRepository']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='codeRepository']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 
@@ -374,7 +374,7 @@
   <xed:template id="build-instructions">
     <mir:textfield xpath="fn:string[@key='buildInstructions']" label="digibib.researchData.codeMeta.buildInstructions"
       help-text="{i18n:digibib.researchData.codeMeta.buildInstructions.help}" />
-    <xed:validate xpath="//fn:string[@key='buildInstructions']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='buildInstructions']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 
@@ -382,7 +382,7 @@
   <xed:template id="release-notes">
     <mir:textfield xpath="fn:string[@key='releaseNotes']" label="digibib.researchData.codeMeta.releaseNotes"
       help-text="{i18n:digibib.researchData.codeMeta.releaseNotes.help}" />
-    <xed:validate xpath="//fn:string[@key='releaseNotes']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='releaseNotes']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 
@@ -390,7 +390,7 @@
   <xed:template id="cont-integration">
     <mir:textfield xpath="fn:string[@key='contIntegration']" label="digibib.researchData.codeMeta.contIntegration"
       help-text="{i18n:digibib.researchData.codeMeta.contIntegration.help}" />
-    <xed:validate xpath="//fn:string[@key='contIntegration']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='contIntegration']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 
@@ -398,7 +398,7 @@
   <xed:template id="issue-tracker">
     <mir:textfield xpath="fn:string[@key='issueTracker']" label="digibib.researchData.codeMeta.issueTracker"
       help-text="{i18n:digibib.researchData.codeMeta.issueTracker.help}" />
-    <xed:validate xpath="//fn:string[@key='issueTracker']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='issueTracker']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 
@@ -406,7 +406,7 @@
   <xed:template id="readme">
     <mir:textfield xpath="fn:string[@key='readme']" label="digibib.researchData.codeMeta.readme"
       help-text="{i18n:digibib.researchData.codeMeta.readme.help}" />
-    <xed:validate xpath="//fn:string[@key='readme']" class="de.gbv.reposis.util.ValidationHelper"
+    <xed:validate xpath="//fn:string[@key='readme']" class="de.vzg.reposis.digibib.util.ValidationHelper"
       method="validateURL" i18n="digibib.invalidURL" display="global" />
   </xed:template>
 </xed:template>
