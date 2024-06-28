@@ -177,4 +177,11 @@
     <mir:textarea xpath="fn:string[@key='processing']" label="digibib.researchData.advanced.processing"
       help-text="{i18n:digibib.researchData.advanced.processing.help}" rows="2" />
   </xed:template>
+
+  <xed:template id="rd.advanced-cleanup-rules">
+    <xed:cleanup-rule xpath="//mods:extension[@type='advanced-part']" relevant-if="*"/>
+    <xed:cleanup-rule xpath="//mods:extension[@type='advanced-part']//fn:string" relevant-if="(string-length(text()) &gt; 0)"/>
+    <xed:cleanup-rule xpath="//mods:extension[@type='advanced-part']//fn:array" relevant-if="*"/>
+    <xed:cleanup-rule xpath="//mods:extension[@type='advanced-part']//fn:map" relevant-if="(count(*) &gt; 0)"/>
+  </xed:template>
 </xed:template>
