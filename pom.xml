@@ -162,24 +162,8 @@
   </pluginRepositories>
   <dependencies>
     <dependency>
-      <groupId>com.github.jsonld-java</groupId>
-      <artifactId>jsonld-java</artifactId>
-      <version>0.13.4</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.rdf4j</groupId>
-      <artifactId>rdf4j-model</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.rdf4j</groupId>
-      <artifactId>rdf4j-model-api</artifactId>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.mycore</groupId>
@@ -193,21 +177,6 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.rdf4j</groupId>
-      <artifactId>rdf4j-rio-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.rdf4j</groupId>
-      <artifactId>rdf4j-rio-jsonld</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.rdf4j</groupId>
-      <artifactId>rdf4j-rio-rdfxml</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>

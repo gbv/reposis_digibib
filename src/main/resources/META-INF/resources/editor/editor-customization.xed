@@ -15,6 +15,9 @@
     <xed:include ref="digibib.class.sponsors"            after="digibib.class.location" />
     <xed:remove  ref="openAIRE" />
     <xed:include ref="openAIRE"                          after="digibib.class.sponsors" />
+    <xed:remove  ref="codemeta.facts" />
+    <xed:remove  ref="codemeta.instance" />
+    <xed:remove  ref="codemeta.other" />
     <xed:include ref="research-data-extensions"          after="related.item.search.of.all.items"/>
     <xed:remove  ref="related.item.other.search.of.all.items" />
   </xed:modify>
@@ -209,7 +212,7 @@
             </legend>
             <xed:choose>
               <xed:when test="$genre_intern='software'">
-                <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="involved.repeated" />
+                <xed:include ref="software.involved.repeated" />
               </xed:when>
               <xed:otherwise>
                 <xed:include ref="research.data.person.repeated" />
@@ -231,7 +234,7 @@
           </fieldset>
           <xed:choose>
             <xed:when test="$genre_intern='software'">
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="relatedPublication.repeated" />
+              <xed:include ref="software.relatedPublication.repeated" />
             </xed:when>
             <xed:otherwise>
               <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/custom-includes.xed" ref="relatedPublication.repeated" />
@@ -310,50 +313,14 @@
     <div class="card">
       <h5 class="card-header">
         <a data-toggle="collapse" href="#codemeta" role="button" aria-expanded="false" aria-controls="codemeta" style="color: black; text-decoration:none;">
-          <xed:output i18n="digibib.researchData.software" />
+          <xed:output i18n="digibib.software" />
         </a>
       </h5>
       <div id="codemeta" class="collapse metadata-box">
         <div class="card card-body">
-          <xed:bind xpath="mods:extension[@displayLabel='codemeta-part']/fn:map" xmlns:fn="http://www.w3.org/2005/xpath-functions">
-            <xed:bind xpath="fn:string[@key='@type']">
-              <input type="hidden" value="SoftwareSourceCode" />
-            </xed:bind>
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.facts" />
-              </legend>
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="developement-status" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="version" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="application-category.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="application-sub-category.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="programming-language.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="operating-system.repeated" />
-            </fieldset>
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.instance" />
-              </legend>
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="processor-requirements.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="memory-requirements.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="storage-requirements.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="runtime-platform.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="software-requirements.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="software-suggestions.repeated" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="permissions.repeated" />
-            </fieldset>
-            <fieldset>
-              <legend class="mir-fieldset-legend mb-3">
-                <xed:output i18n="digibib.researchData.codeMeta.other" />
-              </legend>
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="code-repository" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="readme" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="build-instructions" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="release-notes" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="cont-integration" />
-              <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/codemeta-includes.xed" ref="issue-tracker" />
-            </fieldset>
-          </xed:bind>
+          <xed:include ref="codemeta.facts" />
+          <xed:include ref="codemeta.instance" />
+          <xed:include ref="codemeta.other" />
         </div>
       </div>
     </div>
@@ -361,18 +328,11 @@
 
   <xed:template id="genres.software">
     <div class="mb-3">
-      <xed:output i18n="digibib.researchData.software.introductionText" />
+      <xed:output i18n="digibib.software.introductionText" />
     </div>
     <xed:include ref="research-data-base" />
     <xed:include ref="codemeta-extension" />
     <xed:include ref="metadata-box-script" />
-  </xed:template>
-
-  <xed:template id="codemeta-cleanup-rules">
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='codemeta-part']" relevant-if="*" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='codemeta-part']//fn:string" relevant-if="(string-length(text()) &gt; 0)" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='codemeta-part']//fn:array" relevant-if="*" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='codemeta-part']//fn:map" relevant-if="(count(*) &gt; 1)" />
   </xed:template>
 
   <xed:modify ref="cleanup-rules">
