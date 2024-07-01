@@ -25,8 +25,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.mycore.common.MCRSessionMgr;
 import org.mycore.common.config.MCRConfiguration2;
 import org.mycore.services.queuedjob.MCRJobQueue;
@@ -36,6 +34,7 @@ import de.vzg.reposis.digibib.contact.ContactConstants;
 import de.vzg.reposis.digibib.contact.collect.ContactInfoCollectorJobAction;
 import de.vzg.reposis.digibib.contact.dto.ContactAttemptDto;
 import de.vzg.reposis.digibib.contact.dto.ContactTicketDto;
+import de.vzg.reposis.digibib.contact.email.ContactEmailJobAction;
 import de.vzg.reposis.digibib.contact.email.ContactEmailService;
 import de.vzg.reposis.digibib.contact.exception.ContactEmailException;
 import de.vzg.reposis.digibib.contact.exception.ContactInfoNotFoundException;
@@ -56,13 +55,14 @@ import de.vzg.reposis.digibib.contact.validation.ContactValidator;
  */
 public class ContactTicketServiceImpl implements ContactTicketService {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final String STAFF_EMAIL = MCRConfiguration2
+        .getStringOrThrow(ContactConstants.CONF_PREFIX + "StaffEmail");
 
-    private static final String STAFF_EMAIL
-        = MCRConfiguration2.getStringOrThrow(ContactConstants.CONF_PREFIX + "StaffEmail");
+    private static final MCRJobQueue CONTACT_COLLECTOR_JOB_QUEUE = MCRJobQueueManager.getInstance()
+        .getJobQueue(ContactInfoCollectorJobAction.class);
 
-    private static final MCRJobQueue CONTACT_COLLECTOR_JOB_QUEUE
-        = MCRJobQueueManager.getInstance().getJobQueue(ContactInfoCollectorJobAction.class);
+    private static final MCRJobQueue EMAIL_JOB_QUEUE = MCRJobQueueManager.getInstance()
+        .getJobQueue(ContactEmailJobAction.class);
 
     private final ContactTicketRepository ticketRepository;
 
@@ -95,14 +95,10 @@ public class ContactTicketServiceImpl implements ContactTicketService {
         ticketRepository.insert(contactTicket);
         ticketRepository.flush();
         ticketRepository.detach(contactTicket);
+        // may improve by using eventhandler
         CONTACT_COLLECTOR_JOB_QUEUE.add(ContactInfoCollectorJobAction.createJob(contactTicket.getId()));
-        // TODO move to job or event
-        try {
-            ContactEmailService.sendRequestConfirmation(contactTicket);
-            ContactEmailService.sendNewRequestInfo(contactTicket, STAFF_EMAIL);
-        } catch (ContactEmailException e) {
-            LOGGER.warn("Error while sending email", e);
-        }
+        EMAIL_JOB_QUEUE.add(ContactEmailJobAction.createRequestConfirmationJob(contactTicket.getId()));
+        EMAIL_JOB_QUEUE.add(ContactEmailJobAction.createNewRequestInfoJob(contactTicket.getId(), STAFF_EMAIL));
         return contactTicket;
     }
 
@@ -169,25 +165,20 @@ public class ContactTicketServiceImpl implements ContactTicketService {
         }
         contactTicket.setStatus(ContactTicket.Status.CLOSED);
         ticketRepository.flush();
-        ticketRepository.detach(contactTicket); // TODO may move to finally.
-        // TODO move to job or event
-        try {
-            ContactEmailService.sendRequestCompletedConfirmation(contactTicket);
-        } catch (ContactEmailException e) {
-            LOGGER.warn("Error while sending email", e);
-        }
+        ticketRepository.detach(contactTicket);
+        EMAIL_JOB_QUEUE.add(ContactEmailJobAction.createRequestCompletedConfirmationJob(contactTicket.getId()));
     }
 
     @Override
     public ContactAttempt forwardContactRequest(UUID contactTicketId, UUID contactInfoId) {
-        final ContactTicket contactTicket
-            = ticketRepository.findById(contactTicketId).orElseThrow(() -> new ContactTicketNotFoundException());
-        final ContactInfo contactInfo
-            = contactInfoRepository.findById(contactInfoId).orElseThrow(() -> new ContactInfoNotFoundException());
+        final ContactTicket contactTicket = ticketRepository.findById(contactTicketId)
+            .orElseThrow(() -> new ContactTicketNotFoundException());
+        final ContactInfo contactInfo = contactInfoRepository.findById(contactInfoId)
+            .orElseThrow(() -> new ContactInfoNotFoundException());
         final ContactAttemptDto contactAttemptDto = new ContactAttemptDto();
         contactAttemptDto.setContactInfoId(contactInfoId);
-        final ContactAttempt contactAttempt
-            = ContactAttemptServiceImpl.getInstance().createContactAttempt(contactTicketId, contactAttemptDto);
+        final ContactAttempt contactAttempt = ContactAttemptServiceImpl.getInstance()
+            .createContactAttempt(contactTicketId, contactAttemptDto);
         contactAttemptDto.setId(contactAttempt.getId());
         try {
             ContactEmailService.sendRequestForwarding(contactTicket, contactInfo, contactAttempt.getId());

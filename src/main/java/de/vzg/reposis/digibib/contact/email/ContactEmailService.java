@@ -39,7 +39,6 @@ import de.vzg.reposis.digibib.contact.exception.ContactEmailException;
 import de.vzg.reposis.digibib.contact.exception.ContactException;
 import de.vzg.reposis.digibib.contact.persistence.model.ContactInfo;
 import de.vzg.reposis.digibib.contact.persistence.model.ContactTicket;
-import de.vzg.reposis.digibib.contact.service.ContactAttemptService;
 import de.vzg.reposis.digibib.contact.service.ContactAttemptServiceImpl;
 import jakarta.mail.Flags;
 import jakarta.mail.Folder;
@@ -90,8 +89,8 @@ public class ContactEmailService {
      * @throws ContactEmailException if an email error occurs
      */
     public static void sendRequestCompletedConfirmation(ContactTicket contactTicket) {
-        final EMail requestCompletedConfirmationEmail
-            = ContactEmailServiceHelper.createRequestCompletedConfirmationEmail(contactTicket);
+        final EMail requestCompletedConfirmationEmail = ContactEmailServiceHelper
+            .createRequestCompletedConfirmationEmail(contactTicket);
         getInstance().sendEmail(requestCompletedConfirmationEmail, contactTicket.getContactRequest().getEmail());
     }
 
@@ -107,8 +106,8 @@ public class ContactEmailService {
         UUID contactAttemptId) {
         final Map<String, String> headers = new HashMap<String, String>();
         headers.put(CONTACT_ATTEMPT_HEADER_NAME, contactAttemptId.toString());
-        final EMail requestForwardingEmail
-            = ContactEmailServiceHelper.createRequestForwardingEmail(contactTicket, contactInfo);
+        final EMail requestForwardingEmail = ContactEmailServiceHelper.createRequestForwardingEmail(contactTicket,
+            contactInfo);
         getInstance().sendEmail(requestForwardingEmail, contactInfo.getEmail(), headers);
     }
 
@@ -148,8 +147,8 @@ public class ContactEmailService {
         try {
             final Folder inbox = store.getFolder("INBOX");
             inbox.open(Folder.READ_WRITE);
-            final List<Message> unreadMessages
-                = Arrays.asList(inbox.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false)));
+            final List<Message> unreadMessages = Arrays
+                .asList(inbox.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false)));
             final List<Message> reportMessages = new ArrayList<>();
             for (Message message : unreadMessages) {
                 if (message.isMimeType(REPORT_MIMETYPE)) {
@@ -168,7 +167,6 @@ public class ContactEmailService {
         if (dsnMessage == null) {
             return;
         }
-        final ContactAttemptService eventService = ContactAttemptServiceImpl.getInstance();
         Optional.ofNullable(dsnMessage.getHeader(CONTACT_ATTEMPT_HEADER_NAME, null)).map(UUID::fromString)
             .ifPresent(attemptId -> {
                 try {
