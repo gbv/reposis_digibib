@@ -28,7 +28,7 @@
   <version>2023.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
-    <node.version>v14.19.3</node.version>
+    <node.version>v16.16.0</node.version>
     <yarn.version>v1.22.18</yarn.version>
   </properties>
   <build>
@@ -112,6 +112,36 @@
               <workingDirectory>src/main/vue/modul_handbuecher/</workingDirectory>
             </configuration>
           </execution>
+           <execution>
+            <id>yarn-install_access-key-manager</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <arguments>install</arguments>
+              <workingDirectory>src/main/vue/access-key-manager/</workingDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>yarn-build-access-key-manager</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <arguments>build</arguments>
+              <workingDirectory>src/main/vue/access-key-manager/</workingDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>grunt-build</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>yarn-install</id>
+            <phase>none</phase>
+          </execution>
         </executions>
       </plugin>
     </plugins>
@@ -164,12 +194,19 @@
     <dependency>
       <groupId>com.github.jsonld-java</groupId>
       <artifactId>jsonld-java</artifactId>
-      <version>0.13.4</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.eclipse.rdf4j</groupId>
@@ -180,6 +217,16 @@
       <groupId>org.eclipse.rdf4j</groupId>
       <artifactId>rdf4j-model-api</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>8.0.1.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-base</artifactId>
+      <type>test-jar</type>
     </dependency>
     <dependency>
       <groupId>org.mycore</groupId>
@@ -212,18 +259,17 @@
     </dependency>
     <dependency>
       <groupId>org.jdom</groupId>
-      <artifactId>jdom</artifactId>
-      <version>2.0.2</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jdom</groupId>
       <artifactId>jdom2</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-acl</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>

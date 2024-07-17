@@ -12,4 +12,26 @@
         <url-pattern>/handbuecher/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>MCRAccessKeyConfigHelperServlet</servlet-name>
+        <servlet-class>org.mycore.frontend.servlets.MCRConfigHelperServlet</servlet-class>
+        <init-param>
+            <param-name>Properties</param-name>
+            <param-value>MCR.ACL.AccessKey.Strategy.AllowedSessionPermissionTypes</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MCRAccessKeyConfigHelperServlet</servlet-name>
+        <url-pattern>/access-key-config.json</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MCRVueContactServlet</servlet-name>
+        <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MCRVueContactServlet</servlet-name>
+        <url-pattern>/access-key-manager/*</url-pattern>
+    </servlet-mapping>
+
 </web-fragment>

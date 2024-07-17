@@ -25,3 +25,4 @@ resources/META-INF/persistence.xml
 pom.xml.bak
 target
 dependency-reduced-pom.xml
+/bin/
