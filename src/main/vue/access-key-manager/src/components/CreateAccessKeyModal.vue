@@ -8,7 +8,7 @@
       <div>
         <p>{{ $t('component.acl.accesskey.frontend.description.createAccesskey') }}</p>
       </div>
-      <form @submit.stop.prevent="handleCreateAccessKey">
+      <form>
         <div class="form-group required">
           <!-- eslint-disable-next-line vuejs-accessibility/label-has-for -->
           <label for="inputValue">
@@ -33,10 +33,10 @@
             <select id="inputPermission" class="form-control" v-model="permission"
               :class="v.permission.$error? 'is-invalid' : ''">
               <option value="" disabled>{{ $t('component.acl.accesskey.frontend.select') }}</option>
-              <option value="read">
+              <option v-if="configStore.manageReadAccesskeys" value="read">
                 {{ $t('component.acl.accesskey.frontend.label.type.read') }}
               </option>
-              <option value="writedb">
+              <option v-if="configStore.manageWriteAccessKeys" value="writedb">
                 {{ $t('component.acl.accesskey.frontend.label.type.writedb') }}
               </option>
             </select>
@@ -77,6 +77,7 @@ import {
 } from 'vue';
 import { createAccessKey, getAccessKey } from '@/api/service';
 import { generateRandomString } from '@/utils';
+import { useConfigStore } from '@/stores';
 import AccessKeyDto from '@/dtos/AccessKeyDto';
 import objectIdKey from '@/keys';
 import useVuelidate from '@vuelidate/core';
@@ -99,6 +100,7 @@ const rules = computed(() => ({
   },
 }));
 
+const configStore = useConfigStore();
 const objectId: string | undefined = inject(objectIdKey);
 const emit = defineEmits(['access-key-created', 'close']);
 

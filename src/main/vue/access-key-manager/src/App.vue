@@ -74,16 +74,22 @@ import {
   onErrorCaptured,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { getAccessKeys, removeAccessKey, AccessKeyInformation } from '@/api/service';
+import {
+  getAccessKeys,
+  removeAccessKey,
+  AccessKeyInformation,
+  fetchPermissions,
+} from '@/api/service';
 import objectIdKey from '@/keys';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import AccessKeyDto from '@/dtos/AccessKeyDto';
 import AccessKeyTable from '@/components/AccessKeyTable.vue';
 import CreateAccessKeyModal from '@/components/CreateAccessKeyModal.vue';
 import AccessKeyModal from '@/components/AccessKeyModal.vue';
+import AccessKeyPermissionsDto from '@/dtos/AccessKeyPermissionsDto';
 import Pagination from '@/components/SimplePagination.vue';
 import ConfirmModal from '@/components/ConfirmModal.vue';
-import { urlEncode } from '@/utils';
+import { getWebApplicationBaseURL, urlEncode } from '@/utils';
 import { useConfigStore, useAuthStore } from '@/stores';
 
 const objectId: string | undefined = inject(objectIdKey);
@@ -196,11 +202,19 @@ const handleAddAccessKey = (value: string, accessKey: AccessKeyDto) => {
 onMounted(async () => {
   if (objectId) {
     try {
+      configStore.webApplicationBaseURL = getWebApplicationBaseURL() as string;
       await configStore.fetchConfig();
       if (process.env.NODE_ENV === 'production') {
         await authStore.login(objectId);
       }
-      await fetch();
+      const permissions: AccessKeyPermissionsDto = await fetchPermissions(objectId);
+      configStore.manageReadAccesskeys = permissions.manageReadAccessKeys;
+      configStore.manageWriteAccessKeys = permissions.manageWriteAccessKeys;
+      if (configStore.manageReadAccesskeys || configStore.manageWriteAccessKeys) {
+        await fetch();
+      } else {
+        throw Error('component.acl.accesskey.frontend.error.noPermission');
+      }
     } catch (error) {
       handleError(error);
     }

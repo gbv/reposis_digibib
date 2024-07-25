@@ -2,8 +2,10 @@ import { defineStore } from 'pinia';
 import { fetchConfig } from '@/utils';
 
 interface State {
-  webApplicationBaseURL: string
-  config: Record<string, string>
+  webApplicationBaseURL: string;
+  config: Record<string, string>;
+  manageReadAccesskeys: boolean;
+  manageWriteAccessKeys: boolean;
 }
 
 const ALLOWED_SESSION_TYPES = 'MCR.ACL.AccessKey.Strategy.AllowedSessionPermissionTypes';
@@ -13,6 +15,8 @@ export const useConfigStore = defineStore('config', {
   state: (): State => ({
     webApplicationBaseURL: '',
     config: { },
+    manageReadAccesskeys: false,
+    manageWriteAccessKeys: false,
   }),
   getters: {
     isSessionEnabled: (state): boolean => state.config[ALLOWED_SESSION_TYPES] !== undefined

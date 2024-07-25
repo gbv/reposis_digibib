@@ -31,6 +31,7 @@ import org.mycore.mcr.acl.accesskey.exception.MCRAccessKeyException;
 import org.mycore.mcr.acl.accesskey.exception.MCRAccessKeyNotFoundException;
 import org.mycore.mcr.acl.accesskey.model.MCRAccessKey;
 
+import de.vzg.reposis.digibib.accesskey.AccessKeyConstants;
 import de.vzg.reposis.digibib.accesskey.dto.AccessKeyDto;
 import de.vzg.reposis.digibib.accesskey.dto.AccessKeyPartialUpdateDto;
 import de.vzg.reposis.digibib.accesskey.mapper.AccessKeyMapper;
@@ -42,10 +43,6 @@ import de.vzg.reposis.digibib.accesskey.validation.AccessKeyDtoValidator;
  *
  */
 public class AccessKeyServiceImpl implements AccessKeyService {
-
-    private static final String MANAGE_READ_PERMISSION = "manage-read-access-keys";
-
-    private static final String MANAGE_WRITE_PERMISSION = "manage-write-access-keys";
 
     /**
      * Constructs a new {@link AccessKeyServiceImpl} instance.
@@ -68,14 +65,15 @@ public class AccessKeyServiceImpl implements AccessKeyService {
         if (!MCRMetadataManager.exists(objectId)) {
             throw new MCRAccessKeyException("Object with id " + objectId + " does not exist.");
         }
-        if (MCRAccessManager.checkPermission(objectId, MANAGE_WRITE_PERMISSION)) {
+        if (MCRAccessManager.checkPermission(objectId, AccessKeyConstants.PERMISSION_MANAGE_WRITE_ACCESS_KEYS)) {
             return MCRAccessKeyManager.listAccessKeys(objectId).stream().map(AccessKeyMapper::toDto).toList();
         }
-        if (MCRAccessManager.checkPermission(objectId, MANAGE_READ_PERMISSION)) {
+        if (MCRAccessManager.checkPermission(objectId, AccessKeyConstants.PERMISSION_MANAGE_READ_ACCESS_KEYS)) {
             return MCRAccessKeyManager.listAccessKeysWithType(objectId, PermissionType.READ.getValue()).stream()
                 .map(AccessKeyMapper::toDto).toList();
         }
-        throw MCRAccessException.missingPermission("getAccessKeys", objectId.toString(), MANAGE_READ_PERMISSION);
+        throw MCRAccessException.missingPermission("getAccessKeys", objectId.toString(),
+            AccessKeyConstants.PERMISSION_MANAGE_READ_ACCESS_KEYS);
     }
 
     @Override
@@ -194,11 +192,14 @@ public class AccessKeyServiceImpl implements AccessKeyService {
     private static void ensurePermission(String action, MCRObjectID objectId, String type)
         throws MCRAccessException {
         if (Objects.equals(PermissionType.READ.getValue(), type)) {
-            if (!MCRAccessManager.checkPermission(objectId, MANAGE_READ_PERMISSION)) {
-                throw MCRAccessException.missingPermission(action, objectId.toString(), MANAGE_READ_PERMISSION);
+            if (!MCRAccessManager.checkPermission(objectId, AccessKeyConstants.PERMISSION_MANAGE_READ_ACCESS_KEYS)) {
+                throw MCRAccessException.missingPermission(action, objectId.toString(),
+                    AccessKeyConstants.PERMISSION_MANAGE_READ_ACCESS_KEYS);
             }
-        } else if (!MCRAccessManager.checkPermission(objectId, MANAGE_WRITE_PERMISSION)) {
-            throw MCRAccessException.missingPermission(action, objectId.toString(), MANAGE_WRITE_PERMISSION);
+        } else if (!MCRAccessManager.checkPermission(objectId,
+            AccessKeyConstants.PERMISSION_MANAGE_WRITE_ACCESS_KEYS)) {
+            throw MCRAccessException.missingPermission(action, objectId.toString(),
+                AccessKeyConstants.PERMISSION_MANAGE_WRITE_ACCESS_KEYS);
         }
     }
 

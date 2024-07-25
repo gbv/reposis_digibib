@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import AccessKeyDto from '@/dtos/AccessKeyDto';
+import AccessKeyPermissionsDto from '@/dtos/AccessKeyPermissionsDto';
 import { urlEncode } from '@/utils';
 import instance from './axios';
 
@@ -34,3 +35,5 @@ export const removeAccessKey = async (objectId: string, value: string): Promise<
     params: { value_encoding: SECRET_ENCODING_TYPE_NAME },
   });
 };
+export const fetchPermissions = async (objectId: string): Promise<AccessKeyPermissionsDto> => (
+  await instance.get<AccessKeyPermissionsDto>(`rsc/access-keys/${objectId}/permissions`)).data;

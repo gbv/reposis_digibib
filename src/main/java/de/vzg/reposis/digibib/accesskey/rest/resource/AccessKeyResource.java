@@ -27,12 +27,16 @@ import java.util.Objects;
 import java.util.Optional;
 
 import org.mycore.access.MCRAccessException;
+import org.mycore.access.MCRAccessManager;
 import org.mycore.datamodel.metadata.MCRObjectID;
 import org.mycore.frontend.jersey.MCRJerseyUtil;
 import org.mycore.frontend.jersey.access.MCRRequireLogin;
 import org.mycore.frontend.jersey.filter.access.MCRRestrictedAccess;
 import org.mycore.restapi.annotations.MCRRequireTransaction;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import de.vzg.reposis.digibib.accesskey.AccessKeyConstants;
 import de.vzg.reposis.digibib.accesskey.dto.AccessKeyDto;
 import de.vzg.reposis.digibib.accesskey.dto.AccessKeyPartialUpdateDto;
 import de.vzg.reposis.digibib.accesskey.service.AccessKeyServiceImpl;
@@ -78,6 +82,23 @@ public class AccessKeyResource {
 
     @Context
     UriInfo uriInfo;
+
+    /**
+     * Returns currents users access key permissions for objectId.
+     *
+     * @param objectIdString the object id
+     * @return permissions DTO
+     */
+    @Produces(MediaType.APPLICATION_JSON)
+    @GET
+    @Path("/{" + PATH_PARAM_OBJECT_ID + "}/permissions")
+    public PermissionsDto getPermissions(@PathParam(PATH_PARAM_OBJECT_ID) String objectIdString) {
+        final boolean manageReadAccessKeys
+            = MCRAccessManager.checkPermission(objectIdString, AccessKeyConstants.PERMISSION_MANAGE_READ_ACCESS_KEYS);
+        final boolean manageWriteAccessKeys
+            = MCRAccessManager.checkPermission(objectIdString, AccessKeyConstants.PERMISSION_MANAGE_WRITE_ACCESS_KEYS);
+        return new PermissionsDto(manageReadAccessKeys, manageWriteAccessKeys);
+    }
 
     /**
      * Creates a new access key.
@@ -225,6 +246,10 @@ public class AccessKeyResource {
             return new String(Base64.getUrlDecoder().decode(text.getBytes(UTF_8)), UTF_8);
         }
         throw new IllegalArgumentException("Cannot decode, unknown encoding");
+    }
+
+    record PermissionsDto(@JsonProperty(value = "manageReadAccessKeys") boolean manageReadAccessKeys,
+        @JsonProperty(value = "manageWriteAccessKeys") boolean manageWriteAccessKeys) {
     }
 
 }

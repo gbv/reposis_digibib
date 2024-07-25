@@ -17,11 +17,11 @@ export const useAuthStore = defineStore('auth', {
         const jwt:
           JWT = await fetchJWT(webApplicationBaseURL, objectId, isSessionEnabled);
         if (!jwt.login_success) {
-          throw new Error('noPermission');
+          throw new Error('component.acl.accesskey.frontend.error.noPermission');
         }
         this.accessToken = jwt.access_token;
       } catch (error) {
-        throw new Error('noPermission');
+        throw new Error('component.acl.accesskey.frontend.error.noPermission');
       }
     },
   },

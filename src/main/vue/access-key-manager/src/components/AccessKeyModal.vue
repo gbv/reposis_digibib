@@ -5,8 +5,7 @@
     <div v-if="errorMessage" class="alert alert-danger text-center" role="alert">
       {{ $t(errorMessage) }}
     </div>
-    <!-- TODO check required -->
-    <form @submit.stop.prevent="handleUpdateAccessKey">
+    <form>
       <div class="form-group">
         <!-- eslint-disable-next-line vuejs-accessibility/label-has-for -->
         <label for="inputValue">
@@ -22,10 +21,10 @@
             {{ $t('component.acl.accesskey.frontend.label.permission') }}
           </label>
           <select id="inputPermission" class="form-control" v-model="permission">
-            <option value="read">
+            <option v-if="configStore.manageReadAccesskeys" value="read">
               {{ $t('component.acl.accesskey.frontend.label.type.read') }}
             </option>
-            <option value="writedb">
+            <option v-if="configStore.manageWriteAccessKeys" value="writedb">
               {{ $t('component.acl.accesskey.frontend.label.type.writedb') }}
             </option>
           </select>
@@ -67,6 +66,7 @@ import {
 import AccessKeyDto from '@/dtos/AccessKeyDto';
 import BaseModal from '@/components/BaseModal.vue';
 import objectIdKey from '@/keys';
+import { useConfigStore } from '@/stores';
 import { getAccessKey, patchAccessKey } from '@/api/service';
 
 const props = defineProps({
@@ -79,6 +79,7 @@ const props = defineProps({
   },
 });
 const emit = defineEmits(['access-key-updated', 'close']);
+const configStore = useConfigStore();
 const objectId: string | undefined = inject(objectIdKey);
 
 const errorMessage = ref<string>();
