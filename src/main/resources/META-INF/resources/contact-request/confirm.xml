@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MyCoReWebPage>
+<MyCoReWebPage title="{i18n}">
+  <section xml:lang="de" title="LeoPARD - Kontaktanfrage bestätigen">
+    <h2>Erhalt der Kontaktanfrage bestätigen</h2>
+    <p>Damit wird den Kontaktprozess abschließen können, bitten wir Sie, den Erhalt der Email zu bestätigen</p>
+    <button id="confirm-btn" class="btn btn-primary" type="submit" onclick="answer()">Erhalt bestätigen</button>
+    <div id="answer-success" class="d-none">Die Bestätigung war erfolgreich, vielen Dank!</div>
+    <script>
+      const searchParams = new URLSearchParams(window.location.search);
+      const attemptId = searchParams.get('aid');
+      
+      const answer = async () => {
+        const response = await fetch("../rsc/contact-request/confirmAttempt?aid=" + attemptId, {
+          method: "POST",
+        });
+        if (response.ok) {
+          document.getElementById('answer-success').classList.remove('d-none');
+          document.getElementById('confirm-btn').disabled = true;
+        }
+      }
+  	</script>
+  </section>
+  <section xml:lang="en" title="LeoPARD - Confirm contact request">
+    <h2>Confirm receipt of the contact request</h2>
+    <p>In order to complete the contact process, we ask you to confirm receipt of the email</p>
+    <button id="confirm-btn" class="btn btn-primary" type="submit" onclick="answer()">Confirm receipt</button>
+    <div id="answer-success" class="d-none">The confirmation was successful, thank you very much!</div>
+    <script>
+      const searchParams = new URLSearchParams(window.location.search);
+      const attemptId = searchParams.get('aid');
+      
+      const answer = async () => {
+        const response = await fetch("../rsc/contact-request/confirmAttempt?aid=" + attemptId, {
+          method: "POST",
+        });
+        if (response.ok) {
+          document.getElementById('answer-success').classList.remove('d-none');
+          document.getElementById('confirm-btn').disabled = true;
+        }
+      }
+  	</script>
+  </section>
+</MyCoReWebPage>
