@@ -36,16 +36,14 @@ import jakarta.ws.rs.container.ContainerRequestFilter;
 @Priority(Priorities.AUTHORIZATION)
 public class ContactRestAuthorizationFilter implements ContainerRequestFilter {
 
-    private static final String CONTACT_REQUEST_ID = "contact-request";
-
-    private static final String MANAGE_PERMISSION = "manage";
+    private static final String MANAGE_CONTACT_REQUEST_PERMISSION = "manage-contact-request";
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
         if (Objects.equals(HttpMethod.OPTIONS, requestContext.getMethod())) {
             return;
         }
-        if (!MCRAccessManager.checkPermission(CONTACT_REQUEST_ID, MANAGE_PERMISSION)) {
+        if (!MCRAccessManager.checkPermission(MANAGE_CONTACT_REQUEST_PERMISSION)) {
             throw new ForbiddenException("You do not have manage permission on contact-requests");
         }
     }
