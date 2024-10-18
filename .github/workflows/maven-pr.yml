@@ -4,8 +4,7 @@
 name: Pull Request Checks
 
 on:
-  release:
-    on: [ pull_request ]
+  [ pull_request ]
 
 jobs:
   build:
