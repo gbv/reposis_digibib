@@ -29,8 +29,8 @@
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
     <java.target.version>17</java.target.version>
-    <node.version>v14.19.3</node.version>
-    <yarn.version>v1.22.18</yarn.version>
+    <node.version>v16.19.1</node.version>
+    <yarn.version>v1.22.19</yarn.version>
   </properties>
   <build>
     <plugins>
