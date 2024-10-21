@@ -19,6 +19,7 @@
 package de.vzg.reposis.digibib.contactrequest.service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.UUID;
 
@@ -84,7 +85,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
         validatorFacade.getContactRequestValidator().validate(contactRequestDto);
         final ContactRequest contactRequest = ContactRequestMapper.toEntity(contactRequestDto);
         contactRequest.setId(null);
-        contactRequest.setCreated(LocalDateTime.now());
+        contactRequest.setCreated(LocalDateTime.now(ZoneId.systemDefault()));
         contactRequest.setCreatedBy(MCRSessionMgr.getCurrentSession().getUserInformation().getUserID());
         contactRequest.setStatus(ContactRequest.Status.OPEN);
         final ContactRequest insertedContactRequest = contactRequestRepository.save(contactRequest);

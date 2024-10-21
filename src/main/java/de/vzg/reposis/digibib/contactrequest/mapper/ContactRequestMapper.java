@@ -19,6 +19,7 @@
 package de.vzg.reposis.digibib.contactrequest.mapper;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import de.vzg.reposis.digibib.contactrequest.dto.ContactRequestDto;
@@ -82,7 +83,7 @@ public class ContactRequestMapper {
     public static ContactRequestSummaryDto toSummaryDto(ContactRequest contactRequest) {
         final List<String> emails = contactRequest.getEmailContactAttempts().stream()
             .map(ContactAttempt::getRecipientReference).distinct().toList();
-        final String statusString = contactRequest.getStatus().toString().toLowerCase();
+        final String statusString = contactRequest.getStatus().toString().toLowerCase(Locale.ROOT);
         final ContactRequestSummaryDto contactRequestSummaryDto = new ContactRequestSummaryDto();
         contactRequestSummaryDto.setStatusString(statusString);
         contactRequestSummaryDto.setEmails(emails);
