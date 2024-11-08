@@ -76,7 +76,7 @@ public class EmailClientFactory {
                 }
             };
         }
-        return Session.getDefaultInstance(createSessionPropertiesMap(propertiesMap), authenticator);
+        return Session.getInstance(createSessionPropertiesMap(propertiesMap), authenticator);
     }
 
     private static Properties createSessionPropertiesMap(Map<String, String> propertiesMap) {
