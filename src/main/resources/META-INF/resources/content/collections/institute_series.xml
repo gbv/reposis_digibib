@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Institutsreihen"><div>
-<h2>Institutsreihen</h2>
-
-<div class="row" id="digibib_institutes">
+<MyCoReWebPage><section xml:lang="de" title="Institutsreihen"><h2>Institutsreihen</h2><div class="row" id="digibib_institutes">
 <div class="col-md-10">
 <p>Hier finden Sie eine Übersicht digitaler Veröffentlichungen von Einrichtungen der TU Braunschweig.<br />
  </p>
 
 <ul>
 	<li><a href="institute_series/publications_ina.xml">Institut für Akustik - Schriften des Instituts für Akustik</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64104">Institut für Baustoffe, Massivbau und Brandschutz der Technischen Universität Braunschweig IBMB</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/content/collections/institute_series/publications_ibmb.xml">Institut für Baustoffe, Massivbau und Brandschutz der Technischen Universität Braunschweig IBMB</a></li>
 	<li><a href="https://doi.org/10.24355/dbbs.084-202304171611-0">Institut für Bauwirtschaft und Baubetrieb IBB</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/65789">Institut für Computergraphik: Technical Report - Computer Graphics Lab</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64989">Institut für Datentechnik und Kommunikationsnetze IDA / Institute of Computer and Network Engineering</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/65789">Institut für Computergraphik: Technical Report - Computer Graphics Lab</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/64989">Institut für Datentechnik und Kommunikationsnetze IDA / Institute of Computer and Network Engineering</a></li>
 	<li><a href="https://leopard.tu-braunschweig.de/get/72306">Institut für Elektrische Maschinen, Antriebe und Bahnen IMAB</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64414">Institut für Elektrische Messtechnik und Grundlagen der Elektrotechnik - Berichte</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/64414">Institut für Elektrische Messtechnik und Grundlagen der Elektrotechnik - Berichte</a></li>
 	<li><a href="institute_series/publications_gtas.xml">Institut für Geschichte und Theorie der Architektur und Stadt (GTAS) - Publikationen des GTAS</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/65826">Institut für Mikrotechnik IMT / Institute for Microtechnology</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64162">Institut für Mobile Maschinen und und Nutzfahrzeuge / Institute of Mobile Machines and Commercial Vehicles - Jahrbuch Agrartechnik</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/66475">Institut für Infrastruktur- und Immobilienmanagement - Schriftenreihe</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/65826">Institut für Mikrotechnik IMT / Institute for Microtechnology</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/64162">Institut für Mobile Maschinen und und Nutzfahrzeuge / Institute of Mobile Machines and Commercial Vehicles - Jahrbuch Agrartechnik</a></li>
 	<li><a href="institute_series/publications_ifn.xml">Institut für Nachrichtentechnik IfN</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/69133" target="_blank">Institut für Siedlungswasserwirtschaft</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/69133" target="_blank">Institut für Siedlungswasserwirtschaft</a></li>
 	<li><a href="institute_series/publications_ivb.xml">Institut für Verbrennungskraftmaschinen / Institute of Internal Combustion Engines</a></li>
 	<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00066415">Institut für Verkehr und Stadtbauwesen</a></li>
 	<li><a href="institute_series/publications_iwf.xml">Institut für Werkzeugmaschinen und Fertigungstechnik IWF</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64443">Informatik-Berichte der Technische Universität Braunschweig</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/get/64443">Informatik-Berichte der Technische Universität Braunschweig</a></li>
 	<li><a href="institute_series/publications_nfl.xml">Niedersächsisches Forschungszentrum für Luftfahrt (NFL)</a></li>
-	<li><a href="institute_series/oer_teach_your_peers.xml">OER Teach Your Peers (TYP) Video</a></li>
-	<li><a href="institute_series/oer_teach_it_digital.xml">OER Teach It Digital (TIDig) Video</a></li>
+	<li><a href="/content/collections/institute_series/oer_ueberblick.xml">Open Educational Resources (OER)</a><br />
+	 </li>
 </ul>
 </div>
-</div>
-</div>
-</section><section xml:lang="en" title="Institute series"><div>
+</div></section><section xml:lang="en" title="Institute series"><div>
 <h2>Institute Series</h2>
 
 <div class="row" id="digibib_institutes">
@@ -40,7 +36,7 @@
 
 <ul>
 	<li><a href="institute_series/publications_ina.xml">Institut für Akustik - Schriften des Instituts für Akustik</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64104">Institut für Baustoffe, Massivbau und Brandschutz der Technischen Universität Braunschweig IBMB</a></li>
+	<li><a href="https://leopard.tu-braunschweig.de/content/collections/institute_series/publications_ibmb.xml">Institut für Baustoffe, Massivbau und Brandschutz der Technischen Universität Braunschweig IBMB</a></li>
 	<li><a href="https://doi.org/10.24355/dbbs.084-202304171611-0">Institut für Bauwirtschaft und Baubetrieb IBB</a></li>
 	<li><a href="http://publikationsserver.tu-braunschweig.de/get/65789">Institut für Computergraphik: Technical Report - Computer Graphics Lab</a></li>
 	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64989">Institut für Datentechnik und Kommunikationsnetze IDA / Institute of Computer and Network Engineering</a></li>
@@ -59,4 +55,4 @@
 </ul>
 </div>
 </div>
-</div></section><meta><log lastEditor="dbbs_admin" date="2024-03-06" time="07:58" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2024-06-12" time="07:58" /></meta></MyCoReWebPage>

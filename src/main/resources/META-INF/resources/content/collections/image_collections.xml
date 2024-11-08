@@ -10,12 +10,12 @@
 	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Diasammlung+Herbert+Schulz%22&amp;wt=xml">Diasammlung Herbert Schulz</a><br />
 	Schwerpunkt Blütenpflanzen</li>
 	<br />
-	<li><b>Sammlung Dietmar Brandes </b><!--<a href='/docportal/servlets/MCRSearchServlet?XSL.Style=rss-sdb&amp;query=(keywords contains "Sammlung")+and+(keywords contains "Dietmar")+and+(keywords contains "Brandes")+and+(objectType+=+document)&amp;maxResults=10&amp;created.sortField=descending&amp;mask=browse/type'>
+	<li><b>Sammlung Dietmar Brandes </b><!--<a href='../../receive/dbbs_mods_00065419'>
               <img width="14px" height="14px" align="top" src="/docportal/templates/master/template_ubbs/IMAGES/rss_32.png" border="0"/>
             </a>--><br />
 	Bilder zur Biodiversität der Pflanzen
 	<ul>
-		<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=Digitale+Pflanzenbilder+Sammlung+Dietmar+Brandes">Alle Pflanzenbilder</a></li>
+		<li><a href="../../receive/dbbs_mods_00065419">Alle Pflanzenbilder</a></li>
 		<!--		<li><a href="http://vufind.allegro-c.de/album/index.html">Galeriesuche</a></li>-->
 	</ul>
 	</li>
@@ -26,8 +26,7 @@
 </ul>
 </div>
 </div>
-</div>
-</section><section xml:lang="en" title="Digital Image Collections"><div>
+</div></section><section xml:lang="en" title="Digital Image Collections"><div>
 <h2>Digital image collections of the Universitätsbibliothek Braunschweig</h2>
 
 <div class="row" id="digibib_imagecollection">
@@ -38,13 +37,13 @@
 	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Diasammlung+Herbert+Schulz%22&amp;wt=xml">Slide collection by Herbert Schulz</a><br />
 	Main focus on flowering plants</li>
 	<br />
-	<li><b>Dietmar Brandes' collection</b><!--<a href='/docportal/servlets/MCRSearchServlet?XSL.Style=rss-sdb&amp;query=(keywords contains "Sammlung")+and+(keywords contains "Dietmar")+and+(keywords contains "Brandes")+and+(objectType+=+document)&amp;maxResults=10&amp;created.sortField=descending&amp;mask=browse/type'>
+	<li><b>Dietmar Brandes' collection</b><!--<a href='../../receive/dbbs_mods_00065419'>
               <img width="14px" height="14px" align="top" src="/docportal/templates/master/template_ubbs/IMAGES/rss_32.png" border="0"/>
             </a>--><br />
 	Images of biodiversity of plants
 	<ul>
-		<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=Digitale+Pflanzenbilder+Sammlung+Dietmar+Brandes">Search in the catalogue</a></li>
-<!--		<li><a href="http://vufind.allegro-c.de/album/index.html">Search in the gallery</a></li>-->
+		<li><a href="../../receive/dbbs_mods_00065419">Search in the catalogue</a></li>
+		<!--		<li><a href="http://vufind.allegro-c.de/album/index.html">Search in the gallery</a></li>-->
 	</ul>
 	</li>
 	<br />
@@ -54,5 +53,4 @@
 </ul>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2020-02-17" time="12:19" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2024-05-30" time="06:26" /></meta></MyCoReWebPage>
