@@ -1,80 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage><section xml:lang="de" title="Teach Your Peers (TYP)"><div>
 <h2>Teach Your Peers (TYP)</h2>
-
 <div class="row" id="digibib_typ">
 <div class="col-md-10">
 <p><a href="../../../receive/dbbs_mods_00064110">Übersicht über alle "Teach Your Peers"-Videos</a></p>
-
 <p>Die grundlegende Idee von Teach Your Peers (TYP) greift das Prinzip der MOOCs auf, jedoch so, dass Studierende von ihrem Lehrstoff klar umgrenzte Themenpunkte eigenverantwortlich ausarbeiten und diese frei zugänglich von jedem - insbesondere aber von ihren KommilitonInnen (peers) - in einer Online-Datenbank abgerufen werden können.</p>
-
 <p>Ziel ist die Erstellung ca. 15-minütiger Online-Beiträge, die als Wissens-Rekapitulation, Wissens-Vertiefung, Fortbildung oder Themen-Motivator eingesetzt werden können. Dabei sollen verschiedene Medienformate wie Video- und Audioaufnahmen sowie Texte und Abbildungen verwendet werden, die von den Studierenden selber angefertigt werden. Zusätzlich sollen die Studierenden zu den einzelnen Themen Lernaufgaben erstellen, die anschließend im Internet gelöst werden können. Alle Materialien in dieser Datenbank sollen die Bedingungen von Open Educational Resources (OERs) erfüllen, also gemeinfrei sein und ohne Einschränkungen von jedem genutzt und weiterverbreitet werden dürfen.</p>
-
 <h3>OER Teach Your Peers Videos:</h3>
-
+<p class="col-md-8">2024:</p>
+<ul class="col-md-8">
+<li><a href="../../../receive/dbbs_mods_00077459">Bakteriophagen - Nina Wennrich</a></li>
+<li><a href="../../../receive/dbbs_mods_00078052">Kreuzungen und Genkopplung - Sarah Hantke</a></li>
+</ul>
 <p class="col-md-8">2021:</p>
-
 <ul class="col-md-8">
-	<li><a href="../../../receive/dbbs_mods_00069439">Transposons in the laboratory use - Nele Rieke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069438">Biology of Transposons - Nele Rieke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069292">ChIP-analysis - Michelle-Amirah Khalil</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069304">Autophagic Flux Assay - Tessa Schwarzer</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069332">Gal4/UAS-System and GAL4 Enhancer Trap - Sonja Kunstmann</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069351">Cell Migration Assays - Maike Bälkner</a></li>
+<li><a href="../../../receive/dbbs_mods_00069439">Transposons in the laboratory use - Nele Rieke</a></li>
+<li><a href="../../../receive/dbbs_mods_00069438">Biology of Transposons - Nele Rieke</a></li>
+<li><a href="../../../receive/dbbs_mods_00069292">ChIP-analysis - Michelle-Amirah Khalil</a></li>
+<li><a href="../../../receive/dbbs_mods_00069304">Autophagic Flux Assay - Tessa Schwarzer</a></li>
+<li><a href="../../../receive/dbbs_mods_00069332">Gal4/UAS-System and GAL4 Enhancer Trap - Sonja Kunstmann</a></li>
+<li><a href="../../../receive/dbbs_mods_00069351">Cell Migration Assays - Maike Bälkner</a></li>
 </ul>
-
 <p class="col-md-8">2020:</p>
-
 <ul class="col-md-8">
-	<li><a href="../../../receive/dbbs_mods_00069102">The cerebrum - Nele Rieke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069104">Retina - Michelle-Amirah Khalil</a></li>
-	<li><a href="../../../receive/dbbs_mods_00069103">Das Rückenmark als Bestandteil des zentralen Nervensystems - Julia Müller</a></li>
+<li><a href="../../../receive/dbbs_mods_00069102">The cerebrum - Nele Rieke</a></li>
+<li><a href="../../../receive/dbbs_mods_00069104">Retina - Michelle-Amirah Khalil</a></li>
+<li><a href="../../../receive/dbbs_mods_00069103">Das Rückenmark als Bestandteil des zentralen Nervensystems - Julia Müller</a></li>
 </ul>
-
 <p class="col-md-8">2019:</p>
-
 <ul class="col-md-8">
-	<li><a href="../../../receive/dbbs_mods_00066405">Aktive und passive Immuntherapie neurodegenerativer Krankheiten - Leonhard Hammermann</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066403">Deskriptive Statistik - Marius Gerl</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066412">DNA Methylation and Gene Silencing - Eike Preuß</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066411">"eat-me-Signale" - Jessica Scheibel</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066408">Erzeugung von knock-in Mäusen - Linda Matz</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066404">Impfungen - Lydia Tobias</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066407">Kanonischer und nicht-kanonischer WNT-Signalweg - Dorothea Hinz</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066406">Langzeit-Potenzierung (LTP), Langzeit-Depression (LTD) - Christine Busching</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066413">Mechanistic target of rapamycin (mTOR) Signalweg - Ansgar Eickhoff</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066409">Optogenetische Schalter - Anne-Kathrin Schulze</a></li>
-	<li><a href="../../../receive/dbbs_mods_00066410">Toll-ähnliche Rezeptoren (TLRs: toll-like receptors) und deren Signaltransduktionsweg - Lena Stiefvatter</a></li>
+<li><a href="../../../receive/dbbs_mods_00066405">Aktive und passive Immuntherapie neurodegenerativer Krankheiten - Leonhard Hammermann</a></li>
+<li><a href="../../../receive/dbbs_mods_00066403">Deskriptive Statistik - Marius Gerl</a></li>
+<li><a href="../../../receive/dbbs_mods_00066412">DNA Methylation and Gene Silencing - Eike Preuß</a></li>
+<li><a href="../../../receive/dbbs_mods_00066411">"eat-me-Signale" - Jessica Scheibel</a></li>
+<li><a href="../../../receive/dbbs_mods_00066408">Erzeugung von knock-in Mäusen - Linda Matz</a></li>
+<li><a href="../../../receive/dbbs_mods_00066404">Impfungen - Lydia Tobias</a></li>
+<li><a href="../../../receive/dbbs_mods_00066407">Kanonischer und nicht-kanonischer WNT-Signalweg - Dorothea Hinz</a></li>
+<li><a href="../../../receive/dbbs_mods_00066406">Langzeit-Potenzierung (LTP), Langzeit-Depression (LTD) - Christine Busching</a></li>
+<li><a href="../../../receive/dbbs_mods_00066413">Mechanistic target of rapamycin (mTOR) Signalweg - Ansgar Eickhoff</a></li>
+<li><a href="../../../receive/dbbs_mods_00066409">Optogenetische Schalter - Anne-Kathrin Schulze</a></li>
+<li><a href="../../../receive/dbbs_mods_00066410">Toll-ähnliche Rezeptoren (TLRs: toll-like receptors) und deren Signaltransduktionsweg - Lena Stiefvatter</a></li>
 </ul>
-
 <p class="col-md-8">2017:</p>
-
 <ul class="col-md-8">
-	<li><a href="../../../receive/dbbs_mods_00064116">CD4+ T-Zellaktivierung durch Myelinproteine - Anna Riebisch</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064115">Das Cre/IoxP System in der konditionalen Genetik - Daniela Münch</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064117">Intraneuronaler Transport von Mitochondrien - Angela Wedekind</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064118">miRNA Biogenese, Prozessierung und Funktionen - Dalia Winter</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064112">Nekroptose oder eine Zelle begeht Selbstmord - Mareike Britta Erdmann</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064113">Regulation der Mikrotubuli Dynamik - Imke Grützmacher</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064111">Signalweg des Insulin-ähnlichen Wachstumsfaktors (IGF) - Julia Baumann</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064114">Technische und enzymatische Stickstofffixierung - Jasper Liedtke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00064119">Warum gibt es fünf Antikörperklassen? - Elena Schönlau</a></li>
+<li><a href="../../../receive/dbbs_mods_00064116">CD4+ T-Zellaktivierung durch Myelinproteine - Anna Riebisch</a></li>
+<li><a href="../../../receive/dbbs_mods_00064115">Das Cre/IoxP System in der konditionalen Genetik - Daniela Münch</a></li>
+<li><a href="../../../receive/dbbs_mods_00064117">Intraneuronaler Transport von Mitochondrien - Angela Wedekind</a></li>
+<li><a href="../../../receive/dbbs_mods_00064118">miRNA Biogenese, Prozessierung und Funktionen - Dalia Winter</a></li>
+<li><a href="../../../receive/dbbs_mods_00064112">Nekroptose oder eine Zelle begeht Selbstmord - Mareike Britta Erdmann</a></li>
+<li><a href="../../../receive/dbbs_mods_00064113">Regulation der Mikrotubuli Dynamik - Imke Grützmacher</a></li>
+<li><a href="../../../receive/dbbs_mods_00064111">Signalweg des Insulin-ähnlichen Wachstumsfaktors (IGF) - Julia Baumann</a></li>
+<li><a href="../../../receive/dbbs_mods_00064114">Technische und enzymatische Stickstofffixierung - Jasper Liedtke</a></li>
+<li><a href="../../../receive/dbbs_mods_00064119">Warum gibt es fünf Antikörperklassen? - Elena Schönlau</a></li>
 </ul>
-
 <p class="col-md-8">2015:</p>
-
 <ul class="col-md-8">
-	<li><a href="../../../receive/dbbs_mods_00061654">Anleitung zum Erstellen eines TYP Videos - Sven Wargenau</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061666">Calcium-Homöostase in Zellen - Andreas Schäfer</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061656">Funktion, Phosphorylierung und Pathogenese von Tau - Inessa Wall</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061668">Hedgehog-Signaltransduktion - Jasmin Großer</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061676">Migration von Körnerzellen im Cerebellum - Julia Meersteiner</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061678">Mikroglia Aktivierung : Führung von Mikroglia Migration - Charlotte Tacke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061698">Organelldegradation durch Autophagie - Jasper Liedtke</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061705">Proteindegradation - Proteinabbau durch das UPS und den Endosomalen-Lysosomalen Pathway - Sven Wargenau</a></li>
-	<li><a href="../../../receive/dbbs_mods_00061724">Unfolded Protein Response und Proteinaggregation. Mit Übungsfragen - Nils Birkholz</a></li>
+<li><a href="../../../receive/dbbs_mods_00061654">Anleitung zum Erstellen eines TYP Videos - Sven Wargenau</a></li>
+<li><a href="../../../receive/dbbs_mods_00061666">Calcium-Homöostase in Zellen - Andreas Schäfer</a></li>
+<li><a href="../../../receive/dbbs_mods_00061656">Funktion, Phosphorylierung und Pathogenese von Tau - Inessa Wall</a></li>
+<li><a href="../../../receive/dbbs_mods_00061668">Hedgehog-Signaltransduktion - Jasmin Großer</a></li>
+<li><a href="../../../receive/dbbs_mods_00061676">Migration von Körnerzellen im Cerebellum - Julia Meersteiner</a></li>
+<li><a href="../../../receive/dbbs_mods_00061678">Mikroglia Aktivierung : Führung von Mikroglia Migration - Charlotte Tacke</a></li>
+<li><a href="../../../receive/dbbs_mods_00061698">Organelldegradation durch Autophagie - Jasper Liedtke</a></li>
+<li><a href="../../../receive/dbbs_mods_00061705">Proteindegradation - Proteinabbau durch das UPS und den Endosomalen-Lysosomalen Pathway - Sven Wargenau</a></li>
+<li><a href="../../../receive/dbbs_mods_00061724">Unfolded Protein Response und Proteinaggregation. Mit Übungsfragen - Nils Birkholz</a></li>
 </ul>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2021-03-30" time="11:04" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2024-10-11" time="06:05" /></meta></MyCoReWebPage>

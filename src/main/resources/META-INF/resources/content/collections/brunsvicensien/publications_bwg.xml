@@ -1,64 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage><section xml:lang="de" title="Die Braunschweigische Wissenschaftlichen Gesellschaft (BWG)"><div>
 <h2>Die Braunschweigische Wissenschaftlichen Gesellschaft (BWG)</h2>
-
 <div class="row" id="digibib_bwg">
 <div class="col-md-10">
 <ul>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64801">Die Jahrbücher der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1983</a></li>
-	<li><a href="https://doi.org/10.24355/dbbs.084-202403181138-0"><span class="ibw_diagnostic"><span class="ibw_format_d"><span class="ibw_isbd">Sitzungsberichte und Mitteilungen der Braunschweigischen Wissenschaftlichen Gesellschaft</span></span></span> 1975 - 1982</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64802">Abhandlungen der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1949</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64907">Akademie-Vorlesungen im Schloss</a></li>
-	<li><a href="../../../servlets/solr/select?q=state%3Apublished+AND+mods.subject%3A%22Jahrbuch+der+BWG%22&amp;wt=xml">Zur Suche in den Veröffentlichungen der BWG</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64801">Die Jahrbücher der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1983</a></li>
+<li><a href="https://doi.org/10.24355/dbbs.084-202403181138-0"><span class="ibw_diagnostic"><span class="ibw_format_d"><span class="ibw_isbd">Sitzungsberichte und Mitteilungen der Braunschweigischen Wissenschaftlichen Gesellschaft</span></span></span> 1975 - 1982</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64802">Abhandlungen der Braunschweigischen Wissenschaftlichen Gesellschaft ab dem Jahr 1949</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64907">Akademie-Vorlesungen im Schloss</a></li>
+<li><a href="../../../servlets/solr/select?q=state%3Apublished+AND+mods.subject%3A%22Jahrbuch+der+BWG%22&amp;wt=xml">Zur Suche in den Veröffentlichungen der BWG</a></li>
 </ul>
-
 <p> </p>
-
-<p>Die <a href="http://www.bwg-nds.de">Braunschweigische Wissenschaftliche Gesellschaft (BWG)</a> ist eine Körperschaft des öffentlichen Rechts des Landes Niedersachsen.<br />
-Sie hat die Aufgabe, durch eigene Tätigkeit und in Zusammenarbeit mit anderen wissenschaftlichen Institutionen des In- und Auslandes die Wissenschaften, insbesondere das Zusammenwirken von Naturwissenschaften, Technischen Wissenschaften und Geisteswissenschaften, zu fördern.</p>
-
+<p>Die <a href="http://www.bwg-nds.de">Braunschweigische Wissenschaftliche Gesellschaft (BWG)</a> ist eine Körperschaft des öffentlichen Rechts des Landes Niedersachsen.<br />Sie hat die Aufgabe, durch eigene Tätigkeit und in Zusammenarbeit mit anderen wissenschaftlichen Institutionen des In- und Auslandes die Wissenschaften, insbesondere das Zusammenwirken von Naturwissenschaften, Technischen Wissenschaften und Geisteswissenschaften, zu fördern.</p>
 <p>Die BWG ist nach Struktur und Zielsetzung eine den Akademien der Wissenschaften analoge Institution, deren 145 ordentliche Mitglieder ihre wissenschaftliche Heimat vorrangig in den technisch ausgerichteten Universitäten des Dreiecks Braunschweig - Hannover - Clausthal haben. Damit sind auch die ingenieurwissenschaftlichen Disziplinen ein Schwerpunkt im ansonsten breit angelegten natur- und geisteswissenschaftlichen Spektrum der BWG.</p>
-
-<p>Sie verleiht in der Regel alljährlich die <a href="http://bwg-nds.de/gau%C3%9F-medaille/">Carl Friedrich Gauß-Medaille</a> an wissenschaftlich besonders verdiente Gelehrte des In- und Auslandes.<br />
-Die Ergebnisse ihrer Tätigkeit finden ihren Niederschlag in den Publikationen der Gesellschaft.<br />
-Durch Symposien und Vorträge wird darüber hinaus eine wichtige Verknüpfung mit der Öffentlichkeit hergestellt, um die Ergebnisse der Wissenschaft in die gesellschaftliche Diskussion einzubringen.</p>
+<p>Sie verleiht in der Regel alljährlich die <a href="http://bwg-nds.de/gau%C3%9F-medaille/">Carl Friedrich Gauß-Medaille</a> an wissenschaftlich besonders verdiente Gelehrte des In- und Auslandes.<br />Die Ergebnisse ihrer Tätigkeit finden ihren Niederschlag in den Publikationen der Gesellschaft.<br />Durch Symposien und Vorträge wird darüber hinaus eine wichtige Verknüpfung mit der Öffentlichkeit hergestellt, um die Ergebnisse der Wissenschaft in die gesellschaftliche Diskussion einzubringen.</p>
+<p>Die 2024 erschienene <a href="https://doi.org/10.24355/dbbs.084-202405241426-0">Festschrift anlässlich des 80-jährigen Bestehens</a> der Braunschweigischen Wissenschaftlichen Gesellschaft (BWG) enthält die Manuskripte der Reden von zwei Veranstaltungen, die am 30. November 2023 stattgefunden haben. Sie ergänzt den anlässlich ihres <a href="https://doi.org/10.24355/dbbs.084-201501080956-0">70-jähigen Bestehens veröffentlichten Band</a> von Daniel Wesselhöft und Oliver Matuschek.</p>
 </div>
 </div>
-
 <div class="row">
-<div class="col-md-12">
-<hr />
+<div class="col-md-12"><hr />
 <p><a href="../brunsvicensien.xml">Zurück zu den Brunsvicensien der Universitätsbibliothek Braunschweig</a></p>
 </div>
 </div>
-</div>
-</section><section xml:lang="en" title="The Braunschweigische Wissenschaftliche Gesellschaft"><div>
+</div></section><section xml:lang="en" title="The Braunschweigische Wissenschaftliche Gesellschaft"><div>
 <h2>The Braunschweigische Wissenschaftlichen Gesellschaft (BWG)</h2>
-
 <div class="row" id="digibib_bwg">
 <div class="col-md-10">
 <ul>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64801">The yearbooks of the Braunschweigische Wissenschaftliche Gesellschaft from 1983 on</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64802">Treatise of the Braunschweigische Wissenschaftliche Gesellschaft from 1949 on</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64907">Academical lectures in the Schloss</a></li>
-	<li><a href="../../../servlets/solr/select?q=state%3Apublished+AND+mods.subject%3A%22Jahrbuch+der+BWG%22&amp;wt=xml">Search in the publications of the BWG</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64801">The yearbooks of the Braunschweigische Wissenschaftliche Gesellschaft from 1983 on</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64802">Treatise of the Braunschweigische Wissenschaftliche Gesellschaft from 1949 on</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64907">Academical lectures in the Schloss</a></li>
+<li><a href="../../../servlets/solr/select?q=state%3Apublished+AND+mods.subject%3A%22Jahrbuch+der+BWG%22&amp;wt=xml">Search in the publications of the BWG</a></li>
 </ul>
-
-<p>The <a href="http://www.bwg-nds.de">Braunschweigische Wissenschaftliche Gesellschaft (BWG)</a> is an institution under public law of the Land of Lower Saxony.<br />
-Its task is, by own activity and in cooperation with other scientific institutions national and international, to support science and in particular encourage interaction between sciences, technical sciences and humanities.</p>
-
+<p>The <a href="http://www.bwg-nds.de">Braunschweigische Wissenschaftliche Gesellschaft (BWG)</a> is an institution under public law of the Land of Lower Saxony.<br />Its task is, by own activity and in cooperation with other scientific institutions national and international, to support science and in particular encourage interaction between sciences, technical sciences and humanities.</p>
 <p>The BWG is an institution structured analogously to the Academies of Sciences, whose 145 full members have their scientific homes primarily at technical oriented universities in the triangle of Brunswick - Hanover - Clausthal. With that also engineering disciplines are focused on in the otherwise wide range of sciences and humanities of the BWG.</p>
-
-<p>Usually it confers the <a href="http://bwg-nds.de/gau%C3%9F-medaille/">Carl Friedrich Gauß-Medaille</a> annually to scholars of scientifically outstanding merits national and international.<br />
-Results of its activity can be found in the publications of the company.<br />
-With symposia and speeches a connection to the public is established in order to contribute scientific research results to public discussion.</p>
+<p>Usually it confers the <a href="http://bwg-nds.de/gau%C3%9F-medaille/">Carl Friedrich Gauß-Medaille</a> annually to scholars of scientifically outstanding merits national and international.<br />Results of its activity can be found in the publications of the company.<br />With symposia and speeches a connection to the public is established in order to contribute scientific research results to public discussion.</p>
+<p>The commemorative publication published in 2024 on the occasion of the <a href="https://doi.org/10.24355/dbbs.084-202405241426-0">80th anniversary</a> of the Braunschweigische Wissenschaftliche Gesellschaft (BWG) contains the manuscripts of the speeches from two events that took place on November 30, 2023. It complements the volume by Daniel Wesselhöft and Oliver Matuschek published on the occasion of its <a href="https://doi.org/10.24355/dbbs.084-201501080956-0">70th anniversary</a>.</p>
 </div>
 </div>
-
 <div class="row">
-<div class="col-md-12">
-<hr />
+<div class="col-md-12"><hr />
 <p><a href="../brunsvicensien.xml">Back to the Brunsvicensien of the Universitätsbibliothek Braunschweig</a></p>
 </div>
 </div>
-</div></section><meta><log lastEditor="dbbs_admin" date="2024-03-18" time="16:46" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="celsner" date="2024-10-07" time="08:03" /></meta></MyCoReWebPage>

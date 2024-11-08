@@ -207,6 +207,14 @@
             <label xml:lang="de">OER Teach It Digital (TIDig)</label>
             <label xml:lang="en"></label>
         </item>
+        <item href="/content/collections/institute_series/oer_ueberblick.xml" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">Open Educational Resources (OER)</label>
+            <label xml:lang="en">Open Educational Resources (OER)</label>
+        </item>
+        <item href="/content/collections/institute_series/oer_pitch.xml" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">OER Peer Instructed Teaching (PITCH)</label>
+            <label xml:lang="en">OER Peer Instructed Teaching (PITCH)</label>
+        </item>
     </menu>
     <menu id="publish" dir="/content/publish">
         <label xml:lang="de">Publizieren</label>

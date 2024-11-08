@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Leitlinie"><div>
-<h1 class="leo-page-headline">Leitlinie zum Publizieren in LeoPARD</h1>
-
-<div class="row">
+<MyCoReWebPage><section xml:lang="de" title="Leitlinie"><h1 class="leo-page-headline">Leitlinie zum Publizieren in LeoPARD</h1><div class="row">
 <div class="col-12">
-<p>LeoPARD ist das institutionelle Publikationsrepositorium der Technischen Universität (TU) Braunschweig und wird von der Universitätsbibliothek betrieben. Er dient der Veröffentlichung von Forschungsergebnissen und -dokumentationen von Wissenschaftlerinnen und Wissenschaftlern der TU Braunschweig, von Spezialsammlungen der TU Braunschweig und von regionalen Einrichtungen sowie von digitalisierten Zeugnissen des regionalen kulturellen Erbes.  <br />
-<span class="inline-comment-marker" data-ref="5f1c6bfb-1e9a-4614-a0b6-5e466a7b3af9">Dabei macht die Universitätsbibliothek Braunschweig unter anderem zeitgeschichtliche Dokumente aus ihren Beständen für wissenschaftliche Zwecke, Forschung und Lehre auf LeoPARD zugänglich.</span> Diese Bestände unterliegen keiner Bewertung bzw. Zensur durch die Universitätsbibliothek. Die Universitätsbibliothek Braunschweig distanziert sich ausdrücklich von allen diskriminierenden, rassistischen, gewaltverherrlichenden, sexistischen oder nationalsozialistischen Inhalten.</p>
+<p>LeoPARD ist das institutionelle Publikationsrepositorium der Technischen Universität (TU) Braunschweig und wird von der Universitätsbibliothek betrieben. Er dient der Veröffentlichung von Forschungsergebnissen und -dokumentationen von Wissenschaftlerinnen und Wissenschaftlern der TU Braunschweig, von Spezialsammlungen der TU Braunschweig und von regionalen Einrichtungen sowie von digitalisierten Zeugnissen des regionalen kulturellen Erbes.  </p>
+
+<p><span class="inline-comment-marker" data-ref="5f1c6bfb-1e9a-4614-a0b6-5e466a7b3af9">Dabei macht die Universitätsbibliothek Braunschweig unter anderem zeitgeschichtliche Dokumente aus ihren Beständen für <strong>wissenschaftliche Zwecke, Forschung und Lehre</strong> auf LeoPARD zugänglich.</span> Diese Bestände unterliegen keiner Bewertung bzw. Zensur durch die Universitätsbibliothek. Die Universitätsbibliothek Braunschweig distanziert sich ausdrücklich von allen diskriminierenden, rassistischen, gewaltverherrlichenden, sexistischen oder nationalsozialistischen Inhalten.</p>
 
 <p>LeoPARD bietet die organisatorischen und technischen Rahmenbedingungen, um die dauerhafte Verfügbarkeit der publizierten <span class="inline-comment-marker" data-ref="3addfde5-9ad1-437c-a3b3-6825ca513d29">Objekte</span> zu gewährleisten.</p>
 
@@ -95,16 +93,14 @@ Telefon: +49 (0)531 391-5019</p>
 
 <p style="text-align: right;"><em>Stand: 12.08.2022</em></p>
 </div>
-</div>
-</div>
-</section><section xml:lang="en" title="Policy"><div>
+</div></section><section xml:lang="en" title="Policy"><div>
 <h1 class="leo-page-headline">Policy for publishing in LeoPARD</h1>
 
 <div class="row">
 <div class="col-12">
 <p>LeoPARD is the institutional repository of Technische Universität (TU) Braunschweig and is operated by the university library. It facilitates the publication of research results and documentation of scientists of TU Braunschweig, of special collections of TU Braunschweig and of regional institutions as well as of digitized evidence of the regional cultural heritage.</p>
 
-<p>Among other things, Braunschweig University Library makes contemporary historical documents from its collections available on LeoPARD for academic purposes, research and teaching. These collections are not subject to any evaluation or censorship by the University Library. Braunschweig University Library expressly distances itself from all discriminatory, racist, violence-glorifying, sexist or national socialist content.</p>
+<p>Among other things, Braunschweig University Library makes contemporary historical documents from its collections available on LeoPARD for <strong>academic purposes, research and teaching</strong>. These collections are not subject to any evaluation or censorship by the University Library. Braunschweig University Library expressly distances itself from all discriminatory, racist, violence-glorifying, sexist or national socialist content.</p>
 
 <p>LeoPARD provides the organizational and technical framework to ensure the permanent availability of the published objects.</p>
 
@@ -193,5 +189,4 @@ E-Mail: <span class="madress">forschungsdaten [at] tu-braunschweig.de</span><br 
 Telephone: +49 (0)531 391-5019</p>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="dbbs_admin" date="2023-04-18" time="14:40" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="celsner" date="2024-08-28" time="13:16" /></meta></MyCoReWebPage>
