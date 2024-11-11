@@ -347,8 +347,8 @@
   </xsl:template>
 
   <xsl:template name="print-open-create-contact-request-form-button">
-    <li>
-      <a id="createContactRequestMenuItem" class="dropdown-item" role="menuitem" tabindex="-1"
+    <li id="createContactRequestMenuItem">
+      <a class="dropdown-item" role="menuitem" tabindex="-1"
         data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objectId}">
         <xsl:value-of select="i18n:translate('digibib.contactRequest.frontend.button.contact')" />
       </a>
@@ -356,7 +356,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const menu = document.querySelector('div#mir-edit-div ul.dropdown-menu');
-        const item = document.querySelector('#createContactRequestMenuItem');
+        const item = document.querySelector('li#createContactRequestMenuItem');
         menu.append(item);
       });
     </script>
