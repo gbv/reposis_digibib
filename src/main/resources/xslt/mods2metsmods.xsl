@@ -194,7 +194,7 @@
         <xsl:copy>
             <xsl:apply-templates select="*|@*"/>
             <mods:recordInfo>
-                <mods:recordIdentifier source="leopard">
+                <mods:recordIdentifier source="LeoPARD">
                     <xsl:value-of select="$objectID"/>
                 </mods:recordIdentifier>
             </mods:recordInfo>
@@ -220,7 +220,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-                <mods:recordIdentifier source="leopard">
+                <mods:recordIdentifier source="LeoPARD">
                     <xsl:value-of select="$parentID"/>
                 </mods:recordIdentifier>
             </mods:recordInfo>
