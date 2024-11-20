@@ -12,6 +12,9 @@ lib/pi-tester.jar
 #intellij
 *.iml
 
+#visual studio code
+*.code-workspace
+
 # application specific files on server
 jwt.secret
 messages_de.resolved.properties
