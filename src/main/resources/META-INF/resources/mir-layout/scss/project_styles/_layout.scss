@@ -10,12 +10,10 @@
     position: relative;
     min-height: 100%;
   }
-  html body #page {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  section {
-    padding: 120px 0 2rem 0;
+
+  #page {
+    padding-top: 10rem;
+    padding-bottom: 4.5rem;
   }
 
 // Large devices (desktops) and below: <= 1200px
@@ -26,9 +24,6 @@
 // Medium devices (tablets) and below: <= 992px
 @include media-breakpoint-down(md) {
   // add/overwrite styles for responsive level md and lower
-  section {
-    padding: 2rem 0 2rem 0;
-  }
 }
 
 // Small devices (landscape phones) and below: <= 768px
@@ -39,7 +34,7 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
-  section {
-    padding: 1rem;
+  #page {
+    padding-top: 7.5rem;
   }
 }
