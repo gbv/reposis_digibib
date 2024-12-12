@@ -109,17 +109,16 @@
                                                 <xsl:variable name="licenseClass" select="'mir_licenses'"/>
                                                 <xsl:variable name="licenseId"
                                                               select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink-href, '#')"/>
-                                                <xsl:variable name="license"
+                                                <xsl:variable name="licenseCategory"
                                                               select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]" />
                                                 <xsl:choose>
-                                                  <xsl:when test="$license/url[@xlink:href]">
-                                                    <xsl:value-of select="$license/url/@xlink:href" />
+                                                  <xsl:when test="$licenseCategory/url[@xlink:href]">
+                                                    <xsl:value-of select="$licenseCategory/url/@xlink:href" />
                                                   </xsl:when>
                                                   <xsl:otherwise>
-                                                    <xsl:value-of select="$license/label[@xml:lang=$CurrentLang or position()=1]" />
+                                                    <xsl:value-of select="$licenseCategory/label[@xml:lang=$CurrentLang or position()=1]/@text" />
                                                   </xsl:otherwise>
                                                 </xsl:choose>
-                                                
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="$license"/>
