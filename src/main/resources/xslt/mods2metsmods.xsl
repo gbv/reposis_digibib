@@ -109,8 +109,17 @@
                                                 <xsl:variable name="licenseClass" select="'mir_licenses'"/>
                                                 <xsl:variable name="licenseId"
                                                               select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink-href, '#')"/>
-                                                <xsl:value-of
-                                                        select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]/label[@xml:lang=$CurrentLang or position()=0]"/>
+                                                <xsl:variable name="license"
+                                                              select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]" />
+                                                <xsl:choose>
+                                                  <xsl:when test="$license/url[@xlink:href]">
+                                                    <xsl:value-of select="$license/url/@xlink:href" />
+                                                  </xsl:when>
+                                                  <xsl:otherwise>
+                                                    <xsl:value-of select="$license/label[@xml:lang=$CurrentLang or position()=1]" />
+                                                  </xsl:otherwise>
+                                                </xsl:choose>
+                                                
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="$license"/>
