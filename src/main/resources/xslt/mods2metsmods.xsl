@@ -108,7 +108,7 @@
                                                     test="$object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']">
                                                 <xsl:variable name="licenseClass" select="'mir_licenses'"/>
                                                 <xsl:variable name="licenseId"
-                                                              select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink-href, '#')"/>
+                                                              select="substring-after($object/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:accessCondition[@type='use and reproduction']/@xlink:href, '#')"/>
                                                 <xsl:variable name="licenseCategory"
                                                               select="document('classification:metadata:-1:children:mir_licenses')/mycoreclass//category[@ID=$licenseId]" />
                                                 <xsl:choose>
