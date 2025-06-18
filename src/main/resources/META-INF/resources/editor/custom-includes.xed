@@ -2,6 +2,8 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor"
   xmlns:mir="http://www.mycore.de/mir">
 
+  <xed:load-resource name="mir_genres" uri="classification:metadata:-1:children:mir_genres"/>
+
   <xed:template id="language">
     <xed:bind xpath="mods:language">
       <div class="form-group row {$xed-validation-marker}">
@@ -148,16 +150,16 @@
                     <xed:output i18n="mir.select" />
                   </option>
                   <option value="article">
-                    <xed:output i18n="digibib.genre.publication" />
+                    <xed:output value="$mir_genres//category[@ID='article']/label[lang($CurrentLang)]/@text"/>
                   </option>
                   <option value="research_data">
-                    <xed:output i18n="digibib.genre.researchData" />
+                    <xed:output value="$mir_genres//category[@ID='research_data']/label[lang($CurrentLang)]/@text"/>
                   </option>
                   <option value="software">
-                    <xed:output i18n="digibib.genre.software" />
+                    <xed:output value="$mir_genres//category[@ID='software']/label[lang($CurrentLang)]/@text"/>
                   </option>
                   <option value="speech">
-                    <xed:output i18n="digibib.genre.presentation" />
+                    <xed:output value="$mir_genres//category[@ID='speech']/label[lang($CurrentLang)]/@text"/>
                   </option>
                 </select>
               </xed:bind>
