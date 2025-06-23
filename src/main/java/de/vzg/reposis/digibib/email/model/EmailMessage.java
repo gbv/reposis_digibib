@@ -154,7 +154,6 @@ public class EmailMessage {
         /**
          * Creates a new Builder with a sender and a single "To" recipient.
          *
-         * @param from the sender's email address, must not be
          * @param toRecipient a single primary recipient's email address
          */
         public Builder(String toRecipient) {
@@ -165,7 +164,6 @@ public class EmailMessage {
         /**
          * Creates a new Builder with a sender and multiple "To" recipients.
          *
-         * @param from the sender's email address
          * @param toRecipients list of primary recipient email addresses
          */
         public Builder(List<String> toRecipients) {
@@ -201,8 +199,8 @@ public class EmailMessage {
          * @param bccRecipients list of BCC recipient email addresses
          * @return this builder instance
          */
-        public Builder bccRecipients(List<String> ccRecipients) {
-            this.bccRecipients.addAll(ccRecipients);
+        public Builder bccRecipients(List<String> bccRecipients) {
+            this.bccRecipients.addAll(bccRecipients);
             return this;
         }
 
@@ -220,7 +218,7 @@ public class EmailMessage {
         /**
          * Sets the text body content of the email.
          *
-         * @param body the email body content
+         * @param textBody the email body content
          * @return this builder instance
          */
         public Builder textBody(String textBody) {
@@ -231,7 +229,7 @@ public class EmailMessage {
         /**
          * Sets the html body content of the email.
          *
-         * @param body the email body content
+         * @param htmlBody the email body content
          * @return this builder instance
          */
         public Builder htmlBody(String htmlBody) {

@@ -193,6 +193,10 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>org.apache.pdfbox</groupId>
+      <artifactId>pdfbox</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.eclipse.rdf4j</groupId>
       <artifactId>rdf4j-model</artifactId>
       <scope>compile</scope>
@@ -342,6 +346,8 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
+      <!-- required to mock static classes -->
+      <version>5.12.0</version> 
       <scope>test</scope>
     </dependency>
     <dependency>

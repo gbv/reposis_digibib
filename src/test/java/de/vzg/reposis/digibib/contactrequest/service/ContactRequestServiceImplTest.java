@@ -26,7 +26,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.mycore.common.MCRTestCase;
+import org.mycore.common.MCRJPATestCase;
 import org.mycore.common.events.MCREventManager;
 import org.mycore.datamodel.metadata.MCRObjectID;
 
@@ -45,7 +45,7 @@ import de.vzg.reposis.digibib.contactrequest.validation.ContactInfoValidator;
 import de.vzg.reposis.digibib.contactrequest.validation.ContactRequestValidator;
 import de.vzg.reposis.digibib.contactrequest.validation.ValidatorFacade;
 
-public class ContactRequestServiceImplTest extends MCRTestCase {
+public class ContactRequestServiceImplTest extends MCRJPATestCase {
 
     private final String OBJECT_ID = "mcr_test_00000001";
 
