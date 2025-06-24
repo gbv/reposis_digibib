@@ -16,7 +16,7 @@
  * along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.vzg.reposis.digibib.email.dto;
+package de.vzg.reposis.digibib.contactrequest.email.dto;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,10 +28,10 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 /**
- * DTOfor encapsulating email details for sending with the Java Mail API.
+ * DTO for encapsulating email details for sending with contact request emails.
  */
 @XmlRootElement(name = "email")
-public class SimpleEmailDto {
+public class ContactRequestEmailDto {
 
     private String from;
 
