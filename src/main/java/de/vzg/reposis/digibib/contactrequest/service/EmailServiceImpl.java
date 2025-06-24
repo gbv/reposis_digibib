@@ -38,9 +38,9 @@ import de.vzg.reposis.digibib.contactrequest.dto.ContactAttemptPartialUpdateDto;
 import de.vzg.reposis.digibib.contactrequest.dto.ContactRequestDto;
 import de.vzg.reposis.digibib.contactrequest.dto.util.Nullable;
 import de.vzg.reposis.digibib.contactrequest.email.EmailServiceHelper;
+import de.vzg.reposis.digibib.contactrequest.email.dto.ContactRequestEmailDto;
 import de.vzg.reposis.digibib.contactrequest.exception.ContactRequestException;
 import de.vzg.reposis.digibib.email.EmailClient;
-import de.vzg.reposis.digibib.email.dto.SimpleEmailDto;
 import de.vzg.reposis.digibib.email.exception.EmailException;
 import jakarta.mail.Flags;
 import jakarta.mail.Folder;
@@ -78,26 +78,27 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public void sendNewRequestInfo(ContactRequestDto contactRequestDto) {
-        final SimpleEmailDto newRequestInfoEmail = EmailServiceHelper.createNewRequestInfoEmail(contactRequestDto);
+        final ContactRequestEmailDto newRequestInfoEmail
+            = EmailServiceHelper.createNewRequestInfoEmail(contactRequestDto);
         newRequestInfoEmail.getTo().add(STAFF_EMAIL);
-        client.sendEmail(newRequestInfoEmail);
+        client.sendEmail(EmailServiceHelper.getSendRequest(newRequestInfoEmail));
     }
 
     @Override
     public void sendRequestConfirmation(ContactRequestDto contactRequestDto) {
-        final SimpleEmailDto requestConfirmationEmail
+        final ContactRequestEmailDto requestConfirmationEmail
             = EmailServiceHelper.createRequestConfirmationEmail(contactRequestDto);
         requestConfirmationEmail.getTo().add(contactRequestDto.getBody().getEmail());
-        client.sendEmail(requestConfirmationEmail);
+        client.sendEmail(EmailServiceHelper.getSendRequest(requestConfirmationEmail));
     }
 
     @Override
     public void sendRequestForwarding(ContactRequestDto contactRequestDto, ContactAttemptDto contactAttemptDto) {
-        final SimpleEmailDto requestForwardingEmail
+        final ContactRequestEmailDto requestForwardingEmail
             = EmailServiceHelper.createRequestForwardingEmail(contactRequestDto, contactAttemptDto);
         requestForwardingEmail.getHeaders().put(CONTACT_ATTEMPT_HEADER_NAME, contactAttemptDto.getId().toString());
         requestForwardingEmail.getTo().add(contactAttemptDto.getRecipientReference());
-        client.sendEmail(requestForwardingEmail);
+        client.sendEmail(EmailServiceHelper.getSendRequest(requestForwardingEmail));
     }
 
     @Override

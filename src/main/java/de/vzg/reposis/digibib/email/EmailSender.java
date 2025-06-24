@@ -18,24 +18,24 @@
 
 package de.vzg.reposis.digibib.email;
 
-import de.vzg.reposis.digibib.email.dto.SimpleEmailDto;
 import de.vzg.reposis.digibib.email.exception.EmailException;
+import de.vzg.reposis.digibib.email.model.EmailSendRequest;
 
 /**
  * Interface for sending emails. This interface defines methods for sending emails with various options such
  * as recipients, subject, body, and attachments.
  */
-public interface SimpleEmailSender {
+public interface EmailSender {
 
     /**
      * Sends an email to the specified recipient.
      * <p>
-     * This method uses the provided {@link SimpleEmailDto} object to construct the email message and send it
+     * This method uses the provided {@link EmailSendRequest} object to construct the email message and send it
      * to the recipient address.
      * </p>
      *
-     * @param email the email DTO containing email details
+     * @param EmailSendRequest the EmailSendRequest containing email details
      * @throws EmailException if an error occurs while sending the email
      */
-    void sendEmail(SimpleEmailDto email);
+    void sendEmail(EmailSendRequest emailSendRequest);
 }
