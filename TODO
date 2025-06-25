@@ -1,0 +1,13 @@
+Offene Fragen:
+  - Soll der Agreement-Flag nach der Übermittelung gelöscht werden?
+  - Wer ist Autor, welche Informationen sollen genutzt werden? Corresponding Author?
+  - Mehrfach-Felder ersetzen?
+  - PDF-Formular als Input für Übermittlung?
+    - Vorteil durch klare Definition der Felder können Anpassungen rundherum gemacht werden bzw. das Formular kann ist stabil
+    - Nachteil: Alles hardcoded
+    - Anderer Ansatz: PDF aus HTML rendern? Vorteil XSL kann genutzt werden
+  - PDF/A Kompatiblität?
+  - Sollen die Agreements in der Genre-Klassifikation gesetzt werden oder über Properties?
+    - Vorteil zur Laufzeit und dynamisch Anpassbar
+    - In welcher Sprache sollen die Agreements angezeigt werden? Es bräuchte für jeweilige Agreements unterschiedliche Version in mehreren Sprachen
+    
