@@ -1,0 +1,22 @@
+Offene Fragen:
+  - Soll der Agreement-Flag nach der Übermittelung gelöscht werden?
+  => agreemnt flag soll erstmal nicht gelöscht werden, zwecks dokumentation
+  - Wer ist Autor, welche Informationen sollen genutzt werden? Corresponding Author?
+  => mcruser => ldpa
+  => später anpassung (use case: sekräterin publiziert im namen des autors")
+  - Mehrfach-Felder ersetzen?
+  => am formular orientiert
+
+  - PDF-Formular als Input für Übermittlung?
+    - Vorteil durch klare Definition der Felder können Anpassungen rundherum gemacht werden bzw. das Formular kann ist stabil
+    - Nachteil: Alles hardcoded
+    - Anderer Ansatz: PDF aus HTML rendern? Vorteil XSL kann genutzt werden
+  => pdf formular als input
+
+  - PDF/A Kompatiblität?
+  => optional
+
+  - Sollen die Agreements in der Genre-Klassifikation gesetzt werden oder über Properties?
+    - Vorteil zur Laufzeit und dynamisch Anpassbar
+    - In welcher Sprache sollen die Agreements angezeigt werden? Es bräuchte für jeweilige Agreements unterschiedliche Version in mehreren Sprachen
+  => properties
