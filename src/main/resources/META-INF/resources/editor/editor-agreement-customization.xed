@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xed:template xmlns:xed="http://www.mycore.de/xeditor">
 
-  <!--
-  TODO
-  It would also be feasible to define the agreement via mycore.properties and explicitly specify agreements for genres using a comma-separated list.
-  If a genre is defined, the agreement would point to, e.g., <agreement name>_<genre>_<current lang>.pdf; otherwise, it would fall back to <agreement name>_<current lang>.pdf.
-  The advantage is that changes wouldn’t require updating the genre classification.
-  -->
   <xed:template id="agreement">
-    <xed:load-resource name="genres" uri="classification:metadata:-1:children:mir_genres"/>
-    <xed:bind name="agreement" xpath="$genres//category[@ID=$genre]/label[lang('x-agree')]/@text"/>
+    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.', 'research_data', '.Name')}"/>
+    <xed:load-resource name="agreement_default" uri="property:Digibib.Agreement.Default.Name"/>
+    <xed:bind name="agreement" xpath="$agreement_genre" default="{$agreement_default}"/>
+
     <xed:if test="string-length($agreement)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()=$agreement)">
       <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
         <fieldset>

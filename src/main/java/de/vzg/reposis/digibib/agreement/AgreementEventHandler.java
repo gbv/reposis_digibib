@@ -52,9 +52,6 @@ public class AgreementEventHandler extends MCREventHandlerBase {
 
         MCRJobQueueManager.getInstance().getJobQueue(DeliverAgreementJobAction.class)
             .add(DeliverAgreementJobAction.createJob(obj.getId()));
-
-        // TODO remove flags if exist or are them required later?
-        // obj.getService().removeFlags(AGREEMENT_FLAG);
     }
 
     private Optional<String> getGenre(MCRObject object) {
@@ -64,7 +61,7 @@ public class AgreementEventHandler extends MCREventHandlerBase {
     }
 
     private Optional<String> getAgreementName(String genre) {
-        // TODO include sub genres like software
+        // TODO load file name from properties
         return MCRCategoryDAOFactory.getInstance().getCategory(MCRCategoryID.fromString("mir_genres"), -1).getChildren()
             .stream().filter(c -> Objects.equals(genre, c.getId().getId()))
             .map(c -> c.getLabel("x-agree")).filter(Optional::isPresent).map(c -> c.get().getText()).findFirst();
