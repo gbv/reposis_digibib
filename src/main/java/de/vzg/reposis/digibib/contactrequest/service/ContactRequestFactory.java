@@ -190,7 +190,7 @@ public class ContactRequestFactory {
     }
 
     private static EmailService createEmailService() {
-        return new EmailServiceImpl(EmailClientFactory.getInstance("contactrequest"));
+        return new EmailServiceImpl(EmailClientFactory.obstainInstance("contactrequest"));
     }
 
 }

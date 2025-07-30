@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreobject xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel-mods.xsd">
+  <structure>
+  </structure>
+  <metadata>
+    <def.modsContainer class="MCRMetaXML" heritable="false" notinherit="true">
+      <modsContainer inherited="0">
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <mods:titleInfo type="translated" xml:lang="de" xlink:type="simple">
+            <mods:title>Title</mods:title>
+          </mods:titleInfo>
+       	  <mods:identifier type="doi">10.1000/182</mods:identifier>
+       	  <mods:accessCondition type="use and reproduction" xlink:href="http://www.mycore.org/classifications/mir_licenses#cc_by-nc-sa_4.0" xlink:type="simple"/>
+       	  <mods:accessCondition type="embargo" xlink:type="simple">2025-01-01</mods:accessCondition>
+                 <mods:note type="admin" xlink:type="simple">Comment</mods:note>
+       	</mods:mods>
+      </modsContainer>
+    </def.modsContainer>
+  </metadata>
+  <service>
+    <servdates class="MCRMetaISO8601Date">
+    </servdates>
+    <servflags class="MCRMetaLangText">
+      <servflag type="createdby" inherited="0" form="plain">administrator</servflag>
+    </servflags>
+    <servstates class="MCRMetaClassification">
+    </servstates>
+  </service>
+</mycoreobject>
