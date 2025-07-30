@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xed:template xmlns:xed="http://www.mycore.de/xeditor">
 
-  <!--
-  TODO
-  It would also be feasible to define the agreement via mycore.properties and explicitly specify agreements for genres using a comma-separated list.
-  If a genre is defined, the agreement would point to, e.g., <agreement name>_<genre>_<current lang>.pdf; otherwise, it would fall back to <agreement name>_<current lang>.pdf.
-  The advantage is that changes wouldn’t require updating the genre classification.
-  -->
   <xed:template id="agreement">
-    <xed:load-resource name="genres" uri="classification:metadata:-1:children:mir_genres"/>
-    <xed:bind name="agreement" xpath="$genres//category[@ID=$genre]/label[lang('x-agree')]/@text"/>
-    <xed:if test="string-length($agreement)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()=$agreement)">
-      <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
+    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.', $genre_intern, '.Name')}"/>
+    <xed:load-resource name="agreement_default" uri="property:Digibib.Agreement.Default.Name"/>
+    <xed:bind name="agreement" xpath="$agreement_genre" default="{$agreement_default}"/>
+    <xed:if test="string-length($agreement)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreementConfirmedFlag']/text()=$agreement)">
+      <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='confirmedAgreement']">
         <fieldset>
           <legend class="mir-fieldset-legend">
             <xed:output i18n="digibib.editor.agreement"/>
@@ -31,10 +26,10 @@
             </div>
           </div>
         </fieldset>
-        <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true" i18n="digibib.editor.validation.agreement"/>
+        <xed:validate display="global" xpath="//servflag[@type='confirmedAgreement']" required="true" i18n="digibib.editor.validation.agreement"/>
       </xed:bind>
     </xed:if>
-    <xed:cleanup-rule xpath="//servflag[@type='agreement']" relevant-if="string-length(text())&gt;0"/>
+    <xed:cleanup-rule xpath="//servflag[@type='confirmedAgreement']" relevant-if="string-length(text())&gt;0"/>
   </xed:template>
 
   <xed:modify ref="genres.submit">

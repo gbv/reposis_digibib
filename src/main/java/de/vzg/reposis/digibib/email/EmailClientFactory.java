@@ -60,8 +60,12 @@ public class EmailClientFactory {
      * @param name the unique name associated with the email client instance
      * @return the email client instance for the specified name
      */
-    public static EmailClient getInstance(String name) {
-        return sessions.computeIfAbsent(name, n -> new EmailClient(createSession(n)));
+    public static EmailClient obstainInstance(String name) {
+        return sessions.computeIfAbsent(name, EmailClientFactory::createInstance);
+    }
+
+    public static EmailClient createInstance(String name) {
+        return new EmailClient(createSession(name));
     }
 
     private static Session createSession(String name) {

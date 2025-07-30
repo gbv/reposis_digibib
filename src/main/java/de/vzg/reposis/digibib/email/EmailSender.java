@@ -34,7 +34,7 @@ public interface EmailSender {
      * to the recipient address.
      * </p>
      *
-     * @param EmailSendRequest the EmailSendRequest containing email details
+     * @param emailSendRequest the EmailSendRequest containing email details
      * @throws EmailException if an error occurs while sending the email
      */
     void sendEmail(EmailSendRequest emailSendRequest);
