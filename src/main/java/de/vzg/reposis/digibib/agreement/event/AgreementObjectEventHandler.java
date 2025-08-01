@@ -1,4 +1,4 @@
-package de.vzg.reposis.digibib.agreement;
+package de.vzg.reposis.digibib.agreement.event;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +12,9 @@ import org.mycore.common.events.MCREventHandlerBase;
 import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.mods.MCRMODSWrapper;
 import org.mycore.services.queuedjob.MCRJobQueueManager;
+
+import de.vzg.reposis.digibib.agreement.job.DeliverAgreementJobAction;
+import de.vzg.reposis.digibib.agreement.model.AgreementFactory;
 
 public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
@@ -59,7 +62,7 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
         }
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
         MCRJobQueueManager.getInstance().getJobQueue(DeliverAgreementJobAction.class)
-            .add(DeliverAgreementJobAction.createJob(obj.getId()));
+            .add(DeliverAgreementJobAction.createJob(AgreementFactory.fromObject(obj)));
     }
 
     private List<String> getExistingAgreements(MCRObject obj) {
