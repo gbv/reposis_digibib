@@ -15,7 +15,6 @@ import de.vzg.reposis.digibib.email.model.EmailAttachment;
 import de.vzg.reposis.digibib.email.model.EmailMessage;
 import de.vzg.reposis.digibib.email.model.EmailSendRequest;
 
-// TODO configuration
 @MCRConfigurationProxy(proxyClass = AgreementMailTransmitter.Factory.class)
 public class AgreementMailTransmitter implements AgreementTransmitter {
 
@@ -47,7 +46,7 @@ public class AgreementMailTransmitter implements AgreementTransmitter {
         @MCRProperty(name = "Recipient")
         public String recipient;
 
-        @MCRProperty(name = "EmailClient.Name")
+        @MCRProperty(name = "EmailClient")
         public String clientName;
 
         @Override

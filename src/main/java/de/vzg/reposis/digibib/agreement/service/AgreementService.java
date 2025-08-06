@@ -6,6 +6,9 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mycore.common.config.MCRConfiguration2;
+import org.mycore.datamodel.metadata.MCRMetadataManager;
+import org.mycore.datamodel.metadata.MCRObject;
+import org.mycore.datamodel.metadata.MCRObjectID;
 
 import de.vzg.reposis.digibib.agreement.model.Agreement;
 import de.vzg.reposis.digibib.agreement.pdf.AgreementPdfCreatorFactory;
@@ -16,7 +19,7 @@ public class AgreementService {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final String AGREEMENT_SERVICE_PROP_PREFIX = "Digibib.AgreementService.";
+    private static final String AGREEMENT_SERVICE_PROP_PREFIX = "Digibib.Agreement.Service.";
 
     private AgreementTransmitter transmitter;
 
@@ -41,15 +44,17 @@ public class AgreementService {
         return new AgreementService(sender, creatorFactory);
     }
 
-    public void transferAgreement(Agreement agreement) {
+    public void transferAgreement(MCRObjectID objectId, String agreementName) {
         final ByteArrayOutputStream output = new ByteArrayOutputStream();
+        final MCRObject object = MCRMetadataManager.retrieveMCRObject(objectId);
+        final Agreement agreement = AgreementFactory.fromObject(object);
         try {
-            pdfCreatorFactory.getCreatorFor(agreement).createPdf(agreement, output);
+            pdfCreatorFactory.getCreatorFor(agreementName).createPdf(agreement, output);
             byte[] pdfBytes = output.toByteArray();
-            transmitter.send(agreement.doi(), pdfBytes);
-            LOGGER.info("Agreement with DOI {} was sent successfully.", agreement.doi());
+            transmitter.send(agreement.getDoi(), pdfBytes);
+            LOGGER.info("Agreement with DOI {} was sent successfully.", agreement.getDoi());
         } catch (IOException | RuntimeException e) {
-            throw new AgreementTransportException("Failed to send agreement for DOI " + agreement.doi(), e);
+            throw new AgreementTransportException("Failed to send agreement for DOI " + agreement.getDoi(), e);
         }
     }
 

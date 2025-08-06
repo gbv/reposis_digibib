@@ -1,8 +1,8 @@
 package de.vzg.reposis.digibib.agreement.transport;
 
-import org.mycore.common.MCRException;
+import de.vzg.reposis.digibib.agreement.exception.AgreementException;
 
-public class AgreementTransportException extends MCRException {
+public class AgreementTransportException extends AgreementException {
 
     private static final long serialVersionUID = 1L;
 

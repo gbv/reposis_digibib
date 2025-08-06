@@ -14,19 +14,18 @@ import org.mycore.mods.MCRMODSWrapper;
 import org.mycore.services.queuedjob.MCRJobQueueManager;
 
 import de.vzg.reposis.digibib.agreement.job.DeliverAgreementJobAction;
-import de.vzg.reposis.digibib.agreement.model.AgreementFactory;
 
 public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
     private static final Logger LOGGER = LogManager.getLogger();
+
+    private static final String CONFIG_PREFIX = "Digibib.Agreement.";
 
     private static final String AGREEMENT_DEFAULT_NAME_CONF = "Default";
 
     private static final String AGREEMENT_FLAG = "agreement";
 
     private static final String STATE_PUBLISHED = "published";
-
-    private static final String CONFIG_PREFIX = "Digibib.Agreement.";
 
     @Override
     protected void handleObjectUpdated(MCREvent evt, MCRObject obj) {
@@ -60,9 +59,10 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
             LOGGER.debug("{} already has the agreement '{}'. Skipping...", objId, requiredAgreementName);
             return;
         }
+        // TODO remove not necessary agreements?
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
         MCRJobQueueManager.getInstance().getJobQueue(DeliverAgreementJobAction.class)
-            .add(DeliverAgreementJobAction.createJob(AgreementFactory.fromObject(obj)));
+            .add(DeliverAgreementJobAction.createJob(obj.getId(), requiredAgreementName));
     }
 
     private List<String> getExistingAgreements(MCRObject obj) {

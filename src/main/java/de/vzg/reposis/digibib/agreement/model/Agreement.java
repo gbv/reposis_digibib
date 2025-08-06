@@ -2,18 +2,39 @@ package de.vzg.reposis.digibib.agreement.model;
 
 import java.util.Date;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+
+@XmlRootElement(name = "agreement")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Agreement {
 
-    private String name;
+    @XmlElement
     private Author author;
+
+    @XmlElement
     private String title;
+
+    @XmlElement
     private String license;
+
+    @XmlElement
     private String doi;
+
+    @XmlElement
     private String comment;
+
+    @XmlElement
+    @XmlSchemaType(name = "date")
     private Date embargo;
 
+    public Agreement() {
+    }
+
     private Agreement(Builder builder) {
-        this.name = builder.name;
         this.title = builder.title;
         this.license = builder.license;
         this.doi = builder.doi;
@@ -22,37 +43,56 @@ public class Agreement {
         this.author = builder.author;
     }
 
-    public String name() {
-        return name;
-    }
-
-    public Author author() {
+    public Author getAuthor() {
         return author;
     }
 
-    public String title() {
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public String license() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLicense() {
         return license;
     }
 
-    public String doi() {
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public String getDoi() {
         return doi;
     }
 
-    public String comment() {
+    public void setDoi(String doi) {
+        this.doi = doi;
+    }
+
+    public String getComment() {
         return comment;
     }
 
-    public Date embargo() {
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Date getEmbargo() {
         return embargo;
+    }
+
+    public void setEmbargo(Date embargo) {
+        this.embargo = embargo;
     }
 
     public static class Builder {
 
-        private String name;
         private Author author;
         private String title;
         private String license;
@@ -61,11 +101,6 @@ public class Agreement {
         private Date embargo;
 
         public Builder() {
-        }
-
-        public Builder author(String name) {
-            this.name = name;
-            return this;
         }
 
         public Builder author(Author author) {

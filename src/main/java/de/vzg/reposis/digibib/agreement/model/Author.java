@@ -1,11 +1,28 @@
 package de.vzg.reposis.digibib.agreement.model;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "author")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Author {
 
+    @XmlElement
     private String name;
+
+    @XmlElement
     private String email;
+
+    @XmlElement
     private String phone;
+
+    @XmlElement
     private String institute;
+
+    public Author() {
+    }
 
     private Author(Builder builder) {
         this.name = builder.name;
@@ -18,16 +35,32 @@ public class Author {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
         return phone;
     }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getInstitute() {
         return institute;
+    }
+
+    public void setInstitute(String institute) {
+        this.institute = institute;
     }
 
     public static class Builder {
