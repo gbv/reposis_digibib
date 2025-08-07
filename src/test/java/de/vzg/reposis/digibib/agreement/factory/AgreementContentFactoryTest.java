@@ -8,7 +8,11 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.Map;
 
+import javax.xml.transform.Source;
+import javax.xml.transform.TransformerException;
+
 import org.jdom2.JDOMException;
+import org.jdom2.transform.JDOMSource;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.mycore.common.MCRTestCase;
@@ -16,29 +20,22 @@ import org.mycore.common.content.MCRContent;
 import org.mycore.common.content.MCRURLContent;
 import org.mycore.datamodel.metadata.MCRObject;
 
-import de.vzg.reposis.digibib.agreement.factory.AgreementContentFactory;
 import de.vzg.reposis.digibib.agreement.model.AgreementContent;
 import de.vzg.reposis.digibib.agreement.model.Author;
 import de.vzg.reposis.digibib.agreement.xml.AgreementAuthorURIResolver;
+import de.vzg.reposis.digibib.agreement.xml.AgreementXmlMapper;
 
 public class AgreementContentFactoryTest extends MCRTestCase {
 
     private static final String INPUT_FILE_PATH = "/agreement/mods_object.xml";
 
     private static final String TITLE = "Title";
-
     private static final String DOI = "10.1000/182";
-
     private static final String LICENSE = "cc_by-nc-sa_4.0";
-
     private static final LocalDate EMBARGO = LocalDate.parse("2025-01-01");
-
     private static final String AUTHOR_NAME = "Author";
-
     private static final String AUTHOR_EMAIL = "test@test.de";
-
     private static final String AUTHOR_INSTITUTE = "institue";
-
     private static final String AUTHOR_PHONE = "01234567899";
 
     @Override
@@ -76,13 +73,18 @@ public class AgreementContentFactoryTest extends MCRTestCase {
     public static class AgreementTestAuthorURIResolver extends AgreementAuthorURIResolver {
 
         @Override
-        public Author resolveLocalAuthor(String username) {
-            return new Author.Builder()
+        public Source resolve(String href, String base) throws TransformerException {
+            final Author author = new Author.Builder()
                 .name(AUTHOR_NAME)
                 .email(AUTHOR_EMAIL)
                 .institute(AUTHOR_INSTITUTE)
                 .phone(AUTHOR_PHONE)
                 .build();
+            try {
+                return new JDOMSource(AgreementXmlMapper.toDocument(author));
+            } catch (IOException e) {
+                throw new TransformerException(e);
+            }
         }
     }
 }
