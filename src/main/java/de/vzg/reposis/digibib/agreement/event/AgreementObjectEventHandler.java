@@ -13,7 +13,9 @@ import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.mods.MCRMODSWrapper;
 import org.mycore.services.queuedjob.MCRJobQueueManager;
 
-import de.vzg.reposis.digibib.agreement.job.DeliverAgreementJobAction;
+import de.vzg.reposis.digibib.agreement.factory.AgreementContentFactory;
+import de.vzg.reposis.digibib.agreement.job.TransferAgreementJobAction;
+import de.vzg.reposis.digibib.agreement.model.Agreement;
 
 public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
@@ -26,6 +28,16 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
     private static final String AGREEMENT_FLAG = "agreement";
 
     private static final String STATE_PUBLISHED = "published";
+
+    private final AgreementContentFactory contentFactory;
+
+    public AgreementObjectEventHandler(AgreementContentFactory contentFactory) {
+        this.contentFactory = contentFactory;
+    }
+
+    public AgreementObjectEventHandler() {
+        this(new AgreementContentFactory());
+    }
 
     @Override
     protected void handleObjectUpdated(MCREvent evt, MCRObject obj) {
@@ -59,10 +71,11 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
             LOGGER.debug("{} already has the agreement '{}'. Skipping...", objId, requiredAgreementName);
             return;
         }
-        // TODO remove not necessary agreements?
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
-        MCRJobQueueManager.getInstance().getJobQueue(DeliverAgreementJobAction.class)
-            .add(DeliverAgreementJobAction.createJob(obj.getId(), requiredAgreementName));
+        final Agreement agreement = new Agreement(requiredAgreementName, contentFactory.fromObject(obj));
+        MCRJobQueueManager.getInstance().getJobQueue(TransferAgreementJobAction.class)
+            .add(TransferAgreementJobAction.createJob(agreement));
+        // TODO remove not necessary agreements?
     }
 
     private List<String> getExistingAgreements(MCRObject obj) {

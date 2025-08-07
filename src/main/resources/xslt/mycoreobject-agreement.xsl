@@ -7,10 +7,10 @@
   <xsl:output encoding="UTF-8"/>
 
   <xsl:template match="mycoreobject">
-  	<agreement>
+  	<content>
       <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods"/>
       <xsl:copy-of select="document('agreementauthor:administrator')"/>
-  	</agreement>
+  	</content>
   </xsl:template>
 
   <xsl:template match="mods:mods">

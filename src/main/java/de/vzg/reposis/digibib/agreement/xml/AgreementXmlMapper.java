@@ -7,6 +7,7 @@ import org.jdom2.Document;
 import org.mycore.common.content.MCRJAXBContent;
 
 import de.vzg.reposis.digibib.agreement.model.Agreement;
+import de.vzg.reposis.digibib.agreement.model.AgreementContent;
 import de.vzg.reposis.digibib.agreement.model.Author;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -20,11 +21,11 @@ public class AgreementXmlMapper {
 
     }
 
-    public static Agreement transformToAgreement(InputStream stream) throws JAXBException {
-        return transform(stream, Agreement.class);
+    public static AgreementContent unmarshalAgreementContent(InputStream stream) throws JAXBException {
+        return transform(stream, AgreementContent.class);
     }
 
-    public static Author transformToAuthor(InputStream stream) throws JAXBException {
+    public static Author unmarshalAuthor(InputStream stream) throws JAXBException {
         return transform(stream, Author.class);
     }
 
@@ -50,7 +51,7 @@ public class AgreementXmlMapper {
 
     private static JAXBContext initJaxbContext() {
         try {
-            return JAXBContext.newInstance(Agreement.class, Author.class);
+            return JAXBContext.newInstance(AgreementContent.class, Author.class);
         } catch (JAXBException e) {
             throw new ExceptionInInitializerError(e);
         }

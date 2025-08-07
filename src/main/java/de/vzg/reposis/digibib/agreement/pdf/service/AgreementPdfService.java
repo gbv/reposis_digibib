@@ -1,4 +1,4 @@
-package de.vzg.reposis.digibib.agreement.pdf;
+package de.vzg.reposis.digibib.agreement.pdf.service;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,20 +12,21 @@ import org.mycore.common.config.annotation.MCRInstance;
 import org.mycore.common.config.annotation.MCRProperty;
 
 import de.vzg.reposis.digibib.agreement.model.Agreement;
+import de.vzg.reposis.digibib.agreement.pdf.formfiller.AgreementPdfFormFiller;
 
-@MCRConfigurationProxy(proxyClass = AgreementPdfCreator.Factory.class)
-public class AgreementPdfCreator {
+@MCRConfigurationProxy(proxyClass = AgreementPdfService.Factory.class)
+public class AgreementPdfService {
 
     private final String templateResource;
 
     private final AgreementPdfFormFiller filler;
 
-    public AgreementPdfCreator(String templateResource, AgreementPdfFormFiller filler) {
+    public AgreementPdfService(String templateResource, AgreementPdfFormFiller filler) {
         this.templateResource = templateResource;
         this.filler = filler;
     }
 
-    public void createPdf(Agreement agreement, OutputStream outputStream) throws IOException {
+    public void generatePdf(Agreement agreement, OutputStream outputStream) throws IOException {
         try (
             PDDocument document = Loader.loadPDF(getClass().getResourceAsStream(templateResource).readAllBytes())) {
             PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
@@ -38,7 +39,7 @@ public class AgreementPdfCreator {
         }
     }
 
-    public static final class Factory implements Supplier<AgreementPdfCreator> {
+    public static final class Factory implements Supplier<AgreementPdfService> {
 
         @MCRProperty(name = "TemplateFilePath")
         public String templateFilePath;
@@ -47,8 +48,8 @@ public class AgreementPdfCreator {
         public AgreementPdfFormFiller formFiller;
 
         @Override
-        public AgreementPdfCreator get() {
-            return new AgreementPdfCreator(templateFilePath, formFiller);
+        public AgreementPdfService get() {
+            return new AgreementPdfService(templateFilePath, formFiller);
         }
 
     }

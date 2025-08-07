@@ -1,4 +1,4 @@
-package de.vzg.reposis.digibib.agreement.transport.impl;
+package de.vzg.reposis.digibib.agreement.transport;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -6,8 +6,6 @@ import java.util.function.Supplier;
 import org.mycore.common.config.annotation.MCRConfigurationProxy;
 import org.mycore.common.config.annotation.MCRProperty;
 
-import de.vzg.reposis.digibib.agreement.transport.AgreementTransmitter;
-import de.vzg.reposis.digibib.agreement.transport.AgreementTransportException;
 import de.vzg.reposis.digibib.email.EmailClient;
 import de.vzg.reposis.digibib.email.EmailClientFactory;
 import de.vzg.reposis.digibib.email.exception.EmailException;

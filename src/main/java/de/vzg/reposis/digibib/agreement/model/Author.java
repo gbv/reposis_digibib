@@ -1,5 +1,7 @@
 package de.vzg.reposis.digibib.agreement.model;
 
+import java.util.Objects;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -63,6 +65,27 @@ public class Author {
         this.institute = institute;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, institute, name, phone);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Author other = (Author) obj;
+        return Objects.equals(email, other.email) && Objects.equals(institute, other.institute)
+            && Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
+    }
+
     public static class Builder {
         private String name;
         private String email;
@@ -93,4 +116,5 @@ public class Author {
             return new Author(this);
         }
     }
+
 }
