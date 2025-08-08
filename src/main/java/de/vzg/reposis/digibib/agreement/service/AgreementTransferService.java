@@ -45,7 +45,7 @@ public class AgreementTransferService {
         final ByteArrayOutputStream output = new ByteArrayOutputStream();
         try {
             AgreementPdfService serivce = pdfServiceProvider.getPdfService(agreement.getAgreementName()).orElseThrow();
-            serivce.generatePdf(agreement, output);
+            serivce.generatePdf(agreement.getContent(), output);
             byte[] pdfBytes = output.toByteArray();
             transmitter.send(doi, pdfBytes);
             LOGGER.info("Agreement with DOI {} was sent successfully.", doi);
