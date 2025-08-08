@@ -2,7 +2,8 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor">
 
   <xed:template id="agreement">
-    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.', 'research_data', '.Name')}"/>
+    <!-- TODO $genre is not available in editor-dynamic -->
+    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.', $genre, '.Name')}"/>
     <xed:load-resource name="agreement_default" uri="property:Digibib.Agreement.Default.Name"/>
     <xed:bind name="agreement" xpath="$agreement_genre" default="{$agreement_default}"/>
 

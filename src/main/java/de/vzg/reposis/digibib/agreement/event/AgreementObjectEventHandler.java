@@ -72,8 +72,8 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
     private void enqueueAgreementJobIfMissing(MCRObject obj, List<String> existingAgreements,
         String requiredAgreementName) {
         final String objId = obj.getId().toString();
-        if (existingAgreements.contains(requiredAgreementName)) {
-            LOGGER.debug("{} already has the agreement '{}'. Skipping...", objId, requiredAgreementName);
+        if (!existingAgreements.contains(requiredAgreementName)) {
+            LOGGER.debug("{} does not have the required agreement '{}'. Proceeding...", objId, requiredAgreementName);
             return;
         }
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
