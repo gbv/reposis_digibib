@@ -46,6 +46,8 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
     @Override
     protected void handleObjectUpdated(MCREvent evt, MCRObject obj) {
+        // TODO check state changed to publish otherwise return
+        // TODO check doi exists
         final String objId = obj.getId().toString();
         if (!isPublished(obj)) {
             LOGGER.debug("{} is not published. Skipping...", objId);
@@ -80,6 +82,7 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
         final Agreement agreement = new Agreement(requiredAgreementName, contentFactory.fromObject(obj));
         jobQueue.add(TransferAgreementJobAction.createJob(agreement));
         // TODO remove not necessary agreements?
+        // TODO save transfer time?
     }
 
     private List<String> getExistingAgreements(MCRObject obj) {

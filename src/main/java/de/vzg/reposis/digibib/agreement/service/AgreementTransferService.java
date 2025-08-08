@@ -47,7 +47,7 @@ public class AgreementTransferService {
             AgreementPdfService serivce = pdfServiceProvider.getPdfService(agreement.getAgreementName()).orElseThrow();
             serivce.generatePdf(agreement.getContent(), output);
             byte[] pdfBytes = output.toByteArray();
-            transmitter.send(doi, pdfBytes);
+            transmitter.send(doi + ".pdf", pdfBytes);
             LOGGER.info("Agreement with DOI {} was sent successfully.", doi);
         } catch (IOException | RuntimeException e) {
             throw new AgreementTransportException("Failed to send agreement for DOI " + doi, e);
