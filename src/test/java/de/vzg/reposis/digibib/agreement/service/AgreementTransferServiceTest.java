@@ -56,11 +56,11 @@ public class AgreementTransferServiceTest {
             ByteArrayOutputStream outputStream = invocation.getArgument(1);
             outputStream.write("PDF content".getBytes());
             return null;
-        }).when(pdfCreator).generatePdf(eq(agreement), any(ByteArrayOutputStream.class));
+        }).when(pdfCreator).generatePdf(eq(content), any(ByteArrayOutputStream.class));
 
         agreementService.transferAgreement(agreement);
         verify(pdfCreatorFactory).getPdfService(AGREEMENT_NAME);
-        verify(pdfCreator).generatePdf(eq(agreement), any(ByteArrayOutputStream.class));
+        verify(pdfCreator).generatePdf(eq(content), any(ByteArrayOutputStream.class));
         verify(transmitter).send(eq(DOI), any(byte[].class));
     }
 
@@ -74,7 +74,7 @@ public class AgreementTransferServiceTest {
 
         when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(Optional.of(pdfCreator));
 
-        doThrow(new IOException("PDF generation failed")).when(pdfCreator).generatePdf(eq(agreement),
+        doThrow(new IOException("PDF generation failed")).when(pdfCreator).generatePdf(eq(content),
             any(ByteArrayOutputStream.class));
 
         agreementService.transferAgreement(agreement);
@@ -94,7 +94,7 @@ public class AgreementTransferServiceTest {
             ByteArrayOutputStream outputStream = invocation.getArgument(1);
             outputStream.write("PDF content".getBytes());
             return null;
-        }).when(pdfCreator).generatePdf(eq(agreement), any(ByteArrayOutputStream.class));
+        }).when(pdfCreator).generatePdf(eq(content), any(ByteArrayOutputStream.class));
 
         doThrow(new RuntimeException("Transmit failed")).when(transmitter).send(eq(DOI), any(byte[].class));
 
