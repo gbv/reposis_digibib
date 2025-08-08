@@ -13,6 +13,13 @@ import de.vzg.reposis.digibib.agreement.model.AgreementContent;
 import de.vzg.reposis.digibib.agreement.xml.AgreementXmlMapper;
 import jakarta.xml.bind.JAXBException;
 
+/**
+ * Factory class for creating {@link AgreementContent} instances from {@link MCRObject} instances.
+ * <p>
+ * This class performs an XSLT transformation on the XML representation of the MCRObject
+ * using a predefined transformer, then unmarshals the transformed XML into an AgreementContent
+ * object via JAXB.
+ */
 public class AgreementContentFactory {
 
     private static final String TRANSFORMER_ID = "mycoreobject-agreement";

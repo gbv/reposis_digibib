@@ -16,6 +16,13 @@ import org.apache.pdfbox.pdmodel.interactive.form.PDTextField;
 import de.vzg.reposis.digibib.agreement.model.AgreementContent;
 import de.vzg.reposis.digibib.agreement.model.Author;
 
+/**
+ * Fills an interactive PDF form (AcroForm) with data from an {@link AgreementContent} instance.
+ * <p>
+ * This class is responsible for mapping the agreement content (such as title, comments,
+ * author details, and license selection) to the appropriate form fields in the PDF template.
+ * It also sets the default font and field appearance for consistent formatting.
+ */
 public class AgreementPdfFormFiller {
 
     private static final String FONT_NAME = "Helvetica";
@@ -37,6 +44,14 @@ public class AgreementPdfFormFiller {
         LICENSE_MAPPING.put("cc_by_4.0", "Auswahl1");
     }
 
+    /**
+     * Fills the given PDF AcroForm with the provided agreement content.
+     *
+     * @param acroForm the PDF form to populate
+     * @param agreementContent the agreement content containing the data to fill in
+     * @throws IOException if there is an error accessing or modifying the PDF fields
+     * @throws IllegalArgumentException if any expected text field does not exist or has the wrong type
+     */
     public void fillForm(PDAcroForm acroForm, AgreementContent agreementContent) throws IOException {
         acroForm.getDefaultResources().put(COSName.getPDFName(FONT_NAME), new PDType1Font(FontName.HELVETICA));
 

@@ -7,19 +7,35 @@ import java.util.function.Supplier;
 import org.mycore.common.config.annotation.MCRConfigurationProxy;
 import org.mycore.common.config.annotation.MCRProperty;
 
+/**
+ * Loader for retrieving a PDF form template from the application's resources.
+ * <p>
+ * The template is read as a byte array from the classpath using the specified resource path.
+ */
 @MCRConfigurationProxy(proxyClass = AgreementPdfTemplateLoader.Factory.class)
 public class AgreementPdfTemplateLoader {
 
     private final String resourcePath;
 
+    /**
+     * Creates a new {@code AgreementPdfTemplateLoader} with the given resource path.
+     *
+     * @param resourcePath the classpath resource path to the PDF template
+     */
     public AgreementPdfTemplateLoader(String resourcePath) {
         this.resourcePath = resourcePath;
     }
 
+    /**
+     * Loads the PDF template from the configured resource path.
+     *
+     * @return the template file as a byte array
+     * @throws IOException if an I/O error occurs while reading the template
+     */
     public byte[] loadTemplate() throws IOException {
         try (InputStream in = getClass().getResourceAsStream(resourcePath)) {
             if (in == null) {
-                throw new IllegalArgumentException("Template resource not found: " + resourcePath);
+                throw new IOException("Template resource not found: " + resourcePath);
             }
             return in.readAllBytes();
         }

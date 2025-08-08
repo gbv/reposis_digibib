@@ -14,6 +14,14 @@ import de.vzg.reposis.digibib.agreement.model.AgreementContent;
 import de.vzg.reposis.digibib.agreement.model.Author;
 import de.vzg.reposis.digibib.agreement.service.AgreementTransferService;
 
+/**
+ * A queued job action that transfers an {@link Agreement} to a remote service
+ * using the {@link AgreementTransferService}.
+ * <p>
+ * This job is designed to be executed asynchronously by the MyCoRe queued job system.
+ * It stores all agreement and content data as job parameters so that it can be
+ * serialized, queued, and later reconstructed via {@link #getAgreement()}.
+ */
 public class TransferAgreementJobAction extends MCRJobAction {
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -33,16 +41,36 @@ public class TransferAgreementJobAction extends MCRJobAction {
 
     private final AgreementTransferService agreementService;
 
+    /**
+     * Creates a new {@code TransferAgreementJobAction} for the given job using
+     * the default {@link AgreementTransferService} instance.
+     *
+     * @param job the queued job
+     */
     public TransferAgreementJobAction(MCRJob job) {
         this(job, AgreementTransferService.obtainInstance());
     }
 
+    /**
+     * Creates a new {@code TransferAgreementJobAction} for the given job
+     * and a custom {@link AgreementTransferService} instance.
+     *
+     * @param job the queued job
+     * @param agreementService the service used to transfer agreements
+     */
     public TransferAgreementJobAction(MCRJob job, AgreementTransferService agreementService) {
         super(job);
         this.agreementService = agreementService;
     }
 
-    public static MCRJob createJob(Agreement agreement) {
+    /**
+     * Creates a new {@link MCRJob} instance containing all parameters
+     * necessary to reconstruct and transfer the given {@link Agreement}.
+     *
+     * @param agreement the agreement to transfer
+     * @return a configured job ready for queuing
+     */
+    public static MCRJob fromAgreement(Agreement agreement) {
         final MCRJob job = new MCRJob(TransferAgreementJobAction.class);
         job.setParameter(NAME_PARAM, agreement.getAgreementName());
 
@@ -92,6 +120,11 @@ public class TransferAgreementJobAction extends MCRJobAction {
         // no rollback required
     }
 
+    /**
+     * Reconstructs an {@link Agreement} instance from the stored job parameters.
+     *
+     * @return the reconstructed agreement
+     */
     protected Agreement getAgreement() {
         final Author author = new Author.Builder()
             .name(job.getParameter(CONTENT_AUTHOR_NAME_PARAM))

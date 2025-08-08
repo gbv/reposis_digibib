@@ -44,7 +44,7 @@ public class TransferAgreementJobActionTest {
     @Test
     public void testCreateJob_setsCorrectParametersAndType() {
         initAgreementMock();
-        final MCRJob resultJob = TransferAgreementJobAction.createJob(agreement);
+        final MCRJob resultJob = TransferAgreementJobAction.fromAgreement(agreement);
         final TransferAgreementJobAction action = new TransferAgreementJobAction(resultJob, agreementService);
         final Agreement result = action.getAgreement();
 

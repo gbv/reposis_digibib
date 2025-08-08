@@ -18,6 +18,14 @@ import de.vzg.reposis.digibib.agreement.factory.AgreementContentFactory;
 import de.vzg.reposis.digibib.agreement.job.TransferAgreementJobAction;
 import de.vzg.reposis.digibib.agreement.model.Agreement;
 
+/**
+ * Event handler that listens to updates on MCRObjects and enqueues agreement
+ * transfer jobs based on object metadata and configuration.
+ * <p>
+ * This handler checks if an object is published, has agreements, and a genre.
+ * It then determines the appropriate agreement name from configuration and
+ * enqueues a job to transfer the agreement if not already done.
+ */
 public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -34,11 +42,20 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
     private final MCRJobQueue jobQueue;
 
+    /**
+     * Creates an instance of AgreementObjectEventHandler with given job queue and content factory.
+     *
+     * @param jobQueue the job queue to enqueue agreement transfer jobs
+     * @param contentFactory factory to create AgreementContent from MCRObjects
+     */
     public AgreementObjectEventHandler(MCRJobQueue jobQueue, AgreementContentFactory contentFactory) {
         this.contentFactory = contentFactory;
         this.jobQueue = jobQueue;
     }
 
+    /**
+     * Default constructor initializing with default job queue and content factory.
+     */
     public AgreementObjectEventHandler() {
         this(MCRJobQueueManager.getInstance().getJobQueue(TransferAgreementJobAction.class),
             new AgreementContentFactory());
@@ -80,7 +97,7 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
         }
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
         final Agreement agreement = new Agreement(requiredAgreementName, contentFactory.fromObject(obj));
-        jobQueue.add(TransferAgreementJobAction.createJob(agreement));
+        jobQueue.add(TransferAgreementJobAction.fromAgreement(agreement));
         // TODO remove not necessary agreements?
         // TODO save transfer time?
     }

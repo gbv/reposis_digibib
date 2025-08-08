@@ -61,7 +61,7 @@ public class AgreementTransferServiceTest {
         agreementService.transferAgreement(agreement);
         verify(pdfCreatorFactory).getPdfService(AGREEMENT_NAME);
         verify(pdfCreator).generatePdf(eq(content), any(ByteArrayOutputStream.class));
-        verify(transmitter).send(eq(DOI), any(byte[].class));
+        verify(transmitter).send(eq(DOI + ".pdf"), any(byte[].class));
     }
 
     @Test(expected = AgreementTransportException.class)

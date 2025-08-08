@@ -13,6 +13,12 @@ import de.vzg.reposis.digibib.email.model.EmailAttachment;
 import de.vzg.reposis.digibib.email.model.EmailMessage;
 import de.vzg.reposis.digibib.email.model.EmailSendRequest;
 
+/**
+ * Implementation of {@link AgreementTransmitter} that sends agreements via email.
+ * <p>
+ * This class uses an {@link EmailClient} to send the agreement as a PDF attachment
+ * to a specified recipient.
+ */
 @MCRConfigurationProxy(proxyClass = AgreementMailTransmitter.Factory.class)
 public class AgreementMailTransmitter implements AgreementTransmitter {
 
@@ -22,6 +28,12 @@ public class AgreementMailTransmitter implements AgreementTransmitter {
 
     private final String recipient;
 
+    /**
+     * Constructs a new {@code AgreementMailTransmitter} with the specified email client and recipient.
+     *
+     * @param client the email client used to send emails
+     * @param recipient the recipient email address
+     */
     public AgreementMailTransmitter(EmailClient client, String recipient) {
         this.client = client;
         this.recipient = recipient;
