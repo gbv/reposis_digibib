@@ -8,7 +8,8 @@ import org.apache.logging.log4j.Logger;
 import org.mycore.common.config.MCRConfiguration2;
 
 import de.vzg.reposis.digibib.agreement.model.Agreement;
-import de.vzg.reposis.digibib.agreement.pdf.provider.AgreementPdfServiceProvider;
+import de.vzg.reposis.digibib.agreement.pdf.service.AgreementPdfService;
+import de.vzg.reposis.digibib.agreement.pdf.service.AgreementPdfServiceProvider;
 import de.vzg.reposis.digibib.agreement.transport.AgreementTransmitter;
 import de.vzg.reposis.digibib.agreement.transport.AgreementTransportException;
 
@@ -36,14 +37,15 @@ public class AgreementTransferService {
         final String senderClassProperty = AGREEMENT_SERVICE_PROP_PREFIX + "Transmitter.Class";
         final AgreementTransmitter sender
             = MCRConfiguration2.<AgreementTransmitter>getInstanceOf(senderClassProperty).orElseThrow();
-        return new AgreementTransferService(sender, new AgreementPdfServiceProvider());
+        return new AgreementTransferService(sender, AgreementPdfServiceProvider.obtainInstance());
     }
 
     public void transferAgreement(Agreement agreement) {
         final String doi = agreement.getContent().getDoi();
         final ByteArrayOutputStream output = new ByteArrayOutputStream();
         try {
-            pdfServiceProvider.getPdfService(agreement.getAgreementName()).generatePdf(agreement, output);
+            AgreementPdfService serivce = pdfServiceProvider.getPdfService(agreement.getAgreementName()).orElseThrow();
+            serivce.generatePdf(agreement, output);
             byte[] pdfBytes = output.toByteArray();
             transmitter.send(doi, pdfBytes);
             LOGGER.info("Agreement with DOI {} was sent successfully.", doi);

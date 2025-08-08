@@ -10,14 +10,15 @@ import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import de.vzg.reposis.digibib.agreement.model.Agreement;
 import de.vzg.reposis.digibib.agreement.model.AgreementContent;
-import de.vzg.reposis.digibib.agreement.pdf.provider.AgreementPdfServiceProvider;
 import de.vzg.reposis.digibib.agreement.pdf.service.AgreementPdfService;
+import de.vzg.reposis.digibib.agreement.pdf.service.AgreementPdfServiceProvider;
 import de.vzg.reposis.digibib.agreement.transport.AgreementTransmitter;
 import de.vzg.reposis.digibib.agreement.transport.AgreementTransportException;
 
@@ -49,7 +50,7 @@ public class AgreementTransferServiceTest {
         when(agreement.getContent()).thenReturn(content);
         when(content.getDoi()).thenReturn(DOI);
         when(agreement.getAgreementName()).thenReturn(AGREEMENT_NAME);
-        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(pdfCreator);
+        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(Optional.of(pdfCreator));
 
         doAnswer(invocation -> {
             ByteArrayOutputStream outputStream = invocation.getArgument(1);
@@ -71,7 +72,7 @@ public class AgreementTransferServiceTest {
         when(agreement.getContent()).thenReturn(content);
         when(content.getDoi()).thenReturn(DOI);
 
-        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(pdfCreator);
+        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(Optional.of(pdfCreator));
 
         doThrow(new IOException("PDF generation failed")).when(pdfCreator).generatePdf(eq(agreement),
             any(ByteArrayOutputStream.class));
@@ -87,7 +88,7 @@ public class AgreementTransferServiceTest {
         when(agreement.getContent()).thenReturn(content);
         when(content.getDoi()).thenReturn(DOI);
 
-        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(pdfCreator);
+        when(pdfCreatorFactory.getPdfService(AGREEMENT_NAME)).thenReturn(Optional.of(pdfCreator));
 
         doAnswer(invocation -> {
             ByteArrayOutputStream outputStream = invocation.getArgument(1);

@@ -11,6 +11,7 @@ import org.mycore.common.events.MCREvent;
 import org.mycore.common.events.MCREventHandlerBase;
 import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.mods.MCRMODSWrapper;
+import org.mycore.services.queuedjob.MCRJobQueue;
 import org.mycore.services.queuedjob.MCRJobQueueManager;
 
 import de.vzg.reposis.digibib.agreement.factory.AgreementContentFactory;
@@ -31,12 +32,16 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
 
     private final AgreementContentFactory contentFactory;
 
-    public AgreementObjectEventHandler(AgreementContentFactory contentFactory) {
+    private final MCRJobQueue jobQueue;
+
+    public AgreementObjectEventHandler(MCRJobQueue jobQueue, AgreementContentFactory contentFactory) {
         this.contentFactory = contentFactory;
+        this.jobQueue = jobQueue;
     }
 
     public AgreementObjectEventHandler() {
-        this(new AgreementContentFactory());
+        this(MCRJobQueueManager.getInstance().getJobQueue(TransferAgreementJobAction.class),
+            new AgreementContentFactory());
     }
 
     @Override
@@ -73,8 +78,7 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
         }
         LOGGER.debug("Adding DeliverAgreementJob for {} with agreement '{}'.", objId, requiredAgreementName);
         final Agreement agreement = new Agreement(requiredAgreementName, contentFactory.fromObject(obj));
-        MCRJobQueueManager.getInstance().getJobQueue(TransferAgreementJobAction.class)
-            .add(TransferAgreementJobAction.createJob(agreement));
+        jobQueue.add(TransferAgreementJobAction.createJob(agreement));
         // TODO remove not necessary agreements?
     }
 

@@ -17,8 +17,7 @@ public class AgreementAuthorURIResolver implements URIResolver {
     public final AuthorServiceProvider authorServiceProvider;
 
     public AgreementAuthorURIResolver() {
-        // TODO
-        authorServiceProvider = new AuthorServiceProvider(null, null);
+        authorServiceProvider = AuthorServiceProvider.obtainInstance();
     }
 
     public AgreementAuthorURIResolver(AuthorServiceProvider authorServiceProvider) {
