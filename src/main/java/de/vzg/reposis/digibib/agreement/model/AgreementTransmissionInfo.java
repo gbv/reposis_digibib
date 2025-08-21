@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
  */
 public class AgreementTransmissionInfo {
 
-    private String agreementName;
+    private String agreementId;
 
     private LocalDateTime transmissionDate;
 
@@ -23,30 +23,30 @@ public class AgreementTransmissionInfo {
     /**
      * Constructs a new {@code AgreementTransmissionInfo} instance.
      *
-     * @param agreementName   the name of the transmitted agreement
+     * @param agreementId the id of the transmitted agreement
      * @param transmissionDate the date and time when the transmission occurred
      */
-    public AgreementTransmissionInfo(String agreementName, LocalDateTime transmissionDate) {
-        this.agreementName = agreementName;
+    public AgreementTransmissionInfo(String agreementId, LocalDateTime transmissionDate) {
+        this.agreementId = agreementId;
         this.transmissionDate = transmissionDate;
     }
 
     /**
      * Returns the name of the transmitted agreement.
      *
-     * @return the agreement name
+     * @return the agreement id
      */
-    public String getAgreementName() {
-        return agreementName;
+    public String getAgreementId() {
+        return agreementId;
     }
 
     /**
      * Sets the name of the transmitted agreement.
      *
-     * @param agreementName the agreement name to set
+     * @param agreementId the agreement id to set
      */
-    public void setAgreementName(String agreementName) {
-        this.agreementName = agreementName;
+    public void setAgreementId(String agreementId) {
+        this.agreementId = agreementId;
     }
 
     /**
@@ -67,16 +67,10 @@ public class AgreementTransmissionInfo {
         this.transmissionDate = transmissionDate;
     }
 
-    /**
-     * Returns a string representation of this transmission info,
-     * containing the agreement name and the transmission date.
-     *
-     * @return a human-readable representation of this object
-     */
     @Override
     public String toString() {
         return "AgreementTransmissionInfo{" +
-            "agreementName='" + agreementName + '\'' +
+            "agreementId='" + agreementId + '\'' +
             ", transmissionDate=" + transmissionDate +
             '}';
     }

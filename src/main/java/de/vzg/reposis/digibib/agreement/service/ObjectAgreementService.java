@@ -98,21 +98,21 @@ public class ObjectAgreementService {
      * Returns all confirmed agreements for the given object.
      *
      * @param obj the MCRObject to read from
-     * @return a list of confirmed agreement names, possibly empty
+     * @return a list of confirmed agreement ids, possibly empty
      */
     public List<String> getConfirmedAgreements(MCRObject obj) {
         return obj.getService().getFlags(AGREEMENT_FLAG);
     }
 
     /**
-     * Checks whether the given object has a confirmed agreement with the specified name.
+     * Checks whether the given object has a confirmed agreement with the specified id.
      *
      * @param obj the MCRObject to check
-     * @param requiredAgreementName the agreement name to look for
+     * @param agreementId the agreement id to look for
      * @return {@code true} if the object has this agreement, otherwise {@code false}
      */
-    public boolean hasConfirmedAgreement(MCRObject obj, String requiredAgreementName) {
-        return getConfirmedAgreements(obj).contains(requiredAgreementName);
+    public boolean hasConfirmedAgreement(MCRObject obj, String agreementId) {
+        return getConfirmedAgreements(obj).contains(agreementId);
     }
 
     /**
@@ -137,14 +137,14 @@ public class ObjectAgreementService {
     /**
      * Stores current agreement transmission information for the given object.
      * <p>
-     * The information contains the provided agreement name and the current timestamp.
+     * The information contains the provided agreement id and the current timestamp.
      * Any previous transmission info flags will be removed before adding the new one.
      *
      * @param obj the MCRObject to update
-     * @param agreementName the name of the transmitted agreement
+     * @param agreementId the id of the transmitted agreement
      */
-    public void setAgreementTransmissionInfoNow(MCRObject obj, String agreementName) {
-        final AgreementTransmissionInfo info = new AgreementTransmissionInfo(agreementName, LocalDateTime.now());
+    public void setAgreementTransmissionInfoNow(MCRObject obj, String agreementId) {
+        final AgreementTransmissionInfo info = new AgreementTransmissionInfo(agreementId, LocalDateTime.now());
         final String json = mapper.toJson(info);
         obj.getService().removeFlags(AGREEMENT_TRANSMISSION_INFO_FLAG);
         obj.getService().addFlag(AGREEMENT_TRANSMISSION_INFO_FLAG, json);

@@ -2,10 +2,10 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor">
 
   <xed:template id="agreement">
-    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.', $genre_intern, '.Name')}"/>
-    <xed:load-resource name="agreement_default" uri="property:Digibib.Agreement.Default.Name"/>
+    <xed:load-resource name="agreement_genre" uri="{concat('property:Digibib.Agreement.Genres.', $genre_intern, '.AgreementId')}"/>
+    <xed:load-resource name="agreement_default" uri="property:Digibib.Agreement.DefaultAgreementId"/>
     <xed:bind name="agreement" xpath="$agreement_genre" default="{$agreement_default}"/>
-    <xed:if test="string-length($agreement)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreementConfirmedFlag']/text()=$agreement)">
+    <xed:if test="string-length($agreement)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='confirmedAgreement']/text()=$agreement)">
       <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='confirmedAgreement']">
         <fieldset>
           <legend class="mir-fieldset-legend">

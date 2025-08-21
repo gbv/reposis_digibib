@@ -8,7 +8,7 @@ import org.mycore.common.config.annotation.MCRConfigurationProxy;
 import org.mycore.common.config.annotation.MCRInstanceMap;
 
 /**
- * Provider class for retrieving {@link AgreementPdfService} instances by agreement name.
+ * Provider class for retrieving {@link AgreementPdfService} instances by agreement id.
  * <p>
  * This class acts as a registry for multiple PDF generation services, allowing
  * different agreement types to have their own PDF generation logic.
@@ -21,20 +21,20 @@ public class AgreementPdfServiceProvider {
     /**
      * Creates a new {@code AgreementPdfServiceProvider} with the given map of PDF services.
      *
-     * @param pdfServices a map of agreement names to their corresponding {@link AgreementPdfService}
+     * @param pdfServices a map of agreement ids to their corresponding {@link AgreementPdfService}
      */
     public AgreementPdfServiceProvider(Map<String, AgreementPdfService> pdfServices) {
         this.pdfServices = pdfServices;
     }
 
     /**
-     * Retrieves the {@link AgreementPdfService} for the given agreement name, if available.
+     * Retrieves the {@link AgreementPdfService} for the given agreement id, if available.
      *
-     * @param agreementName the name of the agreement type
+     * @param agreementId the id of the agreement
      * @return an {@link Optional} containing the matching {@link AgreementPdfService}, or empty if not found
      */
-    public Optional<AgreementPdfService> getPdfService(String agreementName) {
-        return Optional.ofNullable(pdfServices.get(agreementName));
+    public Optional<AgreementPdfService> getPdfService(String agreementId) {
+        return Optional.ofNullable(pdfServices.get(agreementId));
     }
 
     /**

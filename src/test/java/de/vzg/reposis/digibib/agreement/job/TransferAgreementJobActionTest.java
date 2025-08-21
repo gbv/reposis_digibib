@@ -20,10 +20,10 @@ import de.vzg.reposis.digibib.agreement.service.AgreementService;
 
 public class TransferAgreementJobActionTest extends MCRTestCase {
 
-    public static final String AGREEMENT_NAME_PARAM = "agreementName";
+    public static final String AGREEMENT_ID_PARAM = "agreementId";
     private static final String OBJECT_ID_PARAM = "objectId";
     private static final String VALID_OBJECT_ID = "mycore_test_00000001";
-    private static final String VALID_NAME = "agreement";
+    private static final String VALID_AGREEMENT_ID = "agreement";
 
     private AgreementService agreementService;
     private AgreementMetadataManager metadataManager;
@@ -47,10 +47,10 @@ public class TransferAgreementJobActionTest extends MCRTestCase {
 
     @Test
     public void testCreateJob_setsCorrectParametersAndType() {
-        final MCRJob resultJob = TransferAgreementJobAction.createJob(objectId, VALID_NAME);
+        final MCRJob resultJob = TransferAgreementJobAction.createJob(objectId, VALID_AGREEMENT_ID);
         final TransferAgreementJobAction action
             = new TransferAgreementJobAction(resultJob, agreementService, metadataManager);
-        assertEquals(VALID_NAME, action.getAgreementName());
+        assertEquals(VALID_AGREEMENT_ID, action.getAgreementId());
         assertEquals(objectId, action.getObjectId());
     }
 
@@ -59,16 +59,16 @@ public class TransferAgreementJobActionTest extends MCRTestCase {
         final MCRJob job = mock(MCRJob.class);
         final MCRObject object = mock(MCRObject.class);
         final AgreementFormData formData = mock(AgreementFormData.class);
-        when(job.getParameter(AGREEMENT_NAME_PARAM)).thenReturn(VALID_NAME);
+        when(job.getParameter(AGREEMENT_ID_PARAM)).thenReturn(VALID_AGREEMENT_ID);
         when(job.getParameter(OBJECT_ID_PARAM)).thenReturn(VALID_OBJECT_ID);
         when(metadataManager.exists(objectId)).thenReturn(true);
         when(metadataManager.retrieveMCRObject(objectId)).thenReturn(object);
-        when(agreementService.createAgreementFormData(object, VALID_NAME)).thenReturn(formData);
+        when(agreementService.createAgreementFormData(object, VALID_AGREEMENT_ID)).thenReturn(formData);
         final TransferAgreementJobAction action
             = new TransferAgreementJobAction(job, agreementService, metadataManager);
         action.execute();
-        verify(agreementService).createAgreementFormData(object, VALID_NAME);
-        verify(agreementService).transferAgreement(objectId, VALID_NAME, formData);
+        verify(agreementService).createAgreementFormData(object, VALID_AGREEMENT_ID);
+        verify(agreementService).transferAgreement(objectId, VALID_AGREEMENT_ID, formData);
     }
 
 }

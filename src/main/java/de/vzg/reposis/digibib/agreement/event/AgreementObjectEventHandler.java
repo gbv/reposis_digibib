@@ -16,7 +16,7 @@ import de.vzg.reposis.digibib.agreement.service.ObjectAgreementService;
  * transfer jobs based on object metadata and configuration.
  * <p>
  * This handler checks if an object is published, has agreements, and a genre.
- * It then determines the appropriate agreement name from configuration and
+ * It then determines the appropriate agreement id from configuration and
  * enqueues a job to transfer the agreement if not already done.
  */
 public class AgreementObjectEventHandler extends MCREventHandlerBase {
@@ -65,7 +65,7 @@ public class AgreementObjectEventHandler extends MCREventHandlerBase {
             return;
         }
 
-        final Optional<String> requiredAgreementOpt = agreementService.resolveRequiredAgreement(obj);
+        final Optional<String> requiredAgreementOpt = agreementService.resolveRequiredAgreementId(obj);
         if (requiredAgreementOpt.isEmpty()) {
             LOGGER.debug("{} has no required agreement configured, skipping.", obj.getId());
             return;

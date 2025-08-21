@@ -29,7 +29,7 @@ import de.vzg.reposis.digibib.agreement.transport.AgreementTransmitter;
  * Service class responsible for managing agreements associated with {@link MCRObject} instances.
  * <p>
  * This service validates objects before creating agreements, determines the correct
- * agreement name based on genre or configuration defaults, and manages agreement
+ * agreement id based on genre or configuration defaults, and manages agreement
  * transfer scheduling and execution.
  */
 @MCRConfigurationProxy(proxyClass = AgreementService.Factory.class)
@@ -38,7 +38,8 @@ public class AgreementService {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static final String CONFIG_PREFIX = "Digibib.Agreement.";
-    private static final String AGREEMENT_DEFAULT_NAME_CONF = "Default";
+    private static final Optional<String> DEFAULT_AGREEMENT_ID
+        = MCRConfiguration2.getString(CONFIG_PREFIX + "DefaultAgreementId");
 
     private final AgreementFormDataFactory formDataFactory;
     private final MCRJobQueue jobQueue;
@@ -89,19 +90,19 @@ public class AgreementService {
     /**
      * Creates a new {@link AgreementFormData} for the given {@link MCRObject} if all requirements are met.
      *
-     * @param obj the {@link MCRObject} for which the agreement is created
-     * @param requiredAgreement the required agreement name
+     * @param obj the {@link MCRObject} for which the agreement id is created
+     * @param requiredAgreementId the required agreement id
      * @return the created {@link AgreementFormData}
      * @throws AgreementException if the object is not in a valid state or the agreement is not applicable
      */
-    public AgreementFormData createAgreementFormData(MCRObject obj, String requiredAgreement) {
-        LOGGER.debug("Creating agreement {} for object {}...", requiredAgreement, obj.getId());
+    public AgreementFormData createAgreementFormData(MCRObject obj, String requiredAgreementId) {
+        LOGGER.debug("Creating agreement {} for object {}...", requiredAgreementId, obj.getId());
         validateObjectStateForAgreement(obj);
-        if (!objectService.hasConfirmedAgreement(obj, requiredAgreement)) {
+        if (!objectService.hasConfirmedAgreement(obj, requiredAgreementId)) {
             throw new AgreementException(
-                "Object " + obj.getId() + " already has no required agreement " + requiredAgreement);
+                "Object " + obj.getId() + " already has no required agreement " + requiredAgreementId);
         }
-        return formDataFactory.fromObject(obj, requiredAgreement);
+        return formDataFactory.fromObject(obj, requiredAgreementId);
     }
 
     private void validateObjectStateForAgreement(MCRObject obj) {
@@ -120,29 +121,29 @@ public class AgreementService {
     }
 
     /**
-     * Resolves the required agreement name for the given {@link MCRObject} based on its genre.
-     * Falls back to the default agreement name if no genre-specific agreement is configured.
+     * Resolves the required agreement id for the given {@link MCRObject} based on its genre.
+     * Falls back to the default agreement id if no genre-specific agreement is configured.
      *
-     * @param obj the object for which to resolve the agreement
-     * @return an {@link Optional} containing the resolved agreement name
+     * @param obj the object for which to resolve the id
+     * @return an {@link Optional} containing the resolved agreement id
      * @throws java.util.NoSuchElementException if the object has no genre
      */
-    public Optional<String> resolveRequiredAgreement(MCRObject obj) {
-        LOGGER.debug("Resolving required agreement for object {}...", obj.getId());
+    public Optional<String> resolveRequiredAgreementId(MCRObject obj) {
+        LOGGER.debug("Resolving required agreement id for object {}...", obj.getId());
         final String genre = objectService.extractGenre(obj).orElseThrow(
             () -> new AgreementException("Cannot resolve agreement for object " + obj.getId() + ": Genre is missing."));
         LOGGER.debug("Genre {} resolved for object {}.", genre, obj.getId());
-        return getAgreementName(genre).or(() -> getDefaultAgreementName());
+        return getAgreementIdByGenre(genre).or(() -> DEFAULT_AGREEMENT_ID);
     }
 
-    public void transferAgreement(MCRObjectID objectId, String agreementName, AgreementFormData formData) {
-        LOGGER.info("Starting transfer of agreement {} for object {}...", agreementName, objectId);
+    public void transferAgreement(MCRObjectID objectId, String agreementId, AgreementFormData formData) {
+        LOGGER.info("Starting transfer of agreement {} for object {}...", agreementId, objectId);
         if (!metadataManager.exists(objectId)) {
             throw new AgreementException(
                 "Cannot transfer agreement, " + objectId.toString() + " does not exist (anymore).");
         }
         final MCRObject object = metadataManager.retrieveMCRObject(objectId);
-        final AgreementPdfService serivce = pdfServiceProvider.getPdfService(agreementName).orElseThrow();
+        final AgreementPdfService serivce = pdfServiceProvider.getPdfService(agreementId).orElseThrow();
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             serivce.generatePdf(formData, baos);
             final byte[] agreementBytes = baos.toByteArray();
@@ -150,9 +151,9 @@ public class AgreementService {
         } catch (IOException e) {
             throw new AgreementException(e);
         }
-        LOGGER.debug("Agreement {} successfully transferred for object {}.", agreementName, objectId);
+        LOGGER.debug("Agreement {} successfully transferred for object {}.", agreementId, objectId);
         LOGGER.debug("Updating agreement metadata for object {}...", objectId);
-        objectService.setAgreementTransmissionInfoNow(object, agreementName);
+        objectService.setAgreementTransmissionInfoNow(object, agreementId);
         objectService.removeConfirmedAgreements(object);
         metadataManager.update(object);
         LOGGER.debug("Agreement metadata updated after transfer for object {}.", objectId);
@@ -198,22 +199,13 @@ public class AgreementService {
     }
 
     /**
-     * Retrieves the default agreement name from configuration.
-     *
-     * @return an {@link Optional} containing the default agreement name, if configured
-     */
-    public Optional<String> getDefaultAgreementName() {
-        return getAgreementName(AGREEMENT_DEFAULT_NAME_CONF);
-    }
-
-    /**
-     * Retrieves the configured agreement name for the given genre.
+     * Retrieves the configured agreement id for the given genre.
      *
      * @param genre the genre key
-     * @return an {@link Optional} containing the configured agreement name, if present
+     * @return an {@link Optional} containing the configured agreement id, if present
      */
-    public Optional<String> getAgreementName(String genre) {
-        return MCRConfiguration2.getString(CONFIG_PREFIX + genre + ".Name");
+    public Optional<String> getAgreementIdByGenre(String genre) {
+        return MCRConfiguration2.getString(CONFIG_PREFIX + "Genres." + genre + ".AgreementId");
     }
 
     protected String getAgreementFilename(MCRObject obj) {

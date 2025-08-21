@@ -33,7 +33,7 @@ public class TransferAgreementJobAction extends MCRJobAction {
      * Job parameter name for the object ID.
      */
     public static final String OBJECT_ID_PARAM = "objectId";
-    public static final String AGREEMENT_NAME_PARAM = "agreementName";
+    private static final String AGREEMENT_ID_PARAM = "agreementId";
 
     private final AgreementService agreementService;
     private final AgreementMetadataManager metadataManager;
@@ -67,12 +67,12 @@ public class TransferAgreementJobAction extends MCRJobAction {
      * necessary to reconstruct and transfer the given agreement.
      *
      * @param objectId the object id
-     * @param agreementName the name of the agreement
+     * @param agreementId the id of the agreement
      * @return a configured job ready for queuing
      */
-    public static MCRJob createJob(MCRObjectID objectId, String agreementName) {
+    public static MCRJob createJob(MCRObjectID objectId, String agreementId) {
         final MCRJob job = new MCRJob(TransferAgreementJobAction.class);
-        job.setParameter(AGREEMENT_NAME_PARAM, agreementName);
+        job.setParameter(AGREEMENT_ID_PARAM, agreementId);
         job.setParameter(OBJECT_ID_PARAM, objectId.toString());
 
         return job;
@@ -95,7 +95,7 @@ public class TransferAgreementJobAction extends MCRJobAction {
         try {
             MCRSessionMgr.getCurrentSession().setUserInformation(MCRSystemUserInformation.getGuestInstance());
             MCRSessionMgr.getCurrentSession().setUserInformation(MCRSystemUserInformation.getJanitorInstance());
-            final String agreementName = getAgreementName();
+            final String agreementId = getAgreementId();
             final MCRObjectID objectId = getObjectId();
 
             if (!metadataManager.exists(objectId)) {
@@ -103,9 +103,9 @@ public class TransferAgreementJobAction extends MCRJobAction {
                 return;
             }
             final MCRObject object = metadataManager.retrieveMCRObject(objectId);
-            final AgreementFormData formData = agreementService.createAgreementFormData(object, agreementName);
-            LOGGER.info("Transferring agreement: '{}' for {}", agreementName, objectId.toString());
-            agreementService.transferAgreement(objectId, agreementName, formData);
+            final AgreementFormData formData = agreementService.createAgreementFormData(object, agreementId);
+            LOGGER.info("Transferring agreement: '{}' for {}", agreementId, objectId.toString());
+            agreementService.transferAgreement(objectId, agreementId, formData);
         } catch (Exception e) {
             throw new ExecutionException(e);
         } finally {
@@ -129,12 +129,12 @@ public class TransferAgreementJobAction extends MCRJobAction {
     }
 
     /**
-     * Returns the name of the agreement associated with this job.
+     * Returns the id of the agreement associated with this job.
      *
-     * @return the name of the agreement
+     * @return the id of the agreement
      */
-    public String getAgreementName() {
-        return job.getParameter(AGREEMENT_NAME_PARAM);
+    public String getAgreementId() {
+        return job.getParameter(AGREEMENT_ID_PARAM);
     }
 
 }
