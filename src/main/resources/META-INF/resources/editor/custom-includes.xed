@@ -30,6 +30,41 @@
     </xed:bind>
   </xed:template>
 
+  <!-- removed publication option -->
+  <xed:template id="research.data.date.repeated">
+    <xed:repeat xpath="mods:originInfo" min="1" max="6">
+      <div class="form-group row">
+        <div class="col-md-3">
+          <xed:bind xpath="@eventType" default="creation">
+            <select class="form-control form-control-inline date-select">
+              <option value="creation">
+                <xed:output i18n="mir.date.created" />
+              </option>
+              <option value="collection">
+                <xed:output i18n="mir.date.collected" />
+              </option>
+              <option value="review">
+                <xed:output i18n="mir.date.reviewed" />
+              </option>
+              <option value="update">
+                <xed:output i18n="mir.date.updated" />
+              </option>
+            </select>
+          </xed:bind>
+        </div>
+        <mir:dateRangeInput xpath="mods:dateCreated[@encoding='w3cdtf']" class="datetimepicker date-changeable col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="creation" />
+        <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="collection" />
+        <mir:dateRangeInput xpath="mods:dateOther[@type='reviewed'][@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}" type="review" />
+        <mir:dateRangeInput xpath="mods:dateModified[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="update" />
+        <mir:help-pmud help-text="{i18n:mir.help.date.repeated}" pmud="true" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
   <xed:template id="comment">
     <xed:repeat xpath="mods:note" min="1" max="10">
       <div class="mir-fieldset-content-centered">
