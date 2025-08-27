@@ -198,7 +198,6 @@
             <legend class="mir-fieldset-legend mb-3">
               <xed:output i18n="digibib.researchData.general" />
             </legend>
-            <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/custom-includes.xed" ref="identifier.repeated" />
             <xed:include ref="workaround.research.data.date.repeated" />
             <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/custom-includes.xed" ref="language" />
             <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="subject.simple" />
