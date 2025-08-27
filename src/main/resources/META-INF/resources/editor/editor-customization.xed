@@ -740,9 +740,6 @@
               <option value="collection">
                 <xed:output i18n="mir.date.collected" />
               </option>
-              <option value="publication">
-                <xed:output i18n="mir.date.issued.10" />
-              </option>
               <option value="review">
                 <xed:output i18n="mir.date.reviewed" />
               </option>
@@ -756,8 +753,6 @@
           type="creation" />
         <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
           type="collection" />
-        <mir:dateRangeInput xpath="mods:dateIssued[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
-          type="publication" />
         <mir:dateRangeInput xpath="mods:dateOther[@type='reviewed'][@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6"
           placeholder="{i18n:mir.placeholder.date}" type="review" />
         <mir:dateRangeInput xpath="mods:dateModified[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
