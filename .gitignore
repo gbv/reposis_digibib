@@ -11,6 +11,7 @@ lib/pi-tester.jar
 
 #intellij
 *.iml
+.idea
 
 #visual studio code
 *.code-workspace
