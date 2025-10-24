@@ -49,7 +49,17 @@
         <!-- SEND EMAIL -->
         <xsl:apply-templates select="." mode="mailReceiver" />
         <subject>
-          <xsl:value-of select="concat($objectType,' erstellt: ',@ID)" />
+          <xsl:choose>
+            <xsl:when test="./metadata/def.modsContainer/modsContainer/mods:mods/mods:name[mods:role/mods:roleTerm='aut']">
+              <xsl:variable name="authorRtf">
+                <xsl:apply-templates select="./metadata/def.modsContainer/modsContainer/mods:mods/mods:name[mods:role/mods:roleTerm='aut'][1]" mode="printName" />
+              </xsl:variable>
+              <xsl:value-of select="concat(normalize-space($authorRtf), '_', $objectType, ' erstellt: ', @ID)" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="concat($objectType, ' erstellt: ', @ID)" />
+            </xsl:otherwise>
+          </xsl:choose>
         </subject>
         <body>
           <xsl:value-of select="'Ein paar Metadaten'" />
