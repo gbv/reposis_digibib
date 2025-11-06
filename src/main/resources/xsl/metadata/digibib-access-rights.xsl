@@ -1,5 +1,5 @@
-<!-- Used to override mir-access-rights div to change its div order -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Used to override mir-access-rights div to change its div order -->
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
