@@ -60,7 +60,7 @@
       </div>
     </xsl:if>
 
-    <xsl:apply-templates />
+    <xsl:apply-imports />
 
   </xsl:template>
 </xsl:stylesheet>
