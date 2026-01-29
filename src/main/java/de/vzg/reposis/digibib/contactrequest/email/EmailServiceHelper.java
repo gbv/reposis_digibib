@@ -37,8 +37,10 @@ import org.mycore.common.xsl.MCRParameterCollector;
 import de.vzg.reposis.digibib.contactrequest.ContactRequestConstants;
 import de.vzg.reposis.digibib.contactrequest.dto.ContactAttemptDto;
 import de.vzg.reposis.digibib.contactrequest.dto.ContactRequestDto;
-import de.vzg.reposis.digibib.email.dto.SimpleEmailDto;
+import de.vzg.reposis.digibib.contactrequest.email.dto.ContactRequestEmailDto;
 import de.vzg.reposis.digibib.email.exception.EmailException;
+import de.vzg.reposis.digibib.email.model.EmailMessage;
+import de.vzg.reposis.digibib.email.model.EmailSendRequest;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
@@ -84,14 +86,14 @@ public class EmailServiceHelper {
     private static final String TO_NAME = "tname";
 
     /**
-     * Creates a {@link SimpleEmailDto} for confirming a contact request,
+     * Creates a {@link ContactRequestEmailDto} for confirming a contact request,
      * based on the provided {@link ContactRequestDto}.
      *
      * @param contactRequestDto the DTO containing details about the contact request
      * @return a DTO representing the constructed request confirmation email
      */
-    public static SimpleEmailDto createRequestConfirmationEmail(ContactRequestDto contactRequestDto) {
-        final SimpleEmailDto baseEmail = new SimpleEmailDto();
+    public static ContactRequestEmailDto createRequestConfirmationEmail(ContactRequestDto contactRequestDto) {
+        final ContactRequestEmailDto baseEmail = new ContactRequestEmailDto();
         final Map<String, String> properties = new HashMap<String, String>();
         properties.put(PARAM_REQUEST_ID, contactRequestDto.getId().toString());
         properties.put(PARAM_OBJECT_ID, contactRequestDto.getObjectId().toString());
@@ -102,20 +104,20 @@ public class EmailServiceHelper {
         final Document emailDocument = convertToDocument(baseEmail);
         final Element emailElement
             = transform(emailDocument, REQUEST_CONFIRMATION_EMAIL_STYLESHEET, properties).getRootElement();
-        return convertToSimpleEmailDto(emailElement);
+        return convertToEmailMessage(emailElement);
     }
 
     /**
-     * Creates a {@link SimpleEmailDto} for forwarding a contact request, based on the
+     * Creates a {@link ContactRequestEmailDto} for forwarding a contact request, based on the
      * provided {@link ContactRequestDto} and {@link ContactAttemptDto}.
      *
      * @param contactRequestDto the DTO containing details about the contact request
      * @param contactAttemptDto the DTO containing details about the contact attempt
      * @return a DTO representing the constructed request forwarding email
      */
-    public static SimpleEmailDto createRequestForwardingEmail(ContactRequestDto contactRequestDto,
+    public static ContactRequestEmailDto createRequestForwardingEmail(ContactRequestDto contactRequestDto,
         ContactAttemptDto contactAttemptDto) {
-        final SimpleEmailDto baseEmail = new SimpleEmailDto();
+        final ContactRequestEmailDto baseEmail = new ContactRequestEmailDto();
         final Map<String, String> properties = new HashMap<String, String>();
         properties.put(PARAM_REQUEST_ID, contactRequestDto.getId().toString());
         properties.put(PARAM_OBJECT_ID, contactRequestDto.getObjectId().toString());
@@ -130,23 +132,45 @@ public class EmailServiceHelper {
         final Document emailDocument = convertToDocument(baseEmail);
         final Element emailElement
             = transform(emailDocument, REQUEST_FORWARDING_EMAIL_STYLESHEET, properties).getRootElement();
-        return convertToSimpleEmailDto(emailElement);
+        return convertToEmailMessage(emailElement);
     }
 
     /**
-     * Creates a {@link SimpleEmailDto} containing new request information, based on the provided {@link ContactRequestDto}.
+     * Creates a {@link ContactRequestEmailDto} containing new request information, based on the provided {@link ContactRequestDto}.
      *
      * @param contactRequestDto the DTO containing details about the contact request
      * @return a DTO representing the constructed new request information email
      */
-    public static SimpleEmailDto createNewRequestInfoEmail(ContactRequestDto contactRequestDto) {
-        final SimpleEmailDto baseEmail = new SimpleEmailDto();
+    public static ContactRequestEmailDto createNewRequestInfoEmail(ContactRequestDto contactRequestDto) {
+        final ContactRequestEmailDto baseEmail = new ContactRequestEmailDto();
         final Map<String, String> properties = new HashMap<String, String>();
         properties.put(PARAM_OBJECT_ID, contactRequestDto.getObjectId().toString());
         final Document emailDocument = convertToDocument(baseEmail);
         final Element emailElement
             = transform(emailDocument, NEW_REQUEST_INFO_EMAIL_STYLESHEET, properties).getRootElement();
-        return convertToSimpleEmailDto(emailElement);
+        return convertToEmailMessage(emailElement);
+    }
+
+    /**
+     * Constructs an {@link EmailSendRequest} from a {@link ContactRequestEmailDto}.
+     * <p>
+     * This method translates the data in the DTO (from, to, cc, bcc, subject, body, headers, etc.)
+     * into an {@link EmailMessage}, and wraps it in an {@link EmailSendRequest}.
+     * </p>
+     *
+     * @param emailDto the DTO containing the email data
+     * @return an {@link EmailSendRequest} built from the DTO
+     */
+    public static EmailSendRequest getSendRequest(ContactRequestEmailDto emailDto) {
+        final EmailMessage message = new EmailMessage.Builder(emailDto.getTo())
+            .ccRecipients(emailDto.getCc())
+            .bccRecipients(emailDto.getBcc())
+            .sentDate(emailDto.getSentDate())
+            .subject(emailDto.getSubject())
+            .headers(emailDto.getHeaders())
+            .textBody(emailDto.getBody())
+            .build();
+        return new EmailSendRequest(message);
     }
 
     private static Document transform(Document input, String stylesheet, Map<String, String> parameters) {
@@ -161,8 +185,8 @@ public class EmailServiceHelper {
         }
     }
 
-    private static Document convertToDocument(SimpleEmailDto simpleEmailDto) {
-        final MCRJAXBContent<SimpleEmailDto> content = new MCRJAXBContent<>(JAXB_CONTEXT, simpleEmailDto);
+    private static Document convertToDocument(ContactRequestEmailDto simpleEmailDto) {
+        final MCRJAXBContent<ContactRequestEmailDto> content = new MCRJAXBContent<>(JAXB_CONTEXT, simpleEmailDto);
         try {
             return content.asXML();
         } catch (IOException e) {
@@ -170,10 +194,10 @@ public class EmailServiceHelper {
         }
     }
 
-    private static SimpleEmailDto convertToSimpleEmailDto(Element element) {
+    private static ContactRequestEmailDto convertToEmailMessage(Element element) {
         try {
             final Unmarshaller unmarshaller = JAXB_CONTEXT.createUnmarshaller();
-            return (SimpleEmailDto) unmarshaller.unmarshal(new JDOMSource(element));
+            return (ContactRequestEmailDto) unmarshaller.unmarshal(new JDOMSource(element));
         } catch (final JAXBException e) {
             throw new MCRException("Exception while transforming Element to SimpleEmailDto", e);
         }
@@ -181,7 +205,7 @@ public class EmailServiceHelper {
 
     private static JAXBContext initContext() {
         try {
-            return JAXBContext.newInstance(SimpleEmailDto.class);
+            return JAXBContext.newInstance(ContactRequestEmailDto.class);
         } catch (final JAXBException e) {
             throw new MCRException("Could not instantiate JAXBContext.", e);
         }

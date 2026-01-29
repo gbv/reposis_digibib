@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xed:template xmlns:xed="http://www.mycore.de/xeditor">
+
+  <!-- TODO add publisher details -->
+  <xed:template id="agreement">
+    <xed:load-resource name="agreementId" uri="{concat('property:Digibib.Agreement.Genres.', $genre_intern, '.Id')}"/>
+    <xed:load-resource name="defaultAgreementId" uri="property:Digibib.Agreement.Default.Id"/>
+    <xed:bind xpath="$agreementId" default="{$defaultAgreementId}"/>
+
+    <xed:if test="string-length($agreementId)&gt;0 and not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='confirmedAgreementId']/text()=$agreementId)">
+      <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='confirmedAgreementId']">
+        <fieldset>
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="digibib.editor.agreement"/>
+          </legend>
+          <div class="row mt-4 mb-4" id="autor-agreement">
+            <div class="offset-3 col-md-9">
+              <div class="form-check required {$xed-validation-marker}">
+                <input class="form-check-input" type="checkbox" value="{$agreementId}" id="autor-agreement-check"/>
+                <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
+                  <xed:output i18n="digibib.editor.agreement.accept.pre"/>
+                    <xed:choose>
+                      <xed:when test="$agreementId != $defaultAgreementId">
+                        <xed:load-resource name="termsFile" uri="{concat('property:Digibib.Agreement.Genres.', $genre_intern, '.TermsFile.', $CurrentLang)}"/>
+                        <a href="{concat($WebApplicationBaseURL, $termsFile)}" target="_blank">
+                          <xed:output i18n="digibib.editor.agreement.accept.link"/>
+                        </a>
+                      </xed:when>
+                      <xed:otherwise>
+                        <xed:load-resource name="termsFile" uri="{concat('property:Digibib.Agreement.Default.TermsFile.', $CurrentLang)}"/>
+                        <a href="{concat($WebApplicationBaseURL, $termsFile)}" target="_blank">
+                          <xed:output i18n="digibib.editor.agreement.accept.link"/>
+                        </a>
+                      </xed:otherwise>
+                    </xed:choose>
+                  <xed:output i18n="digibib.editor.agreement.accept.post"/>              
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <xed:validate display="global" xpath="//servflag[@type='confirmedAgreementId']" required="true" i18n="digibib.editor.validation.agreement"/>
+      </xed:bind>
+    </xed:if>
+    <xed:cleanup-rule xpath="//servflag[@type='confirmedAgreementId']" relevant-if="string-length(text())&gt;0"/>
+  </xed:template>
+
+  <xed:modify ref="genres.submit">
+    <xed:include ref="agreement" before="cancel.submit"/>
+  </xed:modify>
+
+</xed:template>
