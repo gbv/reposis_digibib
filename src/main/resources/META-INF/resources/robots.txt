@@ -1,6 +1,7 @@
 Sitemap: https://leopard.tu-braunschweig.de/sitemap_google.xml
 User-agent: *
 Crawl-delay: 10
+Allow: /sitelinks
 Allow: /servlets/MCRFileNodeServlet/
 Allow: /rsc/sass/
 Allow: /rsc/locale/
