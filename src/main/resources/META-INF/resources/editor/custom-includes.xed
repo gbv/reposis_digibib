@@ -20,33 +20,6 @@
     </xed:bind>
   </xed:template>
 
-  <xed:template id="identifier.repeated">
-    <xed:repeat xpath="mods:identifier" min="1" max="10">
-      <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="digibib.researchData.identifier" />
-        </label>
-        <div class="col-md-2" style="padding-right: 2px">
-          <xed:bind xpath="@type" name="type">
-            <select class="form-control identifierSelect">
-              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:identifier" />
-              <xed:load-resource name="identifier" uri="classification:metadata:-1:children:identifier" />
-              <xed:if test="not($identifier//category[@ID=$type]) and not($type='')">
-                <option value="{$type}" selected="">
-                  <xed:output value="$type" i18n="mir.identifier.other" />
-                </option>
-              </xed:if>
-            </select>
-          </xed:bind>
-        </div>
-        <div class="col-md-4" style="padding-left: 2px">
-          <input type="text" size="30" class="form-control form-control-inline" />
-        </div>
-        <mir:help-pmud help-text="{i18n:mir.help.identifier}" pmud="true" />
-      </div>
-    </xed:repeat>
-  </xed:template>
-
   <!-- same as 'copyrightMD' other naming -->
   <xed:template id="copyright">
     <xed:bind
@@ -55,6 +28,41 @@
       <mir:textfield xpath="cmd:rights.holder/cmd:name" label="digibib.researchData.license.copyright"
         help-text="{i18n:digibib.researchData.license.copyright.help}" />
     </xed:bind>
+  </xed:template>
+
+  <!-- removed publication option -->
+  <xed:template id="research.data.date.repeated">
+    <xed:repeat xpath="mods:originInfo" min="1" max="6">
+      <div class="form-group row">
+        <div class="col-md-3">
+          <xed:bind xpath="@eventType" default="creation">
+            <select class="form-control form-control-inline date-select">
+              <option value="creation">
+                <xed:output i18n="mir.date.created" />
+              </option>
+              <option value="collection">
+                <xed:output i18n="mir.date.collected" />
+              </option>
+              <option value="review">
+                <xed:output i18n="mir.date.reviewed" />
+              </option>
+              <option value="update">
+                <xed:output i18n="mir.date.updated" />
+              </option>
+            </select>
+          </xed:bind>
+        </div>
+        <mir:dateRangeInput xpath="mods:dateCreated[@encoding='w3cdtf']" class="datetimepicker date-changeable col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="creation" />
+        <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="collection" />
+        <mir:dateRangeInput xpath="mods:dateOther[@type='reviewed'][@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}" type="review" />
+        <mir:dateRangeInput xpath="mods:dateModified[@encoding='w3cdtf']" class="datetimepicker date-changeable d-none col-md-6" placeholder="{i18n:mir.placeholder.date}"
+          type="update" />
+        <mir:help-pmud help-text="{i18n:mir.help.date.repeated}" pmud="true" />
+      </div>
+    </xed:repeat>
   </xed:template>
 
   <xed:template id="comment">
