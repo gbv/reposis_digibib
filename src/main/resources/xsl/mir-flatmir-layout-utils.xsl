@@ -11,6 +11,14 @@
 
   <xsl:template name="mir.navigation">
 
+    <xsl:variable name="maintenance" select="document('notnull:file:/mcr/data/maintenance.xml')"/>
+
+    <xsl:if test="string-length($maintenance/message) &gt; 0">
+      <div class="maintenance">
+        <xsl:value-of select="$maintenance/message"/>
+      </div>
+    </xsl:if>
+
     <div class="leo-header">
 
       <div class="leo-header__logo">
