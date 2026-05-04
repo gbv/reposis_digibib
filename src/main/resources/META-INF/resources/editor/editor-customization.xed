@@ -213,11 +213,13 @@
               </xed:when>
               <xed:otherwise>
                 <xed:include ref="research.data.person.repeated" />
+                <xed:validate
+                  xpath="//mods:mods"
+                  test="count(./mods:name/mods:role/mods:roleTerm[@valueURIxEditor='corresponding_author']) &gt; 0"
+                  display="global"
+                  i18n="digibib.validation.correspondingAuthor" />
               </xed:otherwise>
             </xed:choose>
-            <!-- relevant-if="count(./mods:name/mods:role/mods:roleTerm[text()='aut']) &gt; 0" -->
-            <xed:validate xpath="//mods:mods" test="count(./mods:name/mods:role/mods:roleTerm[@valueURIxEditor='corresponding_author']) &gt; 0"
-              display="global" i18n="digibib.validation.correspondingAuthor"/>
           </fieldset>
           <xed:if test="$genre_intern!='software'">
             <xed:include ref="openAIRE" after="person.repeated"/>
