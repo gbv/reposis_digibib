@@ -1,38 +1,41 @@
-<web-fragment xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd" version="3.0" metadata-complete="true"
->
-    <name>reposis_digibib</name>
+<web-fragment version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
+  metadata-complete="true">
 
-    <servlet>
-        <servlet-name>HandbuecherRoot</servlet-name>
-        <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HandbuecherRoot</servlet-name>
-        <url-pattern>/handbuecher/*</url-pattern>
-    </servlet-mapping>
+  <name>reposis_digibib</name>
 
-    <servlet>
-        <servlet-name>MCRVueContactServlet</servlet-name>
-        <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>MCRVueContactServlet</servlet-name>
-        <url-pattern>/contact-request-manager/*</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-    	<servlet-name>ContactRequestRestServlet</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jakarta.ws.rs.Application</param-name>
-            <param-value>de.vzg.reposis.digibib.contactrequest.restapi.ContactRestApp</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ContactRequestRestServlet</servlet-name>
-        <url-pattern>/api/contact-requests/*</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>HandbuecherRoot</servlet-name>
+    <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HandbuecherRoot</servlet-name>
+    <url-pattern>/handbuecher/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MCRVueContactServlet</servlet-name>
+    <servlet-class>org.mycore.webtools.vue.MCRVueRootServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MCRVueContactServlet</servlet-name>
+    <url-pattern>/contact-request-manager/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ContactRequestRestServlet</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jakarta.ws.rs.Application</param-name>
+      <param-value>de.vzg.reposis.digibib.contactrequest.restapi.ContactRestApp</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactRequestRestServlet</servlet-name>
+    <url-pattern>/api/contact-requests/*</url-pattern>
+  </servlet-mapping>
 
 </web-fragment>
