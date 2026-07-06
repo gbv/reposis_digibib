@@ -315,13 +315,6 @@
     </script>
   </xed:template>
 
-  <xed:template id="advanced-cleanup-rules">
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='advanced-part']" relevant-if="*" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='advanced-part']//fn:string" relevant-if="(string-length(text()) &gt; 0)" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='advanced-part']//fn:array" relevant-if="*" />
-    <xed:cleanup-rule xpath="//mods:extension[@displayLabel='advanced-part']//fn:map" relevant-if="(count(*) &gt; 0)" />
-  </xed:template>
-
   <xed:template id="software-extension">
     <div class="card">
       <h5 class="card-header">
@@ -379,7 +372,7 @@
 
   <xed:modify ref="cleanup-rules">
     <xed:include ref="rep.codemeta.cleanupRules" />
-    <xed:include ref="advanced-cleanup-rules" />
+    <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/research_data/advanced-includes.xed" ref="rd.advanced.cleanupRules" />
   </xed:modify>
 
   <xed:modify ref="genres.lecture">
