@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
   <xsl:param name="objectId" />
   <xsl:param name="WebApplicationBaseURL" />
 
@@ -16,7 +17,7 @@
 
   <xsl:template name="subject">
     <subject>
-      <xsl:value-of select="concat('New contact request for: ' , $objectId)" />
+      <xsl:value-of select="concat('New contact request for: ', $objectId)" />
     </subject>
   </xsl:template>
 

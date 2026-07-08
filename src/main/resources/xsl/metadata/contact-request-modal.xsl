@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation" exclude-result-prefixes="i18n">
+<xsl:stylesheet version="1.0"
+  xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  exclude-result-prefixes="i18n">
+
   <xsl:import href="xslImport:modsmeta:metadata/contact-request-modal.xsl" />
+
   <xsl:param name="Digibib.ContactRequest.RequestForm.EnabledGenres" />
-  <xsl:variable name="objectId" select="/mycoreobject/@ID" />
+
+  <xsl:variable name="object-id" select="/mycoreobject/@ID" />
 
   <xsl:template match="/">
     <xsl:if test="contains($Digibib.ContactRequest.RequestForm.EnabledGenres, $mods-type)">
@@ -349,7 +354,7 @@
   <xsl:template name="print-open-create-contact-request-form-button">
     <li id="createContactRequestMenuItem">
       <a class="dropdown-item" role="menuitem" tabindex="-1"
-        data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objectId}">
+        data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$object-id}">
         <xsl:value-of select="i18n:translate('digibib.contactRequest.frontend.button.contact')" />
       </a>
     </li>
