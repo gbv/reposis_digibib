@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
-    xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
-    xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
-    exclude-result-prefixes="i18n mcrver mcrxsl">
+  xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
+  xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
+  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  exclude-result-prefixes="i18n mcrver mcrxsl">
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
+
   <xsl:param name="piwikID" select="'0'" />
 
   <xsl:template name="mir.navigation">
-
     <div class="leo-header">
-
       <div class="leo-header__logo">
         <xsl:call-template name="leo.page-logo" />
       </div>
-
       <div class="leo-header__nav">
         <xsl:call-template name="leo.page-nav" />
       </div>
-
     </div>
-
     <div id="digibib_feedback">
       <a href="mailto:digibib@tu-braunschweig.de">Feedback</a>
     </div>
-
   </xsl:template>
 
   <xsl:template name="leo.page-logo">
@@ -41,89 +36,86 @@
   </xsl:template>
 
   <xsl:template name="leo.page-nav">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-
-          <div class="mir-main-nav d-flex order-3 order-lg-1">
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#mir-main-nav-collapse-box"
-                aria-controls="mir-main-nav-collapse-box"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                id="mir-main-nav-collapse-box"
-                class="collapse navbar-collapse mir-main-nav__entries">
-                <ul class="navbar-nav">
-                  <xsl:call-template name="digibib.generate_single_menu_entry">
-                    <xsl:with-param name="menuID" select="'brand'"/>
-                  </xsl:call-template>
-                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
-                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
-                  <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
-                  <xsl:call-template name="mir.basketMenu" />
-                  <li class="socialbar-wrapper">
-                    <ul class="socialbar"></ul>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-
-          <button
-            class="btn search-toggler js-search-toggler order-1 order-lg-2"
-            type="button">
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="mir-main-nav d-flex order-3 order-lg-1">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#mir-main-nav-collapse-box"
+          aria-controls="mir-main-nav-collapse-box"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          id="mir-main-nav-collapse-box"
+          class="collapse navbar-collapse mir-main-nav__entries">
+          <ul class="navbar-nav">
+            <xsl:call-template name="rep.generate-single-menu-entry">
+              <xsl:with-param name="menu-id" select="'brand'" />
+              <xsl:with-param name="menu-item" select="$loaded_navigation_xml/menu[@id='brand']/item" />
+              <xsl:with-param name="browser-address" select="$browserAddress" />
+            </xsl:call-template>
+            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
+            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='collections']" />
+            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
+            <xsl:call-template name="mir.basketMenu" />
+            <li class="socialbar-wrapper">
+              <ul class="socialbar"></ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <button
+      class="btn search-toggler js-search-toggler order-1 order-lg-2"
+      type="button">
+      <i class="fas fa-search"></i>
+    </button>
+    <div id="options_nav_box" class="mir-prop-nav order-2 order-lg-3">
+      <nav>
+        <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
+          <xsl:call-template name="mir.languageMenu" />
+          <xsl:call-template name="mir.loginMenu" />
+          <li>
+            <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2))}">
+              <img
+              src="{$WebApplicationBaseURL}images/logo-leopard.png"
+              class="leo-logo"
+              alt="leoPARD Logo" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="searchfield_box">
+      <form
+        id="bs-searchHeader"
+        action="{$WebApplicationBaseURL}servlets/solr/find"
+        class="bs-search form-inline"
+        role="search">
+        <div class="input-group js-leo-searchbar">
+          <input
+            name="condQuery"
+            placeholder="{i18n:translate('mir.navsearch.placeholder')}"
+            class="form-control search-query"
+            type="text" />
+          <xsl:choose>
+            <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
+              <input name="owner" type="hidden" value="createdby:*" />
+            </xsl:when>
+            <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
+              <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
+            </xsl:when>
+          </xsl:choose>
+          <button type="submit" class="btn">
             <i class="fas fa-search"></i>
           </button>
-
-          <div id="options_nav_box" class="mir-prop-nav order-2 order-lg-3">
-            <nav>
-              <ul class="navbar-nav ml-auto flex-row flex-row-reverse">
-                <xsl:call-template name="mir.languageMenu" />
-                <xsl:call-template name="mir.loginMenu" />
-                <li>
-                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2))}">
-                    <img
-                    src="{$WebApplicationBaseURL}images/logo-leopard.png"
-                    class="leo-logo"
-                    alt="leoPARD Logo" />
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div class="searchfield_box">
-            <form
-              id="bs-searchHeader"
-              action="{$WebApplicationBaseURL}servlets/solr/find"
-              class="bs-search form-inline"
-              role="search">
-              <div class="input-group js-leo-searchbar">
-                <input
-                  name="condQuery"
-                  placeholder="{i18n:translate('mir.navsearch.placeholder')}"
-                  class="form-control search-query"
-                  type="text" />
-                <xsl:choose>
-                  <xsl:when test="mcrxsl:isCurrentUserInRole('admin') or mcrxsl:isCurrentUserInRole('editor')">
-                    <input name="owner" type="hidden" value="createdby:*" />
-                  </xsl:when>
-                  <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
-                    <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
-                  </xsl:when>
-                </xsl:choose>
-                <button type="submit" class="btn">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-
+        </div>
+      </form>
+    </div>
   </xsl:template>
 
 
@@ -168,9 +160,7 @@
           <div class="col">
             <h2>Projekt</h2>
             <ul class="internal_links">
-              <xsl:apply-templates
-                select="$loaded_navigation_xml/menu[@id='below']/*"
-                mode="footerMenu" />
+              <xsl:apply-templates mode="footerMenu" select="$loaded_navigation_xml/menu[@id='below']/*" />
             </ul>
           </div>
         </div>
@@ -200,30 +190,67 @@
     </div>
   </xsl:template>
 
-  <xsl:template name="digibib.generate_single_menu_entry">
-    <xsl:param name="menuID" />
+  <xsl:template name="rep.generate-single-menu-entry">
+    <xsl:param name="menu-id" />
+    <xsl:param name="menu-item" />
+    <xsl:param name="browser-address" />
+
     <li class="nav-item">
-      <xsl:variable name="activeClass">
+      <xsl:variable name="active-class">
         <xsl:choose>
-          <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item[@href = $browserAddress ]">
-          <xsl:text>active</xsl:text>
+          <xsl:when test="$menu-item/@href = $browser-address">
+            <xsl:text>active</xsl:text>
           </xsl:when>
           <xsl:otherwise>
             <xsl:text>not-active</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      <a id="{$menuID}" href="{$WebApplicationBaseURL}{substring($loaded_navigation_xml/menu[@id=$menuID]/item/@href,2)}" class="nav-link {$activeClass}" >
-        <xsl:choose>
-          <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)] != ''">
-            <xsl:value-of select="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)]" />
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($DefaultLang)]" />
-          </xsl:otherwise>
-        </xsl:choose>
+      <xsl:variable name="full-url">
+        <xsl:call-template name="rep.resolve-full-url">
+          <xsl:with-param name="link" select="$menu-item/@href" />
+        </xsl:call-template>
+      </xsl:variable>
+      <a id="{$menu-id}" href="{$full-url}" class="nav-link {$active-class}">
+        <xsl:apply-templates select="$menu-item" mode="linkText" />
       </a>
     </li>
+  </xsl:template>
+
+  <xsl:template name="rep.resolve-full-url">
+    <xsl:param name="link" />
+    <xsl:param name="base-url" select="$WebApplicationBaseURL" />
+
+    <xsl:choose>
+      <xsl:when test="
+        starts-with($link,'http:')
+        or starts-with($link,'https:')
+        or starts-with($link,'mailto:')
+        or starts-with($link,'ftp:')
+      ">
+        <xsl:value-of select="$link" />
+      </xsl:when>
+      <xsl:when test="starts-with($link,'/')">
+        <xsl:choose>
+          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
+            <xsl:value-of select="concat(substring($base-url, 1, string-length($base-url) - 1), $link)" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="concat($base-url, $link)" />
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
+            <xsl:value-of select="concat($base-url, $link)" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="concat($base-url, '/', $link)" />
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="mir.powered_by">
@@ -248,7 +275,11 @@
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
         })();
       </script>
-      <noscript><p><img src="https://matomo.gbv.de/piwik.php?idsite={$piwikID}" style="border:0;" alt="" /></p></noscript>
+      <noscript>
+        <p>
+          <img src="https://matomo.gbv.de/piwik.php?idsite={$piwikID}" style="border:0;" alt="" />
+        </p>
+      </noscript>
     </xsl:if>
     <!-- End Piwik Code -->
   </xsl:template>
