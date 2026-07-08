@@ -86,7 +86,7 @@
                 <xsl:call-template name="mir.languageMenu" />
                 <xsl:call-template name="mir.loginMenu" />
                 <li>
-                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
+                  <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2))}">
                     <img
                     src="{$WebApplicationBaseURL}images/logo-leopard.png"
                     class="leo-logo"
@@ -136,7 +136,7 @@
       <div class="container">
         <div class="row">
           <div class="col-auto">
-            <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}">
+            <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2))}">
               <img
                 src="{$WebApplicationBaseURL}images/logo-leopard-white.png"
                 class="leo-logo"
