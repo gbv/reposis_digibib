@@ -8,39 +8,12 @@
             <span class="leo-project-name">LeoPARD</span>
             <span class="leo-project-slogan">TU Braunschweig Publications And Research Data</span>
           </h1>
-          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
-            <div class="input-group">
-              <input
-                name="condQuery"
-                placeholder="Suche in 16.000 Dokumenten"
-                class="form-control search-query"
-                id="bs-searchInput"
-                type="text"
-                aria-label=""
-                aria-describedby="" />
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-              </div>
-            </div>
-          </form>
+          <index-search-form />
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../js/jquery.number.js"></script>
-    <script>
-      $( document ).ready(function() {
-        $.ajax({
-          type: "GET",
-          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
-          dataType: "jsonp",
-          success: function (data) {
-            $('#bs-searchInput').attr('placeholder', 'Suche in ' + $.number(data.response.numFound,0, ',', '.') + ' Dokumenten');
-          },
-        });
-      });
-    </script>
+    <script src="../js/index.js" />
   </section>
-
   <section xml:lang="en" title="LeoPARD - Start">
     <div class="jumbotwo" id="bs-index-search">
       <div class="row">
@@ -49,40 +22,10 @@
             <span class="leo-project-name">LeoPARD</span>
             <span class="leo-project-slogan">TU Braunschweig Publications And Research Data</span>
           </h1>
-          <form action="../servlets/solr/find" id="bs-searchMainPage" class="form-inline mt-3" role="search">
-            <div class="input-group">
-              <input
-                name="condQuery"
-                placeholder="Search in 16.000 documents"
-                class="form-control search-query"
-                id="bs-searchInput"
-                type="text"
-                aria-label=""
-                aria-describedby="" />
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-              </div>
-            </div>
-          </form>
+          <index-search-form />
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../js/jquery.number.js"></script>
-    <script>
-      $( document ).ready(function() {
-        $.ajax({
-          type: "GET",
-          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
-          dataType: "jsonp",
-          success: function (data) {
-            $('#bs-searchInput').attr('placeholder', 'Search in ' + $.number(data.response.numFound,0, ',', '.') + ' documents');
-          },
-        });
-      });
-    </script>
+    <script src="../js/index.js" />
   </section>
-
-  <meta>
-    <log lastEditor="administrator" date="2022-08-22" time="12:46"/>
-  </meta>
 </MyCoReWebPage>
