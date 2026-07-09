@@ -10,18 +10,18 @@
 
   <xsl:template match="/">
     <xsl:variable name="mods" select="mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods" />
-      <div id="metadata-extension">
-        <div class="mir_metadata" style="margin-top:-30px;">
-          <hr class="my-3" />
-          <dl>
-            <xsl:if test="$mods/mods:extension[@type='advanced-part']/fn:map">
+      <xsl:if test="$mods/mods:extension[@type='advanced-part']/fn:map">
+        <div id="metadata-extension">
+          <div class="mir_metadata" style="margin-top:-30px;">
+            <hr class="my-3" />
+            <dl>
               <xsl:call-template name="advanced">
                 <xsl:with-param name="advanced" select="$mods/mods:extension[@type='advanced-part']/fn:map" />
               </xsl:call-template>
-            </xsl:if>
-          </dl>
+            </dl>
+          </div>
         </div>
-      </div>
+      </xsl:if>
     <xsl:apply-imports />
   </xsl:template>
 
