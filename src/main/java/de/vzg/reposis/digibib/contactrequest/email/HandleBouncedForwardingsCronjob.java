@@ -46,13 +46,13 @@ public class HandleBouncedForwardingsCronjob extends MCRCronjob {
 
     @Override
     public void runJob() {
-        getProcessable().setStatus(MCRProcessableStatus.processing);
+        getProcessable().setStatus(MCRProcessableStatus.PROCESSING);
         getProcessable().setProgress(0);
         try {
             new MCRFixedUserCallable<>(() -> {
                 ContactRequestFactory.getContactEmailService().handleBouncedMessages();
                 return null;
-            }, MCRSystemUserInformation.getJanitorInstance()).call();
+            }, MCRSystemUserInformation.JANITOR).call();
         } catch (Exception e) {
             LOGGER.error("Error while handling bounces messages", e);
         }

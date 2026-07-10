@@ -55,7 +55,7 @@ public class ContactRestExceptionMapper implements ExceptionMapper<ContactReques
     }
 
     private static Response getResponse(Exception e, int statusCode, String errorCode) {
-        MCRErrorResponse response = MCRErrorResponse.fromStatus(statusCode).withCause(e).withMessage(e.getMessage())
+        MCRErrorResponse response = MCRErrorResponse.ofStatusCode(statusCode).withCause(e).withMessage(e.getMessage())
             .withDetail(Optional.of(e).map(ex -> (ex instanceof WebApplicationException) ? ex.getCause() : ex)
                 .map(Object::getClass).map(Class::getName).orElse(null))
             .withErrorCode(errorCode);

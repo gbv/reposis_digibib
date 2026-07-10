@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ This file is part of ***  M y C o R e  ***
-  ~ See http://www.mycore.de/ for details.
-  ~
-  ~ MyCoRe is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ MyCoRe is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>de.gbv.reposis</groupId>
     <artifactId>reposis_mir_parent</artifactId>
-    <version>2023.06-SNAPSHOT</version>
+    <version>2024.06-SNAPSHOT</version>
   </parent>
-
   <artifactId>reposis_digibib</artifactId>
-  <version>2023.06-SNAPSHOT</version>
+  <version>2024.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>digibib</MCR.AppName>
     <cage.version>1.0</cage.version>
-    <java.target.version>17</java.target.version>
+    <java.target.version>21</java.target.version>
     <node.version>v16.19.1</node.version>
     <sun.mail.version>2.0.1</sun.mail.version>
     <yarn.version>v1.22.19</yarn.version>

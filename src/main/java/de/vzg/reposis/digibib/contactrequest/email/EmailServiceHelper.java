@@ -151,8 +151,8 @@ public class EmailServiceHelper {
 
     private static Document transform(Document input, String stylesheet, Map<String, String> parameters) {
         MCRJDOMContent source = new MCRJDOMContent(input);
-        MCRXSL2XMLTransformer transformer = MCRXSL2XMLTransformer.getInstance(stylesheet);
-        MCRParameterCollector parameterCollector = MCRParameterCollector.getInstanceFromUserSession();
+        MCRXSL2XMLTransformer transformer = MCRXSL2XMLTransformer.obtainInstance(stylesheet);
+        MCRParameterCollector parameterCollector = MCRParameterCollector.ofCurrentSession();
         parameterCollector.setParameters(parameters);
         try {
             return transformer.transform(source, parameterCollector).asXML();

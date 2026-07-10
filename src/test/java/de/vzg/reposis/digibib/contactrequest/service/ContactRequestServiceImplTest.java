@@ -67,7 +67,7 @@ public class ContactRequestServiceImplTest extends MCRTestCase {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        MCREventManager.instance().clear();
+        MCREventManager.getInstance().clear();
         requestRepoMock = Mockito.mock(ContactRequestRepository.class);
         infoRepoyMock = Mockito.mock(ContactInfoRepository.class);
         attemptRepoMock = Mockito.mock(ContactAttemptRepository.class);
