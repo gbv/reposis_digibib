@@ -59,7 +59,7 @@
                     <xsl:if test="contains($Digibib.ContactRequest.RequestForm.EnabledGenres, $mods-type)">
                       <xsl:value-of select="' '" />
                       <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.before')" />
-                      <a data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objectId}">
+                      <a data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objID}">
                         <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink')" />
                       </a>
                       <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.after')" />
