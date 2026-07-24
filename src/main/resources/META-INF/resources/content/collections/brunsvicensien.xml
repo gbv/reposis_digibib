@@ -1,182 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage><section xml:lang="de" title="Brunsvicensien"><div>
 <h2>Brunsvicensien (Literatur aus und über die Stadt und das Land Braunschweig)</h2>
-
 <div class="row" id="digibib_brunsvicensien">
 <div class="col-md-6">
 <ul><!--<li>Brunsvicensien der <a href="http://www.ub.tu-braunschweig.de">Universitätsbibliothek Braunschweig</a><br />
 	&nbsp;</li>-->
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Alle Titel</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject:%22Vom%20Collegium%20Carolinum%20bis%20zur%20Technischen%20Universit%C3%A4t%22&amp;wt=xml">Vom Collegium Carolinum bis zur Technischen Universität </a>
-	<ul>
-		<li><a href="../../receive/dbbs_mods_00065812">Vorlesungsverzeichnisse ab 1745</a></li>
-		<li><a href="brunsvicensien/matrikelbuecher.xml">Matrikelbücher (1745 - 1942)</a></li>
-	</ul>
-	</li>
-	<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=%22brunsvicensien+der+universit%C3%A4tsbibliothek+braunschweig+universit%C3%A4tsbibliothek+braunschweig%22&amp;submit=&amp;limit=20&amp;sort=year">Universitätsbibliothek Braunschweig </a>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/64095">Veröffentlichungen der Universitätsbibliothek und des<br />
-		Universitätsarchivs Braunschweig</a></li>
-	</ul>
-	</li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Stadt+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Stadt Braunschweig</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Land%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Land Braunschweig</a> (Region, Umland ...)</li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Herzogtum+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Herzogtum Braunschweig</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Kunst-+und+Kulturgeschichte%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Kunst- und Kulturgeschichte</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Schul-+und+Bildungswesen%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Schul- und Bildungswesen</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Wirtschaft,+Handel+und+Justiz%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Wirtschaft, Handel und Justiz</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Architektur%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Architektur</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Pharmazie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Pharmazie</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Biologie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Biologie</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Geologie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Geologie</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Eisenbahngeschichte%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Eisenbahngeschichte</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Ansichten+von+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Ansichten von Braunschweig</a></li>
-	<li>Werke...
-	<ul>
-		<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Persönlichkeiten%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">... von Persönlichkeiten der Region </a></li>
-		<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Werke+über+Braunschweiger+Persönlichkeiten%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">... über Persönlichkeiten der Region </a></li>
-	</ul>
-	</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Alle Titel</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject:%22Vom%20Collegium%20Carolinum%20bis%20zur%20Technischen%20Universit%C3%A4t%22&amp;wt=xml">Vom Collegium Carolinum bis zur Technischen Universität </a>
+<ul>
+<li><a href="../../receive/dbbs_mods_00065812">Vorlesungsverzeichnisse ab 1745</a></li>
+<li><a href="brunsvicensien/matrikelbuecher.xml">Matrikelbücher (1745 - 1942)</a></li>
+</ul>
+</li>
+<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=%22brunsvicensien+der+universit%C3%A4tsbibliothek+braunschweig+universit%C3%A4tsbibliothek+braunschweig%22&amp;submit=&amp;limit=20&amp;sort=year">Universitätsbibliothek Braunschweig </a>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64095">Veröffentlichungen der Universitätsbibliothek und des<br />Universitätsarchivs Braunschweig</a></li>
+</ul>
+</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Stadt+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Stadt Braunschweig</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Land%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Land Braunschweig</a> (Region, Umland ...)</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Herzogtum+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Herzogtum Braunschweig</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Kunst-+und+Kulturgeschichte%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Kunst- und Kulturgeschichte</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Schul-+und+Bildungswesen%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Schul- und Bildungswesen</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Wirtschaft,+Handel+und+Justiz%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Wirtschaft, Handel und Justiz</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Architektur%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Architektur</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Pharmazie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Pharmazie</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Biologie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Biologie</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Geologie%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Geologie</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Eisenbahngeschichte%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Eisenbahngeschichte</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Ansichten+von+Braunschweig%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">Ansichten von Braunschweig</a></li>
+<li>Werke...
+<ul>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Persönlichkeiten%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">... von Persönlichkeiten der Region </a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Werke+über+Braunschweiger+Persönlichkeiten%22+AND+mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">... über Persönlichkeiten der Region </a></li>
+</ul>
+</li>
 </ul>
 </div>
-
 <div class="col-md-6">
 <ul>
-	<li><a href="../../receive/dbbs_mods_00064795">Braunschweigische Anzeigen</a></li>
-	<li><a href="../../receive/dbbs_mods_64930">Gelehrte Beyträge zu den Braunschweigischen Anzeigen</a></li>
-	<li><a href="../../receive/dbbs_mods_64934">Braunschweigisches Magazin</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64262">Braunschweigische Adressbücher </a><a href="http://publikationsserver.tu-braunschweig.de/get/64262">ab dem Jahr 1721</a></li>
+<li><a href="../../receive/dbbs_mods_00064795">Braunschweigische Anzeigen</a></li>
+<li><a href="../../receive/dbbs_mods_64930">Gelehrte Beyträge zu den Braunschweigischen Anzeigen</a></li>
+<li><a href="../../receive/dbbs_mods_64934">Braunschweigisches Magazin</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64262">Braunschweigische Adressbücher </a><a href="http://publikationsserver.tu-braunschweig.de/get/64262">ab dem Jahr 1721</a></li>
 </ul>
-
 <h3>Digitalisate in Zusammenarbeit mit Kooperationspartnern</h3>
-
 <ul>
-	<li><strong><a href="https://publikationsserver.tu-braunschweig.de/content/collections/brunsvicensien/blm.xml">Braunschweigisches Landesmuseum</a></strong>
-
-	<ul>
-		<li><a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00069575">Forschungen und Berichte</a></li>
-		<li><a href="https://leopard.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A%22Judaica+des+Braunschweigischen+Landesmuseums%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Judaica</a></li>
-		<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00071917">Neue Studien zur Sachsenforschung</a></li>
-	</ul>
-	</li>
-	<li><strong><a href="https://publikationsserver.tu-braunschweig.de/servlets/solr/select?q=%2Bmods.subject%3A%22Best%C3%A4nde+des+Stadtarchivs+Braunschweig%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Stadtarchiv Braunschweig</a></strong>, u.a. Adreßbücher, <a href="http://publikationsserver.tu-braunschweig.de/get/64442">Urkundenbücher</a> und <a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00064441">Chroniken</a> der Stadt Braunschweig und <a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00041777">Verhandlungen der Stadtverordneten</a></li>
-	<li><strong><a href="../../content/collections/brunsvicensien/stadtbibliothek.xml">Stadtbibliothek Braunschweig</a></strong></li>
-	<li><strong><a href="brunsvicensien/publications_bwg.xml">Braunschweigische Wissenschaftliche Gesellschaft</a></strong>  <a href="http://bwg-nds.de/">(BWG)</a></li>
-	<li><strong><a href="http://www.braunschweigischer-geschichtsverein.de/">Braunschweigischer Geschichtsverein</a></strong>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/64800">Braunschweigische Jahrbücher</a> der Jahrgänge 1902 bis 2019</li>
-	</ul>
-	</li>
-	<li><strong><a href="http://www.bs-heimat.de/">Braunschweigischer Landesverein Geschichte-Heimat-Natur e.V.</a></strong>
-	<ul>
-		<li><a href="http://www.bs-heimat.de/">​</a><a href="http://publikationsserver.tu-braunschweig.de/get/64191">Braunschweigische Heimat - ab dem Jg. 1.1910</a></li>
-	</ul>
-	</li>
-	<li><strong><a href="http://www.eintracht.com">BTSV Eintracht von 1895 e.V.</a></strong>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/65164">Eintracht-Magazin: Mitteilungsblatt des BTSV Eintracht v. 1895</a> - ab dem Jahr 1908</li>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/65281">Eintracht-Echo</a> - ab dem Jahr 1953</li>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/65792">Eintracht Aktuell</a> - ab dem Jahr 1976</li>
-	</ul>
-	</li>
-	<li><strong><a href="https://richardborek.com/stiftung/">Richard Borek Stiftung</a></strong>
-	<ul>
-		<li><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/borek.xml">Kulturmagazin 'LIVING"</a></li>
-	</ul>
-	</li>
+<li><strong><a href="https://publikationsserver.tu-braunschweig.de/content/collections/brunsvicensien/blm.xml">Braunschweigisches Landesmuseum</a></strong>
+<ul>
+<li><a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00069575">Forschungen und Berichte</a></li>
+<li><a href="https://leopard.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A%22Judaica+des+Braunschweigischen+Landesmuseums%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Judaica</a></li>
+<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00071917">Neue Studien zur Sachsenforschung</a></li>
+</ul>
+</li>
+<li><strong><a href="https://publikationsserver.tu-braunschweig.de/servlets/solr/select?q=%2Bmods.subject%3A%22Best%C3%A4nde+des+Stadtarchivs+Braunschweig%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Stadtarchiv Braunschweig</a></strong>, u.a. Adreßbücher, <a href="http://publikationsserver.tu-braunschweig.de/get/64442">Urkundenbücher</a> und <a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00064441">Chroniken</a> der Stadt Braunschweig und <a href="https://publikationsserver.tu-braunschweig.de/receive/dbbs_mods_00041777">Verhandlungen der Stadtverordneten</a></li>
+<li><strong><a href="../../content/collections/brunsvicensien/stadtbibliothek.xml">Stadtbibliothek Braunschweig</a></strong></li>
+<li><strong><a href="brunsvicensien/publications_bwg.xml">Braunschweigische Wissenschaftliche Gesellschaft</a></strong>  <a href="http://bwg-nds.de/">(BWG)</a></li>
+<li><strong><a href="http://www.braunschweigischer-geschichtsverein.de/">Braunschweigischer Geschichtsverein</a></strong>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64800">Braunschweigische Jahrbücher</a> der Jahrgänge 1902 bis 2024</li>
+</ul>
+</li>
+<li><strong><a href="http://www.bs-heimat.de/">Braunschweigischer Landesverein Geschichte-Heimat-Natur e.V.</a></strong>
+<ul>
+<li><a href="http://www.bs-heimat.de/">​</a><a href="http://publikationsserver.tu-braunschweig.de/get/64191">Braunschweigische Heimat - ab dem Jg. 1.1910</a></li>
+</ul>
+</li>
+<li><strong><a href="http://www.eintracht.com">BTSV Eintracht von 1895 e.V.</a></strong>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/65164">Eintracht-Magazin: Mitteilungsblatt des BTSV Eintracht v. 1895</a> - ab dem Jahr 1908</li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/65281">Eintracht-Echo</a> - ab dem Jahr 1953</li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/65792">Eintracht Aktuell</a> - ab dem Jahr 1976</li>
+</ul>
+</li>
+<li><strong><a href="https://richardborek.com/stiftung/">Richard Borek Stiftung</a></strong>
+<ul>
+<li><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/borek.xml">Kulturmagazin 'LIVING"</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-</div>
-</section><section xml:lang="en" title="Brunsvicensien"><div>
+</div></section><section xml:lang="en" title="Brunsvicensien"><div>
 <h2>Brunsvicensien (Literature from and concerning Brunswick city and Brunswick Land)</h2>
-
 <div class="row" id="digibib_brunsvicensien">
 <div class="col-md-6">
 <ul><!--<li>Brunsvicensien of the <a href="http://www.ub.tu-braunschweig.de">Universitätsbibliothek Braunschweig</a></li>-->
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">All titles</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject:%22Vom%20Collegium%20Carolinum%20bis%20zur%20Technischen%20Universit%C3%A4t%22&amp;wt=xml">From Collegium Carolinum to Technische Universität</a>
-	<ul>
-		<li><a href="../../receive/dbbs_mods_00065812">Lecture directories from 1745</a></li>
-		<li><a href="brunsvicensien/matrikelbuecher.xml">Matriculation books (1745 - 1942)</a></li>
-	</ul>
-	</li>
-	<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=%22brunsvicensien+der+universit%C3%A4tsbibliothek+braunschweig+universit%C3%A4tsbibliothek+braunschweig%22&amp;submit=&amp;limit=20&amp;sort=year">Universitätsbibliothek Braunschweig </a>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/64095">Publications of the university library and the<br />
-		university archive of Brunswick</a></li>
-	</ul>
-	</li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Stadt+Braunschweig%22&amp;wt=xml">Brunswick city</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Land%22&amp;wt=xml">Brunswick Land</a> (region, surrounding area ...)</li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Herzogtum+Braunschweig%22&amp;wt=xml">Duchy of Brunswick</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Kunst-+und+Kulturgeschichte%22&amp;wt=xml">History of arts and civilization</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Schul-+und+Bildungswesen%22&amp;wt=xml">School system and education</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Wirtschaft,+Handel+und+Justiz%22&amp;wt=xml">Economy, trade and justice</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Architektur%22&amp;wt=xml">Architecture</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Pharmazie%22&amp;wt=xml">Pharmacy</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Biologie%22&amp;wt=xml">Biology</a> (in cooperation with<a href="http://niedersachsen.nabu.de/tiereundpflanzen/vogelschutz/avison/">Avifaunistische<br />
-	Arbeitsgemeinschaft Südostniedersachsen) </a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Geologie%22&amp;wt=xml">Geology</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Eisenbahngeschichte%22&amp;wt=xml">Railroad history</a></li>
-	<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Ansichten+von+Braunschweig%22&amp;wt=xml">Views of Brunswick</a></li>
-	<li>Works...
-	<ul>
-		<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Persönlichkeiten%22&amp;wt=xml">... by renowned personalities of the region </a></li>
-		<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Werke+über+Braunschweiger+Persönlichkeiten%22&amp;wt=xml">... of renowned personalities of the region </a></li>
-	</ul>
-	</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Brunsvicensien%22&amp;wt=xml">All titles</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject:%22Vom%20Collegium%20Carolinum%20bis%20zur%20Technischen%20Universit%C3%A4t%22&amp;wt=xml">From Collegium Carolinum to Technische Universität</a>
+<ul>
+<li><a href="../../receive/dbbs_mods_00065812">Lecture directories from 1745</a></li>
+<li><a href="brunsvicensien/matrikelbuecher.xml">Matriculation books (1745 - 1942)</a></li>
 </ul>
-
+</li>
+<li><a href="https://katalog.ub.tu-braunschweig.de/vufind/Search/Results?lookfor=%22brunsvicensien+der+universit%C3%A4tsbibliothek+braunschweig+universit%C3%A4tsbibliothek+braunschweig%22&amp;submit=&amp;limit=20&amp;sort=year">Universitätsbibliothek Braunschweig </a>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64095">Publications of the university library and the<br />university archive of Brunswick</a></li>
+</ul>
+</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Stadt+Braunschweig%22&amp;wt=xml">Brunswick city</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Land%22&amp;wt=xml">Brunswick Land</a> (region, surrounding area ...)</li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Herzogtum+Braunschweig%22&amp;wt=xml">Duchy of Brunswick</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Kunst-+und+Kulturgeschichte%22&amp;wt=xml">History of arts and civilization</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Schul-+und+Bildungswesen%22&amp;wt=xml">School system and education</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Wirtschaft,+Handel+und+Justiz%22&amp;wt=xml">Economy, trade and justice</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Architektur%22&amp;wt=xml">Architecture</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Pharmazie%22&amp;wt=xml">Pharmacy</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Biologie%22&amp;wt=xml">Biology</a> (in cooperation with<a href="http://niedersachsen.nabu.de/tiereundpflanzen/vogelschutz/avison/">Avifaunistische<br />Arbeitsgemeinschaft Südostniedersachsen) </a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Geologie%22&amp;wt=xml">Geology</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Eisenbahngeschichte%22&amp;wt=xml">Railroad history</a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Ansichten+von+Braunschweig%22&amp;wt=xml">Views of Brunswick</a></li>
+<li>Works...
+<ul>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Braunschweiger+Persönlichkeiten%22&amp;wt=xml">... by renowned personalities of the region </a></li>
+<li><a href="../../servlets/solr/select?q=mods.subject%3A%22Werke+über+Braunschweiger+Persönlichkeiten%22&amp;wt=xml">... of renowned personalities of the region </a></li>
+</ul>
+</li>
+</ul>
 <h3> </h3>
-
 <h3> </h3>
 </div>
-
 <div class="col-md-6">
 <ul>
-	<li><a href="brunsvicensien/gelehrte-beytraege.xml">Braunschweigische Anzeigen</a></li>
-	<li><a href="brunsvicensien/gelehrte-beytraege.xml">Gelehrte Beyträge zu den Braunschweigischen Anzeigen</a></li>
-	<li><a href="brunsvicensien/gelehrte-beytraege.xml">Braunschweigisches Magazin</a></li>
-	<li><a href="http://publikationsserver.tu-braunschweig.de/get/64262">Braunschweigische Adressbücher ab dem Jahr 1721 - ... </a></li>
+<li><a href="brunsvicensien/gelehrte-beytraege.xml">Braunschweigische Anzeigen</a></li>
+<li><a href="brunsvicensien/gelehrte-beytraege.xml">Gelehrte Beyträge zu den Braunschweigischen Anzeigen</a></li>
+<li><a href="brunsvicensien/gelehrte-beytraege.xml">Braunschweigisches Magazin</a></li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64262">Braunschweigische Adressbücher ab dem Jahr 1721 - ... </a></li>
 </ul>
-
 <h3>​Digitized files in collaboration with cooperation partners</h3>
-
 <ul>
-	<li><strong><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/blm.xml">Braunschweigisches Landesmuseum</a></strong>
-
-	<ul>
-		<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00069575">Forschungen und Berichte</a></li>
-		<li><a href="https://leopard.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A%22Judaica+des+Braunschweigischen+Landesmuseums%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Judaica</a></li>
-		<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00071917">Neue Studien zur Sachsenforschung</a></li>
-	</ul>
-	</li>
-	<li><strong><a href="http://www.braunschweig.de/kultur_tourismus/bibliotheken_archive/stadtarchiv/index.html">Stadtarchiv Braunschweig</a></strong>, among other things <a href="http://publikationsserver.tu-braunschweig.de/get/64262">Adressbücher</a>, <a href="../../receive/dbbs_mods_00064442">Urkundenbücher</a> and <a href="../../receive/dbbs_mods_00064441">Chroniken</a> of Braunschweig</li>
-	<li><strong><a href="brunsvicensien/publications_bwg.xml">Braunschweigische Wissenschaftliche Gesellschaft</a></strong> <a href="http://bwg-nds.de/">(BWG)</a></li>
-	<li><a href="http://www.braunschweigischer-geschichtsverein.de/">Braunschweigischer Geschichtsverein</a>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/64800">Braunschweigische Jahrbücher</a> der Jahrgänge 1902 bis 2019</li>
-	</ul>
-	</li>
-	<li><strong><a href="http://www.bs-heimat.de/">Braunschweigischer Landesverein Geschichte-Heimat-Natur e.V.</a></strong>
-	<ul>
-		<li><a href="http://www.bs-heimat.de/">​</a><a href="http://publikationsserver.tu-braunschweig.de/get/64191">Braunschweigische Heimat - ab dem Jg. 1.1910</a></li>
-	</ul>
-	</li>
-	<li><strong><a href="http://www.eintracht.com">BTSV Eintracht von 1895 e.V.</a></strong>
-	<ul>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/65164">Eintracht-Magazin: Mitteilungsblatt des BTSV Eintracht v. 1895</a> - ab dem Jahr 1908</li>
-		<li><a href="http://publikationsserver.tu-braunschweig.de/get/65281">Eintracht-Echo</a> - ab dem Jahr 1953</li>
-		<li><a href="leopard.tu-braunschweig.de/get/65792">Eintracht Aktuell</a> - abe dem Jahr 1976</li>
-	</ul>
-	</li>
-	<li><strong><a href="https://richardborek.com/stiftung/">Richard Borek Stiftung</a></strong>
-	<ul>
-		<li><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/borek.xml">Szenemagazin 'LIVING"</a></li>
-	</ul>
-	</li>
+<li><strong><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/blm.xml">Braunschweigisches Landesmuseum</a></strong>
+<ul>
+<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00069575">Forschungen und Berichte</a></li>
+<li><a href="https://leopard.tu-braunschweig.de/servlets/solr/select?q=%2BallMeta%3A%22Judaica+des+Braunschweigischen+Landesmuseums%22+%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=content%2Fsearch%2Fcomplex_intern.xed">Judaica</a></li>
+<li><a href="https://leopard.tu-braunschweig.de/receive/dbbs_mods_00071917">Neue Studien zur Sachsenforschung</a></li>
+</ul>
+</li>
+<li><strong><a href="http://www.braunschweig.de/kultur_tourismus/bibliotheken_archive/stadtarchiv/index.html">Stadtarchiv Braunschweig</a></strong>, among other things <a href="http://publikationsserver.tu-braunschweig.de/get/64262">Adressbücher</a>, <a href="../../receive/dbbs_mods_00064442">Urkundenbücher</a> and <a href="../../receive/dbbs_mods_00064441">Chroniken</a> of Braunschweig</li>
+<li><strong><a href="brunsvicensien/publications_bwg.xml">Braunschweigische Wissenschaftliche Gesellschaft</a></strong> <a href="http://bwg-nds.de/">(BWG)</a></li>
+<li><a href="http://www.braunschweigischer-geschichtsverein.de/">Braunschweigischer Geschichtsverein</a>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/64800">Braunschweigische Jahrbücher</a> years 1902 to 2024</li>
+</ul>
+</li>
+<li><strong><a href="http://www.bs-heimat.de/">Braunschweigischer Landesverein Geschichte-Heimat-Natur e.V.</a></strong>
+<ul>
+<li><a href="http://www.bs-heimat.de/">​</a><a href="http://publikationsserver.tu-braunschweig.de/get/64191">Braunschweigische Heimat - ab dem Jg. 1.1910</a></li>
+</ul>
+</li>
+<li><strong><a href="http://www.eintracht.com">BTSV Eintracht von 1895 e.V.</a></strong>
+<ul>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/65164">Eintracht-Magazin: Mitteilungsblatt des BTSV Eintracht v. 1895</a> - starting from 1908</li>
+<li><a href="http://publikationsserver.tu-braunschweig.de/get/65281">Eintracht-Echo</a> - starting from 1953</li>
+<li><a href="leopard.tu-braunschweig.de/get/65792">Eintracht Aktuell</a> - starting from 1976</li>
+</ul>
+</li>
+<li><strong><a href="https://richardborek.com/stiftung/">Richard Borek Stiftung</a></strong>
+<ul>
+<li><a href="https://leopard.tu-braunschweig.de/content/collections/brunsvicensien/borek.xml">Szenemagazin 'LIVING"</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-</div></section><meta><log lastEditor="celsner" date="2024-02-08" time="15:21" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2025-08-25" time="10:50" /></meta></MyCoReWebPage>

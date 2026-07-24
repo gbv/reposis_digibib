@@ -1,335 +1,345 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <navigation hrefStartingPage="/content/index.xml" dir="/content" template="template_mir">
-    <menu id="main" dir="/content/main">
-        <label xml:lang="de">Hauptmenü</label>
-        <label xml:lang="en">Main menu</label>
-    </menu>
-    <menu id="brand" dir="/content/brand">
-        <label xml:lang="de">MIR-Menü</label>
-        <label xml:lang="en">MIR menu</label>
-        <item href="/content/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Startseite</label>
-            <label xml:lang="en">Start</label>
-        </item>
-    </menu>
-    <menu id="below" dir="/content/below">
-        <label xml:lang="de">Footer-Menü</label>
-        <label xml:lang="en">Footer menu</label>
-        <item href="/content/below/impressum.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Impressum</label>
-            <label xml:lang="en">Legal Notice</label>
-        </item>
-        <item href="/content/below/contact.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Kontakt</label>
-            <label xml:lang="en">Contact</label>
-        </item>
-        <item href="/content/below/rights.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Datenschutz</label>
-            <label xml:lang="en">Privacy Notice</label>
-        </item>
-        <item href="/content/below/terms_of_use.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Nutzungsbedingungen</label>
-            <label xml:lang="en">Terms of Use</label>
-        </item>
-        <item href="/content/below/accessibility.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Barrierefreiheit</label>
-            <label xml:lang="en">Accessibility</label>
-        </item>
-        <item href="/sitelinks" type="intern" replaceMenu="false" constrainPopUp="false">
-          <label xml:lang="de">Sitelinks</label>
-          <label xml:lang="en">Sitelinks</label>
-        </item>
-    </menu>
-    <menu id="search">
-        <label xml:lang="de">Recherche</label>
-        <label xml:lang="en">Search</label>
-        <item href="/content/search/simple.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">einfach</label>
-            <label xml:lang="en">simple</label>
-        </item>
-        <item href="/content/search/simple_intern.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">einfach</label>
-            <label xml:lang="en">simple</label>
-        </item>
-        <item href="/content/search/complex.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">komplex</label>
-            <label xml:lang="en">complex</label>
-        </item>
-        <item href="/content/search/complex_intern.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">komplex</label>
-            <label xml:lang="en">complex</label>
-        </item>
-        <item href="/search/search-expert.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">expert</label>
-            <label xml:lang="en">expert</label>
-        </item>
-        <item href="/content/browse/institutes.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">nach Einrichtung</label>
-            <label xml:lang="en">Faculties</label>
-        </item>
-        <item href="/content/browse/genres.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">nach Dokumenttyp</label>
-            <label xml:lang="en">Genre</label>
-        </item>
-        <item href="/content/browse/ddc.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">nach DDC</label>
-            <label xml:lang="en">DDC</label>
-        </item>
-        <item href="/servlets/MCRActionMappingServlet/personindex/browse" type="extern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">nach Personen</label>
-            <label xml:lang="en">Persons</label>
-        </item>
-    </menu>
-    <menu id="collections" dir="/content/collections">
-        <label xml:lang="de">Sammlungen</label>
-        <label xml:lang="en">Collections</label>
-        <item href="/content/collections/brunsvicensien.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Brunsvicensien</label>
-            <label xml:lang="en">Brunsvicensien</label>
-        </item>
-        <item href="/content/collections/brunsvicensien_alpha.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Brunsvicensien alphabetisch</label>
-            <label xml:lang="en">new entry</label>
-        </item>
-        <item href="/content/collections/brunsvicensien_thema.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Brunsvicensien Thema</label>
-            <label xml:lang="en">new entry 2</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/publications_bwg.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen der BWG</label>
-            <label xml:lang="en">BWG Publications</label>
-        </item>
-        <item href="/content/collections/dst.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Deutscher Städtetag</label>
-        </item>
-        <item href="/content/collections/image_collections.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Digitale Bildersammlungen</label>
-            <label xml:lang="en">Digital image collections</label>
-        </item>
-        <item href="/content/collections/institute_series.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Institutsreihen</label>
-            <label xml:lang="en">Institute series</label>
-        </item>
-        <item href="/content/collections/childrens_books.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Historische Kinderbücher</label>
-            <label xml:lang="en">Historical Children's Books</label>
-        </item>
-        <item href="/content/collections/pharmacy.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Pharmazie</label>
-            <label xml:lang="en">Pharmacy</label>
-        </item>
-        <item href="/content/collections/publikationsfonds.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Publikationsfonds der TU Braunschweig</label>
-            <label xml:lang="en">Publication fund of TU Braunscheig</label>
-        </item>
-        <item href="/content/collections/specialty_rarities.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Spezialgebiete und Raritäten</label>
-            <label xml:lang="en">Specialty and Rarities</label>
-        </item>
-        <item href="/content/collections/botanical_and_zoological.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Wertvolle botanische und zoologische Bücher</label>
-            <label xml:lang="en">Valuable botanical and zoological books</label>
-        </item>
-        <item href="/content/collections/tu-bekanntmachungen.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Hochschulöffentliche Bekanntmachungen der TU Braunschweig</label>
-            <label xml:lang="en">University Public Announcements</label>
-        </item>
-    </menu>
-    <menu id="children">
-        <label xml:lang="de">Kinderbücher</label>
-        <item href="/content/collections/videos_picture_books.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Videos von Ziehbilderbüchern</label>
-            <label xml:lang="en">Videos of picture books</label>
-        </item>
-    </menu>
-    <menu id="brunsvicensien">
-        <label xml:lang="de">Brunsvicensien</label>
-        <item href="/content/collections/brunsvicensien/adressbuecher.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Braunschweigische Adreßbücher</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/gelehrte-beytraege.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Gelehrte Beyträge</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/jahrbuecher.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Jahrbücher des Braunschweigischen Geschichtsvereins</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/matrikelbuecher.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Matrikelbücher der Technischen Universität Carolo-Wilhelmina zu Braunschweig</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/ph.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Vorlesungsverzeichnisse der Pädagogischen Hochschule</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/publications_bwg.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Die Braunschweigische Wissenschaftlichen Gesellschaft</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/stadtbibliothek.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Stadtbibliothek Braunschweig</label>
-            <label xml:lang="en">Municipal Library Braunschweig</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/blm.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Braunschweigisches Landesmuseum</label>
-            <label xml:lang="en">Brunswick State Museum</label>
-        </item>
-        <item href="/content/collections/brunsvicensien/borek.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Richard Borek Stiftung</label>
-            <label xml:lang="en">new entry</label>
-        </item>
-    </menu>
-    <menu id="institute_series">
-        <label xml:lang="de">Institutsreihen</label>
-        <item href="/content/collections/institute_series/publications_ivb.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des Instituts für Verbrennungskraftmaschinen</label>
-        </item>
-        <item href="/content/collections/institute_series/oer_teach_your_peers.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">OER Teach Your Peers (TYP) Videos</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_ina.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Schriften des Instituts für Akustik</label>
-            <label xml:lang="en">Publications of the Institute for Acoustics</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_nfl.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des Niedersächsischen Forschungszentrums für Luftfahrt</label>
-            <label xml:lang="en">Publications of the Aeronautics Research Centre Niedersachsen</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_iwf.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des Instituts für Werkzeugmaschinen und Fertigungstechnik</label>
-            <label xml:lang="en">Publications of the Institute of Machine Tools and Production Technology</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_gtas.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des Instituts für Geschichte und Theorie der Architektur und Stadt (GTAS)</label>
-            <label xml:lang="en">Publications of the Institute of History and Theory of Architecture and the City (GTAS)</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_ifn.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des Instituts für Nachrichtentechnik</label>
-            <label xml:lang="en">Publications of the Institute for Communications Technology</label>
-        </item>
-        <item href="/content/collections/institute_series/publications_ibmb.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Veröffentlichungen des iBMB</label>
-            <label xml:lang="en">Publications of iBMB</label>
-        </item>
-        <item href="/content/collections/institute_series/oer_teach_it_digital.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">OER Teach It Digital (TIDig)</label>
-            <label xml:lang="en"></label>
-        </item>
-        <item href="/content/collections/institute_series/oer_ueberblick.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Open Educational Resources (OER)</label>
-            <label xml:lang="en">Open Educational Resources (OER)</label>
-        </item>
-        <item href="/content/collections/institute_series/oer_pitch.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">OER Peer Instructed Teaching (PITCH)</label>
-            <label xml:lang="en">OER Peer Instructed Teaching (PITCH)</label>
-        </item>
-    </menu>
-    <menu id="publish" dir="/content/publish">
-        <label xml:lang="de">Publizieren</label>
-        <label xml:lang="en">Publish</label>
-        <item href="/content/publish/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Dokument einreichen</label>
-            <label xml:lang="en">Submit new document</label>
-        </item>
-        <item href="/content/publish/importPPN.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Dokument importieren (PPN)</label>
-            <label xml:lang="en">Import new document (PPN)</label>
-        </item>
-        <item href="/editor/editor-hoeb.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Hochschulöffentliche Bekanntmachung</label>
-            <label xml:lang="en">Hochschulöffentliche Bekanntmachung</label>
-        </item>
-        <item href="/editor/editor-admins.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Dokument einreichen (Admin)</label>
-            <label xml:lang="en">Submit new document (admin)</label>
-        </item>
-        <item href="/servlets/solr/select?q=state%3Asubmitted%20AND%20createdby:{CurrentUser}" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Meine Einreichungen</label>
-            <label xml:lang="en">My submitted documents</label>
-        </item>
-        <item href="/content/publish/authors_area.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Hinweise für Autorinnen und Autoren</label>
-            <label xml:lang="en">Notes for Authors</label>
-        </item>
-        <item href="/content/publish/contract.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Vertragsbedingungen</label>
-            <label xml:lang="en">Terms &amp; Conditions</label>
-        </item>
-        <item href="/content/publish/copyright.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Urheberrecht</label>
-            <label xml:lang="en">Copyright</label>
-        </item>
-        <item href="/content/publish/policy.xml" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Leitlinie</label>
-            <label xml:lang="en">Policy</label>
-        </item>
-    </menu>
-    <menu id="user">
-        <label xml:lang="de">Nutzermenü</label>
-        <label xml:lang="en">User menu</label>
-        <group id="thisuser">
-            <item href="/servlets/MCRUserServlet?action=changeMyPassword" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Passwort ändern</label>
-                <label xml:lang="en">Change Password</label>
-            </item>
-            <item href="/servlets/MCRUserServlet?action=show" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Benutzerdaten anzeigen</label>
-                <label xml:lang="en">Show User Data</label>
-            </item>
-            <item href="/authorization/change-current-user.xed?action=saveCurrentUser" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Kontaktdaten ändern</label>
-                <label xml:lang="en">Change user contact</label>
-            </item>
-        </group>
-        <group id="contentadmin">
-            <item href="/modules/classeditor/classificationEditor.xml?XSL.classeditor.showId=true" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Klassifikationseditor</label>
-                <label xml:lang="en">Edit Classifications</label>
-            </item>
-            <item href="/rsc/ACLE/start" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">ACL-Editor</label>
-                <label xml:lang="en">ACL Editor</label>
-            </item>
-        </group>
-        <group id="useradmin">
-            <item href="/servlets/MCRUserServlet" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Nutzerverwaltung</label>
-                <label xml:lang="en">Admin Users</label>
-            </item>
-            <item href="/authorization/new-user.xed?action=save" type="intern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Nutzer anlegen</label>
-                <label xml:lang="en">Create User</label>
-            </item>
-            <item href="/authorization/roles-editor.xml" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Rollen administrieren</label>
-                <label xml:lang="en">Manage roles</label>
-            </item>
-            <item href="/contact-request-manager" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Kontaktanfragen</label>
-                <label xml:lang="en">Contact Requests</label>
-            </item>
-        </group>
-        <group id="miscadmin">
-            <item href="/modules/webcli/launchpad.xml" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">WebCLI</label>
-                <label xml:lang="en">WebCLI</label>
-            </item>
-            <item href="/modules/webtools/session/sessionListing.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Aktive Sitzungen</label>
-                <label xml:lang="en">Session Management</label>
-            </item>
-            <item href="/modules/webtools/processing/processing.xml" type="intern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Aktive Prozesse</label>
-                <label xml:lang="en">Processing</label>
-            </item>
-            <item href="/jobqueue/" type="intern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">Job Queue</label>
-                <label xml:lang="en">Job Queue</label>
-            </item>
-            <item href="/modules/wcms2/wcms2.xml?XSL.useMT=false" type="extern" replaceMenu="false" constrainPopUp="false">
-                <label xml:lang="de">WCMS</label>
-                <label xml:lang="en">WCMS</label>
-            </item>
-        </group>
-        <item href="/servlets/logout?url=../content/index.xml" type="extern" replaceMenu="false" constrainPopUp="false">
-            <label xml:lang="de">Abmelden</label>
-            <label xml:lang="en">Logout</label>
-        </item>
-    </menu>
+  <menu id="main" dir="/content/main">
+    <label xml:lang="de">Hauptmenü</label>
+    <label xml:lang="en">Main menu</label>
+  </menu>
+  <menu id="brand" dir="/content/brand">
+    <label xml:lang="de">MIR-Menü</label>
+    <label xml:lang="en">MIR menu</label>
+    <item href="/content/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Startseite</label>
+      <label xml:lang="en">Start</label>
+    </item>
+  </menu>
+  <menu id="below" dir="/content/below">
+    <label xml:lang="de">Footer-Menü</label>
+    <label xml:lang="en">Footer menu</label>
+    <item href="/content/below/impressum.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Impressum</label>
+      <label xml:lang="en">Legal Notice</label>
+    </item>
+    <item href="/content/below/contact.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Kontakt</label>
+      <label xml:lang="en">Contact</label>
+    </item>
+    <item href="/content/below/rights.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Datenschutz</label>
+      <label xml:lang="en">Privacy Notice</label>
+    </item>
+    <item href="/content/below/terms_of_use.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Nutzungsbedingungen</label>
+      <label xml:lang="en">Terms of Use</label>
+    </item>
+    <item href="/content/below/accessibility.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Barrierefreiheit</label>
+      <label xml:lang="en">Accessibility</label>
+    </item>
+    <item href="/sitelinks" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Sitelinks</label>
+      <label xml:lang="en">Sitelinks</label>
+    </item>
+  </menu>
+  <menu id="search">
+    <label xml:lang="de">Recherche</label>
+    <label xml:lang="en">Search</label>
+    <item href="/content/search/simple.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">einfach</label>
+      <label xml:lang="en">simple</label>
+    </item>
+    <item href="/content/search/simple_intern.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">einfach</label>
+      <label xml:lang="en">simple</label>
+    </item>
+    <item href="/content/search/complex.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">komplex</label>
+      <label xml:lang="en">complex</label>
+    </item>
+    <item href="/content/search/complex_intern.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">komplex</label>
+      <label xml:lang="en">complex</label>
+    </item>
+    <item href="/search/search-expert.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">expert</label>
+      <label xml:lang="en">expert</label>
+    </item>
+    <item href="/content/browse/institutes.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">nach Einrichtung</label>
+      <label xml:lang="en">Faculties</label>
+    </item>
+    <item href="/content/browse/genres.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">nach Dokumenttyp</label>
+      <label xml:lang="en">Genre</label>
+    </item>
+    <item href="/content/browse/ddc.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">nach DDC</label>
+      <label xml:lang="en">DDC</label>
+    </item>
+    <item href="/servlets/MCRActionMappingServlet/personindex/browse" type="extern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">nach Personen</label>
+      <label xml:lang="en">Persons</label>
+    </item>
+  </menu>
+  <menu id="collections" dir="/content/collections">
+    <label xml:lang="de">Sammlungen</label>
+    <label xml:lang="en">Collections</label>
+    <item href="/content/collections/brunsvicensien.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Brunsvicensien</label>
+      <label xml:lang="en">Brunsvicensien</label>
+    </item>
+    <item href="/content/collections/brunsvicensien_alpha.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Brunsvicensien alphabetisch</label>
+      <label xml:lang="en">new entry</label>
+    </item>
+    <item href="/content/collections/brunsvicensien_thema.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Brunsvicensien Thema</label>
+      <label xml:lang="en">new entry 2</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/publications_bwg.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen der BWG</label>
+      <label xml:lang="en">BWG Publications</label>
+    </item>
+    <item href="/content/collections/dst.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Deutscher Städtetag</label>
+    </item>
+    <item href="/content/collections/image_collections.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Digitale Bildersammlungen</label>
+      <label xml:lang="en">Digital image collections</label>
+    </item>
+    <item href="/content/collections/institute_series.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Institutsreihen</label>
+      <label xml:lang="en">Institute series</label>
+    </item>
+    <item href="/content/collections/childrens_books.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Historische Kinderbücher</label>
+      <label xml:lang="en">Historical Children's Books</label>
+    </item>
+    <item href="/content/collections/pharmacy.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Pharmazie</label>
+      <label xml:lang="en">Pharmacy</label>
+    </item>
+    <item href="/content/collections/publikationsfonds.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Publikationsfonds der TU Braunschweig</label>
+      <label xml:lang="en">Publication fund of TU Braunscheig</label>
+    </item>
+    <item href="/content/collections/specialty_rarities.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Spezialgebiete und Raritäten</label>
+      <label xml:lang="en">Specialty and Rarities</label>
+    </item>
+    <item href="/content/collections/botanical_and_zoological.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Wertvolle botanische und zoologische Bücher</label>
+      <label xml:lang="en">Valuable botanical and zoological books</label>
+    </item>
+    <item href="/content/collections/tu-bekanntmachungen.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Hochschulöffentliche Bekanntmachungen der TU Braunschweig</label>
+      <label xml:lang="en">University Public Announcements</label>
+    </item>
+  </menu>
+  <menu id="children">
+    <label xml:lang="de">Kinderbücher</label>
+    <item href="/content/collections/videos_picture_books.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Videos von Ziehbilderbüchern</label>
+      <label xml:lang="en">Videos of picture books</label>
+    </item>
+  </menu>
+  <menu id="brunsvicensien">
+    <label xml:lang="de">Brunsvicensien</label>
+    <item href="/content/collections/brunsvicensien/adressbuecher.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Braunschweigische Adreßbücher</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/gelehrte-beytraege.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Gelehrte Beyträge</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/jahrbuecher.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Jahrbücher des Braunschweigischen Geschichtsvereins</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/matrikelbuecher.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Matrikelbücher der Technischen Universität Carolo-Wilhelmina zu Braunschweig</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/ph.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Vorlesungsverzeichnisse der Pädagogischen Hochschule</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/publications_bwg.xml" type="intern" replaceMenu="false"
+          constrainPopUp="false">
+      <label xml:lang="de">Die Braunschweigische Wissenschaftlichen Gesellschaft</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/stadtbibliothek.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Stadtbibliothek Braunschweig</label>
+      <label xml:lang="en">Municipal Library Braunschweig</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/blm.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Braunschweigisches Landesmuseum</label>
+      <label xml:lang="en">Brunswick State Museum</label>
+    </item>
+    <item href="/content/collections/brunsvicensien/borek.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Richard Borek Stiftung</label>
+      <label xml:lang="en">new entry</label>
+    </item>
+  </menu>
+  <menu id="institute_series">
+    <label xml:lang="de">Institutsreihen</label>
+    <item href="/content/collections/institute_series/publications_ivb.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des Instituts für Verbrennungskraftmaschinen</label>
+    </item>
+    <item href="/content/collections/institute_series/oer_teach_your_peers.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">OER Teach Your Peers (TYP) Videos</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_ina.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Schriften des Instituts für Akustik</label>
+      <label xml:lang="en">Publications of the Institute for Acoustics</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_nfl.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des Niedersächsischen Forschungszentrums für Luftfahrt</label>
+      <label xml:lang="en">Publications of the Aeronautics Research Centre Niedersachsen</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_iwf.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des Instituts für Werkzeugmaschinen und Fertigungstechnik</label>
+      <label xml:lang="en">Publications of the Institute of Machine Tools and Production Technology</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_gtas.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des Instituts für Geschichte und Theorie der Architektur und Stadt (GTAS)</label>
+      <label xml:lang="en">Publications of the Institute of History and Theory of Architecture and the City (GTAS)</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_ifn.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des Instituts für Nachrichtentechnik</label>
+      <label xml:lang="en">Publications of the Institute for Communications Technology</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_ibmb.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichungen des iBMB</label>
+      <label xml:lang="en">Publications of iBMB</label>
+    </item>
+    <item href="/content/collections/institute_series/oer_teach_it_digital.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">OER Teach It Digital (TIDig)</label>
+      <label xml:lang="en"></label>
+    </item>
+    <item href="/content/collections/institute_series/oer_ueberblick.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Open Educational Resources (OER)</label>
+      <label xml:lang="en">Open Educational Resources (OER)</label>
+    </item>
+    <item href="/content/collections/institute_series/oer_pitch.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">OER Peer Instructed Teaching (PITCH)</label>
+      <label xml:lang="en">OER Peer Instructed Teaching (PITCH)</label>
+    </item>
+    <item href="/content/collections/institute_series/publications_elenia.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Veröffentlichung des elenia Instituts für Hochspannungstechnik und Energiesysteme</label>
+      <label xml:lang="en">Publications of elenia Institute for High Voltage Technology and Power Systems</label>
+    </item>
+  </menu>
+  <menu id="publish" dir="/content/publish">
+    <label xml:lang="de">Publizieren</label>
+    <label xml:lang="en">Publish</label>
+    <item href="/content/publish/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Dokument einreichen</label>
+      <label xml:lang="en">Submit new document</label>
+    </item>
+    <item href="/content/publish/importPPN.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Dokument importieren (PPN)</label>
+      <label xml:lang="en">Import new document (PPN)</label>
+    </item>
+    <item href="/editor/editor-hoeb.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Hochschulöffentliche Bekanntmachung</label>
+      <label xml:lang="en">Hochschulöffentliche Bekanntmachung</label>
+    </item>
+    <item href="/editor/editor-admins.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Dokument einreichen (Admin)</label>
+      <label xml:lang="en">Submit new document (admin)</label>
+    </item>
+    <item href="/servlets/solr/select?q=state%3Asubmitted%20AND%20createdby:{CurrentUser}" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Meine Einreichungen</label>
+      <label xml:lang="en">My submitted documents</label>
+    </item>
+    <item href="/content/publish/authors_area.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Hinweise für Autorinnen und Autoren</label>
+      <label xml:lang="en">Notes for Authors</label>
+    </item>
+    <item href="/content/publish/contract.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Vertragsbedingungen</label>
+      <label xml:lang="en">Terms &amp; Conditions</label>
+    </item>
+    <item href="/content/publish/copyright.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Urheberrecht</label>
+      <label xml:lang="en">Copyright</label>
+    </item>
+    <item href="/content/publish/policy.xml" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Leitlinie</label>
+      <label xml:lang="en">Policy</label>
+    </item>
+  </menu>
+  <menu id="user">
+    <label xml:lang="de">Nutzermenü</label>
+    <label xml:lang="en">User menu</label>
+    <group id="thisuser">
+      <item href="/servlets/MCRUserServlet?action=changeMyPassword" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Passwort ändern</label>
+        <label xml:lang="en">Change Password</label>
+      </item>
+      <item href="/servlets/MCRUserServlet?action=show" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Benutzerdaten anzeigen</label>
+        <label xml:lang="en">Show User Data</label>
+      </item>
+      <item href="/authorization/change-current-user.xed?action=saveCurrentUser" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Kontaktdaten ändern</label>
+        <label xml:lang="en">Change user contact</label>
+      </item>
+    </group>
+    <group id="contentadmin">
+      <item href="/modules/classeditor/classificationEditor.xml?XSL.classeditor.showId=true" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Klassifikationseditor</label>
+        <label xml:lang="en">Edit Classifications</label>
+      </item>
+      <item href="/rsc/ACLE/start" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">ACL-Editor</label>
+        <label xml:lang="en">ACL Editor</label>
+      </item>
+    </group>
+    <group id="useradmin">
+      <item href="/servlets/MCRUserServlet" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Nutzerverwaltung</label>
+        <label xml:lang="en">Admin Users</label>
+      </item>
+      <item href="/authorization/new-user.xed?action=save" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Nutzer anlegen</label>
+        <label xml:lang="en">Create User</label>
+      </item>
+      <item href="/authorization/roles-editor.xml" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Rollen administrieren</label>
+        <label xml:lang="en">Manage roles</label>
+      </item>
+      <item href="/contact-request-manager" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Kontaktanfragen</label>
+        <label xml:lang="en">Contact Requests</label>
+      </item>
+    </group>
+    <group id="miscadmin">
+      <item href="/modules/webcli/launchpad.xml" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">WebCLI</label>
+        <label xml:lang="en">WebCLI</label>
+      </item>
+      <item href="/modules/webtools/session/sessionListing.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Aktive Sitzungen</label>
+        <label xml:lang="en">Session Management</label>
+      </item>
+      <item href="/modules/webtools/processing/processing.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Aktive Prozesse</label>
+        <label xml:lang="en">Processing</label>
+      </item>
+      <item href="/jobqueue/" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Job Queue</label>
+        <label xml:lang="en">Job Queue</label>
+      </item>
+      <item href="/modules/wcms2/wcms2.xml?XSL.useMT=false" type="extern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">WCMS</label>
+        <label xml:lang="en">WCMS</label>
+      </item>
+    </group>
+    <item href="/servlets/logout?url={WebApplicationBaseURLEncoded}content/index.xml" type="extern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Abmelden</label>
+      <label xml:lang="en">Logout</label>
+    </item>
+  </menu>
 </navigation>

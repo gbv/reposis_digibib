@@ -4,310 +4,179 @@
 <div class="row">
 <div class="col-12">
 <h3>I. Name und Anschrift der oder des Verantwortlichen</h3>
-
 <p>Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze der Mitgliedstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist die:</p>
-
-<p style="margin-left: 40px;">Technische Universität Braunschweig<br />
-Universitätsplatz 2<br />
-38106 Braunschweig<br />
-Tel.: +49 (0) 531 391-0<br />
-E-Mail: <span class="madress">praesidentin(at)tu-braunschweig.de</span><br />
-vertreten durch die Präsidentin, <a href="https://www.tu-braunschweig.de/praesidentin">Prof. Dr. Angela Ittel</a></p>
-
-
+<p style="margin-left: 40px;">Technische Universität Braunschweig<br />Universitätsplatz 2<br />38106 Braunschweig<br />Tel.: +49 (0) 531 391-0<br />E-Mail: <span class="madress">praesidentin(at)tu-braunschweig.de</span><br />vertreten durch die Präsidentin, <a href="https://www.tu-braunschweig.de/praesidentin">Prof. Dr. Angela Ittel</a></p>
 <h3>II. Name und Anschrift des Datenschutzbeauftragten</h3>
-
 <p>Der Datenschutzbeauftragte der Technischen Universität Braunschweig ist:</p>
-
-<p style="margin-left: 40px;">Dr. Bernd Nörtemann<br />
-Bienroder Weg 80<br />
-38106 Braunschweig<br />
-Tel.: +49 (0) 531 391-7654<br />
-E-Mail: <span class="madress">datenschutz(at) tu-braunschweig.de</span><br />
-<a href="https://www.tu-braunschweig.de/datenschutz">https://www.tu-braunschweig.de/datenschutz</a></p>
-
-
+<p style="margin-left: 40px;">Technische Universität Braunschweig<br />Datenschutzbeauftragter<br />Bienroder Weg 87<br />38106 Braunschweig<br />Tel.: +49 (0) 531 391-7654<br />E-Mail: <span class="madress">datenschutz(at) tu-braunschweig.de</span><br /><a href="https://www.tu-braunschweig.de/datenschutz">https://www.tu-braunschweig.de/datenschutz</a></p>
 <h3>III. Allgemeines zur Datenverarbeitung</h3>
-
 <p>Diese Datenschutzerklärung soll die Nutzer*innen dieses Repositoriums über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch die Betreiber (Universitätsbibliothek Braunschweig, Mail ub [at] tu-braunschweig.de) informieren.</p>
-
 <p>Die Technische Universität Braunschweig nimmt den Datenschutz sehr ernst und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Da durch neue Technologien und die ständige Weiterentwicklung dieses Service Änderungen an dieser Datenschutzerklärung vorgenommen werden können, empfehlen wir Ihnen sich die Datenschutzerklärung in regelmäßigen Abständen wieder durchzulesen.</p>
-
 <h4>1. Umfang der Verarbeitung personenbezogener Daten</h4>
-
 <p>Eine Anmeldung (Login) mit persönlichen Daten ist nur zur Veröffentlichung von Publikationen durch Hochschulangehörige erforderlich, nicht für die Suche nach oder den lesenden Zugriff auf Publikationen. Zur Veröffentlichung melden sich Hochschulangehörige mit ihrer TU-Kennung an. Die Autorisierung erfolgt gegen den IDP (Identity Provider - DFN-AAI Shibboleth) der Technischen Universität Braunschweig. Das Repositorium verarbeitet und speichert dabei folgende Nutzerdaten:</p>
-
 <ul>
-	<li>Name</li>
-	<li>Benutzerkennung</li>
-	<li>E-Mail-Adresse</li>
-	<li>Uhrzeit und Datum des letzten Logins</li>
-	<li>Benutzerrollen (Mitarbeiter*in, Studierende)</li>
-	<li>Verknüpfung zu den in diesem Repositorium veröffentlichten Publikationen, inkl. Datum und Uhrzeit der letzten Änderung Die Speicherung und Verarbeitung dieser Daten geschieht zur Wahrnehmung der uns übertragenen Aufgabe der Unterstützung von Lehre und Forschung gemäß Art. 6 Abs. 1 lit. e DSGVO i. V. m. § 3 NDSG und ist erforderlich</li>
-	<li>zum Nachweis der Berechtigung zur Veröffentlichung in unserem Repositorium</li>
-	<li>zur Kommunikation mit Autor*innen im Rahmen des Veröffentlichungsprozesses</li>
-	<li>zum Nachweis der Urheberschaft an E-Publikationen</li>
+<li>Name</li>
+<li>Benutzerkennung</li>
+<li>E-Mail-Adresse</li>
+<li>Uhrzeit und Datum des letzten Logins</li>
+<li>Benutzerrollen (Mitarbeiter*in, Studierende)</li>
+<li>Verknüpfung zu den in diesem Repositorium veröffentlichten Publikationen, inkl. Datum und Uhrzeit der letzten Änderung Die Speicherung und Verarbeitung dieser Daten geschieht zur Wahrnehmung der uns übertragenen Aufgabe der Unterstützung von Lehre und Forschung gemäß Art. 6 Abs. 1 lit. e DSGVO i. V. m. § 3 NDSG und ist erforderlich</li>
+<li>zum Nachweis der Berechtigung zur Veröffentlichung in unserem Repositorium</li>
+<li>zur Kommunikation mit Autor*innen im Rahmen des Veröffentlichungsprozesses</li>
+<li>zum Nachweis der Urheberschaft an E-Publikationen</li>
 </ul>
-
 <h4>2. Publikationsdaten</h4>
-
 <p>Zweck dieses Repositoriums ist die weltweite Veröffentlichung und Bereitstellung elektronischer Publikationen (E-Publikationen und E-Dissertationen) im Sinne von Open Access. Dazu speichern, verarbeiten und veröffentlichen wir auch personenbezogene Daten der an Publikationen beteiligten Personen:</p>
-
 <ul>
-	<li>Namen und Rollen (z.B. Autor*in, Herausgeber*in)</li>
-	<li>Eindeutige Autoren-Identifikatoren (z. B. ORCiD, GND)</li>
-	<li>Informationen zur organisatorischen Zugehörigkeit (z.B. Universität, Fakultät, Institut)</li>
+<li>Namen und Rollen (z.B. Autor*in, Herausgeber*in)</li>
+<li>Eindeutige Autoren-Identifikatoren (z. B. ORCiD, GND)</li>
+<li>Informationen zur organisatorischen Zugehörigkeit (z.B. Universität, Fakultät, Institut)</li>
 </ul>
-
 <p>Dies dient dem eindeutigen Nachweis und der Anerkennung der Urheberschaft, der Zitierfähigkeit und der besseren Auffindbarkeit der Publikationen. Mit Veröffentlichung der Publikation übertragen wir auch diese personenbezogenen Daten an Dritte und stellen sie über Schnittstellen bereit:</p>
-
 <ul>
-	<li>an die Deutsche Nationalbibliothek im Rahmen der Meldepflichten zum Zweck der Archivierung und des Nachweises in der Deutschen Nationalbibliografie</li>
-	<li>an die Registrierungsagentur DataCite zur eindeutigen Vergabe von dauerhaften Publikations- Identifikatoren (DOI)</li>
-	<li>an wissenschaftliche und allgemeine Suchmaschinen wie Google, Google Scholar, BASE</li>
-	<li>an Dritte weltweit, über Schnittstellen wie OAI (Open Archives Initiative) und das Google Sitemap Protokoll</li>
+<li>an die Deutsche Nationalbibliothek im Rahmen der Meldepflichten zum Zweck der Archivierung und des Nachweises in der Deutschen Nationalbibliografie</li>
+<li>an die Registrierungsagentur DataCite zur eindeutigen Vergabe von dauerhaften Publikations- Identifikatoren (DOI)</li>
+<li>an wissenschaftliche und allgemeine Suchmaschinen wie Google, Google Scholar, BASE</li>
+<li>an Dritte weltweit, über Schnittstellen wie OAI (Open Archives Initiative) und das Google Sitemap Protokoll</li>
 </ul>
-
 <p>Eine Veröffentlichung und damit die Weitergabe und weltweite Zugänglichmachung erfolgt nur mit Einverständnis der Autor*innen bzw. Herausgeber*innen und erst nach Unterzeichnung des Veröffentlichungsvertrages.</p>
-
 <h4>3. Dauer der Speicherung personenbezogener Daten</h4>
-
 <p>Die personenbezogenen Daten der betroffenen Person werden von der TU Braunschweig nur so lange gespeichert, wie der Zweck der Speicherung besteht. Wenn die Verarbeitung auf einer Einwilligung der betroffenen Person beruht, werden die Daten nur so lange gespeichert, bis dieEinwilligung widerrufen wird, es sei denn, es besteht eine andere Rechtsgrundlage für die Verarbeitung.</p>
-
 <h4>4. Rechte der betroffenen Person</h4>
-
 <h5>4.1 Auskunftsrechte</h5>
-
 <p>Sie haben als Nutzer*in das Recht, auf Antrag eine kostenlose Auskunft darüber zu erhalten, welche personenbezogenen Daten über Sie gespeichert wurden. Sie haben außerdem das Recht auf Berichtigung falscher Daten und auf die Verarbeitungseinschränkung oder Löschung Ihrer personenbezogenen Daten. Falls zutreffend, können Sie auch Ihr Recht auf Datenportabilität geltend machen. Sollten Sie annehmen, dass Ihre Daten unrechtmäßig verarbeitet wurden, können Sie eine Beschwerde bei der zuständigen Aufsichtsbehörde einreichen.</p>
-
 <h5>4.2 Recht auf Löschung</h5>
-
 <p>Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z. B. Vorratsdatenspeicherung) kollidiert, haben Sie ein Anrecht auf Löschung Ihrer Daten. Von uns gespeicherte Daten werden, sollten sie für ihre Zweckbestimmung nicht mehr vonnöten sein und es keine gesetzlichen Aufbewahrungsfristen geben, gelöscht. Falls eine Löschung nicht durchgeführt werden kann, da die Daten für zulässige gesetzliche Zwecke erforderlich sind, erfolgt eine Einschränkung der Datenverarbeitung. In diesem Fall werden die Daten gesperrt und nicht für andere Zwecke verarbeitet.</p>
-
 <h5>4.3 Widerspruchsrechte</h5>
-
 <p>Betroffene haben das Recht, ihre datenschutzrechtliche Einwilligungserklärung jederzeit zu widerrufen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt. Wenn Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen oder Fragen bzgl. der Erhebung, Verarbeitung oder Verwendung Ihrer personenbezogenen Daten haben oder erteilte Einwilligungen widerrufen möchten, wenden Sie sich bitte an folgende Kontaktadresse:</p>
-
-<p style="margin-left: 40px;">Team Publikationsservices der TU Braunschweig<br />
-+49 (0) 531 391 5052 / 5067<br />
-<span class="madress">ub-publikationsserrvices [at] tu-braunschweig.de</span></p>
-
+<p style="margin-left: 40px;">Team Publikationsservices der TU Braunschweig<br />+49 (0) 531 391 5052 / 5067<br /><span class="madress">ub-publikationsservices [at] tu-braunschweig.de</span></p>
 <h5>4.4 Recht auf Beschwerde bei einer Aufsichtsbehörde</h5>
-
 <p>Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Betroffenen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn sie der Ansicht sind, dass die Verarbeitung der sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.</p>
-
 <p>Die Aufsichtsbehörde, bei der die Beschwerde eingereicht wurde, unterrichtet den Beschwerdeführenden über den Stand und die Ergebnisse der Beschwerde einschließlich der Möglichkeit eines gerichtlichen Rechtsbehelfs nach Art. 78 DSGVO.</p>
-
-
 <h3>IV. Beschreibung der Webseite und Erstellung von Logfiles</h3>
-
 <h4>1. Beschreibung und Umfang der Datenverarbeitung</h4>
-
 <p>Bei jedem Aufruf einer Internetseite der TU Braunschweig erfasst das System automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners. Im Einzelnen werden folgende Daten erhoben:</p>
-
 <ul>
-	<li>Informationen über den Browsertyp und die verwendete Version</li>
-	<li>Das Betriebssystem des Nutzenden</li>
-	<li>Die IP-Adresse des Nutzenden</li>
-	<li>Datum und Uhrzeit des Zugriffs</li>
-	<li>Webseiten, die vom System des Nutzenden über die Webseite der TU Braunschweig aufgerufen werden</li>
+<li>Informationen über den Browsertyp und die verwendete Version</li>
+<li>Das Betriebssystem des Nutzenden</li>
+<li>Die IP-Adresse des Nutzenden</li>
+<li>Datum und Uhrzeit des Zugriffs</li>
+<li>Webseiten, die vom System des Nutzenden über die Webseite der TU Braunschweig aufgerufen werden</li>
 </ul>
-
 <p>Die Daten werden ebenfalls in den Logfiles des Systems gespeichert. Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzenden findet nicht statt.</p>
-
 <h4>2. Rechtsgrundlage für die Datenverarbeitung</h4>
-
 <p>Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DSGVO.</p>
-
 <h4>3. Zweck der Datenverarbeitung</h4>
-
 <p>Die vorübergehende Speicherung der IP-Adresse durch das System ist zur Erhaltung des Dienstbetriebs notwendig. Hierfür muss die IP-Adresse des Nutzenden für die Dauer der Sitzung gespeichert bleiben.</p>
-
 <p>Die Speicherung in Logfiles erfolgt, um die Funktionsfähigkeit der Webseite sicherzustellen. Zudem dienen der TU Braunschweig die Daten zur Optimierung der Webseite und zur Sicherstellung der Sicherheit der informationstechnischen Systeme. Eine Auswertung der Daten zu Marketingzwecken findet in diesem Zusammenhang nicht statt. In diesen Zwecken liegt auch das berechtigte Interesse an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DSGVO.</p>
-
 <h4>4. Dauer der Speicherung</h4>
-
 <p>Die Daten werden gelöscht, wenn die jeweilige Sitzung beendet ist. Im Falle der Speicherung der Daten in Logfiles ist dies nach spätestens 24 Stunden der Fall. Eine darüber hinaus gehende Speicherung ist möglich. In diesem Fall werden die IP-Adressen der Nutzenden gelöscht oder verfremdet, sodass eine Zuordnung des aufrufenden Clients nicht mehr möglich ist.</p>
-
 <h3>V. Verwendung von Cookies</h3>
-
 <p>Diese Dienstleistung verwendet Cookies zur pseudonymisierten Reichweitenmessung. Bei Cookies handelt es sich um kleine Dateien, welche auf Ihrem Endgerät gespeichert werden. Ihr Browser greift auf diese Dateien zu. Durch den Einsatz von Cookies erhöht sich die Benutzerfreundlichkeit und Sicherheit dieser Plattform. Nutzungsdaten werden nur in anonymisierter Form zu Optimierungszwecken gesammelt und gespeichert.</p>
-
 <p>Für die Optimierung unserer Angebote liefern personenbezogene Daten keinerlei Mehrwert. Für die Webanalyse setzten wir daher die von Datenschützern empfohlene Nutzungsanalyse-Software Matomo ein. Durch eine automatische Anonymisierung der IP-Adressen mit dem Plugin AnonymizeIP können die erhobenen Daten nicht mehr bestimmten Personen zugeordnet werden. Damit ist ausgeschlossen, dass Nutzungsdaten oder Nutzungsprofile mit personenbezogenen Daten in Verbindung gebracht werden.</p>
-<iframe src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de" style="border: 0; width: 100%;">&lt;/div&gt;</iframe>
-
+<iframe style="border: 0; width: 100%;" src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de" sandbox="">&amp;amp;lt;/div&amp;amp;gt;</iframe>
 <p>Die Daten dienen ausschließlich der Verbesserung von LeoPARD, den die Betreiber mit ihrer Dienstleistung anbieten.</p>
-
 <h3>VI. Kontaktaufnahme</h3>
-
 <h4>1. Beschreibung und Umfang der Datenverarbeitung</h4>
-
 <p>Auf den Internetseiten der TU Braunschweig ist eine Kontaktaufnahme über Formulare oder jeweils bereitgestellte E-Mail-Adressen möglich. In diesem Fall werden die übermittelten personenbezogenen Daten der nutzenden Person gespeichert. Es erfolgt in diesem Zusammenhang keine Weitergabe der Daten an Dritte. Die Daten werden ausschließlich für die Verarbeitung des genannten Zweckes verwendet.</p>
-
 <h4>2. Rechtsgrundlage für die Datenverarbeitung</h4>
-
 <p>Rechtsgrundlage für die Verarbeitung der übermittelten Daten im Rahmen der Kontaktaufnahme ist Art. 6 Abs. 1 DSGVO.</p>
-
 <h4>3. Zweck der Datenverarbeitung</h4>
-
 <p>Die Verarbeitung der personenbezogenen Daten dient der TU Braunschweig allein zur Bearbeitung der Kontaktaufnahme. Hierin liegt auch das berechtigte Interesse an der Verarbeitung der Daten.</p>
-
 <h4>4. Dauer der Speicherung, Widerspruchs- und Beseitigungsmöglichkeit</h4>
-
 <p>Die personenbezogenen Daten, die übermittelt wurden, werden gelöscht, wenn der jeweilige Zweck erfüllt ist.</p>
-
 <p>Nimmt die nutzende Person Kontakt mit der TU Braunschweig auf, so kann er der Speicherung seiner personenbezogenen Daten jederzeit widersprechen. In einem solchen Fall kann die Kommunikation nicht fortgeführt oder wieder aufgenommen werden. Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert wurden, werden in diesem Fall gelöscht.</p>
 </div>
 </div>
-</div>
-</section><section xml:lang="en" title="Data Protection Declaration"><div>
+</div></section><section xml:lang="en" title="Data Protection Declaration"><div>
 <h1 class="leo-page-headline">Data Protection Declaration</h1>
 <div class="row">
 <div class="col-12">
 <p>This is a translation of LeoPARD's <em>Datenschutzerklärung </em>(Data Protection Declaration). Only the German version is legally valid. In case of any differences in wording, meaning, or interpretation between the German and English versions, the German version shall prevail. </p>
-
 <h3>I. Name and Address of the Controller</h3>
-
 <p>The controller as described in the General Data Protection Regulation (GDPR) and other national data protection acts as a member states as well as other data protection provisions is:</p>
-
-<p style="margin-left: 40px;">Technische Universität Braunschweig<br />
-Universitätsplatz 2<br />
-38106 Braunschweig<br />
-Tel.: +49 (531) 391-0<br />
-E-Mail: <span class="madress">praesidentin [at] tu-braunschweig.de</span></p>
-
+<p style="margin-left: 40px;">Technische Universität Braunschweig<br />Universitätsplatz 2<br />38106 Braunschweig<br />Tel.: +49 (531) 391-0<br />E-Mail: <span class="madress">praesidentin [at] tu-braunschweig.de</span></p>
 <p>represented by the President, <a href="https://www.tu-braunschweig.de/praesidentin">Prof. Dr. Angela Ittel</a></p>
-
+<h3>II. Name und Address of the Data Protection Officer</h3>
+<p>The data protection officer at Technische Universität Braunschweig is:</p>
+<p style="margin-left: 40px;">Technische Universität Braunschweig<br />Data Protection Officer<br />Bienroder Weg 87<br />38106 Braunschweig<br />Tel.: +49 (0) 531 391-7654<br />E-Mail: <span class="madress">datenschutz(at) tu-braunschweig.de</span><br /><a href="https://www.tu-braunschweig.de/datenschutz">https://www.tu-braunschweig.de/datenschutz</a></p>
 <h3>III. General Information on Data Processing</h3>
-
 <p>This data protection declaration is intended to inform the users of this repository about the nature, scope and purpose of the collection and use of personal data by the operators (Braunschweig University Library, mail <span class="madress">ub [at] tu-braunschweig.de</span>).</p>
-
 <p>Technische Universität Braunschweig takes data protection very seriously and treats your personal data confidentially and in accordance with the statutory provisions. Since new technologies and the continuous development of this service may result in changes to this data protection declaration, we recommend that you read it again at regular intervals.</p>
-
 <h4>1 Scope of personal data processing</h4>
-
 <p>A registration (login) with personal data is only required for the submission of publications by university members, not for the search for or the read access to publications. To publish, university members log in with their TU identifier. Authorization is provided through the IDP (Identity Provider - DFN-AAI Shibboleth) of Technische Universität Braunschweig. The repository processes and stores the following user data:</p>
-
 <ul>
-	<li>Name</li>
-	<li>User ID</li>
-	<li>E-Mail-Address</li>
-	<li>Time and date of last login</li>
-	<li>User roles (employee, student)</li>
-	<li>Link to the publications released in this repository, incl. date and time of the last modification The storage and processing of this data is done for the performance of the task assigned to us of supporting teaching and research according to Art. 6 para. 1 lit. e GDPR in conjunction with § 3 NDSG and is required</li>
-	<li>to prove the authorization for publication in our repository</li>
-	<li>for communication with authors in the context of the publication process</li>
-	<li>to prove authorship of e-publications</li>
+<li>Name</li>
+<li>User ID</li>
+<li>E-Mail-Address</li>
+<li>Time and date of last login</li>
+<li>User roles (employee, student)</li>
+<li>Link to the publications released in this repository, incl. date and time of the last modification The storage and processing of this data is done for the performance of the task assigned to us of supporting teaching and research according to Art. 6 para. 1 lit. e GDPR in conjunction with § 3 NDSG and is required</li>
+<li>to prove the authorization for publication in our repository</li>
+<li>for communication with authors in the context of the publication process</li>
+<li>to prove authorship of e-publications</li>
 </ul>
-
 <h4>2 Publication data</h4>
-
 <p>The aim of this repository is the worldwide publication and provision of electronic publications (e-publications and e-dissertations) in the sense of Open Access. For this purpose, we also store, process and publish personal data of the persons involved in publications:</p>
-
 <ul>
-	<li>Names und Roles (e.g. author, editor)</li>
-	<li>Unique author identifiers (e.g. ORCiD, GND)</li>
-	<li>Information on organizational affiliation (e.g. university, faculty, institute)</li>
+<li>Names und Roles (e.g. author, editor)</li>
+<li>Unique author identifiers (e.g. ORCiD, GND)</li>
+<li>Information on organizational affiliation (e.g. university, faculty, institute)</li>
 </ul>
-
 <p>This serves to provide unambiguous confirmation and acknowledgement of authorship, citability, and better findability of the publications. With the release of the publication, we also transfer this personal data to third parties and make it available via interfaces to:</p>
-
 <ul>
-	<li>the German National Library within the scope of the reporting obligations for the purpose of archiving and proof in the German National Bibliography</li>
-	<li>the registration agency DataCite for the unique assignment of permanent publication identifiers (DOI)</li>
-	<li>scientific and general search engines like Google, Google Scholar, BASE</li>
-	<li>third parties worldwide, via interfaces such as OAI (Open Archives Initiative) and the Google Sitemap protocol</li>
+<li>the German National Library within the scope of the reporting obligations for the purpose of archiving and proof in the German National Bibliography</li>
+<li>the registration agency DataCite for the unique assignment of permanent publication identifiers (DOI)</li>
+<li>scientific and general search engines like Google, Google Scholar, BASE</li>
+<li>third parties worldwide, via interfaces such as OAI (Open Archives Initiative) and the Google Sitemap protocol</li>
 </ul>
-
 <p>Publication and thus distribution and worldwide accessibility will only take place with the consent of the authors or editors and only after signing the publication contract.</p>
-
 <h4>3 Duration of personal data storage</h4>
-
 <p>The personal data of the data subject will be stored by TU Braunschweig only as long as the purpose of the storage exists. If the processing is based on the data subject's consent, the data will only be stored until the consent is revoked, unless there is another legal basis for the processing.</p>
-
 <h4>4 Rights of the person concerned</h4>
-
 <h5>4.1 Information rights</h5>
-
 <p>As a user, you have the right to request free information about what personal data has been stored about you. You also have the right to have inaccurate data corrected and to have processing of your personal data restricted or deleted. If applicable, you may also exercise your right to data portability. If you believe that your data has been processed unlawfully, you may lodge a complaint with the competent supervisory authority.</p>
-
 <h5>4.2 Right of deletion</h5>
-
 <p>Unless your request conflicts with a legal obligation to retain data (e.g. data retention), you have a right to have your data deleted. Data stored by us will be deleted if it is no longer required for its intended purpose and there are no legal retention periods. If deletion cannot be carried out because the data is required for permissible legal purposes, data processing will be restricted. In this case, the data will be blocked and not processed for other purposes.</p>
-
 <h5>4.3 Rights of objection</h5>
-
 <p>Affected persons have the right to revoke their declaration of consent under data protection law at any time. The revocation of consent does not affect the lawfulness of the processing carried out on the basis of the consent until the revocation. If you wish to correct, block, delete or obtain information about the personal data stored about you, or if you have any questions regarding the collection, processing or use of your personal data, or if you wish to revoke any consent you have given, please contact us at the following address:</p>
-
-<p style="margin-left: 40px;">Team Publikationsservices of TU Braunschweig<br />
-+49 (0) 531 391 5052 / 5067<br />
-<span class="madress">ub-publikationsserrvices [at] tu-braunschweig.de</span></p>
-
+<p style="margin-left: 40px;">Team Publikationsservices of TU Braunschweig<br />+49 (0) 531 391 5052 / 5067<br /><span class="madress">ub-publikationsserrvices [at] tu-braunschweig.de</span></p>
 <h5>4.4 Right to complain to a supervisory authority</h5>
-
 <p>Without prejudice to any other administrative or judicial remedy, data subjects shall have the right to lodge a complaint with a supervisory authority, in particular in the Member State of their residence, place of work or the place of the alleged infringement, if they consider that the processing of personal data relating to them infringes the GDPR.</p>
-
 <p>The supervisory authority to which the complaint has been lodged shall inform the complainant of the status and outcome of the complaint, including the possibility of a judicial remedy under Article 78 GDPR.</p>
-
 <h3>IV. Description of the website and creation of log files</h3>
-
 <h4>1 Description and scope of data processing</h4>
-
 <p>Each time a website of TU Braunschweig is accessed, the system automatically collects data and information from the computer system of the accessing computer. In detail, the following data is collected:</p>
-
 <ul>
-	<li>Information about the browser type and version used</li>
-	<li>The operating system of the user's system</li>
-	<li>The IP address of the user's system</li>
-	<li>Date and time of access</li>
-	<li>Web pages that are accessed by the user's system via TU Braunschweig website</li>
+<li>Information about the browser type and version used</li>
+<li>The operating system of the user's system</li>
+<li>The IP address of the user's system</li>
+<li>Date and time of access</li>
+<li>Web pages that are accessed by the user's system via TU Braunschweig website</li>
 </ul>
-
 <p>The data is also stored in the log files of the system. This data is not stored together with other personal data of the user.</p>
-
 <h4>2 Legal basis for data processing</h4>
-
 <p>The legal basis for the temporary storage of the data is Art. 6 para. 1 lit. f GDPR.</p>
-
 <h4>3 Purpose of data processing</h4>
-
 <p>The temporary storage of the IP address by the system is necessary to maintain the operation of the service. For this purpose, the IP address of the user must remain stored for the duration of the session</p>
-
 <p>The storage in log files is done to ensure the functionality of the website. In addition, the TU Braunschweig uses the data to optimize the website and to ensure the security of the information technology systems. An evaluation of the data for marketing purposes does not take place in this context. These purposes also constitute the legitimate interest in data processing according to Art. 6 Para. 1 lit. f GDPR.</p>
-
 <h4>4 Duration of the storage</h4>
-
 <p>The data is deleted when the respective session has ended. In the case of storage of data in log files, this is the case after 24 hours at the latest. Storage beyond this period is possible. In this case, the IP addresses of the users are deleted or alienated, so that an assignment of the calling client is no longer possible.</p>
-
 <h3>V. Usage of Cookies</h3>
-
 <p>This service uses cookies for pseudonymized reach measurement. Cookies are small files that are stored on your terminal device. Your browser accesses these files. The use of cookies increases the user-friendliness and security of this platform. Usage data is only collected and stored in anonymized form for optimization purposes.</p>
-
 <p>For the optimization of our offers, personal data do not provide any added value. For web analysis, we therefore use the usage analysis software Matomo, which is recommended by data protection experts. By automatically anonymizing the IP addresses with the AnonymizeIP plugin, the collected data can no longer be assigned to specific individuals. This excludes the possibility of usage data or usage profiles being associated with personal data.</p>
-<iframe src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de" style="border: 0; width: 100%;">&lt;/div&gt;</iframe>
-
+<iframe style="border: 0; width: 100%;" src="https://piwik.gbv.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite=30&amp;language=de" sandbox="">&amp;amp;lt;/div&amp;amp;gt;</iframe>
 <p>The data is used exclusively for the improvement of the publication server, which the operators of "LeoPARD" offer with their service.</p>
-
 <h3>VI. Contact</h3>
-
 <h4>1 Description and scope of data processing</h4>
-
 <p>On the web pages of TU Braunschweig it is also possible to contact us via forms or e-mail addresses provided in each case. In this case, the transmitted personal data of the user will be stored. In this context, the data will not be passed on to third parties. The data is used exclusively for the processing of the stated purpose.</p>
-
 <h4>2 Legal basis for data processing</h4>
-
 <p>The legal basis for the processing of the transmitted data in the context of contacting us is Art. 6 para. 1 GDPR.</p>
-
 <h4>3 Purpose of data processing</h4>
-
 <p>The processing of personal data serves TU Braunschweig solely to process the contact. This is also the legitimate interest in processing the data.</p>
-
 <h4>4 Duration of storage, possibility of objection and deletion</h4>
-
 <p>The personal data that has been transmitted will be deleted when the respective purpose has been fulfilled.</p>
-
 <p>If the user contacts TU Braunschweig, he or she can object to the storage of his or her personal data at any time. In such a case, communication cannot be continued or resumed. All personal data stored in the course of contacting the TU Braunschweig will be deleted in this case.</p>
 </div>
 </div>
-</div>
-</section><meta><log lastEditor="celsner" date="2022-09-13" time="16:18" /></meta></MyCoReWebPage>
+</div></section><meta><log lastEditor="dbbs_admin" date="2026-05-29" time="14:34" /></meta></MyCoReWebPage>
