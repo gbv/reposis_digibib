@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_institutes">
-  <label xml:lang="en" text="TU Braunschweig institutes" description="A list of institutions" />
+<mycoreclass ID="mir_institutes"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Einrichtungen der TU Braunschweig" description="Liste der Einrichtungen" />
+  <label xml:lang="en" text="TU Braunschweig institutes" description="A list of institutions" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/mir_institutes" />
   <categories>
     <category ID="Faculty_c_">
-      <label xml:lang="x-hide" text="true" />
-      <label xml:lang="en" text="actual Faculties" />
       <label xml:lang="de" text="aktuelle Fakultäten" />
+      <label xml:lang="en" text="actual Faculties" />
+      <label xml:lang="x-hide" text="true" />
       <category ID="TUBS">
-        <label xml:lang="en" text="TU Braunschweig" />
         <label xml:lang="de" text="TU-Braunschweig" />
+        <label xml:lang="en" text="TU Braunschweig" />
       </category>
       <category ID="Faculty_c_01">
         <label xml:lang="de" text="01 - Carl-Friedrich Gauß-Fakultät" />
@@ -21,26 +23,26 @@
         <label xml:lang="en" text="02 - Life Sciences" />
       </category>
       <category ID="Faculty_c_03">
-        <label xml:lang="en" text="03 - Architecture, Civil Engineering and Environmental Sciences" />
         <label xml:lang="de" text="03 - Architektur, Bauingenieurwesen und Umweltwissenschaften" />
+        <label xml:lang="en" text="03 - Architecture, Civil Engineering and Environmental Sciences" />
       </category>
       <category ID="Faculty_c_04">
-        <label xml:lang="en" text="04 - Mechanical Engineering" />
         <label xml:lang="de" text="04 - Maschinenbau" />
+        <label xml:lang="en" text="04 - Mechanical Engineering" />
       </category>
       <category ID="Faculty_c_05">
-        <label xml:lang="en" text="05 - Electrical Engineering, Information Technology, Physics" />
         <label xml:lang="de" text="05 - Elektrotechnik, Informationstechnik, Physik" />
+        <label xml:lang="en" text="05 - Electrical Engineering, Information Technology, Physics" />
       </category>
       <category ID="Faculty_c_06">
-        <label xml:lang="en" text="06 - Humanities and Educational Sciences" />
         <label xml:lang="de" text="06 - Geistes- und Erziehungswissenschaften" />
+        <label xml:lang="en" text="06 - Humanities and Educational Sciences" />
       </category>
     </category>
     <category ID="Faculty_b_">
-      <label xml:lang="x-hide" text="true" />
       <label xml:lang="de" text="April 2006 - März 2007" />
       <label xml:lang="en" text="April 2006 - March 2007" />
+      <label xml:lang="x-hide" text="true" />
       <category ID="Faculty_b_01">
         <label xml:lang="de" text="01 - Mathematik und Informatik" />
         <label xml:lang="en" text="01 - Mathematics and Computer Science" />
@@ -54,30 +56,30 @@
         <label xml:lang="en" text="03 - Architecture, Civil Engineering, and Environmental Sciences" />
       </category>
       <category ID="Faculty_b_04">
-        <label xml:lang="en" text="04 - Mechanical Engineering" />
         <label xml:lang="de" text="04 - Maschinenbau" />
+        <label xml:lang="en" text="04 - Mechanical Engineering" />
       </category>
       <category ID="Faculty_b_05">
         <label xml:lang="de" text="05 - Elektrotechnik und Informationstechnik" />
         <label xml:lang="en" text="05 - Electrical Engineering and Information Technology" />
       </category>
       <category ID="Faculty_b_06">
-        <label xml:lang="en" text="06 - Humanities and Educational Sciences" />
         <label xml:lang="de" text="06 - Geistes- und Erziehungswissenschaften" />
+        <label xml:lang="en" text="06 - Humanities and Educational Sciences" />
       </category>
       <category ID="Faculty_b_07">
-        <label xml:lang="en" text="07 - Physics and Geo Sciences" />
         <label xml:lang="de" text="07 - Physik und Geowissenschaften" />
+        <label xml:lang="en" text="07 - Physics and Geo Sciences" />
       </category>
       <category ID="Faculty_b_08">
-        <label xml:lang="en" text="08 - Business Administration, Economics, and Social Sciences" />
         <label xml:lang="de" text="08 - Wirtschafts- und Sozialwissenschaften" />
+        <label xml:lang="en" text="08 - Business Administration, Economics, and Social Sciences" />
       </category>
     </category>
     <category ID="Faculty">
-      <label xml:lang="x-hide" text="true" />
-      <label xml:lang="en" text="until March 2006" />
       <label xml:lang="de" text="bis März 2006" />
+      <label xml:lang="en" text="until March 2006" />
+      <label xml:lang="x-hide" text="true" />
       <category ID="Faculty_01">
         <label xml:lang="de" text="01 - Mathematik und Informatik" />
         <label xml:lang="en" text="01 - Mathematics and Computer Science" />
@@ -87,32 +89,32 @@
         <label xml:lang="en" text="02 - Physics and Geoscience" />
       </category>
       <category ID="Faculty_03">
-        <label xml:lang="en" text="03 - Chemistry and Pharmacy" />
         <label xml:lang="de" text="03 - Chemie und Pharmazie" />
+        <label xml:lang="en" text="03 - Chemistry and Pharmacy" />
       </category>
       <category ID="Faculty_04">
-        <label xml:lang="en" text="04 - Biosciences and Psychology" />
         <label xml:lang="de" text="04 - Biowissenschaften und Psychologie" />
+        <label xml:lang="en" text="04 - Biosciences and Psychology" />
       </category>
       <category ID="Faculty_05">
-        <label xml:lang="en" text="05 - Architecture" />
         <label xml:lang="de" text="05 - Architektur" />
+        <label xml:lang="en" text="05 - Architecture" />
       </category>
       <category ID="Faculty_06">
         <label xml:lang="de" text="06 - Bauingenieurwesen" />
         <label xml:lang="en" text="06 - Civil Engineering" />
       </category>
       <category ID="Faculty_07">
-        <label xml:lang="en" text="07 - Mechanical Engineering" />
         <label xml:lang="de" text="07 - Maschinenbau" />
+        <label xml:lang="en" text="07 - Mechanical Engineering" />
       </category>
       <category ID="Faculty_08">
         <label xml:lang="de" text="08 - Elektrotechnik und Informationstechnik" />
         <label xml:lang="en" text="08 - Electrical Engineering and Information Technology" />
       </category>
       <category ID="Faculty_09">
-        <label xml:lang="en" text="09 - Humanities and Educational Sciences" />
         <label xml:lang="de" text="09 - Geistes- und Erziehungswissenschaften" />
+        <label xml:lang="en" text="09 - Humanities and Educational Sciences" />
       </category>
       <category ID="Faculty_10">
         <label xml:lang="de" text="10 - Wirtschafts- und Sozialwissenschaften" />

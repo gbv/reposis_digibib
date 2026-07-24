@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="data_origins">
-  <label xml:lang="en" text="Data Origin" />
+<mycoreclass ID="data_origins"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Datenentstehung" />
+  <label xml:lang="en" text="Data Origin" />
   <categories>
     <category ID="observations">
-      <label xml:lang="en" text="Observations" />
       <label xml:lang="de" text="Beobachtung" />
+      <label xml:lang="en" text="Observations" />
     </category>
     <category ID="experiments">
-      <label xml:lang="en" text="Experiment and Measurements" />
       <label xml:lang="de" text="Experiment und Messungen" />
+      <label xml:lang="en" text="Experiment and Measurements" />
     </category>
     <category ID="simulations">
-      <label xml:lang="en" text="Simulations" />
       <label xml:lang="de" text="Simulationen" />
+      <label xml:lang="en" text="Simulations" />
     </category>
     <category ID="media">
-      <label xml:lang="en" text="Images, Audio or Video Recordings" />
       <label xml:lang="de" text="Bilder, Audio- oder Videoaufnahmen" />
+      <label xml:lang="en" text="Images, Audio or Video Recordings" />
     </category>
     <category ID="surveys">
-      <label xml:lang="en" text="Surveys and Interviews" />
       <label xml:lang="de" text="Umfragen und Interviews" />
+      <label xml:lang="en" text="Surveys and Interviews" />
     </category>
     <category ID="statistics">
-      <label xml:lang="en" text="Statistics and Reference Data" />
       <label xml:lang="de" text="Statistiken und Referenzdaten" />
+      <label xml:lang="en" text="Statistics and Reference Data" />
     </category>
     <category ID="protocols">
-      <label xml:lang="en" text="Protocol Files and Usage Data" />
       <label xml:lang="de" text="Protokolldateien und Nutzungsdaten" />
+      <label xml:lang="en" text="Protocol Files and Usage Data" />
     </category>
     <category ID="text">
-      <label xml:lang="en" text="Text Documents" />
       <label xml:lang="de" text="Textdokumente" />
+      <label xml:lang="en" text="Text Documents" />
     </category>
     <category ID="other">
-      <label xml:lang="en" text="Other" />
       <label xml:lang="de" text="Andere" />
+      <label xml:lang="en" text="Other" />
     </category>
   </categories>
 </mycoreclass>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="development_status">
+<mycoreclass ID="development_status"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
+  <label xml:lang="de" text="Entwicklungsstatus" description="Liste von Entwicklungsstatus." />
   <label xml:lang="en" text="Development Status" description="A list of development statuses." />
-  <label xml:lang="de" text="Entwicklungsstatus" description="Liste von Entwicklungstatus." />
   <categories>
     <category ID="concept">
       <label xml:lang="de" text="Konzept" />

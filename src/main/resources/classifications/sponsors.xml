@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="sponsors">
-  <label xml:lang="en" text="sponsored by" description="A list of sponsors" />
+<mycoreclass ID="sponsors"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Förderer" description="Liste möglicher Sponsoren" />
+  <label xml:lang="en" text="sponsored by" description="A list of sponsors" />
   <label xml:lang="x-uri" text="http://www.digibib.tu-bs.de/sponsors" />
   <categories>
     <category ID="dfg">
-      <label xml:lang="de" text="gefördert von der DFG" />
-      <label xml:lang="en" text="sponsored by DFG" />
+      <label xml:lang="de" text="Digitalisierung gefördert von der DFG" />
+      <label xml:lang="en" text="Digitization sponsored by DFG" />
+    </category>
+    <category ID="fonds_tubs">
+      <label xml:lang="de" text="Publikationsfonds der TU Braunschweig" />
     </category>
   </categories>
 </mycoreclass>

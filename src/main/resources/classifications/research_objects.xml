@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_objects">
-  <label xml:lang="en" text="Research Objects" description="A list of research objects." />
+<mycoreclass ID="research_objects"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Forschungsobjekte" description="Liste möglicher Forschungsobjekte." />
+  <label xml:lang="en" text="Research Objects" description="A list of research objects." />
   <categories>
     <category ID="fabric">
-      <label xml:lang="en" text="Fabric" />
       <label xml:lang="de" text="Gewebe" />
+      <label xml:lang="en" text="Fabric" />
     </category>
     <category ID="organism">
-      <label xml:lang="en" text="Organism" />
       <label xml:lang="de" text="Organismus" />
+      <label xml:lang="en" text="Organism" />
     </category>
     <category ID="media">
-      <label xml:lang="en" text="Media" />
       <label xml:lang="de" text="Medien" />
+      <label xml:lang="en" text="Media" />
     </category>
     <category ID="people">
-      <label xml:lang="en" text="People" />
       <label xml:lang="de" text="Personen" />
+      <label xml:lang="en" text="People" />
     </category>
     <category ID="physical_object">
-      <label xml:lang="en" text="Physical Object" />
       <label xml:lang="de" text="Physisches Objekt" />
+      <label xml:lang="en" text="Physical Object" />
     </category>
     <category ID="non_physical_object">
-      <label xml:lang="en" text="Non-physical Object" />
       <label xml:lang="de" text="Nicht-physisches Objekt" />
+      <label xml:lang="en" text="Non-physical Object" />
     </category>
     <category ID="substance">
-      <label xml:lang="en" text="Substance" />
       <label xml:lang="de" text="Stoff/Substanz" />
+      <label xml:lang="en" text="Substance" />
     </category>
     <category ID="other">
-      <label xml:lang="en" text="Other" />
       <label xml:lang="de" text="Anderes" />
+      <label xml:lang="en" text="Other" />
     </category>
   </categories>
 </mycoreclass>
