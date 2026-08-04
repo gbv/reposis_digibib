@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <description>
-  <eprints xmlns="http://www.openarchives.org/OAI/1.1/eprints"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/1.1/eprints http://www.openarchives.org/OAI/1.1/eprints.xsd">
+  <eprints
+    xmlns="http://www.openarchives.org/OAI/1.1/eprints"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.openarchives.org/OAI/1.1/eprints http://www.openarchives.org/OAI/1.1/eprints.xsd">
     <content>
       <text>
-        LeoPARD is the institutional repository of Technische Universität (TU) Braunschweig and is operated by the university library. It facilitates the
-        publication of research results and documentation of scientists of the TU Braunschweig, of special collections of the TU Braunschweig and of regional institutions as well as of digitized evidence of the regional cultural heritage.
+        LeoPARD is the institutional repository of Technische Universität (TU) Braunschweig and is operated by the
+        university library. It facilitates the publication of research results and documentation of scientists of the
+         TU Braunschweig, of special collections of the TU Braunschweig and of regional institutions as well as of
+         digitized evidence of the regional cultural heritage.
       </text>
       <URL>https://leopard.tu-braunschweig.de/</URL>
     </content>
     <metadataPolicy>
       <text>
-        All bibliographic metadata provided via this interface, except abstracts, is hereby made available under CC0 license, free to share and re-use.
+        All bibliographic metadata provided via this interface, except abstracts, is hereby made available under CC0
+        license, free to share and re-use.
       </text>
       <URL>http://creativecommons.org/publicdomain/zero/1.0/deed.de</URL>
     </metadataPolicy>
     <dataPolicy>
       <text>
-        The publications and electronic documents provided here must be used according to copyright laws, all rights reserved if not otherwise explicitly specified.
+        The publications and electronic documents provided here must be used according to copyright laws, all rights
+        reserved if not otherwise explicitly specified.
       </text>
       <URL>https://leopard.tu-braunschweig.de/</URL>
     </dataPolicy>
     <submissionPolicy>
       <text>
-        This repository is intended to hold Open Access publications, electronic thesis, dissertations and special collections of Technische Universität Braunschweig
-        as well as digitized objects of the local cultural heritage.
+        This repository is intended to hold Open Access publications, electronic thesis, dissertations and special
+        collections of Technische Universität Braunschweig as well as digitized objects of the local cultural heritage.
       </text>
       <URL>https://leopard.tu-braunschweig.de/content/publish/policy.xml</URL>
     </submissionPolicy>
     <comment>
-      This institutional repository is powered by the MyCoRe repository software, see http://www.mycore.org/ for more information.
+      This institutional repository is powered by the MyCoRe repository software, see https://www.mycore.org/ for
+      more information.
     </comment>
   </eprints>
 </description>

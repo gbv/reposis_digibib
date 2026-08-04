@@ -11,10 +11,10 @@
   <xsl:param name="MCR.mir-module.EditorMail" />
   <xsl:param name="MCR.mir-module.MailSender" />
   <xsl:param name="MCR.mir-module.sendEditorMailToCurrentAuthor" />
-  
   <xsl:variable name="newline" select="'&#xA;'" />
   <xsl:variable name="categories" select="document('classification:metadata:1:children:mir_institutes')/mycoreclass/categories" />
   <xsl:variable name="institutemember" select="$categories/category[mcrxsl:isCurrentUserInRole(concat('mir_institutes:',@ID))]" />
+  <!-- START digibib adaptions -->
   <xsl:variable name="objectType">
     <xsl:choose>
       <xsl:when test="/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:genre[@type='kindof']">
@@ -30,12 +30,21 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
+  <!-- END digibib adaptions -->
 
   <xsl:template match="/">
     <xsl:message>
+    <!-- START digibib adaptions -->
+    <!--
+      type:
+      <xsl:value-of select="$type" />
+      action:
+      <xsl:value-of select="$action" />
+    -->
       type:        <xsl:value-of select="$type" />
       objectType:  <xsl:value-of select="$objectType" />
       action:      <xsl:value-of select="$action" />
+    <!-- END digibib adaptions -->
     </xsl:message>
     <email>
       <from><xsl:value-of select="$MCR.mir-module.MailSender" /></from>
@@ -45,10 +54,34 @@
 
   <xsl:template match="mycoreobject" mode="email">
     <xsl:choose>
+      <!-- START digibib adaptions -->
+      <!--
+      <xsl:when test="not(mcrxsl:isCurrentUserInRole('editor') or mcrxsl:isCurrentUserInRole('admin')) and mcrxsl:isCurrentUserInRole('submitter') and ($action='create')">
+      -->
       <xsl:when test="not(mcrxsl:isCurrentUserInRole('editor') or mcrxsl:isCurrentUserInRole('admin')) and (mcrxsl:isCurrentUserInRole('submitter') or mcrxsl:isCurrentUserInRole('hoeb-submitter')) and ($action='create')">
+      <!-- END digibib adaptions -->
         <!-- SEND EMAIL -->
         <xsl:apply-templates select="." mode="mailReceiver" />
         <subject>
+          <!-- START digibib adaptions -->
+          <!--
+          <xsl:variable name="objectType">
+            <xsl:choose>
+              <xsl:when test="./metadata/def.modsContainer/modsContainer/mods:mods/mods:genre[@type='kindof']">
+                <xsl:apply-templates select="./metadata/def.modsContainer/modsContainer/mods:mods/mods:genre[@type='kindof']"
+                  mode="printModsClassInfo" />
+              </xsl:when>
+              <xsl:when test="./metadata/def.modsContainer/modsContainer/mods:mods/mods:genre[@type='intern']">
+                <xsl:apply-templates select="./metadata/def.modsContainer/modsContainer/mods:mods/mods:genre[@type='intern']"
+                  mode="printModsClassInfo" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="'Objekt'" />
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="concat($objectType,' erstellt: ',@ID)" />
+          -->
           <xsl:choose>
             <xsl:when test="./metadata/def.modsContainer/modsContainer/mods:mods/mods:name[mods:role/mods:roleTerm='aut']">
               <xsl:variable name="authorRtf">
@@ -60,6 +93,7 @@
               <xsl:value-of select="concat($objectType, ' erstellt: ', @ID)" />
             </xsl:otherwise>
           </xsl:choose>
+          <!-- END digibib adaptions -->
         </subject>
         <body>
           <xsl:value-of select="'Ein paar Metadaten'" />
@@ -77,7 +111,12 @@
               <xsl:value-of select="'Do not send mail as action is not create.'" />
             </xsl:message>
           </xsl:when>
+          <!-- START digibib adaptions -->
+          <!--
+          <xsl:when test="not(mcrxsl:isCurrentUserInRole('submitter'))">
+          -->
           <xsl:when test="not(mcrxsl:isCurrentUserInRole('submitter') or mcrxsl:isCurrentUserInRole('hoeb-submitter'))">
+          <!-- END digibib adaptions -->
             <xsl:message>
               <xsl:value-of select="concat('Do not send mail as current user ',$CurrentUser, ' is not in group creator.')" />
             </xsl:message>
@@ -158,12 +197,14 @@
         </xsl:when>
       </xsl:choose>
     </xsl:for-each>
+    <!-- START digibib adaptions -->
     <xsl:if test="contains('Dissertation Habilitation Diplomarbeit Abschlussarbeit Thesis Diploma thesis Master', $objectType)">
       <to>ub-diss@tu-braunschweig.de</to>
     </xsl:if>
     <xsl:if test="contains('Forschungsdaten Research Data', $objectType)">
       <to>forschungsdaten@tu-braunschweig.de</to>
     </xsl:if>
+    <!-- END digibib adaptions -->
   </xsl:template>
 
   <!-- Classification support -->

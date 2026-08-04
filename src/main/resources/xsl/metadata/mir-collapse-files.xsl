@@ -11,14 +11,15 @@
                 exclude-result-prefixes="i18n mcr mods acl xlink embargo piUtil"
 >
   <xsl:import href="xslImport:modsmeta:metadata/mir-collapse-files.xsl" />
-   <!-- BEGIN leopard specific changes -->
+  <!-- START digibib adaptions -->
   <xsl:param name="Digibib.ContactRequest.RequestForm.EnabledGenres" />
-  <!-- END leopard specific changes -->
+  <!-- END digibib adaptions -->
   <xsl:param name="MIR.NotFullAccessInfo.Genres" />
+  <xsl:param name="MIR.FileBrowser.FilesPerPage" />
   <xsl:template match="/">
     <xsl:variable xmlns:encoder="xalan://java.net.URLEncoder" name="loginURL"
-      select="concat( $ServletsBaseURL, 'MCRLoginServlet',$HttpSession,'?url=', encoder:encode( string( $RequestURL ) ) )" />
-    
+      select="concat( $ServletsBaseURL, 'MCRLoginServlet?url=', encoder:encode( string( $RequestURL ) ) )" />
+
     <xsl:choose>
       <xsl:when test="key('rights', mycoreobject/@ID)/@read or key('rights', mycoreobject/structure/derobjects/derobject/@xlink:href)/@accKeyEnabled">
         <xsl:variable name="objID" select="mycoreobject/@ID" />
@@ -54,24 +55,25 @@
                 <xsl:if test="count(mycoreobject/structure/derobjects/derobject) &gt; count(mycoreobject/structure/derobjects/derobject[key('rights', @xlink:href)/@read])">
                   <div class="alert alert-warning" role="alert">
                     <xsl:value-of select="i18n:translate('mir.derivate.not_full_access')" />
-                    <!-- BEGIN leopard specific changes -->
+                    <!-- START digibib adaptions -->
                     <xsl:if test="contains($Digibib.ContactRequest.RequestForm.EnabledGenres, $mods-type)">
                       <xsl:value-of select="' '" />
                       <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.before')" />
-                      <a data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objectId}">
+                      <a data-toggle="modal" data-target="#createContactRequestModal" data-object-id="{$objID}">
                         <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink')" />
                       </a>
                       <xsl:value-of select="i18n:translate('mir.derivate.not_full_access.contactRequestLink.after')" />
                     </xsl:if>
-                    <!-- END leopard specific changes -->
+                    <!-- END digibib adaptions -->
                   </div>
                 </xsl:if>
               </xsl:if>
-              <!-- BEGIN leopard specific changes -->
+              <!-- START digibib adaptions -->
               <xsl:for-each select="mycoreobject/structure/derobjects/derobject[(key('rights', @xlink:href)/@read and not(classification[@classid='derivate_types' and @categid='external_store_s3'])) or key('rights', @xlink:href)/@write]">
-              <!-- END leopard specific changes -->
+              <!-- END digibib adaptions -->
                 <xsl:variable name="derId" select="@xlink:href" />
                 <xsl:variable name="derivateXML" select="document(concat('mcrobject:',$derId))" />
+                <xsl:variable name="derivateType" select="$derivateXML/mycorederivate/derivate/classifications/classification[@classid='derivate_types']/@categid" />
                 <div id="files{@xlink:href}" class="file_box">
                   <div class="row header">
                     <div class="col-12">
@@ -82,6 +84,9 @@
                               <xsl:choose>
                                 <xsl:when test="$derivateXML//titles/title[@xml:lang=$CurrentLang]">
                                   <xsl:value-of select="$derivateXML//titles/title[@xml:lang=$CurrentLang]" />
+                                </xsl:when>
+                                <xsl:when test="string-length($derivateType)!=0">
+                                  <xsl:value-of select="mcr:getDisplayName('derivate_types',$derivateType)" />
                                 </xsl:when>
                                 <xsl:otherwise>
                                   <xsl:value-of select="i18n:translate('metadata.files.file')" />
@@ -106,7 +111,7 @@
                   <xsl:choose>
                     <xsl:when test="key('rights', @xlink:href)/@read">
                       <xsl:variable name="maindoc" select="$derivateXML/mycorederivate/derivate/internals/internal/@maindoc" />
-                      <div class="file_box_files" data-objID="{$objID}" data-deriID="{$derId}" data-mainDoc="{$maindoc}" data-writedb="{acl:checkPermission($derId,'writedb')}" data-deletedb="{acl:checkPermission($derId,'deletedb')}">
+                      <div class="file_box_files" data-objID="{$objID}" data-deriID="{$derId}" data-mainDoc="{$maindoc}" data-writedb="{acl:checkPermission($derId,'writedb')}" data-deletedb="{acl:checkPermission($derId,'deletedb')}" data-numperpage="{$MIR.FileBrowser.FilesPerPage}">
                         <xsl:if test="acl:checkPermission($derId,'read')">
                           <xsl:attribute name="data-jwt">
                             <xsl:value-of select="'required'" />

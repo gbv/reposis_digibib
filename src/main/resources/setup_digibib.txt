@@ -1,3 +1,4 @@
+reload solr configuration main in core main
 update classification from uri resource:classifications/data_origins.xml
 update classification from uri resource:classifications/ddc.xml
 update classification from uri resource:classifications/development_status.xml

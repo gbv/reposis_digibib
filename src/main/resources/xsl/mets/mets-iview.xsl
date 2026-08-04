@@ -20,7 +20,7 @@
   <xsl:param name="objectID" />
   <!-- this is where the master file group is located (files that are referenced by a relative URL) -->
   <xsl:variable name="masterFileGrp"
-                select="/mets:mets/mets:fileSec/mets:fileGrp[
+    select="/mets:mets/mets:fileSec/mets:fileGrp[
       @USE='MASTER' and
       mets:file/mets:FLocat/@LOCTYPE='URL' and
       not(
@@ -137,8 +137,14 @@
           </xsl:when>
           <xsl:when test="$use='DOWNLOAD' and $MCR.Viewer.PDFCreatorURI">
             <mets:file ID="{concat($use,'_',$ncName)}" MIMETYPE="application/pdf">
+              <!-- START digibib adaptions -->
+              <!--
+              <mets:FLocat LOCTYPE="URL"
+                xlink:href="{concat($MCR.Viewer.PDFCreatorURI, '?mets=', encoder:encode(concat($WebApplicationServletsURL, 'MCRMETSServlet', '/',$derivateID, '/mets.xml?XSL.Style=pdf'), 'UTF-8'), '&amp;pages=', position())}" />
+              -->
               <mets:FLocat LOCTYPE="URL"
                            xlink:href="{concat($WebApplicationBaseURL, 'rsc/pdf', '/',$derivateID, '?pages=', position())}" />
+              <!-- END digibib adaptions -->
             </mets:file>
           </xsl:when>
           <xsl:otherwise>
@@ -193,10 +199,19 @@
       <xsl:if test="$MCR.Viewer.PDFCreatorURI">
         <mets:fptr FILEID="{concat('DOWNLOAD_',$ncName)}" />
       </xsl:if>
-
+      <!-- START digibib adaptions -->
+      <!--
+      <xsl:if test="mets:fptr[$copyFileGrp/mets:file/@ID=@FILEID]">
+      -->
       <xsl:if test="mets:fptr[$copyFileGrp/mets:fileGrp/mets:file/@ID=@FILEID]">
+      <!-- END digibib adaptions -->
         <!-- Copy fptr that have match in copyFileGrp -->
+        <!-- START digibib adaptions -->
+        <!--
+        <xsl:copy-of select="mets:fptr[$copyFileGrp/mets:file/@ID=@FILEID]" />
+        -->
         <xsl:copy-of select="mets:fptr[$copyFileGrp/mets:fileGrp/mets:file/@ID=@FILEID]" />
+        <!-- END digibib adaptions -->
       </xsl:if>
     </xsl:copy>
   </xsl:template>

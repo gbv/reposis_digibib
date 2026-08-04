@@ -63,12 +63,12 @@
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:if>
-              <xsl:call-template name="lf2br">
-                <xsl:with-param name="string" select="normalize-space(.)" />
-              </xsl:call-template>
-              <xsl:if test="@authority='gnd' and @valueURI">
-                <xsl:apply-templates select="." mode="gnd"/>
-              </xsl:if>
+            <xsl:call-template name="lf2br">
+              <xsl:with-param name="string" select="normalize-space(.)" />
+            </xsl:call-template>
+            <xsl:if test="@authority='gnd' and @valueURI">
+              <xsl:apply-templates select="." mode="gnd"/>
+            </xsl:if>
           </xsl:for-each>
         </td>
       </tr>
@@ -205,7 +205,7 @@
             <xsl:value-of select="url/@xlink:href" />
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="concat($WebApplicationBaseURL,'receive/',url/@xlink:href,$HttpSession)" />
+            <xsl:value-of select="concat($WebApplicationBaseURL,'receive/',url/@xlink:href)" />
           </xsl:otherwise>
         </xsl:choose>
       </xsl:if>
@@ -516,8 +516,12 @@
           <xsl:variable name="classlink" select="mcrmods:getClassCategParentLink(.)" />
           <xsl:choose>
             <xsl:when test="string-length($classlink) &gt; 0">
-              <!-- DIGIBIB specific changes: add check for 'x-hide' label in mir_institutes classification -->
+              <!-- START digibib adaptions: add check for 'x-hide' label in mir_institutes classification -->
+              <!--
+              <xsl:for-each select="document($classlink)/mycoreclass//category[position()=1 or position()=last()]">
+              -->
               <xsl:for-each select="document($classlink)/mycoreclass//category[position()=1 or position()=last()][not(label/@xml:lang='x-hide')]">
+              <!-- END digibib adaptions -->
                 <xsl:if test="position() > 1">
                   <xsl:value-of select="', '" />
                 </xsl:if>
@@ -921,7 +925,7 @@
     </xsl:for-each>
   </xsl:template>
 
-  <!-- START leopard specific changes -->
+  <!-- START digibib adaptions -->
   <xsl:template name="getGenreName">
     <xsl:param name="genre" />
     <xsl:variable name="genreID" select="substring-after($genre/@valueURI, '#')" />
@@ -956,7 +960,7 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
-  <!-- END leopard specific changes -->
+  <!-- END digibib adaptions -->
 
   <xsl:template name="printMetaDate.mods.relatedItems">
     <xsl:param name="parentID" />
@@ -973,13 +977,13 @@
             <xsl:with-param select="$parentID" name="obj_id" />
           </xsl:call-template>
         </xsl:when>
-        <!-- START leopard specific changes -->
+        <!-- START digibib adaptions -->
         <xsl:when test="mods:titleInfo/mods:title and (mods:identifier or mods:location/mods:url[@access='raw object'])">
           <xsl:call-template name="printRelatedItemAsAPA">
             <xsl:with-param name="mods" select="." />
           </xsl:call-template>
         </xsl:when>
-        <!-- END leopard specific changes -->
+        <!-- END digibib adaptions -->
         <xsl:otherwise>
           <xsl:value-of select="mods:titleInfo/mods:title" />
         </xsl:otherwise>

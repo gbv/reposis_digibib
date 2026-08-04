@@ -94,14 +94,14 @@ public class ContactRequestServiceImpl implements ContactRequestService {
             MCREvent.EventType.CREATE);
         evt.put(ContactRequestEventHandlerBase.CONTACT_REQUEST_TYPE,
             ContactRequestMapper.toDto(insertedContactRequest));
-        MCREventManager.instance().handleEvent(evt);
+        MCREventManager.getInstance().handleEvent(evt);
         return ContactRequestMapper.toDto(insertedContactRequest);
     }
 
     @Override
     public ContactRequestDto getContactRequestById(UUID contactRequestId) {
         return contactRequestRepository.findById(contactRequestId).map(ContactRequestMapper::toDto)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
         }
         validatorFacade.getContactRequestValidator().validate(contactRequestDto);
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestDto.getId())
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         contactRequest.setStatus(ContactRequest.Status.valueOf(contactRequestDto.getStatus()));
         contactRequest.setComment(contactRequestDto.getComment());
         contactRequest.setBody(ContactRequestBodyMapper.toEntity(contactRequestDto.getBody()));
@@ -130,7 +130,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
         ContactRequestPartialUpdateDto contactRequestDto) {
         validatorFacade.getContactRequestValidator().validate(contactRequestDto);
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestId)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         contactRequestDto.getBody().getOptional().map(ContactRequestBodyMapper::toEntity)
             .ifPresent(contactRequest::setBody);
         contactRequestDto.getComment().getOptional().ifPresent(contactRequest::setComment);
@@ -152,7 +152,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
     public ContactInfoDto createContactInfo(UUID contactRequestId, ContactInfoDto contactInfoDto) {
         validatorFacade.getContactInfoValidator().validate(contactInfoDto);
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestId)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         if (ContactInfoServiceImpl.checkContactExists(contactRequest.getContactInfos(), contactInfoDto)) {
             throw new ContactInfoAlreadyExistsException();
         }
@@ -167,7 +167,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
     @Override
     public List<ContactInfoDto> getContactInfosById(UUID contactRequestId) {
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestId)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         return contactRequest.getContactInfos().stream().map(ContactInfoMapper::toDto).toList();
     }
 
@@ -175,7 +175,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
     public ContactAttemptDto createContactAttempt(UUID contactRequestId, ContactAttemptDto contactAttemptDto) {
         validatorFacade.getContactAttemptValidator().validate(contactAttemptDto);
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestId)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         final ContactAttempt contactAttempt = ContactAttemptMapper.toEntity(contactAttemptDto);
         contactAttempt.setContactRequest(contactRequest);
         final ContactAttempt createdContactAttempt = contactAttemptRepository.save(contactAttempt);
@@ -185,21 +185,21 @@ public class ContactRequestServiceImpl implements ContactRequestService {
         evt.put(ContactRequestEventHandlerBase.CONTACT_ATTEMPT_TYPE,
             ContactAttemptMapper.toDto(createdContactAttempt));
         evt.put(ContactRequestEventHandlerBase.CONTACT_REQUEST_TYPE, ContactRequestMapper.toDto(contactRequest));
-        MCREventManager.instance().handleEvent(evt);
+        MCREventManager.getInstance().handleEvent(evt);
         return ContactAttemptMapper.toDto(createdContactAttempt);
     }
 
     @Override
     public List<ContactAttemptDto> getContactAttemptsById(UUID contactRequestId) {
-        return contactRequestRepository.findById(contactRequestId).map(t -> {
-            return t.getEmailContactAttempts().stream().map(ContactAttemptMapper::toDto).toList();
-        }).orElseThrow(() -> new ContactRequestNotFoundException());
+        return contactRequestRepository.findById(contactRequestId)
+            .map(t -> t.getEmailContactAttempts().stream().map(ContactAttemptMapper::toDto).toList())
+            .orElseThrow(ContactRequestNotFoundException::new);
     }
 
     @Override
     public ContactRequestSummaryDto getStatusSummaryById(UUID contactRequestId) {
         final ContactRequest contactRequest = contactRequestRepository.findById(contactRequestId)
-            .orElseThrow(() -> new ContactRequestNotFoundException());
+            .orElseThrow(ContactRequestNotFoundException::new);
         return ContactRequestMapper.toSummaryDto(contactRequest);
     }
 

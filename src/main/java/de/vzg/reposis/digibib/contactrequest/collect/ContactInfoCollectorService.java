@@ -42,9 +42,10 @@ public class ContactInfoCollectorService {
     private static final String COLLECTOR_PROP_PREFIX = ContactRequestConstants.CONF_PREFIX + "ContactInfoCollector.";
 
     static {
-        MCRConfiguration2.getSubPropertiesMap(COLLECTOR_PROP_PREFIX).entrySet().stream()
-            .filter(p -> p.getKey().endsWith(".Class")).map(p -> COLLECTOR_PROP_PREFIX.concat(p.getKey()))
-            .map(p -> MCRConfiguration2.<ContactInfoCollector>getSingleInstanceOf(p).orElseThrow())
+        MCRConfiguration2.getSubPropertiesMap(COLLECTOR_PROP_PREFIX).keySet().stream()
+            .filter(s -> s.endsWith(".Class"))
+            .map(COLLECTOR_PROP_PREFIX::concat)
+            .map(p -> MCRConfiguration2.getInstanceOfOrThrow(ContactInfoCollector.class, p))
             .forEach(COLLECTORS::add);
     }
 

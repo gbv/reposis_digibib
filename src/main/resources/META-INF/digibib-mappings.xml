@@ -1,7 +1,7 @@
-<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
-                 version="2.2">
+<entity-mappings version="2.2"
+  xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
   <entity class="de.vzg.reposis.digibib.contactrequest.model.ContactRequest" />
   <entity class="de.vzg.reposis.digibib.contactrequest.model.ContactInfo" />
   <entity class="de.vzg.reposis.digibib.contactrequest.model.ContactAttempt" />

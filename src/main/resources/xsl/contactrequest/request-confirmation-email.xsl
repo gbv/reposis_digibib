@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3">
+<xsl:stylesheet version="1.0"
+  xmlns:mods="http://www.loc.gov/mods/v3"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  exclude-result-prefixes="mods">
   
   <xsl:param name="WebApplicationBaseURL" />
   <xsl:param name="requestId" />
@@ -28,10 +31,11 @@
   </xsl:template>
 
   <xsl:template name="body">
+    <xsl:variable name="title" select="$mycoreobject//mods:mods/mods:titleInfo/mods:title" />
     <body>
       <xsl:value-of select="concat('Hello ', $rname, ',', $newline)" />
       <xsl:value-of select="$newline" />
-      <xsl:value-of select="concat('we have received the following contact request for the publication ', $mycoreobject//mods:mods/mods:titleInfo/mods:title, ' [0] on LeoPARD:', $newline)" />
+      <xsl:value-of select="concat('we have received the following contact request for the publication ', $title, ' [0] on LeoPARD:', $newline)" />
       <xsl:value-of select="$newline" />
       <xsl:value-of select="concat($indent, '=====', $newline)" />
       <xsl:value-of select="concat($indent, 'Name:  ', $rname, $newline)" />
