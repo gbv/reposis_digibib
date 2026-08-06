@@ -61,7 +61,7 @@
           </xsl:for-each>
         </xsl:when>
       </xsl:choose>
-      <!-- START digibib adaptions -->
+      <!-- END digibib adaptions -->
     </div>
 
     <!-- authors, description, children -->
@@ -105,9 +105,13 @@
               <xsl:when test="(string-length(@altRepGroup) &gt; 0) and (string-length(@altFormat) &gt; 0)">
                 <xsl:copy-of select="document(concat('unescape-html-content:', @altFormat))"/>
               </xsl:when>
+              <!-- START digibib adaptions -->
+              <!--
               <xsl:when test="@altRepGroup and count(../mods:abstract[@altRepGroup=current()/@altRepGroup]) = 1">
                 <xsl:copy-of select="."/>
               </xsl:when>
+              -->
+              <!-- END digibib adaptions -->
               <xsl:when test="not(@altRepGroup)">
                 <xsl:copy-of select="."/>
               </xsl:when>
@@ -118,6 +122,8 @@
 
         <xsl:choose>
           <xsl:when test="count($abstracts/mods:abstract) &gt; 1">
+            <!-- START digibib adaptions -->
+            <!--
             <xsl:variable name="first-abstract-in-current-lang-node-id" select="generate-id($abstracts/mods:abstract[@xml:lang=$CurrentLang][1])"/>
             <xsl:variable name="first-abstract-in-current-lang-position">
               <xsl:for-each select="$abstracts/mods:abstract">
@@ -129,18 +135,28 @@
                 </xsl:if>
               </xsl:for-each>
             </xsl:variable>
+            -->
+            <!-- END digibib adaptions -->
 
             <div id="mir-abstract-tabs">
               <ul class="nav nav-tabs justify-content-end" role="tablist">
                 <xsl:for-each select="$abstracts/mods:abstract">
+                  <!-- START digibib adaptions -->
+                  <!--
                   <xsl:sort select="@type"/>
                   <xsl:sort select="@xml:lang"/>
+                  -->
+                  <!-- END digibib adaptions -->
 
                   <xsl:variable name="tabName">
                     <xsl:choose>
+                      <!-- START digibib adaptions -->
+                      <!--
                       <xsl:when test="@type and $MIR.Layout.Abstract.Type.Classification">
                         <xsl:value-of select="mcrxsl:getDisplayName($MIR.Layout.Abstract.Type.Classification, @type)"/>
                       </xsl:when>
+                      -->
+                      <!-- END digibib adaptions -->
                       <xsl:when test="@xml:lang">
                         <xsl:value-of
                           select="document(concat('classification:metadata:0:children:rfc5646:',./@xml:lang))//category/label[@xml:lang=$CurrentLang]/@text" />
@@ -153,6 +169,8 @@
                   </xsl:variable>
                   <li class="nav-item">
                     <a class="nav-link" href="#tab{position()}" role="tab" data-toggle="tab">
+                      <!-- START digibib adaptions -->
+                      <!--
                       <xsl:choose>
                         <xsl:when test="$first-abstract-in-current-lang-position = position()">
                           <xsl:attribute name="class">active nav-link</xsl:attribute>
@@ -171,14 +189,24 @@
                           <xsl:value-of select="@xml:lang"/>
                         </sup>
                       </xsl:if>
+                      -->
+                      <xsl:if test="position()=1">
+                        <xsl:attribute name="class">active nav-link</xsl:attribute>
+                      </xsl:if>
+                      <xsl:value-of select="$tabName" />
+                      <!-- END digibib adaptions -->
                     </a>
                   </li>
                 </xsl:for-each>
               </ul>
               <div class="tab-content">
                 <xsl:for-each select="$abstracts/mods:abstract">
+                  <!-- START digibib adaptions -->
+                  <!--
                   <xsl:sort select="@type"/>
                   <xsl:sort select="@xml:lang"/>
+                  -->
+                  <!-- END digibib adaptions -->
 
                   <div class="tab-pane ellipsis ellipsis-text" role="tabpanel" id="tab{position()}">
                     <xsl:if test="@xml:lang">
@@ -186,6 +214,8 @@
                         <xsl:value-of select="@xml:lang" />
                       </xsl:attribute>
                     </xsl:if>
+                    <!-- START digibib adaptions -->
+                    <!--
                     <xsl:choose>
                       <xsl:when test="$first-abstract-in-current-lang-position = position()">
                           <xsl:attribute name="class">tab-pane ellipsis ellipsis-text active</xsl:attribute>
@@ -196,6 +226,11 @@
                         </xsl:if>
                       </xsl:otherwise>
                     </xsl:choose>
+                    -->
+                    <xsl:if test="position()=1">
+                      <xsl:attribute name="class">tab-pane ellipsis ellipsis-text active</xsl:attribute>
+                    </xsl:if>
+                    <!-- END digibib adaptions -->
                     <p>
                       <span class="ellipsis-description">
                         <xsl:copy-of select="node()"/>
